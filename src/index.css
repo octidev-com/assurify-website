@@ -1,1 +1,33 @@
 @import 'tailwindcss';
+
+@layer utilities {
+  .container {
+    width: 1170px;
+  }
+
+  .btn-primary {
+    cursor: pointer;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #f7f7f7;
+    border-radius: 1rem;
+    color: #000000;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .btn-secondary {
+    cursor: pointer;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+}
