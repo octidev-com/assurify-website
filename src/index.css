@@ -30,4 +30,11 @@
     font-size: 1rem;
     color: #ffffff;
   }
+
+  .text-gradient {
+    background: linear-gradient(180deg, #50c04a 0%, #fff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

@@ -1,6 +1,8 @@
 import Navbar from './component/Navbar'
-import roundBg from './assets/round-bg.png' // Import the image
+import roundBg from './assets/banner/round-bg.png'
 import Banner from './component/Banner'
+import bannerBg from './assets/banner/banner-bg.png'
+import HowItWorks from './component/howItWorks'
 
 function App() {
   return (
@@ -11,9 +13,18 @@ function App() {
           <img src={roundBg} alt='Background decoration' />
         </div>
 
+        {/* navbar component */}
         <Navbar />
 
-        <Banner />
+        {/* banner component */}
+        <div
+          style={{ backgroundImage: `url(${bannerBg})` }}
+          className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center '>
+          <Banner />
+        </div>
+
+        {/* how it works section */}
+        <HowItWorks />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
