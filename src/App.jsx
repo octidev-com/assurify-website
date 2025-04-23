@@ -26,6 +26,10 @@ function App() {
         {/* how it works section */}
         <HowItWorks />
 
+        <Banner />
+        <Banner />
+        <Banner />
+
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
           <img src={roundBg} alt='Background decoration' />
