@@ -94,7 +94,7 @@ const HowItWorks = () => {
     // Pin the content
     ScrollTrigger.create({
       trigger: pin,
-      start: 'top top',
+      start: 'center center',
       end: `+=${window.innerHeight * howItWorksSteps.length}`,
       pin: true,
       pinSpacing: false
@@ -166,7 +166,7 @@ const HowItWorks = () => {
   return (
     <div
       ref={containerRef}
-      className='mt-[150px] container min-h-screen overflow-x-hidden'>
+      className='mt-[150px] container min-h-screen overflow-x-hidden '>
       <div ref={pinRef} className='relative pb-8'>
         {/* Header Section */}
         <div className='w-[732px] max-w-full mx-auto flex flex-col gap-4 px-4'>
