@@ -9,6 +9,7 @@ import Benefits from './component/Home/Benfits'
 import Brands from './component/Home/Brands'
 import Pricing from './component/Home/Pricing'
 import Review from './component/Home/Review'
+import WhyAssurifyBestChoice from './component/Home/WhyAssurifyBestChoice'
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
 
         {/* review section */}
         <Review />
+
+        {/* why assurify best choice section */}
+        <WhyAssurifyBestChoice />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
