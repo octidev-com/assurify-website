@@ -7,6 +7,7 @@ import HowItWorks from './component/Home/HowItWorks'
 import ProtectionCoverage from './component/Home/ProtectionCoverage'
 import Benefits from './component/Home/Benfits'
 import Brands from './component/Home/Brands'
+import Pricing from './component/Home/Pricing'
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
 
         {/* brands section */}
         <Brands />
+
+        {/* pricing section */}
+        <Pricing />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
