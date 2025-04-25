@@ -1,16 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from './component/Navbar'
 import roundBg from './assets/banner/round-bg.png'
-import Banner from './component/Banner'
+import Banner from './component/Home/Banner'
 import bannerBg from './assets/banner/banner-bg.png'
-import HowItWorks from './component/howItWorks'
-import ProtectionCoverage from './component/protectionCoverage'
+import HowItWorks from './component/Home/HowItWorks'
+import ProtectionCoverage from './component/Home/ProtectionCoverage'
 
 function App() {
-  useEffect(() => {
-    console.log('Navbar rendered, checking stickiness')
-  }, [])
-
   return (
     <div className='w-full mx-auto bg-[#0C0D0C] min-h-screen'>
       <div className='w-full relative text-white flex flex-col items-center min-h-screen overflow-x-hidden'>

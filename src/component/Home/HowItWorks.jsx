@@ -64,14 +64,6 @@ const HowItWorks = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [indicatorNumbers, setIndicatorNumbers] = useState([1, 2, 3])
 
-  // Preload images to prevent flicker
-  useEffect(() => {
-    howItWorksSteps.forEach((step) => {
-      const img = new Image()
-      img.src = step.image
-    })
-  }, [])
-
   // GSAP ScrollTrigger for content animations
   useEffect(() => {
     const container = containerRef.current
@@ -104,10 +96,10 @@ const HowItWorks = () => {
     ScrollTrigger.create({
       trigger: container,
       start: 'top top',
-      end: `+=${window.innerHeight * (howItWorksSteps.length + 1)}`,
+      end: `+=${window.innerHeight * (howItWorksSteps.length + 15)}`,
       scrub: true,
       onUpdate: (self) => {
-        const progress = self.progress * (howItWorksSteps.length + 1)
+        const progress = self.progress * (howItWorksSteps.length + 15)
         const newStepIndex = Math.min(
           Math.floor(progress),
           howItWorksSteps.length
@@ -166,7 +158,20 @@ const HowItWorks = () => {
   return (
     <div
       ref={containerRef}
-      className='mt-[150px] container min-h-screen overflow-x-hidden '>
+      className='mt-[150px] container min-h-screen overflow-x-hidden'>
+      {/* Preload Images */}
+      <div style={{ display: 'none' }}>
+        {howItWorksSteps.map((step) => (
+          <img
+            key={step.id}
+            src={step.image}
+            alt={`Preload ${step.title}`}
+            width='0'
+            height='0'
+          />
+        ))}
+      </div>
+
       <div ref={pinRef} className='relative pb-8'>
         {/* Header Section */}
         <div className='w-[732px] max-w-full mx-auto flex flex-col gap-4 px-4'>
