@@ -14,44 +14,88 @@ const ProtectionCoverage = () => {
     { id: 6, title: 'Reorder / refund', iconName: 'reorder_refund' }
   ]
 
-  // Ref for the container and elements
+  // Ref for the container and elements (right side only)
   const containerRef = useRef(null)
   const elementRefs = useRef([])
 
   useEffect(() => {
-    // Dynamically load GSAP
-    const script = document.createElement('script')
-    script.src =
+    // Dynamically load GSAP and ScrollTrigger
+    const gsapScript = document.createElement('script')
+    gsapScript.src =
       'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'
-    script.async = true
-    script.onload = () => {
-      const { gsap } = window
+    gsapScript.async = true
 
-      if (containerRef.current && gsap) {
-        // Rotate the container
-        gsap.to(containerRef.current, {
-          rotation: 360,
-          duration: 20, // Slower rotation for readability
-          repeat: -1, // Infinite loop
-          ease: 'linear'
+    const scrollTriggerScript = document.createElement('script')
+    scrollTriggerScript.src =
+      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'
+    scrollTriggerScript.async = true
+
+    // Flags to track if scripts were appended
+    let gsapAppended = false
+    let scrollTriggerAppended = false
+
+    // Load GSAP first, then ScrollTrigger
+    gsapScript.onload = () => {
+      document.body.appendChild(scrollTriggerScript)
+      scrollTriggerAppended = true
+    }
+
+    scrollTriggerScript.onload = () => {
+      const { gsap, ScrollTrigger } = window
+
+      if (containerRef.current && gsap && ScrollTrigger) {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger)
+
+        // Initially hide the container (border) and elements
+        gsap.set(containerRef.current, { opacity: 0 })
+        gsap.set(elementRefs.current, { opacity: 0 })
+
+        // Create a timeline for the animation
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current, // Trigger when the right-side container enters the viewport
+            start: 'top 80%', // Start the animation when the top of the container is 80% from the top of the viewport
+            toggleActions: 'play none none none' // Play the animation when entering the viewport
+          }
         })
 
-        // Counter-rotate each element to keep text upright
-        elementRefs.current.forEach((element) => {
-          gsap.to(element, {
-            rotation: -360, // Counter-rotation
-            duration: 20,
-            repeat: -1,
-            ease: 'linear'
-          })
+        // Fade in the rounded border
+        tl.to(containerRef.current, {
+          opacity: 1,
+          duration: 1.2, // Slower fade-in for the border (1200ms)
+          delay: 0.3 // 300ms delay
         })
+
+        // Fade in each element one by one with a stagger
+        tl.to(
+          elementRefs.current,
+          {
+            opacity: 1,
+            duration: 0.8, // Slower fade-in for each element (800ms)
+            stagger: 0.5 // 500ms delay between each element for a more gradual reveal
+          },
+          '-=0.6' // Overlap the start of the element animation slightly with the border animation
+        )
       }
     }
-    document.body.appendChild(script)
 
-    // Cleanup script on component unmount
+    // Append GSAP script first
+    document.body.appendChild(gsapScript)
+    gsapAppended = true
+
+    // Cleanup scripts on component unmount
     return () => {
-      document.body.removeChild(script)
+      // Only remove scripts if they were appended
+      if (gsapAppended && document.body.contains(gsapScript)) {
+        document.body.removeChild(gsapScript)
+      }
+      if (
+        scrollTriggerAppended &&
+        document.body.contains(scrollTriggerScript)
+      ) {
+        document.body.removeChild(scrollTriggerScript)
+      }
     }
   }, [])
 
@@ -65,7 +109,7 @@ const ProtectionCoverage = () => {
       {/* Background images wrapper */}
       <div className='container'>
         <div className='grid grid-cols-2 justify-center gap-[30px] py-[26px]'>
-          {/* Left side of the main content */}
+          {/* Left side of the main content (header) - No animation */}
           <div className='flex flex-col gap-6'>
             <div className='flex justify-center items-center gap-3'>
               <img src={rightSideHr} alt='' className='max-w-[100px]' />
@@ -89,9 +133,9 @@ const ProtectionCoverage = () => {
             </div>
           </div>
 
-          {/* Right side of the main content */}
+          {/* Right side of the main content - With animation */}
           <div className='w-[744px] h-[370px] flex items-center justify-center'>
-            {/* Container for rotation */}
+            {/* Container for the border */}
             <div
               ref={containerRef}
               className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full'>
