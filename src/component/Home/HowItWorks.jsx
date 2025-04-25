@@ -197,7 +197,7 @@ const HowItWorks = () => {
         </div>
 
         {/* Slider Section */}
-        <div className='rounded-2xl mt-8 flex justify-center items-center'>
+        <div className='rounded-2xl mt-12 flex justify-center items-center'>
           {/* Left Side Image */}
           <img
             ref={imageRef}

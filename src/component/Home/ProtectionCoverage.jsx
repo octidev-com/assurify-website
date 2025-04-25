@@ -138,7 +138,7 @@ const ProtectionCoverage = () => {
             {/* Container for the border */}
             <div
               ref={containerRef}
-              className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full'>
+              className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10'>
               {/* Options positioned around the circle */}
               {protectionCoverageOptions.map((opt, index) => {
                 const positions = [
@@ -176,7 +176,7 @@ const ProtectionCoverage = () => {
                   <div
                     key={opt.id}
                     ref={(el) => (elementRefs.current[index] = el)} // Store ref for each element
-                    className='absolute flex items-center gap-4 p-3 bg-[#00000080] rounded-lg z-40'
+                    className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20' // Changed bg to fully opaque
                     style={{
                       top: position.top,
                       left: position.left,

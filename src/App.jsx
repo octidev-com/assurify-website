@@ -5,6 +5,7 @@ import Banner from './component/Home/Banner'
 import bannerBg from './assets/banner/banner-bg.png'
 import HowItWorks from './component/Home/HowItWorks'
 import ProtectionCoverage from './component/Home/ProtectionCoverage'
+import Benefits from './component/Home/Benfits'
 
 function App() {
   return (
@@ -33,7 +34,11 @@ function App() {
         {/* How it works section */}
         <HowItWorks />
 
+        {/* protection coverage section */}
         <ProtectionCoverage />
+
+        {/* benefits section */}
+        <Benefits />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
