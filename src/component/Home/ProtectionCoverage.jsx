@@ -100,7 +100,7 @@ const ProtectionCoverage = () => {
   }, [])
 
   return (
-    <div className='text-white mt-[150px] relative w-full flex justify-center overflow-hidden py-[150px] bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px]'>
+    <div className='text-white mt-[150px] relative w-full flex justify-center overflow-hidden py-[150px] '>
       {/* Right side bg image */}
       <div className='absolute -top-[50%] -left-[800px]'>
         <img src={roundBg} alt='Background decoration' />
