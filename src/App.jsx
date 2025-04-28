@@ -4,6 +4,7 @@ import Footer from './component/Footer'
 import Home from './pages/Home'
 import { Route, Routes } from 'react-router'
 import Pricing from './pages/Pricing'
+import ContactUs from './pages/ContactUs'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/pricing' element={<Pricing />} />
+        <Route path='/contact-us' element={<ContactUs />} />
       </Routes>
       <Footer />
     </div>

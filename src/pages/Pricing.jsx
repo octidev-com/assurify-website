@@ -4,9 +4,11 @@ import leftSideHr from '../assets/howItWorks/left-side-hr.png'
 import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
 import FAQ from '../component/Home/FAQ'
+import { useNavigate } from 'react-router'
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true)
+  const navigate = useNavigate()
 
   const pricingData = isMonthly
     ? [
@@ -116,7 +118,11 @@ const Pricing = () => {
                 </span>{' '}
                 / {isMonthly ? 'per month' : 'per year'}
               </p>
-              <button className='btn-secondary'>Contact Us</button>
+              <button
+                className='btn-secondary'
+                onClick={() => navigate('/contact-us')}>
+                Contact Us
+              </button>
 
               <hr className='w-full h-[1px] bg-[#FFFFFF33] border-0' />
 
