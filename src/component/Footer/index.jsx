@@ -9,7 +9,7 @@ const Footer = () => {
       {/* Call to action section */}
       <div className='mx-auto flex items-center justify-between p-12 container border border-[rgba(72,189,66,0.10)] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] rounded-[26px] relative z-10 shadow-lg -mb-16'>
         <div className='flex flex-col gap-4 w-[664px]'>
-          <h1 className='text-[40px] font-normal leading-[50px]'>
+          <h1 className='text-[40px] font-normal text-[#fff] leading-[50px]'>
             Protect Your Customers, Boost Your Margins — Shipping Coverage That
             Works for Everyone.
           </h1>

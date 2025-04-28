@@ -55,27 +55,27 @@ const ProtectionCoverage = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: containerRef.current, // Trigger when the right-side container enters the viewport
-            start: 'top 80%', // Start the animation when the top of the container is 80% from the top of the viewport
-            toggleActions: 'play none none none' // Play the animation when entering the viewport
+            start: 'top 80%', // Start when top of container is 80% from top of viewport
+            toggleActions: 'play none none none' // Play on enter
           }
         })
 
         // Fade in the rounded border
         tl.to(containerRef.current, {
           opacity: 1,
-          duration: 1.2, // Slower fade-in for the border (1200ms)
+          duration: 1.2, // Slower fade-in (1200ms)
           delay: 0.3 // 300ms delay
         })
 
-        // Fade in each element one by one with a stagger
+        // Fade in each element with stagger
         tl.to(
           elementRefs.current,
           {
             opacity: 1,
-            duration: 0.8, // Slower fade-in for each element (800ms)
-            stagger: 0.5 // 500ms delay between each element for a more gradual reveal
+            duration: 0.8, // Slower fade-in (800ms)
+            stagger: 0.5 // 500ms delay between elements
           },
-          '-=0.6' // Overlap the start of the element animation slightly with the border animation
+          '-=0.6' // Overlap with border animation
         )
       }
     }
@@ -84,9 +84,8 @@ const ProtectionCoverage = () => {
     document.body.appendChild(gsapScript)
     gsapAppended = true
 
-    // Cleanup scripts on component unmount
+    // Cleanup scripts on unmount
     return () => {
-      // Only remove scripts if they were appended
       if (gsapAppended && document.body.contains(gsapScript)) {
         document.body.removeChild(gsapScript)
       }
@@ -100,14 +99,25 @@ const ProtectionCoverage = () => {
   }, [])
 
   return (
-    <div className='text-white mt-[150px] relative w-full flex justify-center overflow-hidden py-[150px] '>
-      {/* Right side bg image */}
-      <div className='absolute -top-[50%] -left-[800px]'>
-        <img src={roundBg} alt='Background decoration' />
+    <div className='w-full mt-[150px] py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
+      {/* Background elements */}
+      <div className='absolute top-1/2 left-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
+        <img
+          src={roundBg}
+          alt='Background decoration left'
+          className='w-[75vw] max-w-none'
+        />
+      </div>
+      <div className='absolute top-1/2 right-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
+        <img
+          src={roundBg}
+          alt='Background decoration right'
+          className='w-[75vw] max-w-none'
+        />
       </div>
 
-      {/* Background images wrapper */}
-      <div className='container'>
+      {/* Main content with container */}
+      <div className='container relative mx-auto z-10'>
         <div className='grid grid-cols-2 justify-center gap-[30px] py-[26px]'>
           {/* Left side of the main content (header) - No animation */}
           <div className='flex flex-col gap-6'>
@@ -146,28 +156,28 @@ const ProtectionCoverage = () => {
                     top: '0%',
                     left: '20%',
                     transform: 'translate(-55%, -40%)'
-                  }, // Top-left ("Order placed")
-                  { top: '0%', left: '20%', transform: 'translate(65%, -40%)' }, // Top-right ("Claim raised")
+                  }, // Top-left
+                  { top: '0%', left: '20%', transform: 'translate(65%, -40%)' }, // Top-right
                   {
                     top: '50%',
                     left: '10%',
                     transform: 'translate(-60%, -50%)'
-                  }, // Middle-left ("Claim approved")
+                  }, // Middle-left
                   {
                     top: '50%',
                     left: '10%',
                     transform: 'translate(100%, -50%)'
-                  }, // Middle-right ("Merchant paid")
+                  }, // Middle-right
                   {
                     top: '100%',
                     left: '20%',
                     transform: 'translate(-55%, -60%)'
-                  }, // Bottom-left ("Claim resolved")
+                  }, // Bottom-left
                   {
                     top: '100%',
                     left: '20%',
                     transform: 'translate(55%, -60%)'
-                  } // Bottom-right ("Reorder / refund")
+                  } // Bottom-right
                 ]
 
                 const position = positions[index] || { top: '50%', left: '50%' }
@@ -175,8 +185,8 @@ const ProtectionCoverage = () => {
                 return (
                   <div
                     key={opt.id}
-                    ref={(el) => (elementRefs.current[index] = el)} // Store ref for each element
-                    className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20' // Changed bg to fully opaque
+                    ref={(el) => (elementRefs.current[index] = el)}
+                    className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20'
                     style={{
                       top: position.top,
                       left: position.left,
@@ -194,11 +204,6 @@ const ProtectionCoverage = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Left side bg image */}
-      <div className='absolute -top-[50%] -right-[800px]'>
-        <img src={roundBg} alt='Background decoration' />
       </div>
     </div>
   )
