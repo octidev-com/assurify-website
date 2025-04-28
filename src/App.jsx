@@ -12,6 +12,7 @@ import Review from './component/Home/Review'
 import WhyAssurifyBestChoice from './component/Home/WhyAssurifyBestChoice'
 import InsightsAndInspiration from './component/Home/InsightsAndInspiration'
 import FAQ from './component/Home/FAQ'
+import Footer from './component/Footer'
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
 
         {/* FAQ section */}
         <FAQ />
+
+        {/* Footer section */}
+        <Footer />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>

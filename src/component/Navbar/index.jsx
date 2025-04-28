@@ -1,10 +1,11 @@
 import React from 'react'
+import OrgIcon from '../../assets/icon/assurify-icon.png'
 
 const Navbar = () => {
   return (
     <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-6 sticky top-0 z-50'>
       <div className='container flex justify-between items-center'>
-        <img src='/src/assets/icon/assurify-icon.png' alt='' />
+        <img src={OrgIcon} alt='' />
         <div className='flex gap-6 '>
           <a
             className='text-[16px] font-normal active:text-[#48BD42] hover:text-[#48BD42]'
