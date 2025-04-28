@@ -11,6 +11,7 @@ import Pricing from './component/Home/Pricing'
 import Review from './component/Home/Review'
 import WhyAssurifyBestChoice from './component/Home/WhyAssurifyBestChoice'
 import InsightsAndInspiration from './component/Home/InsightsAndInspiration'
+import FAQ from './component/Home/FAQ'
 
 function App() {
   return (
@@ -59,6 +60,9 @@ function App() {
 
         {/* insights & Inspiration section */}
         <InsightsAndInspiration />
+
+        {/* FAQ section */}
+        <FAQ />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
