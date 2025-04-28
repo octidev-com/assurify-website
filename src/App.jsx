@@ -10,6 +10,7 @@ import Brands from './component/Home/Brands'
 import Pricing from './component/Home/Pricing'
 import Review from './component/Home/Review'
 import WhyAssurifyBestChoice from './component/Home/WhyAssurifyBestChoice'
+import InsightsAndInspiration from './component/Home/InsightsAndInspiration'
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
 
         {/* why assurify best choice section */}
         <WhyAssurifyBestChoice />
+
+        {/* insights & Inspiration section */}
+        <InsightsAndInspiration />
 
         {/* Left side bg image */}
         <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>

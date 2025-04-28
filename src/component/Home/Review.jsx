@@ -8,20 +8,17 @@ import AssurifyIcon from '../../assets/icon/assurify-icon.png'
 
 const Review = () => {
   return (
-    <div className='container mt-[150px] py-[150px] relative'>
+    <div className='w-full mt-[150px] py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
       {/* Background elements */}
-      <div className='absolute -top-[60%] -left-[90%] pointer-events-none z-0'>
+      <div className='absolute top-1/2 left-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img src={roundBg} alt='Background decoration' />
       </div>
-      <div className='absolute -top-[50%] -right-[90%] pointer-events-none z-0'>
+      <div className='absolute top-1/2 right-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img src={roundBg} alt='Background decoration' />
       </div>
 
-      {/* Main content with gradient background */}
-      <div className='relative'>
-        {/* Gradient overlay */}
-        <div className='absolute inset-0 bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] -z-10 rounded-[20px]'></div>
-
+      {/* Main content with container */}
+      <div className='container relative mx-auto'>
         {/* Header */}
         <div className='flex justify-between w-full relative z-10'>
           <div className='flex flex-col gap-6 max-w-[570px]'>
@@ -57,20 +54,24 @@ const Review = () => {
               Excellent
             </p>
             <div className='flex gap-1'>
-              <img src={StartIcon} alt='' />
-              <img src={StartIcon} alt='' />
-              <img src={StartIcon} alt='' />
-              <img src={StartIcon} alt='' />
-              <img src={StartIcon} alt='' />
+              <img src={StartIcon} alt='star' />
+              <img src={StartIcon} alt='star' />
+              <img src={StartIcon} alt='star' />
+              <img src={StartIcon} alt='star' />
+              <img src={StartIcon} alt='star' />
             </div>
             <p className='text-[#A6A6A6] text-xl font-normal leading-[30px]'>
               Based on{' '}
               <span className='text-[#f7f7f7] underline'>20 reviews</span>
             </p>
-            <img src={AssurifyIcon} alt='' className='w-[100px] h-[25px]' />
+            <img
+              src={AssurifyIcon}
+              alt='Assurify logo'
+              className='w-[100px] h-[25px]'
+            />
           </div>
 
-          {/* Reviews card with gradient background */}
+          {/* Reviews card */}
           <div className='flex flex-col gap-[30px] p-10 rounded-[20px] border border-[#262626] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]'>
             {/* Review star */}
             <div className='flex gap-1'>
