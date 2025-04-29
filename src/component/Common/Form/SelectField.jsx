@@ -13,7 +13,7 @@
 const SelectField = ({ label, placeholder, id, options = [], required }) => {
   return (
     <div className="flex-1">
-      <label htmlFor={id} className="text-base text-[#A6A6A6] font-light leading-6">
+      <label htmlFor={id} className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
         {label}
       </label>
       <select

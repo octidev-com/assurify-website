@@ -267,18 +267,18 @@ const Checkout = () => {
   return (
     <div>
       {/* SPACER TO PREVENT CONTENT OVERLAP WITH NAVBAR */}
-      <div className="w-full h-[97px]"></div>
+      <div className="w-full h-[48px] lg:h-[97px]"></div>
 
       {/* MAIN SECTION */}
       <SectionTitle middleText={"Checkout"} />
 
-      <div className="container mt-14 mx-auto px-4 lg:px-0">
+      <div className="container mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0">
         {/* MAIN CONTENT */}
-        <div className="flex gap-[30px]">
+        <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[30px]">
           {/* COLUMN 1 */}
-          <div className="flex flex-col gap-[30px]">
-            <div className="flex flex-col gap-[30px] lg:w-[670px]">
-              <div className="flex gap-[30px] w-full">
+          <div className="flex flex-col gap-[24px] lg:gap-[30px]">
+            <div className="flex flex-col gap-[12px] lg:gap-[30px] lg:w-[670px]">
+              <div className="flex flex-col lg:flex-row gap-[12px] lg:gap-[30px]">
                 {/* First Name */}
                 <TextField label={"First Name"} id={"first-name"} required={true} />
                 {/* First Name */}
@@ -300,7 +300,7 @@ const Checkout = () => {
           </div>
 
           {/* COLUMN 2 */}
-          <div className="flex flex-col gap-[30px]">
+          <div className="flex flex-col gap-[24px] lg:gap-[30px]">
             {/* Coupon Code */}
             <div className="w-full lg:w-[470px]">
               <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
