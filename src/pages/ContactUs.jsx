@@ -114,38 +114,38 @@ const ContactUs = () => {
               </div>
               <div>
                 <label
-                  htmlFor='full-name'
+                  htmlFor='email-address'
                   className='text-base text-[#A6A6A6] font-light leading-6'>
                   Email Address
                 </label>
                 <input
-                  type='text'
-                  id='full-name'
+                  type='email'
+                  id='email-address'
                   className='w-full px-4 h-12 rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none'
                 />
               </div>
               <div>
                 <label
-                  htmlFor='full-name'
+                  htmlFor='subject'
                   className='text-base text-[#A6A6A6] font-light leading-6'>
                   Subject
                 </label>
                 <input
                   type='text'
-                  id='full-name'
+                  id='subject'
                   className='w-full px-4 h-12 rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none'
                 />
               </div>
 
               <div>
                 <label
-                  htmlFor='full-name'
+                  htmlFor='what-can-we-help-you-with'
                   className='text-base text-[#A6A6A6] font-light leading-6'>
                   What can we help you with?
                 </label>
                 <textarea
                   type='text'
-                  id='full-name'
+                  id='what-can-we-help-you-with'
                   className='w-full p-4 h-[200px] rounded-xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none'
                 />
               </div>
