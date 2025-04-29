@@ -26,7 +26,7 @@ const PricingSection = ({ hideToggle }) => {
       ];
 
   return (
-    <div className="container mt-[150px]">
+    <div className="mt-[32px] lg:mt-[56px]">
       {/* Header Section */}
       <SectionTitle
         topText={"Pricing"}
