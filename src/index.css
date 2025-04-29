@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @layer utilities {
   .container {
-    width: 1170px;
+    max-width: 1170px;
   }
 
   .btn-primary {

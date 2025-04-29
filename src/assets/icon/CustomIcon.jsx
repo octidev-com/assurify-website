@@ -921,6 +921,43 @@ const CustomIcon = ({ iconName, height, width }) => {
           </g>
         </svg>
       )
+    case 'close-icon':
+      return (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='bitcoin-icons:cross-outline'>
+            <path
+              id='Vector'
+              d='M4 4L12 12M12 4L4 12'
+              stroke='#A6A6A6'
+              stroke-linecap='round'
+            />
+          </g>
+        </svg>
+      )
+    case 'hamburger-icon':
+      return (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='quill:hamburger'>
+            <path
+              id='Vector'
+              d='M3.75 6H20.25M3.75 12H20.25M3.75 18H20.25'
+              stroke='#F7F7F7'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            />
+          </g>
+        </svg>
+      )
     default:
       break
   }
