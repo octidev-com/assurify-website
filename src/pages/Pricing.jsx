@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import rightSideHr from "../assets/howItWorks/right-side-hr.png";
-import leftSideHr from "../assets/howItWorks/left-side-hr.png";
 import roundBg from "../assets/banner/round-bg.png";
 import CustomIcon from "../assets/icon/CustomIcon";
 import FAQ from "../component/Home/FAQ";
