@@ -4,6 +4,7 @@ import SelectField from "../component/Common/Form/SelectField";
 import TextAreaField from "../component/Common/Form/TextAreaFields";
 import TextField from "../component/Common/Form/TextField";
 import SectionTitle from "../component/Common/SectionTitle";
+import stripeImg from "../assets/checkout/Stripe.png";
 
 const Checkout = () => {
   const countryList = [
@@ -256,6 +257,13 @@ const Checkout = () => {
     { value: "ZM", label: "Zambia" },
     { value: "ZW", label: "Zimbabwe" },
   ];
+
+  const productDetails = [
+    { title: "Assurify Lifetime Deal * 1", price: "50.00" },
+    { title: "Subtotal", price: "50.00" },
+    { title: "Shipping", price: "Free Shipping" },
+  ];
+
   return (
     <div className="w-full bg-[#0C0D0C] min-h-screen text-white relative overflow-x-hidden">
       {/* SPACER TO PREVENT CONTENT OVERLAP WITH NAVBAR */}
@@ -315,7 +323,48 @@ const Checkout = () => {
 
             {/* Your Order */}
             <div className="w-full lg:w-[470px]">
-              <div className="flex gap-4 items-center p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]"></div>
+              <div className="p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Your Order</h3>
+
+                {/* Product Details */}
+                <div className="flex flex-col gap-[16px] mt-[12px]">
+                  <div className="flex justify-between items-center">
+                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Product</p>
+                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Subtotal</p>
+                  </div>
+
+                  {productDetails.map((item, index) => (
+                    <div key={index} className="flex justify-between items-center">
+                      <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.title}</p>
+                      <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.price}</p>
+                    </div>
+                  ))}
+
+                  {/* Total */}
+                  <div className="flex justify-between items-center">
+                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Total</p>
+                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">$50.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Payment Method */}
+            <div className="w-full lg:w-[470px]">
+              <div className="p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Payment Method</h3>
+
+                {/* Product Details */}
+                <div className="flex flex-col gap-[16px] mt-[12px]">
+                  <div className="flex gap-[6px] items-center">
+                    <img src={stripeImg} style={{ width: "24px", height: "24px" }} alt="" />
+                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Stripe</p>
+                  </div>
+
+                  {/* Placeholder Button */}
+                  <button className="btn-primary-green-full">Place Order</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
