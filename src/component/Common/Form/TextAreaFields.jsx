@@ -9,21 +9,21 @@
  * @returns {JSX.Element} A JSX element representing the labeled text input field.
  */
 
-const TextField = ({ label, placeholder, id, required }) => {
+const TextAreaField = ({ label, placeholder, id, required }) => {
   return (
     <div className="flex-1">
       <label htmlFor={id} className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
         {label}
       </label>
-      <input
-        type="text"
+      <textarea
+        rows={5}
         id={id}
         required={required}
         placeholder={placeholder}
-        className="w-full px-4 h-[48px] rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
+        className="w-full p-4 rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
       />
     </div>
   );
 };
 
-export default TextField;
+export default TextAreaField;

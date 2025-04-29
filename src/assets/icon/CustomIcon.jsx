@@ -1,4 +1,4 @@
-const CustomIcon = ({ iconName }) => {
+const CustomIcon = ({ iconName, height, width }) => {
   switch (iconName) {
     case 'order_placed':
       return (
@@ -663,27 +663,18 @@ const CustomIcon = ({ iconName }) => {
     case 'star-icon':
       return (
         <svg
-          width='22'
-          height='22'
-          viewBox='0 0 22 22'
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
-          <g clip-path='url(#clip0_149_1031)'>
+          <g id='star'>
             <path
-              d='M9.65527 16.2516L14.0005 15.088L15.816 21L9.65527 16.2516ZM19.6553 8.61006H12.0065L9.65527 1L7.30408 8.61006H-0.344727L5.84575 13.327L3.49456 20.9371L9.68504 16.2201L13.4946 13.327L19.6553 8.61006Z'
-              fill='white'
+              id='Vector'
+              d='M8.00005 11.5134L10.7667 13.1867C11.2734 13.4934 11.8934 13.04 11.76 12.4667L11.0267 9.32005L13.4734 7.20005C13.92 6.81338 13.68 6.08005 13.0934 6.03338L9.87338 5.76005L8.61338 2.78671C8.38671 2.24671 7.61338 2.24671 7.38671 2.78671L6.12671 5.75338L2.90672 6.02671C2.32005 6.07338 2.08005 6.80671 2.52672 7.19338L4.97338 9.31338L4.24005 12.46C4.10672 13.0334 4.72671 13.4867 5.23338 13.18L8.00005 11.5134Z'
+              fill='#F7F7F7'
             />
           </g>
-          <defs>
-            <clipPath id='clip0_149_1031'>
-              <rect
-                width='20.6897'
-                height='20.6897'
-                fill='white'
-                transform='translate(0.655273 0.655273)'
-              />
-            </clipPath>
-          </defs>
         </svg>
       )
     case 'accordion-close-icon':
@@ -899,8 +890,8 @@ const CustomIcon = ({ iconName }) => {
     case 'half-filed-star-icon':
       return (
         <svg
-          width='24'
-          height='24'
+          width={width}
+          height={height}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -916,8 +907,8 @@ const CustomIcon = ({ iconName }) => {
     case 'filled-star-icon':
       return (
         <svg
-          width='24'
-          height='24'
+          width={width}
+          height={height}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -926,6 +917,43 @@ const CustomIcon = ({ iconName }) => {
               id='Vector'
               d='M8.24301 7.34004L1.86301 8.26505L1.75001 8.28804C1.57895 8.33346 1.423 8.42345 1.2981 8.54885C1.1732 8.67424 1.08381 8.83053 1.03907 9.00177C0.994331 9.17301 0.995837 9.35305 1.04344 9.52352C1.09104 9.69398 1.18303 9.84876 1.31001 9.97204L5.93201 14.471L4.84201 20.826L4.82901 20.936C4.81854 21.113 4.85528 21.2895 4.93546 21.4475C5.01564 21.6056 5.13639 21.7395 5.28534 21.8356C5.4343 21.9316 5.6061 21.9863 5.78316 21.9942C5.96022 22.002 6.13617 21.9626 6.29301 21.88L11.999 18.88L17.692 21.88L17.792 21.926C17.9571 21.9911 18.1365 22.011 18.3118 21.9838C18.4871 21.9566 18.652 21.8833 18.7896 21.7713C18.9272 21.6593 19.0326 21.5128 19.0948 21.3467C19.1571 21.1806 19.1741 21.0009 19.144 20.826L18.053 14.471L22.677 9.97104L22.755 9.88604C22.8664 9.74881 22.9395 9.5845 22.9667 9.40984C22.994 9.23518 22.9744 9.05642 22.9101 8.89178C22.8458 8.72713 22.7389 8.58248 22.6005 8.47256C22.4621 8.36264 22.2969 8.29138 22.122 8.26604L15.742 7.34004L12.89 1.56004C12.8075 1.39258 12.6797 1.25156 12.5212 1.15295C12.3627 1.05434 12.1797 1.00208 11.993 1.00208C11.8063 1.00208 11.6233 1.05434 11.4648 1.15295C11.3063 1.25156 11.1785 1.39258 11.096 1.56004L8.24301 7.34004Z'
               fill='#FFB30F'
+            />
+          </g>
+        </svg>
+      )
+    case 'close-icon':
+      return (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='bitcoin-icons:cross-outline'>
+            <path
+              id='Vector'
+              d='M4 4L12 12M12 4L4 12'
+              stroke='#A6A6A6'
+              stroke-linecap='round'
+            />
+          </g>
+        </svg>
+      )
+    case 'hamburger-icon':
+      return (
+        <svg
+          width='24'
+          height='24'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='quill:hamburger'>
+            <path
+              id='Vector'
+              d='M3.75 6H20.25M3.75 12H20.25M3.75 18H20.25'
+              stroke='#F7F7F7'
+              stroke-linecap='round'
+              stroke-linejoin='round'
             />
           </g>
         </svg>

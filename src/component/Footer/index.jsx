@@ -2,6 +2,7 @@ import React from 'react'
 import OrgIcon from '../../assets/icon/assurify-icon.png'
 import CustomIcon from '../../assets/icon/CustomIcon'
 import roundBg from '../../assets/banner/round-bg.png'
+import { Link } from 'react-router'
 
 const Footer = () => {
   return (
@@ -74,12 +75,7 @@ const Footer = () => {
                   <a
                     href='#'
                     className='text-[#fff] text-base font-light leading-6'>
-                    Documentation
-                  </a>
-                  <a
-                    href='#'
-                    className='text-[#fff] text-base font-light leading-6'>
-                    Discussion
+                    For Merchant
                   </a>
                   <a
                     href='#'
@@ -91,6 +87,11 @@ const Footer = () => {
                     className='text-[#fff] text-base font-light leading-6'>
                     Contact Us
                   </a>
+                  <Link
+                    to='/privacy-policy'
+                    className='text-[#fff] text-base font-light leading-6'>
+                    Privacy Policy
+                  </Link>
                 </div>
               </div>
 
