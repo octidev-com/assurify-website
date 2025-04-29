@@ -7,6 +7,7 @@ import Pricing from "./pages/Pricing";
 import ContactUs from "./pages/ContactUs";
 import Deals from "./pages/Deals";
 import Checkout from "./pages/Checkout";
+import ForMerchant from "./pages/ForMerchant";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/deals" element={<Deals />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/forMerchant" element={<ForMerchant />} />
       </Routes>
       <Footer />
     </div>

@@ -36,6 +36,15 @@ const Navbar = () => {
             Discussion
           </NavLink>
           <NavLink
+            to='/forMerchant'
+            className={({ isActive }) =>
+              `text-[16px] font-normal ${
+                isActive ? 'text-[#48BD42]' : 'text-white'
+              } hover:text-[#48BD42]`
+            }>
+            For Merchant
+          </NavLink>
+          <NavLink
             to='/deals'
             className={({ isActive }) =>
               `text-[16px] font-normal ${
