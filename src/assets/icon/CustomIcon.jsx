@@ -1,4 +1,4 @@
-const CustomIcon = ({ iconName }) => {
+const CustomIcon = ({ iconName, height, width }) => {
   switch (iconName) {
     case 'order_placed':
       return (
@@ -663,27 +663,18 @@ const CustomIcon = ({ iconName }) => {
     case 'star-icon':
       return (
         <svg
-          width='22'
-          height='22'
-          viewBox='0 0 22 22'
+          width='16'
+          height='16'
+          viewBox='0 0 16 16'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
-          <g clip-path='url(#clip0_149_1031)'>
+          <g id='star'>
             <path
-              d='M9.65527 16.2516L14.0005 15.088L15.816 21L9.65527 16.2516ZM19.6553 8.61006H12.0065L9.65527 1L7.30408 8.61006H-0.344727L5.84575 13.327L3.49456 20.9371L9.68504 16.2201L13.4946 13.327L19.6553 8.61006Z'
-              fill='white'
+              id='Vector'
+              d='M8.00005 11.5134L10.7667 13.1867C11.2734 13.4934 11.8934 13.04 11.76 12.4667L11.0267 9.32005L13.4734 7.20005C13.92 6.81338 13.68 6.08005 13.0934 6.03338L9.87338 5.76005L8.61338 2.78671C8.38671 2.24671 7.61338 2.24671 7.38671 2.78671L6.12671 5.75338L2.90672 6.02671C2.32005 6.07338 2.08005 6.80671 2.52672 7.19338L4.97338 9.31338L4.24005 12.46C4.10672 13.0334 4.72671 13.4867 5.23338 13.18L8.00005 11.5134Z'
+              fill='#F7F7F7'
             />
           </g>
-          <defs>
-            <clipPath id='clip0_149_1031'>
-              <rect
-                width='20.6897'
-                height='20.6897'
-                fill='white'
-                transform='translate(0.655273 0.655273)'
-              />
-            </clipPath>
-          </defs>
         </svg>
       )
     case 'accordion-close-icon':
@@ -899,8 +890,8 @@ const CustomIcon = ({ iconName }) => {
     case 'half-filed-star-icon':
       return (
         <svg
-          width='24'
-          height='24'
+          width={width}
+          height={height}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -916,8 +907,8 @@ const CustomIcon = ({ iconName }) => {
     case 'filled-star-icon':
       return (
         <svg
-          width='24'
-          height='24'
+          width={width}
+          height={height}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
