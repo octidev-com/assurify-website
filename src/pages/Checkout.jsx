@@ -265,14 +265,14 @@ const Checkout = () => {
   ];
 
   return (
-    <div className="w-full bg-[#0C0D0C] min-h-screen text-white relative overflow-x-hidden">
+    <div className="w-full bg-[#0C0D0C] text-white relative overflow-x-hidden">
       {/* SPACER TO PREVENT CONTENT OVERLAP WITH NAVBAR */}
       <div className="w-full h-[80px]"></div>
 
       {/* MAIN SECTION */}
       <SectionTitle middleText={"Checkout"} />
 
-      <div className="container mt-14 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mt-14 mx-auto px-4 lg:px-0">
         {/* MAIN CONTENT */}
         <div className="flex gap-[30px]">
           {/* COLUMN 1 */}
@@ -303,7 +303,7 @@ const Checkout = () => {
           <div className="flex flex-col gap-[30px]">
             {/* Coupon Code */}
             <div className="w-full lg:w-[470px]">
-              <div className="p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
                 <label htmlFor={"Coupon Code"} className="text-base text-[#A6A6A6] font-light leading-6">
                   Have a coupon code?
                 </label>
@@ -323,7 +323,7 @@ const Checkout = () => {
 
             {/* Your Order */}
             <div className="w-full lg:w-[470px]">
-              <div className="p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
                 <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Your Order</h3>
 
                 {/* Product Details */}
@@ -351,7 +351,7 @@ const Checkout = () => {
 
             {/* Payment Method */}
             <div className="w-full lg:w-[470px]">
-              <div className="p-6 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
                 <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Payment Method</h3>
 
                 {/* Product Details */}
