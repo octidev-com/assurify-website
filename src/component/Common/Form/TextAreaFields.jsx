@@ -12,7 +12,7 @@
 const TextAreaField = ({ label, placeholder, id, required }) => {
   return (
     <div className="flex-1">
-      <label htmlFor={label} className="text-base text-[#A6A6A6] font-light leading-6">
+      <label htmlFor={id} className="text-base text-[#A6A6A6] font-light leading-6">
         {label}
       </label>
       <textarea
