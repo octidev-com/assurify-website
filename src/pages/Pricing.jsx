@@ -45,7 +45,7 @@ const Pricing = () => {
         {/* Spacer to prevent content overlap with Navbar */}
         <NavbarSpacer />
 
-        <div className="container mt-14 mx-auto">
+        <div className="container mx-auto">
           {/* Header Section */}
           <SectionTitle
             topText={"Pricing"}
@@ -54,7 +54,7 @@ const Pricing = () => {
           />
 
           {/* Monthly and Annually toggle switch */}
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-[32px] lg:mt-12">
             <div className="relative flex items-center bg-[#1A1B1A] rounded-[16px] w-[200px] h-[40px] overflow-hidden">
               <button
                 className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${
@@ -80,15 +80,15 @@ const Pricing = () => {
           </div>
 
           {/* Pricing package cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-8 mx-auto max-w-[1200px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[20px] lg:mt-8 mx-auto max-w-[1200px]">
             {pricingData.map((item) => (
               <div
                 key={item.id}
-                className="p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] flex flex-col gap-8"
+                className="p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] flex flex-col gap-8"
               >
                 <div>
-                  <h4 className="text-2xl font-medium leading-8">{item.title}</h4>
-                  <p className="text-sm font-normal leading-5 mt-1">15-day free trial</p>
+                  <h4 className="text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8">{item.title}</h4>
+                  <p className="text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1">15-day free trial</p>
                 </div>
                 <p className="text-[#FFFFFFCC] text-sm font-normal leading-6">
                   <span className="text-[#FFFFFF] text-5xl font-normal leading-14">{item.price}</span> /{" "}
