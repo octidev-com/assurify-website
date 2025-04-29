@@ -3,6 +3,7 @@ import rightSideHr from "../../assets/howItWorks/right-side-hr.png";
 import leftSideHr from "../../assets/howItWorks/left-side-hr.png";
 import CustomIcon from "../../assets/icon/CustomIcon";
 import { useNavigate } from "react-router";
+import SectionTitle from "../Common/SectionTitle";
 
 const Pricing = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -29,21 +30,15 @@ const Pricing = ({ hideToggle }) => {
   return (
     <div className="container mt-[150px]">
       {/* Header Section */}
-      <div className="w-[732px] max-w-full mx-auto flex flex-col gap-4 px-4">
-        <div className="flex justify-center items-center gap-3">
-          <img src={rightSideHr} alt="" className="max-w-[100px]" />
-          <p className="text-xl font-normal leading-[30px]">Pricing</p>
-          <img src={leftSideHr} alt="" className="max-w-[100px]" />
-        </div>
-        <h1 className="text-5xl font-semibold text-gradient text-center leading-[72px]">Simple, Transparent Pricing No Hidden Fees!</h1>
-        <p className="text-[#A6A6A6] text-lg font-light text-center leading-[27px]">
-          Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features.
-        </p>
-      </div>
+      <SectionTitle
+        topText={"Pricing"}
+        middleText={"Simple, Transparent Pricing No Hidden Fees!"}
+        bottomText={"Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features."}
+      />
 
       {/* MONTHLY AND YEARLY PLAN TOGGLE */}
       {!hideToggle && (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-[32px] lg:mt-12">
           <div className="relative flex items-center bg-[#1A1B1A] rounded-[16px] w-[200px] h-[40px] overflow-hidden">
             <button
               className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${
@@ -69,69 +64,62 @@ const Pricing = ({ hideToggle }) => {
         </div>
       )}
 
-      {/* pricing package cards */}
-      <div className="grid grid-cols-3 gap-[30px] mt-[48px]">
+      {/* Pricing package cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[20px] lg:mt-12 mx-auto">
         {pricingData.map((item) => (
           <div
             key={item.id}
-            className="p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] flex flex-col gap-8"
+            className="p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] flex flex-col gap-8"
           >
             <div>
-              <h4 className="text-2xl font-medium leading-8">{item.title}</h4>
-              <p className="text-sm font-normal leading-5 mt-1">15-day free trial</p>
+              <h4 className="text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8">{item.title}</h4>
+              <p className="text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1">15-day free trial</p>
             </div>
             <p className="text-[#FFFFFFCC] text-sm font-normal leading-6">
-              <span className="text-[#FFFFFF] text-5xl font-normal leading-14">{item.price}</span> / per month
+              <span className="text-[#FFFFFF] text-5xl font-normal leading-14">{item.price}</span> / {isMonthly ? "per month" : "per year"}
             </p>
-
             <button className="btn-secondary" onClick={() => navigate("/contact-us")}>
               Contact Us
             </button>
 
-            <hr class="w-full h-[1px]  bg-[#FFFFFF33] border-0 "></hr>
+            <hr className="w-full h-[1px] bg-[#FFFFFF33] border-0" />
 
             <div className="flex flex-col gap-4">
               <p className="text-[#FFFFFF] text-lg font-medium leading-7">What you will get</p>
-
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
                 Employee directory
               </div>
-              <div className="flex items-center  gap-2">
-                {" "}
+              <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
-                </span>{" "}
+                </span>
                 Task management
               </div>
-              <div className="flex items-center  gap-2">
-                {" "}
+              <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
-                </span>{" "}
+                </span>
                 Calendar integration
               </div>
-              <div className="flex items-center  gap-2">
-                {" "}
+              <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
-                </span>{" "}
+                </span>
                 File storage
               </div>
-              <div className="flex items-center  gap-2">
-                {" "}
+              <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
-                </span>{" "}
+                </span>
                 Communication tools
               </div>
-              <div className="flex items-center  gap-2">
-                {" "}
+              <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
-                </span>{" "}
+                </span>
                 Reporting and analytics
               </div>
             </div>

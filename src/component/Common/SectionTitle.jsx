@@ -7,12 +7,16 @@ const SectionTitle = ({ topText, middleText, bottomText }) => {
       {topText && (
         <div className="flex justify-center items-center gap-3">
           <img src={rightSideHr} alt="Right horizontal line" className="max-w-[100px]" />
-          <p className="text-xl font-normal leading-[30px]">{topText}</p>
+          <p className="text-[14px] lg:text-xl font-normal leading-[21px] lg:leading-[30px]">{topText}</p>
           <img src={leftSideHr} alt="Left horizontal line" className="max-w-[100px]" />
         </div>
       )}
-      {middleText && <h1 className="text-[24px] lg:text-5xl font-semibold text-gradient text-center leading-[72px]">{middleText}</h1>}
-      {bottomText && <p className="text-[#A6A6A6] text-lg font-light text-center leading-[27px]">{bottomText}</p>}
+      {middleText && (
+        <h1 className="text-[24px] lg:text-5xl font-semibold text-gradient text-center leading-[36px] lg:leading-[72px]">{middleText}</h1>
+      )}
+      {bottomText && (
+        <p className="text-[#A6A6A6] text-[12px] lg:text-lg font-light text-center leading-[18px] lg:leading-[27px]">{bottomText}</p>
+      )}
     </div>
   );
 };
