@@ -265,9 +265,9 @@ const Checkout = () => {
   ];
 
   return (
-    <div className="w-full bg-[#0C0D0C] text-white relative overflow-x-hidden">
+    <div>
       {/* SPACER TO PREVENT CONTENT OVERLAP WITH NAVBAR */}
-      <div className="w-full h-[80px]"></div>
+      <div className="w-full h-[97px]"></div>
 
       {/* MAIN SECTION */}
       <SectionTitle middleText={"Checkout"} />
