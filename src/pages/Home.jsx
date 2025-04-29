@@ -6,7 +6,7 @@ import HowItWorks from "../component/Home/HowItWorks";
 import ProtectionCoverage from "../component/Home/ProtectionCoverage";
 import Benefits from "../component/Home/Benfits";
 import Brands from "../component/Home/Brands";
-import Pricing from "../component/Home/Pricing";
+import Pricing from "../component/Home/PricingSection";
 import Review from "../component/Home/Review";
 import WhyAssurifyBestChoice from "../component/Home/WhyAssurifyBestChoice";
 import InsightsAndInspiration from "../component/Home/InsightsAndInspiration";

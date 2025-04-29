@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import rightSideHr from "../../assets/howItWorks/right-side-hr.png";
-import leftSideHr from "../../assets/howItWorks/left-side-hr.png";
 import CustomIcon from "../../assets/icon/CustomIcon";
 import { useNavigate } from "react-router";
 import SectionTitle from "../Common/SectionTitle";
 
-const Pricing = ({ hideToggle }) => {
+const PricingSection = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true);
   const navigate = useNavigate();
 
@@ -76,7 +74,8 @@ const Pricing = ({ hideToggle }) => {
               <p className="text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1">15-day free trial</p>
             </div>
             <p className="text-[#FFFFFFCC] text-sm font-normal leading-6">
-              <span className="text-[#FFFFFF] text-5xl font-normal leading-14">{item.price}</span> / {isMonthly ? "per month" : "per year"}
+              <span className="text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14">{item.price}</span> /{" "}
+              {isMonthly ? "per month" : "per year"}
             </p>
             <button className="btn-secondary" onClick={() => navigate("/contact-us")}>
               Contact Us
@@ -130,4 +129,4 @@ const Pricing = ({ hideToggle }) => {
   );
 };
 
-export default Pricing;
+export default PricingSection;
