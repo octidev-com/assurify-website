@@ -8,6 +8,7 @@ const Pricing = () => {
   return (
     <div className="w-full bg-[#0C0D0C] min-h-screen text-white relative overflow-x-hidden">
       <Container>
+        <NavbarSpacer />
         <PricingSection />
       </Container>
     </div>
