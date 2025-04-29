@@ -28,7 +28,7 @@ const ContactUs = () => {
       {/* Spacer to prevent content overlap with Navbar */}
       <div className='w-full h-[80px]'></div>
 
-      <div className='container mt-14 mx-auto px-4 sm:px-6 lg:px-8'>
+      <div className='container mt-14 mx-auto '>
         {/* Header Section */}
         <div className='w-[732px] max-w-full mx-auto flex flex-col gap-4'>
           <div className='flex justify-center items-center gap-3'>

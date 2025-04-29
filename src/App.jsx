@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import { Route, Routes } from 'react-router'
 import Pricing from './pages/Pricing'
 import ContactUs from './pages/ContactUs'
+import Deals from './pages/Deals'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/pricing' element={<Pricing />} />
         <Route path='/contact-us' element={<ContactUs />} />
+        <Route path='/deals' element={<Deals />} />
       </Routes>
       <Footer />
     </div>
