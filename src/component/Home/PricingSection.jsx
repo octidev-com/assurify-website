@@ -9,21 +9,21 @@ const PricingSection = ({ hideToggle }) => {
 
   const pricingData = isMonthly
     ? [
-        { id: 1, title: "Basic", price: "$0.00" },
-        { id: 2, title: "Starter", price: "$9.00" },
-        { id: 3, title: "Starter Plus", price: "$19.00" },
-        { id: 4, title: "Enterprise", price: "$49.00" },
-        { id: 5, title: "Ultimate", price: "$99.00" },
-        { id: 6, title: "Lifetime Deal", price: "$69.99" },
-      ]
+      { id: 1, title: "Basic", price: "$0.00" },
+      { id: 2, title: "Starter", price: "$9.00" },
+      { id: 3, title: "Starter Plus", price: "$19.00" },
+      { id: 4, title: "Enterprise", price: "$49.00" },
+      { id: 5, title: "Ultimate", price: "$99.00" },
+      { id: 6, title: "Lifetime Deal", price: "$69.99" },
+    ]
     : [
-        { id: 1, title: "Basic", price: "$0.00" },
-        { id: 2, title: "Starter", price: "$97.20" },
-        { id: 3, title: "Starter Plus", price: "$205.20" },
-        { id: 4, title: "Enterprise", price: "$529.20" },
-        { id: 5, title: "Ultimate", price: "$1069.20" },
-        { id: 6, title: "Lifetime Deal", price: "$69.99" },
-      ];
+      { id: 1, title: "Basic", price: "$0.00" },
+      { id: 2, title: "Starter", price: "$97.20" },
+      { id: 3, title: "Starter Plus", price: "$205.20" },
+      { id: 4, title: "Enterprise", price: "$529.20" },
+      { id: 5, title: "Ultimate", price: "$1069.20" },
+      { id: 6, title: "Lifetime Deal", price: "$69.99" },
+    ];
 
   return (
     <div className="mt-[32px] lg:mt-[56px]">
@@ -39,21 +39,19 @@ const PricingSection = ({ hideToggle }) => {
         <div className="flex justify-center mt-[32px] lg:mt-12">
           <div className="relative flex items-center bg-[#1A1B1A] rounded-[16px] w-[200px] h-[40px] overflow-hidden">
             <button
-              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${
-                isMonthly
-                  ? "bg-[linear-gradient(94deg,#48BD42_2.15%,#FFF_97.92%)] text-black rounded-[14px] shadow-[0_0_10px_rgba(72,189,66,0.8)]"
-                  : "bg-[#1A1B1A] text-white"
-              }`}
+              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${isMonthly
+                ? "bg-[linear-gradient(94deg,#48BD42_2.15%,#FFF_97.92%)] text-black rounded-[14px] shadow-[0_0_10px_rgba(72,189,66,0.8)]"
+                : "bg-[#1A1B1A] text-white"
+                }`}
               onClick={() => setIsMonthly(true)}
             >
               Monthly
             </button>
             <button
-              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${
-                !isMonthly
-                  ? "bg-[linear-gradient(94deg,#48BD42_2.15%,#FFF_97.92%)] text-black rounded-[14px] shadow-[0_0_10px_rgba(72,189,66,0.8)]"
-                  : "bg-[#1A1B1A] text-white"
-              }`}
+              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium  transition-all duration-300 overflow-hidden ${!isMonthly
+                ? "bg-[linear-gradient(94deg,#48BD42_2.15%,#FFF_97.92%)] text-black rounded-[14px] shadow-[0_0_10px_rgba(72,189,66,0.8)]"
+                : "bg-[#1A1B1A] text-white"
+                }`}
               onClick={() => setIsMonthly(false)}
             >
               Annually
