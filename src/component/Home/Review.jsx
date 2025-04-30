@@ -28,7 +28,7 @@ const Review = () => {
 
       {/* Main content with container */}
       <Container>
-        <div className='container relative mx-auto'>
+        <div className='relative mx-auto'>
           {/* Header */}
           <div className='flex flex-col md:flex-row justify-between w-full relative z-10 items-center md:items-center'>
             <div className='flex flex-col gap-4 md:gap-6 max-w-[570px] items-center md:items-start text-center md:text-left'>

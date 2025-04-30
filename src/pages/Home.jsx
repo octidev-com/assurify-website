@@ -11,6 +11,8 @@ import WhyAssurifyBestChoice from '../component/Home/WhyAssurifyBestChoice'
 import InsightsAndInspiration from '../component/Home/InsightsAndInspiration'
 import FAQ from '../component/Home/FAQ'
 import Review from '../component/Home/Review'
+import PricingSection from '../component/Home/PricingSection'
+import Container from '../component/Common/Container'
 
 const Home = () => {
   return (
@@ -43,7 +45,9 @@ const Home = () => {
       <Brands />
 
       {/* Pricing section */}
-      <Pricing hideToggle={true} />
+      <Container>
+        <PricingSection hideToggle={true} />
+      </Container>
 
       {/* Review section */}
       <Review />
