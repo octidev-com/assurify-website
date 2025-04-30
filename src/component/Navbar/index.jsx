@@ -20,7 +20,7 @@ const Navbar = () => {
           <img
             src={OrgIcon}
             alt='Assurify logo'
-            className='w-[80px] sm:w-[100px] h-auto'
+            className='w-[96px] md:w-[120px] lg:w-auto h-auto'
           />
 
           {/* Toggle Text for Mobile */}
@@ -68,6 +68,26 @@ const Navbar = () => {
               }>
               Pricing
             </NavLink>
+            <a
+              target='_blank'
+              href='https://documentation.assurify.app/'
+              className={({ isActive }) =>
+                `text-[14px] sm:text-[16px] font-normal ${
+                  isActive ? 'text-[#48BD42]' : 'text-white'
+                } hover:text-[#48BD42]`
+              }>
+              Doc
+            </a>
+            <a
+              target='_blank'
+              href='https://blog.assurify.app/'
+              className={({ isActive }) =>
+                `text-[14px] sm:text-[16px] font-normal ${
+                  isActive ? 'text-[#48BD42]' : 'text-white'
+                } hover:text-[#48BD42]`
+              }>
+              Blog
+            </a>
           </div>
 
           {/* Buttons - Hidden on Mobile */}

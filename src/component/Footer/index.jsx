@@ -22,10 +22,12 @@ const Footer = () => {
               trust with customers and unlocking new revenue with every sale.
             </p>
           </div>
-          <Button
-            buttonText='Try it for free'
-            className='mt-4 sm:mt-6 md:mt-0'
-          />
+          <div className='mx-auto md:mx-0'>
+            <Button
+              buttonText='Try it for free'
+              className='mt-4 sm:mt-6 md:mt-0'
+            />
+          </div>
         </div>
       </Container>
 
