@@ -4,6 +4,7 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 import roundBg from '../../assets/banner/round-bg.png'
 import { Link } from 'react-router'
 import Container from '../Common/Container'
+import Button from '../Common/Button'
 
 const Footer = () => {
   return (
@@ -21,9 +22,10 @@ const Footer = () => {
               trust with customers and unlocking new revenue with every sale.
             </p>
           </div>
-          <button className='btn-primary mt-4 sm:mt-6 md:mt-0'>
-            Try it for free
-          </button>
+          <Button
+            buttonText='Try it for free'
+            className='mt-4 sm:mt-6 md:mt-0'
+          />
         </div>
       </Container>
 
