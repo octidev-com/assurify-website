@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import OrgIcon from '../../assets/icon/assurify-icon.png'
 import { NavLink } from 'react-router'
 import CustomIcon from '../../assets/icon/CustomIcon'
+import Button from '../Common/Button'
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -71,16 +72,9 @@ const Navbar = () => {
 
           {/* Buttons - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <NavLink
-              to='/demo'
-              className='btn-secondary text-[14px] sm:text-[16px] px-3 sm:px-6'>
-              View Demo
-            </NavLink>
-            <NavLink
-              to='/pricing'
-              className='btn-primary text-[14px] sm:text-[16px] px-3 sm:px-6'>
-              Try For Free
-            </NavLink>
+            <Button buttonText={'View Demo'} variant='secondary-outline' />
+
+            <Button buttonText={'Try For Free'} />
           </div>
         </div>
       </div>
@@ -143,18 +137,9 @@ const Navbar = () => {
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
-          <NavLink
-            to='/how-it-works'
-            className='bg-white text-black py-2 px-4 rounded-full text-center text-[16px] font-normal hover:bg-gray-200'
-            onClick={toggleSidebar}>
-            How It Works
-          </NavLink>
-          <NavLink
-            to='/demo'
-            className='bg-transparent border border-white text-white py-2 px-4 rounded-full text-center text-[16px] font-normal hover:bg-white hover:text-black'
-            onClick={toggleSidebar}>
-            View Demo
-          </NavLink>
+          <Button buttonText={'View Demo'} variant='secondary-outline' />
+
+          <Button buttonText={'Try For Free'} />
         </div>
       </div>
 
