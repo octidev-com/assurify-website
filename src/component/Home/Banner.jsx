@@ -1,5 +1,6 @@
 import React from 'react'
 import Container from '../Common/Container'
+import Button from '../Common/Button'
 
 const Banner = () => {
   return (
@@ -14,12 +15,8 @@ const Banner = () => {
             packages; it's about protecting your brand.
           </p>
           <div className='flex justify-center gap-2 sm:gap-4 lg:gap-5'>
-            <button className='btn-primary text-xs sm:text-sm lg:text-base px-3 sm:px-4 lg:px-5 py-1 sm:py-2 lg:py-2'>
-              How it works
-            </button>
-            <button className='btn-secondary text-xs sm:text-sm lg:text-base px-3 sm:px-4 lg:px-5 py-1 sm:py-2 lg:py-2'>
-              View Demo
-            </button>
+            <Button buttonText='How it works' />
+            <Button buttonText='View Demo' variant='secondary-outline' />
           </div>
         </div>
       </Container>

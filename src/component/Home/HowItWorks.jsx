@@ -9,6 +9,7 @@ import stepImg4 from '../../assets/howItWorks/steps-img4.png'
 import stepImg5 from '../../assets/howItWorks/steps-img5.png'
 import stepImg6 from '../../assets/howItWorks/steps-img6.png'
 import SectionTitle from '../Common/SectionTitle'
+import Button from '../Common/Button'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -183,9 +184,7 @@ const HowItWorks = () => {
         />
 
         <div className='flex justify-center mt-2'>
-          <button type='button' className='btn-primary'>
-            Get Started
-          </button>
+          <Button buttonText='Get Started' />
         </div>
 
         {/* Slider Section */}
