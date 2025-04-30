@@ -6,17 +6,19 @@ import HowItWorks from '../component/Home/HowItWorks'
 import ProtectionCoverage from '../component/Home/ProtectionCoverage'
 import Benefits from '../component/Home/Benfits'
 import Brands from '../component/Home/Brands'
-import Pricing from '../component/Home/Pricing'
-import Review from '../component/Home/Review'
+import Pricing from '../component/Home/PricingSection'
 import WhyAssurifyBestChoice from '../component/Home/WhyAssurifyBestChoice'
 import InsightsAndInspiration from '../component/Home/InsightsAndInspiration'
 import FAQ from '../component/Home/FAQ'
+import Review from '../component/Home/Review'
+import PricingSection from '../component/Home/PricingSection'
+import Container from '../component/Common/Container'
 
 const Home = () => {
   return (
     <div className='w-full relative text-white flex flex-col items-center min-h-screen overflow-x-hidden'>
       {/* Right side bg image */}
-      <div className='absolute -top-[800px] -left-[500px] pointer-events-none z-0'>
+      <div className='absolute  -top-[800px] -left-[1000px] sm:-left-[800px] md:-left-[500px] pointer-events-none z-0'>
         <img src={roundBg} alt='Background decoration' />
       </div>
 
@@ -43,7 +45,9 @@ const Home = () => {
       <Brands />
 
       {/* Pricing section */}
-      <Pricing />
+      <Container>
+        <PricingSection hideToggle={true} />
+      </Container>
 
       {/* Review section */}
       <Review />
@@ -58,7 +62,7 @@ const Home = () => {
       <FAQ />
 
       {/* Left side bg image */}
-      <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
+      <div className='absolute -top-[800px] -right-[1000px] sm:-right-[800px] md:-right-[500px] pointer-events-none z-0'>
         <img src={roundBg} alt='Background decoration' />
       </div>
     </div>

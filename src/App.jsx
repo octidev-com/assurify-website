@@ -1,11 +1,14 @@
-import React from 'react'
-import Navbar from './component/Navbar'
-import Footer from './component/Footer'
-import Home from './pages/Home'
-import { Route, Routes } from 'react-router'
-import Pricing from './pages/Pricing'
-import ContactUs from './pages/ContactUs'
-import Deals from './pages/Deals'
+import React from "react";
+import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
+import Home from "./pages/Home";
+import { Route, Routes } from "react-router";
+import Pricing from "./pages/Pricing";
+import ContactUs from "./pages/ContactUs";
+import Deals from "./pages/Deals";
+import Checkout from "./pages/Checkout";
+import ForMerchant from "./pages/ForMerchant";
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 const App = () => {
   return (
@@ -14,10 +17,13 @@ const App = () => {
         <Navbar />
       </div>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/pricing' element={<Pricing />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/forMerchant" element={<ForMerchant />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/deals' element={<Deals />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </div>

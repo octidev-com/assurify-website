@@ -1,212 +1,195 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
 import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import roundBg from '../../assets/banner/round-bg.png'
 import CustomIcon from '../../assets/icon/CustomIcon'
+import StartIcon from '../../assets/star.png'
+import AssurifyIcon from '../../assets/icon/assurify-icon.png'
+import Container from '../Common/Container'
 
-const ProtectionCoverage = () => {
-  const protectionCoverageOptions = [
-    { id: 1, title: 'Order placed', iconName: 'order_placed' },
-    { id: 2, title: 'Claim raised', iconName: 'claim_raised' },
-    { id: 3, title: 'Claim approved', iconName: 'claim_approved' },
-    { id: 4, title: 'Merchant paid', iconName: 'merchant_paid' },
-    { id: 5, title: 'Claim resolved', iconName: 'claim_resolved' },
-    { id: 6, title: 'Reorder / refund', iconName: 'reorder_refund' }
-  ]
-
-  // Ref for the container and elements (right side only)
-  const containerRef = useRef(null)
-  const elementRefs = useRef([])
-
-  useEffect(() => {
-    // Dynamically load GSAP and ScrollTrigger
-    const gsapScript = document.createElement('script')
-    gsapScript.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js'
-    gsapScript.async = true
-
-    const scrollTriggerScript = document.createElement('script')
-    scrollTriggerScript.src =
-      'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'
-    scrollTriggerScript.async = true
-
-    // Flags to track if scripts were appended
-    let gsapAppended = false
-    let scrollTriggerAppended = false
-
-    // Load GSAP first, then ScrollTrigger
-    gsapScript.onload = () => {
-      document.body.appendChild(scrollTriggerScript)
-      scrollTriggerAppended = true
-    }
-
-    scrollTriggerScript.onload = () => {
-      const { gsap, ScrollTrigger } = window
-
-      if (containerRef.current && gsap && ScrollTrigger) {
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger)
-
-        // Initially hide the container (border) and elements
-        gsap.set(containerRef.current, { opacity: 0 })
-        gsap.set(elementRefs.current, { opacity: 0 })
-
-        // Create a timeline for the animation
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current, // Trigger when the right-side container enters the viewport
-            start: 'top 80%', // Start when top of container is 80% from top of viewport
-            toggleActions: 'play none none none' // Play on enter
-          }
-        })
-
-        // Fade in the rounded border
-        tl.to(containerRef.current, {
-          opacity: 1,
-          duration: 1.2, // Slower fade-in (1200ms)
-          delay: 0.3 // 300ms delay
-        })
-
-        // Fade in each element with stagger
-        tl.to(
-          elementRefs.current,
-          {
-            opacity: 1,
-            duration: 0.8, // Slower fade-in (800ms)
-            stagger: 0.5 // 500ms delay between elements
-          },
-          '-=0.6' // Overlap with border animation
-        )
-      }
-    }
-
-    // Append GSAP script first
-    document.body.appendChild(gsapScript)
-    gsapAppended = true
-
-    // Cleanup scripts on unmount
-    return () => {
-      if (gsapAppended && document.body.contains(gsapScript)) {
-        document.body.removeChild(gsapScript)
-      }
-      if (
-        scrollTriggerAppended &&
-        document.body.contains(scrollTriggerScript)
-      ) {
-        document.body.removeChild(scrollTriggerScript)
-      }
-    }
-  }, [])
-
+const Review = () => {
   return (
-    <div className='w-full mt-[150px] py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
+    <div className='w-full mt-[80px] md:mt-[150px] py-[80px] md:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
       {/* Background elements */}
       <div className='absolute top-1/2 left-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img
           src={roundBg}
           alt='Background decoration left'
-          className='w-[75vw] max-w-none'
+          className='w-[150vw] md:w-[100vw] lg:w-[75vw] max-w-none'
         />
       </div>
       <div className='absolute top-1/2 right-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img
           src={roundBg}
           alt='Background decoration right'
-          className='w-[75vw] max-w-none'
+          className='w-[150vw] md:w-[100vw] lg:w-[75vw] max-w-none'
         />
       </div>
 
       {/* Main content with container */}
-      <div className='container relative mx-auto z-10'>
-        <div className='grid grid-cols-2 justify-center gap-[30px] py-[26px]'>
-          {/* Left side of the main content (header) - No animation */}
-          <div className='flex flex-col gap-6'>
-            <div className='flex justify-center items-center gap-3'>
-              <img src={rightSideHr} alt='' className='max-w-[100px]' />
-              <p className='text-xl font-normal leading-[30px]'>
-                Protection Coverage
+      <Container>
+        <div className='relative mx-auto'>
+          {/* Header */}
+          <div className='flex flex-col md:flex-row justify-between w-full relative z-10 items-center md:items-center'>
+            <div className='flex flex-col gap-4 md:gap-6 max-w-[570px] items-center md:items-start text-center md:text-left'>
+              <div className='flex justify-center md:justify-start items-center gap-2 md:gap-3'>
+                <img
+                  src={rightSideHr}
+                  alt=''
+                  className='max-w-[60px] md:max-w-[100px]'
+                />
+                <p className='text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
+                  Rated & Recommended
+                </p>
+                <img
+                  src={leftSideHr}
+                  alt=''
+                  className='max-w-[60px] md:max-w-[100px]'
+                />
+              </div>
+              <h1 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
+                Verified Customer Experiences
+              </h1>
+              <p className='text-[#A6A6A6] text-sm md:text-lg font-light leading-5 md:leading-[27px]'>
+                Discover why customers trust us through their honest reviews.
               </p>
-              <img src={leftSideHr} alt='' className='max-w-[100px]' />
             </div>
-            <h1 className='text-5xl font-semibold text-gradient leading-[72px]'>
-              Total Coverage & Claims Management
-            </h1>
-            <p className='text-[#A6A6A6] text-lg font-light leading-[27px]'>
-              Purchasers crave carbon-neutral shipping options and total package
-              protection. Guide Protection makes it easy to give the people what
-              they want (again..and again).
-            </p>
-            <div>
-              <button type='button' className='btn-secondary'>
-                Get Started
+            <div className='hidden md:flex gap-[40px] mt-6 md:mt-0'>
+              <button>
+                <CustomIcon
+                  iconName={'slider-left-icon'}
+                  width={56}
+                  height={56}
+                />
+              </button>
+              <button>
+                <CustomIcon
+                  iconName={'slider-right-icon'}
+                  width={56}
+                  height={56}
+                />
               </button>
             </div>
           </div>
 
-          {/* Right side of the main content - With animation */}
-          <div className='w-[744px] h-[370px] flex items-center justify-center'>
-            {/* Container for the border */}
-            <div
-              ref={containerRef}
-              className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10'>
-              {/* Options positioned around the circle */}
-              {protectionCoverageOptions.map((opt, index) => {
-                const positions = [
-                  {
-                    top: '0%',
-                    left: '20%',
-                    transform: 'translate(-55%, -40%)'
-                  }, // Top-left
-                  { top: '0%', left: '20%', transform: 'translate(65%, -40%)' }, // Top-right
-                  {
-                    top: '50%',
-                    left: '10%',
-                    transform: 'translate(-60%, -50%)'
-                  }, // Middle-left
-                  {
-                    top: '50%',
-                    left: '10%',
-                    transform: 'translate(100%, -50%)'
-                  }, // Middle-right
-                  {
-                    top: '100%',
-                    left: '20%',
-                    transform: 'translate(-55%, -60%)'
-                  }, // Bottom-left
-                  {
-                    top: '100%',
-                    left: '20%',
-                    transform: 'translate(55%, -60%)'
-                  } // Bottom-right
-                ]
+          {/* Main content */}
+          <div className='mt-6 md:mt-12 flex flex-col md:flex-row items-center gap-4 md:gap-[30px] w-full relative z-10'>
+            {/* Review reports */}
+            <div className='flex flex-col gap-3 md:gap-4 items-center flex-shrink-0 w-fit'>
+              <p className='text-[#A6A6A6] text-xl md:text-2xl font-medium leading-7 md:leading-9'>
+                Excellent
+              </p>
+              <div className='flex gap-1'>
+                <img
+                  src={StartIcon}
+                  alt='Star'
+                  className='w-5 md:w-6 h-5 md:h-6'
+                />
+                <img
+                  src={StartIcon}
+                  alt='Star'
+                  className='w-5 md:w-6 h-5 md:h-6'
+                />
+                <img
+                  src={StartIcon}
+                  alt='Star'
+                  className='w-5 md:w-6 h-5 md:h-6'
+                />
+                <img
+                  src={StartIcon}
+                  alt='Star'
+                  className='w-5 md:w-6 h-5 md:h-6'
+                />
+                <img
+                  src={StartIcon}
+                  alt='Star'
+                  className='w-5 md:w-6 h-5 md:h-6'
+                />
+              </div>
+              <p className='text-[#A6A6A6] text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
+                Based on{' '}
+                <span className='text-[#f7f7f7] underline'>20 reviews</span>
+              </p>
+              <img
+                src={AssurifyIcon}
+                alt='Assurify'
+                className='w-[80px] md:w-[100px] h-[20px] md:h-[25px]'
+              />
+            </div>
 
-                const position = positions[index] || { top: '50%', left: '50%' }
+            <div className='flex items-center gap-3'>
+              {/* Slider icons for mobile */}
+              <button className='md:hidden'>
+                <CustomIcon
+                  iconName={'mobile-slider-left-icon'}
+                  width={36}
+                  height={36}
+                />
+              </button>
 
-                return (
-                  <div
-                    key={opt.id}
-                    ref={(el) => (elementRefs.current[index] = el)}
-                    className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20'
-                    style={{
-                      top: position.top,
-                      left: position.left,
-                      transform: position.transform
-                    }}>
-                    <div className='p-2 bg-[#98FF9317] rounded-sm'>
-                      <CustomIcon iconName={opt.iconName} />
-                    </div>
-                    <h3 className='text-xl font-normal text-white'>
-                      {opt.title}
-                    </h3>
+              {/* Reviews card with gradient background */}
+              <div className='relative flex flex-col gap-4 md:gap-[30px] p-6 md:p-10 rounded-[20px] border border-[#262626] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full max-w-[600px] md:max-w-none mt-4 md:mt-0'>
+                {/* Review star */}
+                <div className='flex gap-1'>
+                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                    <CustomIcon
+                      iconName={'star-icon'}
+                      className='w-4 md:w-5 h-4 md:h-5'
+                    />
                   </div>
-                )
-              })}
+                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                    <CustomIcon
+                      iconName={'star-icon'}
+                      className='w-4 md:w-5 h-4 md:h-5'
+                    />
+                  </div>
+                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                    <CustomIcon
+                      iconName={'star-icon'}
+                      className='w-4 md:w-5 h-4 md:h-5'
+                    />
+                  </div>
+                  <div className='bg-[#D9D9D930] p-2 md:p-[10px]'>
+                    <CustomIcon
+                      iconName={'star-icon'}
+                      className='w-4 md:w-5 h-4 md:h-5'
+                    />
+                  </div>
+                  <div className='bg-[#D9D9D930] p-2 md:p-[10px]'>
+                    <CustomIcon
+                      iconName={'star-icon'}
+                      className='w-4 md:w-5 h-4 md:h-5'
+                    />
+                  </div>
+                </div>
+
+                {/* Review text */}
+                <p className='text-[#fff] text-sm md:text-lg font-normal leading-5 md:leading-[27px]'>
+                  Working with DigitX was a pleasure. Their web design team
+                  created a stunning website that perfectly captured our brand's
+                  essence. The feedback from our customers has been
+                  overwhelmingly positive.
+                </p>
+
+                {/* Reviewer name */}
+                <p className='text-[#A6A6A6] text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
+                  Aditya Verma
+                </p>
+              </div>
+
+              <button className='md:hidden'>
+                <CustomIcon
+                  iconName={'mobile-slider-right-icon'}
+                  width={36}
+                  height={36}
+                />
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   )
 }
 
-export default ProtectionCoverage
+export default Review

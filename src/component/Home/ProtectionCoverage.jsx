@@ -3,6 +3,8 @@ import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
 import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import roundBg from '../../assets/banner/round-bg.png'
 import CustomIcon from '../../assets/icon/CustomIcon'
+import Container from '../Common/Container'
+import Button from '../Common/Button'
 
 const ProtectionCoverage = () => {
   const protectionCoverageOptions = [
@@ -117,94 +119,101 @@ const ProtectionCoverage = () => {
       </div>
 
       {/* Main content with container */}
-      <div className='container relative mx-auto z-10'>
-        <div className='grid grid-cols-2 justify-center gap-[30px] py-[26px]'>
-          {/* Left side of the main content (header) - No animation */}
-          <div className='flex flex-col gap-6'>
-            <div className='flex justify-center items-center gap-3'>
-              <img src={rightSideHr} alt='' className='max-w-[100px]' />
-              <p className='text-xl font-normal leading-[30px]'>
-                Protection Coverage
+      <Container>
+        <div className='relative mx-auto z-10'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 justify-center gap-[30px] py-[26px]'>
+            {/* Left side of the main content (header) - No animation */}
+            <div className='flex flex-col gap-6'>
+              <div className='flex justify-center items-center gap-3'>
+                <img src={rightSideHr} alt='' className='max-w-[100px]' />
+                <p className='text-xl font-normal leading-[30px]'>
+                  Protection Coverage
+                </p>
+                <img src={leftSideHr} alt='' className='max-w-[100px]' />
+              </div>
+              <h1 className='text-5xl font-semibold text-gradient leading-[72px]'>
+                Total Coverage & Claims Management
+              </h1>
+              <p className='text-[#A6A6A6] text-lg font-light leading-[27px]'>
+                Purchasers crave carbon-neutral shipping options and total
+                package protection. Guide Protection makes it easy to give the
+                people what they want (again..and again).
               </p>
-              <img src={leftSideHr} alt='' className='max-w-[100px]' />
+              <div>
+                <Button buttonText='Get Started' variant='secondary-outline' />
+              </div>
             </div>
-            <h1 className='text-5xl font-semibold text-gradient leading-[72px]'>
-              Total Coverage & Claims Management
-            </h1>
-            <p className='text-[#A6A6A6] text-lg font-light leading-[27px]'>
-              Purchasers crave carbon-neutral shipping options and total package
-              protection. Guide Protection makes it easy to give the people what
-              they want (again..and again).
-            </p>
-            <div>
-              <button type='button' className='btn-secondary'>
-                Get Started
-              </button>
-            </div>
-          </div>
 
-          {/* Right side of the main content - With animation */}
-          <div className='w-[744px] h-[370px] flex items-center justify-center'>
-            {/* Container for the border */}
-            <div
-              ref={containerRef}
-              className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10'>
-              {/* Options positioned around the circle */}
-              {protectionCoverageOptions.map((opt, index) => {
-                const positions = [
-                  {
-                    top: '0%',
-                    left: '20%',
-                    transform: 'translate(-55%, -40%)'
-                  }, // Top-left
-                  { top: '0%', left: '20%', transform: 'translate(65%, -40%)' }, // Top-right
-                  {
+            {/* Right side of the main content - With animation */}
+            <div className='w-full lg:w-[744px] lg:h-[370px] flex items-center justify-center'>
+              {/* Container for the border */}
+              <div
+                ref={containerRef}
+                className='relative w-[370px] h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10'>
+                {/* Options positioned around the circle */}
+                {protectionCoverageOptions.map((opt, index) => {
+                  const positions = [
+                    {
+                      top: '0%',
+                      left: '20%',
+                      transform: 'translate(-55%, -40%)'
+                    }, // Top-left
+                    {
+                      top: '0%',
+                      left: '20%',
+                      transform: 'translate(65%, -40%)'
+                    }, // Top-right
+                    {
+                      top: '50%',
+                      left: '10%',
+                      transform: 'translate(-60%, -50%)'
+                    }, // Middle-left
+                    {
+                      top: '50%',
+                      left: '10%',
+                      transform: 'translate(100%, -50%)'
+                    }, // Middle-right
+                    {
+                      top: '100%',
+                      left: '20%',
+                      transform: 'translate(-55%, -60%)'
+                    }, // Bottom-left
+                    {
+                      top: '100%',
+                      left: '20%',
+                      transform: 'translate(55%, -60%)'
+                    } // Bottom-right
+                  ]
+
+                  const position = positions[index] || {
                     top: '50%',
-                    left: '10%',
-                    transform: 'translate(-60%, -50%)'
-                  }, // Middle-left
-                  {
-                    top: '50%',
-                    left: '10%',
-                    transform: 'translate(100%, -50%)'
-                  }, // Middle-right
-                  {
-                    top: '100%',
-                    left: '20%',
-                    transform: 'translate(-55%, -60%)'
-                  }, // Bottom-left
-                  {
-                    top: '100%',
-                    left: '20%',
-                    transform: 'translate(55%, -60%)'
-                  } // Bottom-right
-                ]
+                    left: '50%'
+                  }
 
-                const position = positions[index] || { top: '50%', left: '50%' }
-
-                return (
-                  <div
-                    key={opt.id}
-                    ref={(el) => (elementRefs.current[index] = el)}
-                    className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20'
-                    style={{
-                      top: position.top,
-                      left: position.left,
-                      transform: position.transform
-                    }}>
-                    <div className='p-2 bg-[#98FF9317] rounded-sm'>
-                      <CustomIcon iconName={opt.iconName} />
+                  return (
+                    <div
+                      key={opt.id}
+                      ref={(el) => (elementRefs.current[index] = el)}
+                      className='absolute flex items-center gap-4 p-3 bg-[#000000] rounded-lg z-20'
+                      style={{
+                        top: position.top,
+                        left: position.left,
+                        transform: position.transform
+                      }}>
+                      <div className='p-2 bg-[#98FF9317] rounded-sm'>
+                        <CustomIcon iconName={opt.iconName} />
+                      </div>
+                      <h3 className='text-xl font-normal text-white'>
+                        {opt.title}
+                      </h3>
                     </div>
-                    <h3 className='text-xl font-normal text-white'>
-                      {opt.title}
-                    </h3>
-                  </div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   )
 }
