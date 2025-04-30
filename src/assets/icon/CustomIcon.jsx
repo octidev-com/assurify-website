@@ -588,8 +588,8 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'slider-left-icon':
       return (
         <svg
-          width='56'
-          height='56'
+          width={width}
+          height={height}
           viewBox='0 0 56 56'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -606,8 +606,8 @@ const CustomIcon = ({ iconName, height, width }) => {
           <defs>
             <clipPath id='clip0_149_965'>
               <rect
-                width='56'
-                height='56'
+                width={width}
+                height={height}
                 fill='white'
                 transform='matrix(-1 0 0 1 56 0)'
               />
@@ -618,8 +618,8 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'slider-right-icon':
       return (
         <svg
-          width='56'
-          height='56'
+          width={width}
+          height={height}
           viewBox='0 0 56 56'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -655,7 +655,7 @@ const CustomIcon = ({ iconName, height, width }) => {
               <stop offset='1' stop-color='white' />
             </linearGradient>
             <clipPath id='clip0_149_968'>
-              <rect width='56' height='56' fill='white' />
+              <rect width={width} height={height} fill='white' />
             </clipPath>
           </defs>
         </svg>
@@ -956,6 +956,85 @@ const CustomIcon = ({ iconName, height, width }) => {
               stroke-linejoin='round'
             />
           </g>
+        </svg>
+      )
+    case 'mobile-slider-right-icon':
+      return (
+        <svg
+          width='28'
+          height='28'
+          viewBox='0 0 28 28'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='Frame' clip-path='url(#clip0_491_4447)'>
+            <path
+              id='Vector'
+              d='M13.9999 0C6.26796 0 0 6.26796 0 13.9999C0 21.7319 6.26796 28.0001 13.9999 28.0001C21.7319 28.0001 28.0001 21.7319 28.0001 13.9999C27.9914 6.27155 21.7285 0.00871579 13.9999 0ZM13.9999 26.5999C7.0411 26.5999 1.39991 20.9587 1.39991 13.9999C1.39991 7.0411 7.0411 1.39991 13.9999 1.39991C20.9587 1.39991 26.5999 7.0411 26.5999 13.9999C26.592 20.9554 20.9554 26.592 13.9999 26.5999Z'
+              fill='url(#paint0_linear_491_4447)'
+            />
+            <path
+              id='Vector_2'
+              d='M12.3609 8.57298C12.0697 8.31842 11.6275 8.34816 11.3729 8.63911C11.1186 8.93033 11.1483 9.37252 11.4393 9.62708L16.4371 13.9999L11.439 18.3729C11.1478 18.6274 11.1184 19.0696 11.3727 19.3606C11.6272 19.6518 12.0694 19.6815 12.3606 19.427L17.9605 14.5269C18.1125 14.3941 18.1997 14.2019 18.1997 13.9999C18.1997 13.7979 18.1125 13.6058 17.9605 13.4728L12.3609 8.57298Z'
+              fill='url(#paint1_linear_491_4447)'
+            />
+          </g>
+          <defs>
+            <linearGradient
+              id='paint0_linear_491_4447'
+              x1='14'
+              y1='0'
+              x2='14'
+              y2='28.0001'
+              gradientUnits='userSpaceOnUse'>
+              <stop stop-color='#48BD42' />
+              <stop offset='1' stop-color='white' />
+            </linearGradient>
+            <linearGradient
+              id='paint1_linear_491_4447'
+              x1='14.6997'
+              y1='8.3999'
+              x2='14.6997'
+              y2='19.6'
+              gradientUnits='userSpaceOnUse'>
+              <stop stop-color='#48BD42' />
+              <stop offset='1' stop-color='white' />
+            </linearGradient>
+            <clipPath id='clip0_491_4447'>
+              <rect width='28' height='28' fill='white' />
+            </clipPath>
+          </defs>
+        </svg>
+      )
+    case 'mobile-slider-left-icon':
+      return (
+        <svg
+          width='32'
+          height='32'
+          viewBox='0 0 32 32'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'>
+          <g id='Frame' clip-path='url(#clip0_491_4425)'>
+            <path
+              id='Vector'
+              d='M16.0001 0C24.8366 0 32 7.16338 32 15.9999C32 24.8364 24.8366 32.0001 16.0001 32.0001C7.16357 32.0001 -9.91821e-05 24.8364 -9.91821e-05 15.9999C0.0098629 7.16748 7.16738 0.0099609 16.0001 0ZM16.0001 30.3999C23.953 30.3999 30.4001 23.9528 30.4001 15.9999C30.4001 8.04697 23.953 1.5999 16.0001 1.5999C8.04717 1.5999 1.6001 8.04697 1.6001 15.9999C1.60918 23.949 8.05098 30.3908 16.0001 30.3999Z'
+              fill='#A6A6A6'
+            />
+            <path
+              id='Vector_2'
+              d='M17.8731 9.7979C18.206 9.50698 18.7113 9.54096 19.0022 9.87348C19.2929 10.2063 19.2589 10.7117 18.9264 11.0026L13.2147 16L18.9267 20.9978C19.2595 21.2887 19.2932 21.7941 19.0025 22.1266C18.7116 22.4594 18.2063 22.4934 17.8734 22.2025L11.4735 16.6024C11.2998 16.4506 11.2002 16.2309 11.2002 16C11.2002 15.7692 11.2998 15.5498 11.4735 15.3977L17.8731 9.7979Z'
+              fill='#A6A6A6'
+            />
+          </g>
+          <defs>
+            <clipPath id='clip0_491_4425'>
+              <rect
+                width='32'
+                height='32'
+                fill='white'
+                transform='matrix(-1 0 0 1 32 0)'
+              />
+            </clipPath>
+          </defs>
         </svg>
       )
     default:

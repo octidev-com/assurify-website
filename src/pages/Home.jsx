@@ -7,10 +7,10 @@ import ProtectionCoverage from '../component/Home/ProtectionCoverage'
 import Benefits from '../component/Home/Benfits'
 import Brands from '../component/Home/Brands'
 import Pricing from '../component/Home/PricingSection'
-import Review from '../component/Home/Review'
 import WhyAssurifyBestChoice from '../component/Home/WhyAssurifyBestChoice'
 import InsightsAndInspiration from '../component/Home/InsightsAndInspiration'
 import FAQ from '../component/Home/FAQ'
+import Review from '../component/Home/Review'
 
 const Home = () => {
   return (
