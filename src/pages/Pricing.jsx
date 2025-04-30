@@ -1,5 +1,3 @@
-import React from "react";
-import SectionTitle from "../component/Common/SectionTitle";
 import NavbarSpacer from "../component/Common/NavbarSpacer";
 import Container from "../component/Common/Container";
 import PricingSection from "../component/Home/PricingSection";
