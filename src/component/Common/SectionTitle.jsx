@@ -11,7 +11,7 @@ const SectionTitle = ({ topText, middleText, bottomText }) => {
             alt='Right horizontal line'
             className='max-w-[100px]'
           />
-          <p className='text-[14px] lg:text-xl font-normal leading-[21px] lg:leading-[30px]'>
+          <p className='text-[14px] text-center lg:text-xl font-normal leading-[21px] lg:leading-[30px]'>
             {topText}
           </p>
           <img
