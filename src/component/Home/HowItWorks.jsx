@@ -8,8 +8,7 @@ import stepImg3 from '../../assets/howItWorks/steps-img3.png'
 import stepImg4 from '../../assets/howItWorks/steps-img4.png'
 import stepImg5 from '../../assets/howItWorks/steps-img5.png'
 import stepImg6 from '../../assets/howItWorks/steps-img6.png'
-import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
-import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
+import SectionTitle from '../Common/SectionTitle'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -174,130 +173,127 @@ const HowItWorks = () => {
 
       <div ref={pinRef} className='relative pb-8'>
         {/* Header Section */}
-        <div className='w-[732px] max-w-full mx-auto flex flex-col gap-4 px-4'>
-          <div className='flex justify-center items-center gap-3'>
-            <img src={rightSideHr} alt='' className='max-w-[100px]' />
-            <p className='text-xl font-normal leading-[30px]'>
-              Protection Coverage
-            </p>
-            <img src={leftSideHr} alt='' className='max-w-[100px]' />
-          </div>
-          <h1 className='text-5xl font-semibold text-gradient text-center leading-[72px]'>
-            How It Works
-          </h1>
-          <p className='text-[#A6A6A6] text-lg font-light text-center leading-[27px]'>
-            With licensed shipping protection, fast issue resolution, package
-            tracking, product recommendations, and carbon neutral shipping.
-          </p>
-          <div className='flex justify-center'>
-            <button type='button' className='btn-primary'>
-              Get Started
-            </button>
-          </div>
+
+        <SectionTitle
+          topText={'Protection Coverage'}
+          middleText={'How It Works'}
+          bottomText={
+            'With licensed shipping protection, fast issue resolution, package tracking, product recommendations, and carbon neutral shipping.'
+          }
+        />
+
+        <div className='flex justify-center mt-2'>
+          <button type='button' className='btn-primary'>
+            Get Started
+          </button>
         </div>
 
         {/* Slider Section */}
-        <div className='rounded-2xl mt-12 flex justify-center items-center'>
+        <div className='rounded-2xl mt-8 sm:mt-10 md:mt-12 flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6'>
           {/* Left Side Image */}
           <img
             ref={imageRef}
             src={howItWorksSteps[0].image}
             alt={howItWorksSteps[0].title}
-            className='max-w-[50%] object-contain'
+            className='order-2 md:order-1 object-contain w-full max-w-[250px] sm:max-w-[280px] md:max-w-[180px] lg:max-w-none mt-4 sm:mt-5 md:mt-0'
           />
-          {/* Description Middle Section */}
-          <div className='ml-8 max-w-[40%]'>
-            <h1
-              ref={titleRef}
-              className='text-[#f7f7f7] text-5xl font-normal leading-[72px] mb-4'>
-              {howItWorksSteps[0].title}
-            </h1>
-            <p
-              ref={descriptionRef}
-              className='text-[#A6A6A6] text-lg font-normal leading-[30px]'>
-              {howItWorksSteps[0].description}
-            </p>
-          </div>
 
-          {/* Navigation Indicator */}
-          <div className='flex flex-col items-center ml-8 min-h-[400px]'>
-            {indicatorNumbers.map((number) => (
-              <svg
-                key={number}
-                xmlns='http://www.w3.org/2000/svg'
-                width='48'
-                height={number - 1 === currentStep ? '131' : '132'}
-                viewBox={
-                  number - 1 === currentStep ? '0 0 48 131' : '0 0 48 132'
-                }
-                fill='none'
-                className='mb-[-20px]'
-                aria-label={`Step ${number}`}>
-                <rect
-                  x='24'
-                  y={number - 1 === currentStep ? '46.75' : '47.25'}
-                  width='84'
-                  height='1.5'
-                  rx='0.749998'
-                  transform={`rotate(90 24 ${
-                    number - 1 === currentStep ? '46.75' : '47.25'
-                  })`}
-                  fill={
-                    number - 1 === currentStep
-                      ? 'url(#paint0_linear_624_353)'
-                      : '#A6A6A6'
+          {/* Description and Navigation Wrapper for small screens */}
+          <div className='order-1 flex flex-row md:flex-none justify-center items-center w-full md:w-auto min-w-[280px]'>
+            {/* Description Middle Section */}
+            <div className='flex flex-col items-center md:items-start text-center md:text-left flex-1 md:flex-none pr-2 sm:pr-3'>
+              <h1
+                ref={titleRef}
+                className='text-[#f7f7f7] text-[16px] sm:text-[18px] md:text-4xl lg:text-5xl font-normal leading-[1.5] sm:leading-[1.8] md:leading-[60px] lg:leading-[72px] mb-3 sm:mb-4'>
+                {howItWorksSteps[0].title}
+              </h1>
+              <p
+                ref={descriptionRef}
+                className='text-[#A6A6A6] text-[8px] sm:text-[9px] md:text-base lg:text-lg font-normal leading-[1.5] sm:leading-[1.6] md:leading-[28px] lg:leading-[30px]'>
+                {howItWorksSteps[0].description}
+              </p>
+            </div>
+
+            {/* Navigation Indicator */}
+            <div className='flex flex-col items-center min-h-[320px] sm:min-h-[360px] md:min-h-[400px] ml-3 sm:ml-4 md:ml-0'>
+              {indicatorNumbers.map((number) => (
+                <svg
+                  key={number}
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='40'
+                  height={number - 1 === currentStep ? '109' : '110'}
+                  viewBox={
+                    number - 1 === currentStep ? '0 0 40 109' : '0 0 40 110'
                   }
-                  opacity={number - 1 === currentStep ? '1' : '0.7'}
-                />
-                <circle
-                  cx='24'
-                  cy={number - 1 === currentStep ? '24.25' : '24.75'}
-                  r='23.25'
-                  stroke={
-                    number - 1 === currentStep
-                      ? 'url(#paint1_linear_624_353)'
-                      : 'white'
-                  }
-                  strokeWidth='1.5'
-                />
-                <text
-                  x='24'
-                  y={number - 1 === currentStep ? '29.25' : '30'}
-                  fontSize='24'
-                  fontWeight='600'
-                  fill={number - 1 === currentStep ? 'white' : '#A6A6A6'}
-                  textAnchor='middle'
-                  className='select-none'>
-                  {number}
-                </text>
-                <defs>
-                  {number - 1 === currentStep && (
-                    <>
-                      <linearGradient
-                        id='paint0_linear_624_353'
-                        x1='24'
-                        y1='47.5'
-                        x2='108'
-                        y2='47.5'
-                        gradientUnits='userSpaceOnUse'>
-                        <stop stopColor='#48BD42' />
-                        <stop offset='1' stopColor='#0C0D0C' />
-                      </linearGradient>
-                      <linearGradient
-                        id='paint1_linear_624_353'
-                        x1='4.23529'
-                        y1='12.25'
-                        x2='43.96'
-                        y2='39.9448'
-                        gradientUnits='userSpaceOnUse'>
-                        <stop stopColor='#48BD42' />
-                        <stop offset='1' stopColor='white' />
-                      </linearGradient>
-                    </>
-                  )}
-                </defs>
-              </svg>
-            ))}
+                  fill='none'
+                  className='mb-[-16px] sm:mb-[-18px]'
+                  aria-label={`Step ${number}`}>
+                  <rect
+                    x='20'
+                    y={number - 1 === currentStep ? '39.0833' : '39.5833'}
+                    width='70'
+                    height='1.25'
+                    rx='0.625'
+                    transform={`rotate(90 20 ${
+                      number - 1 === currentStep ? '39.0833' : '39.5833'
+                    })`}
+                    fill={
+                      number - 1 === currentStep
+                        ? 'url(#paint0_linear_624_353)'
+                        : '#A6A6A6'
+                    }
+                    opacity={number - 1 === currentStep ? '1' : '0.7'}
+                  />
+                  <circle
+                    cx='20'
+                    cy={number - 1 === currentStep ? '20.2083' : '20.7083'}
+                    r='19.375'
+                    stroke={
+                      number - 1 === currentStep
+                        ? 'url(#paint1_linear_624_353)'
+                        : 'white'
+                    }
+                    strokeWidth='1.25'
+                  />
+                  <text
+                    x='20'
+                    y={number - 1 === currentStep ? '24.375' : '25'}
+                    fontSize='20'
+                    fontWeight='600'
+                    fill={number - 1 === currentStep ? 'white' : '#A6A6A6'}
+                    textAnchor='middle'
+                    className='select-none'>
+                    {number}
+                  </text>
+                  <defs>
+                    {number - 1 === currentStep && (
+                      <>
+                        <linearGradient
+                          id='paint0_linear_624_353'
+                          x1Invoices='20'
+                          y1='39.8333'
+                          x2='90'
+                          y2='39.8333'
+                          gradientUnits='userSpaceOnUse'>
+                          <stop stopColor='#48BD42' />
+                          <stop offset='1' stopColor='#0C0D0C' />
+                        </linearGradient>
+                        <linearGradient
+                          id='paint1_linear_624_353'
+                          x1='3.52941'
+                          y1='10.2083'
+                          x2='36.6333'
+                          y2='33.2873'
+                          gradientUnits='userSpaceOnUse'>
+                          <stop stopColor='#48BD42' />
+                          <stop offset='1' stopColor='white' />
+                        </linearGradient>
+                      </>
+                    )}
+                  </defs>
+                </svg>
+              ))}
+            </div>
           </div>
         </div>
       </div>
