@@ -67,22 +67,24 @@ const PricingSection = ({ hideToggle }) => {
         {pricingData.map((item) => (
           <div
             key={item.id}
-            className="p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] flex flex-col gap-[16px] lg:gap-8"
+            className="p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]"
           >
             <div>
               <h4 className="text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8">{item.title}</h4>
               <p className="text-[#ffffffcc] text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1">15-day free trial</p>
             </div>
 
-            <p className="text-[#FFFFFFCC] text-sm font-normal leading-6">
+            <p className="mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6">
               <span className="text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14">{item.price}</span> /{" "}
               {isMonthly ? "per month" : "per year"}
             </p>
-            <button className="btn-secondary" onClick={() => navigate("/contact-us")}>
+
+            {/* Contact Us Button */}
+            <button className="mt-[24px] lg:mt-[32px] btn-secondary" onClick={() => navigate("/contact-us")}>
               Contact Us
             </button>
 
-            <hr className="w-full h-[1px] bg-[#FFFFFF33] border-0" />
+            <hr className="my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0" />
 
             <div className="flex flex-col gap-4">
               <p className="text-[#FFFFFF] text-lg font-medium leading-7">What you will get</p>
@@ -90,37 +92,37 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                Employee directory
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">Employee directory</p>
               </div>
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                Task management
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">Task management</p>
               </div>
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                Calendar integration
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">Calendar integration</p>
               </div>
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                File storage
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">File storage</p>
               </div>
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                Communication tools
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">Communication tools</p>
               </div>
               <div className="flex items-center gap-2">
                 <span>
                   <CustomIcon iconName={"tick-icon"} />
                 </span>
-                Reporting and analytics
+                <p className="#ffffffcc text-[13px] lg:text-[14px] leading-[22px]">Reporting and analytics</p>
               </div>
             </div>
           </div>
