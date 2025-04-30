@@ -4,6 +4,7 @@ import CustomIcon from "../assets/icon/CustomIcon";
 import FAQ from "../component/Home/FAQ";
 import NavbarSpacer from "../component/Common/NavbarSpacer";
 import Container from "../component/Common/Container";
+import Button from "../component/Common/Button";
 
 const Deals = () => {
   // State to track the active tab
@@ -29,35 +30,39 @@ const Deals = () => {
         <div className="mt-14 mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[30px]">
             {/* product image */}
-            <div className="w-full lg:w-[570px] h-[500px] rounded-xl bg-[#D9D9D9]"></div>
+            <div className="w-full lg:w-[570px] h-[290px] lg:h-[500px] rounded-xl bg-[#D9D9D9]"></div>
 
             {/* product details */}
-            <div className="max-w-[570px] flex flex-col gap-8">
-              <div className="flex flex-col gap-4">
-                <h1 className="text-[#F7F7F7] text-[40px] font-semibold leading-[60px] tracking-[-0.4px]">
+            <div className="max-w-[570px] flex flex-col gap-[24px] lg:gap-8">
+              <div className="flex flex-col gap-[12px] lg:gap-4">
+                <h1 className="text-[#F7F7F7] text-[24px] lg:text-[40px] font-semibold leading-[36px] lg:leading-[60px] tracking-[-0.4px]">
                   Assurify Shipping Protection (Lifetime Deal)
                 </h1>
-                <div className="flex gap-2">
-                  <div className="flex gap-1">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1 h-[24px]">
                     {[1, 2, 3, 4, 5].map((item) => (
                       <CustomIcon key={item} iconName={item === 5 ? "half-filed-star-icon" : "filled-star-icon"} height={24} width={24} />
                     ))}
                   </div>
-                  <p className="text-lg font-normal text-[#F7F7F7]">4.5 (288 reviews)</p>
+                  <p className="text-[14px] lg:text-lg font-normal text-[#F7F7F7]">4.5 (288 reviews)</p>
                 </div>
-                <p className="text-[32px] text-[#f7f7f7] font-semibold leading-12">$1,140.00</p>
-                <p className="text-[#A6A6A6] text-base font-light leading-[24px]">
+                <p className="text-[20px] lg:text-[32px] text-[#f7f7f7] font-semibold leading-[21px] lg:leading-12">$1,140.00</p>
+                <p className="text-[#A6A6A6] text-[12px] lg:text-base font-light leading-[18px] lg:leading-[24px]">
                   Are you tired of juggling multiple tools to safeguard your online presence? Assurify is here to redefine digital security
                   and organization.
                 </p>
               </div>
+
+              {/* Buttons */}
               <div className="flex gap-3">
-                <button className="px-6 py-[11px] bg-[#48BD42] rounded-2xl text-base font-medium text-[#000]">Buy Now</button>
-                <button className="btn-secondary">How to install Assurify?</button>
+                <Button buttonText="Buy Now" variant="primary-green" />
+                <Button buttonText="How to install Assurify?" variant="secondary-outline" />
               </div>
+
+              {/* Product details */}
               <div className="flex flex-col gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-                  <p className="text-[#f7f7f7] text-base font-light leading-[30px]">
+                <div className="p-3 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                  <p className="text-[#f7f7f7] text-[12px] lg:text-[16px] font-light leading-[30px]">
                     Enjoy 20% OFF your next purchase with code <span className="font-medium">SAVE20</span> - limited time only!
                   </p>
                 </div>
@@ -95,11 +100,11 @@ const Deals = () => {
           </div>
 
           {/* Tabs */}
-          <div className="mt-14">
+          <div className="mt-[32px] lg:mt-14">
             {/* Tab Navigation Links */}
             <div className="bg-gradient-to-r from-[rgba(255,255,255,0.12)] to-[rgba(255,255,255,0.12)] backdrop-blur-[37px] rounded-t-xl p-4 flex gap-5">
               <button
-                className={`text-xl font-medium leading-[30px] cursor-pointer ${
+                className={`text-[16px] lg:text-[20px] font-medium leading-[24px] lg:leading-[30px] cursor-pointer ${
                   activeTab === "description" ? "text-[#f7f7f7]" : "text-[#A6A6A6]"
                 }`}
                 onClick={() => setActiveTab("description")}
@@ -107,7 +112,7 @@ const Deals = () => {
                 Description
               </button>
               <button
-                className={`text-xl font-normal leading-[30px] cursor-pointer ${
+                className={`text-[16px] lg:text-[20px] font-medium leading-[24px] lg:leading-[30px] cursor-pointer ${
                   activeTab === "reviews" ? "text-[#f7f7f7]" : "text-[#A6A6A6]"
                 }`}
                 onClick={() => setActiveTab("reviews")}
@@ -120,29 +125,33 @@ const Deals = () => {
             <div className="border-b border-l border-r border-[rgba(72,189,66,0.10)] rounded-b-xl p-4">
               {/* description tab content */}
               {activeTab === "description" && (
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-[16px] lg:gap-[24px]">
                   {/* top section */}
                   <div className="flex flex-col gap-3">
-                    <h1 className="text-[40px] font-semibold text-[#f7f7f7] leading-[60px] tracking-[-0.4px]">
+                    <h1 className="text-[20px] lg:text-[40px] font-semibold text-[#f7f7f7] leading-[30px] lg:leading-[60px] tracking-[-0.4px]">
                       Transform Your Digital Security for Just $69.99
                     </h1>
-                    <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                    <p className="text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                       With the Assurify Lifetime Deal, originally priced at $1,140 but now available for only $69.99, you gain access to a
                       robust suite of tools that keep your digital life secure and hassle-free.
                     </p>
-                    <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                    <p className="text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                       In this guide, we’ll explore everything about this deal, from features to benefits, and answer frequently asked
                       questions to help you make an informed decision.
                     </p>
                   </div>
 
                   {/* bottom section */}
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-[12px] lg:gap-4">
                     {/* first question and answer */}
                     <div className="flex flex-col gap-3">
-                      <h1 className="text-[32px] font-semibold text-[#f7f7f7] leading-12 tracking-[-0.32px]">Table of Contents</h1>
-                      <h2 className="text-2xl font-medium text-[#f7f7f7] leading-9 tracking-[-0.24px]">1. What is Assurify</h2>
-                      <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <h1 className="text-[18px] lg:text-[32px] font-semibold text-[#f7f7f7] leading-[27px] lg:leading-12 tracking-[-0.32px]">
+                        Table of Contents
+                      </h1>
+                      <h2 className="text-[16px] lg:text-2xl font-medium text-[#f7f7f7] leading-[24px] lg:leading-9 tracking-[-0.24px]">
+                        1. What is Assurify?
+                      </h2>
+                      <p className="text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         Assurify is a comprehensive app designed to enhance your digital security and simplify your daily tasks. From
                         monitoring personal information breaches to managing important documents, Assurify acts as your digital assistant,
                         ensuring your online world remains protected and organized.
@@ -151,25 +160,29 @@ const Deals = () => {
 
                     {/* second question and answer */}
                     <div className="flex flex-col gap-3">
-                      <h2 className="text-2xl font-medium text-[#f7f7f7] leading-9 tracking-[-0.24px]">2. Why You Need Assurify?</h2>
-                      <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <h2 className="text-[16px] lg:text-2xl font-medium text-[#f7f7f7] leading-[24px] lg:leading-9 tracking-[-0.24px]">
+                        2. Why You Need Assurify?
+                      </h2>
+                      <p className="text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         In today’s interconnected world, online threats are increasing daily. Personal data theft, password breaches, and
                         identity fraud have become significant concerns. Assurify provides:
                       </p>
-                      <ul className="list-disc list-inside text-[12px] font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <ul className="list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         <li>A proactive way to safeguard sensitive information.</li>
                         <li>Tools to streamline document management.</li>
                         <li>Real-time alerts for potential vulnerabilities.</li>
                       </ul>
-                      <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <p className="text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         Investing in a solution like Assurify not only secures your data but also gives you peace of mind.
                       </p>
                     </div>
 
                     {/* third question and answer */}
                     <div className="flex flex-col gap-3">
-                      <h2 className="text-2xl font-medium text-[#f7f7f7] leading-9 tracking-[-0.24px]">3. Feature Of Assurify?</h2>
-                      <p className="text-base font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <h2 className="text-[16px] lg:text-2xl font-medium text-[#f7f7f7] leading-[24px] lg:leading-9 tracking-[-0.24px]">
+                        3. Feature Of Assurify?
+                      </h2>
+                      <p className="text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         Assurify’s robust features make it stand out in the crowded security app market. Here are some key highlights:
                       </p>
                       <ul className="list-disc list-inside text-[12px] font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
