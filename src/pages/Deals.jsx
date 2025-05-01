@@ -27,7 +27,7 @@ const Deals = () => {
 
       {/* main content */}
       <Container>
-        <div className="mt-14 mx-auto">
+        <div className="mt-[32px] lg:mt-14 mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-[30px]">
             {/* product image */}
             <div className="w-full lg:w-[570px] h-[290px] lg:h-[500px] rounded-xl bg-[#D9D9D9]"></div>
@@ -185,7 +185,7 @@ const Deals = () => {
                       <p className="text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         Assurify’s robust features make it stand out in the crowded security app market. Here are some key highlights:
                       </p>
-                      <ul className="list-disc list-inside text-[12px] font-light text-[#A6A6A6] leading-[24px] tracking-[-0.16px]">
+                      <ul className="flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                         <li>
                           <span className="font-normal text-[#f7f7f7]">Breach Monitoring:</span> Receive real-time alerts if your personal
                           data appears in any breach database.
@@ -218,24 +218,33 @@ const Deals = () => {
 
               {/* review tab content */}
               {activeTab === "reviews" && (
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
+                <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-[30px]">
                   {/* left side ratings stat */}
                   <div className="col-span-1">
-                    <h5 className="text-[#f7f7f7] font-semibold text-2xl">Ratings</h5>
-                    <p className="mt-[5px] text-[#A6A6A6] text-base font-light leading-[24px] tracking-[-0.16px]">
+                    <h5 className="text-[#f7f7f7] font-semibold text-[18px] lg:text-2xl">Ratings</h5>
+                    <p className="mt-[5px] text-[#A6A6A6] text-[12px] lg:text-base font-light leading-[18px] lg:leading-[24px] tracking-[-0.16px]">
                       Ratings and reviews are verified and are from people who use the service
                     </p>
 
                     {/* avg rating */}
-                    <h2 className="text-[#f7f7f7] text-[64px] font-bold  tracking-[-0.4px]">
-                      4.5<span className="text-[#a6a6a6] text-[32px] "> /5</span>
-                    </h2>
-                    <div className="flex my-1">
-                      {[1, 2, 3, 4, 5].map((item) => (
-                        <CustomIcon key={item} height={16} width={16} iconName={item === 5 ? "half-filed-star-icon" : "filled-star-icon"} />
-                      ))}
+                    <div className="flex flex-col gap-[4px]">
+                      <h2 className="text-[#f7f7f7] text-[48px] lg:text-[64px] leading-[72px] lg:leading-[96px] font-bold  tracking-[-0.4px]">
+                        4.5<span className="text-[#a6a6a6] text-[20px] lg:text-[32px] lg:font-bold font-medium"> /5</span>
+                      </h2>
+                      <div className="flex my-1">
+                        {[1, 2, 3, 4, 5].map((item) => (
+                          <CustomIcon
+                            key={item}
+                            height={16}
+                            width={16}
+                            iconName={item === 5 ? "half-filed-star-icon" : "filled-star-icon"}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-[#A6A6A6] text-[14px] lg:text-xl font-normal leading-[21px] lg:leading-[30px]">
+                        Based on 288 reviews
+                      </p>
                     </div>
-                    <p className="text-[#A6A6A6] text-xl font-normal leading-[20px]">Based on 288 reviews</p>
 
                     {/* ratings counts */}
                     <div className="flex flex-col gap-[7px] mt-3">
@@ -260,9 +269,11 @@ const Deals = () => {
 
                     {/* review and rating form */}
                     <div className="p-4 mt-[30px] bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0.03)_100%)] backdrop-blur-[37px] rounded-2xl flex flex-col gap-3">
-                      <h5 className="text-xl font-semibold text-[#f7f7f7]">Add your comment</h5>
+                      <h5 className="text-[16px] lg:text-xl font-semibold text-[#f7f7f7] leading-[27px] lg:leading-[30px]">
+                        Add your comment
+                      </h5>
                       <div className="flex items-center justify-between">
-                        <p className="text-lg text-[#f7f7f7] font-light">Ratings</p>
+                        <p className="text-[16px] lg:text-lg text-[#f7f7f7] font-light leading-[24px] lg:leading-[27px]">Ratings</p>
                         <div className="flex gap-1">
                           {[1, 2, 3, 4, 5].map((item) => (
                             <CustomIcon
@@ -274,8 +285,13 @@ const Deals = () => {
                           ))}
                         </div>
                       </div>
+
+                      {/* Comment Form */}
                       <div>
-                        <label htmlFor="full-name" className="text-base text-[#A6A6A6] font-light leading-6">
+                        <label
+                          htmlFor="full-name"
+                          className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-[21px] lg:leading-6"
+                        >
                           Full Name
                         </label>
                         <input
@@ -285,7 +301,10 @@ const Deals = () => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="email-address" className="text-base text-[#A6A6A6] font-light leading-6">
+                        <label
+                          htmlFor="email-address"
+                          className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-[21px] lg:leading-6"
+                        >
                           Email Address
                         </label>
                         <input
@@ -295,7 +314,10 @@ const Deals = () => {
                         />
                       </div>
                       <div>
-                        <label htmlFor="what-can-we-help-you-with" className="text-base text-[#A6A6A6] font-light leading-6">
+                        <label
+                          htmlFor="what-can-we-help-you-with"
+                          className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-[21px] lg:leading-6"
+                        >
                           What can we help you with?
                         </label>
                         <textarea
@@ -304,13 +326,15 @@ const Deals = () => {
                           className="w-full p-4 h-[120px] rounded-xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
                         />
                       </div>
-                      <button className="btn-primary">Add Review</button>
+
+                      {/* Add Review Button */}
+                      <Button buttonText="Add Review" />
                     </div>
                   </div>
 
                   {/* right side reviews */}
-                  <div className="col-span-2">
-                    <h5 className="text-[#f7f7f7] font-semibold text-2xl">Reviews</h5>
+                  <div className="col-span-2 mt-[24px] lg:mt-[0]">
+                    <h5 className="text-[#f7f7f7] font-semibold text-[18px] lg:text-2xl leading-[27px]">Reviews</h5>
 
                     {/* reviews */}
                     <div>
@@ -318,7 +342,7 @@ const Deals = () => {
                         <React.Fragment key={item}>
                           <div className="flex flex-col gap-3 mt-3">
                             <div>
-                              <h5>Cameron Williamson</h5>
+                              <h5 className="text-[#F7F7F7] text-[16px] font-medium leading-[24px]">Cameron Williamson</h5>
 
                               <div className="flex mt-2">
                                 {[1, 2, 3, 4, 5].map((star) => (
@@ -332,19 +356,21 @@ const Deals = () => {
                               </div>
                             </div>
 
-                            <p>
+                            <p className="text-[#A6A6A6] text-[14px] lg:text-[16px] font-light leading-[18px] lg:leading-[24px] tracking-[-0.12px] lg:tracking-[-0.16px]">
                               Are you tired of juggling multiple tools to safeguard your online presence? Assurify is here to redefine
                               digital security and organization.
                             </p>
 
-                            <p>14 December 2024</p>
+                            <p className="text-[#A6A6A6] font-light text-[12px] lg:text-[16px] leading-[18px] lg:leading-[24px] tracking-[-0.12px]">
+                              14 December 2024
+                            </p>
                           </div>
 
                           {/* Conditionally render hr or See more... */}
                           {index < array.length - 1 ? (
                             <hr className="w-full h-[1px] bg-[rgba(147,147,147,0.2)] border-0 rounded-[2px] my-3" />
                           ) : (
-                            <p className=" my-3 cursor-pointer text-[#f7f7f7] hover:underline text-base font-medium leading-[24px]">
+                            <p className="my-3 cursor-pointer text-[16px] text-[#f7f7f7] hover:underline text-base font-medium leading-[24px]">
                               See more...
                             </p>
                           )}
