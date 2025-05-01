@@ -3,19 +3,35 @@ import OrgIcon from '../../assets/icon/assurify-icon.png'
 import { NavLink } from 'react-router'
 import CustomIcon from '../../assets/icon/CustomIcon'
 import Button from '../Common/Button'
+import Topbar from '../Common/Topbar'
 
-const Navbar = () => {
+const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
   }
 
+  // Array of navigation items
+  const navItems = [
+    { label: 'Home', to: '/', external: false },
+    { label: 'For Merchant', to: '/forMerchant', external: false },
+    { label: 'Deals', to: '/deals', external: false },
+    { label: 'Pricing', to: '/pricing', external: false },
+    { label: 'Doc', to: 'https://documentation.assurify.app/', external: true },
+    { label: 'Blog', to: 'https://blog.assurify.app/', external: true }
+  ]
+
   return (
     <>
+      {/* Topbar */}
+      <Topbar
+        isAnnouncementVisible={isAnnouncementVisible}
+        setIsAnnouncementVisible={setIsAnnouncementVisible}
+      />
       {/* Navbar */}
-      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 sticky top-0 z-50'>
-        <div className='container flex justify-between items-center max-w-full px-3 sm:px-4 lg:px-6'>
+      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 z-50 sticky'>
+        <div className='container flex justify-between items-center max-w-full px-4 lg:px-0'>
           {/* Logo */}
           <img
             src={OrgIcon}
@@ -32,69 +48,35 @@ const Navbar = () => {
 
           {/* Navigation Links - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-6 flex-wrap items-center'>
-            <NavLink
-              to='/'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              Home
-            </NavLink>
-            <NavLink
-              to='/forMerchant'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              For Merchant
-            </NavLink>
-            <NavLink
-              to='/deals'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              Deals
-            </NavLink>
-            <NavLink
-              to='/pricing'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              Pricing
-            </NavLink>
-            <a
-              target='_blank'
-              href='https://documentation.assurify.app/'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              Doc
-            </a>
-            <a
-              target='_blank'
-              href='https://blog.assurify.app/'
-              className={({ isActive }) =>
-                `text-[14px] sm:text-[16px] font-normal ${
-                  isActive ? 'text-[#48BD42]' : 'text-white'
-                } hover:text-[#48BD42]`
-              }>
-              Blog
-            </a>
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.label}
+                  href={item.to}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-[14px] lg:text-[16px] font-normal text-white hover:text-[#48BD42]'>
+                  {item.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `text-[14px] lg:text-[16px] font-normal ${
+                      isActive ? 'text-[#48BD42]' : 'text-white'
+                    } hover:text-[#48BD42]`
+                  }>
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </div>
 
           {/* Buttons - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <Button buttonText={'View Demo'} variant='secondary-outline' />
-
-            <Button buttonText={'Try For Free'} />
+            <Button variant='secondary-outline'>View Demo</Button>
+            <Button>Try For Free</Button>
           </div>
         </div>
       </div>
@@ -113,61 +95,36 @@ const Navbar = () => {
 
         {/* Sidebar Links */}
         <div className='flex flex-col gap-6 mt-12'>
-          <NavLink
-            to='/'
-            className={({ isActive }) =>
-              `text-[16px] font-normal ${
-                isActive ? 'text-[#48BD42]' : 'text-white'
-              } hover:text-[#48BD42]`
-            }
-            onClick={toggleSidebar}>
-            Home
-          </NavLink>
-          <NavLink
-            to='/forMerchant'
-            className={({ isActive }) =>
-              `text-[16px] font-normal ${
-                isActive ? 'text-[#48BD42]' : 'text-white'
-              } hover:text-[#48BD42]`
-            }
-            onClick={toggleSidebar}>
-            For Marcent
-          </NavLink>
-          <NavLink
-            to='/forMerchant'
-            className={({ isActive }) =>
-              `text-[16px] font-normal ${
-                isActive ? 'text-[#48BD42]' : 'text-white'
-              } hover:text-[#48BD42]`
-            }>
-            For Merchant
-          </NavLink>
-          <NavLink
-            to='/deals'
-            className={({ isActive }) =>
-              `text-[16px] font-normal ${
-                isActive ? 'text-[#48BD42]' : 'text-white'
-              } hover:text-[#48BD42]`
-            }
-            onClick={toggleSidebar}>
-            Deals
-          </NavLink>
-          <NavLink
-            to='/pricing'
-            className={({ isActive }) =>
-              `text-[16px] font-normal ${
-                isActive ? 'text-[#48BD42]' : 'text-white'
-              } hover:text-[#48BD42]`
-            }
-            onClick={toggleSidebar}>
-            Pricing
-          </NavLink>
+          {navItems.map((item) =>
+            item.external ? (
+              <a
+                key={item.label}
+                href={item.to}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-[16px] font-normal text-white hover:text-[#48BD42]'
+                onClick={toggleSidebar}>
+                {item.label}
+              </a>
+            ) : (
+              <NavLink
+                key={item.label}
+                to={item.to}
+                className={({ isActive }) =>
+                  `text-[16px] font-normal ${
+                    isActive ? 'text-[#48BD42]' : 'text-white'
+                  } hover:text-[#48BD42]`
+                }
+                onClick={toggleSidebar}>
+                {item.label}
+              </NavLink>
+            )
+          )}
         </div>
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
           <Button buttonText={'View Demo'} variant='secondary-outline' />
-
           <Button buttonText={'Try For Free'} />
         </div>
       </div>

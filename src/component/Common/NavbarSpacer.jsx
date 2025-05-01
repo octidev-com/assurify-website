@@ -1,5 +1,10 @@
-const NavbarSpacer = () => {
-  return <div className="w-full h-[48px] lg:h-[97px]"></div>;
-};
+const NavbarSpacer = ({ isAnnouncementVisible }) => {
+  // Adjust height based on announcement visibility
+  const spacerHeight = isAnnouncementVisible
+    ? 'h-[96px] lg:h-[145px]' // Taller height when Topbar is visible
+    : 'h-[48px] lg:h-[97px]' // Default height when Topbar is hidden
 
-export default NavbarSpacer;
+  return <div className={`w-full ${spacerHeight}`}></div>
+}
+
+export default NavbarSpacer
