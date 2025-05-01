@@ -1,6 +1,6 @@
 import roundBg from "../assets/banner/round-bg.png";
 import NavbarSpacer from "../component/Common/NavbarSpacer";
-import ForMerchantSection from "../component/Home/ForMerchantSection";
+import ForMerchantSection from "../component/ForMerchant/ForMerchantSection";
 
 const ForMerchant = () => {
     return (
