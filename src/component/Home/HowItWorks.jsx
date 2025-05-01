@@ -64,7 +64,7 @@ const HowItWorks = () => {
   const [currentStep, setCurrentStep] = useState(0)
   const [indicatorNumbers, setIndicatorNumbers] = useState([1, 2, 3])
 
-  // GSAP ScrollTrigger for content animations
+  // GSAP ScrollTrigger for content animations (unchanged)
   useEffect(() => {
     const container = containerRef.current
     const pin = pinRef.current
@@ -158,7 +158,7 @@ const HowItWorks = () => {
   return (
     <div
       ref={containerRef}
-      className='mt-[150px] container min-h-screen overflow-x-hidden'>
+      className='mt-20 sm:mt-24 md:mt-28 lg:mt-[150px] container min-h-screen overflow-x-hidden'>
       {/* Preload Images */}
       <div style={{ display: 'none' }}>
         {howItWorksSteps.map((step) => (
@@ -172,9 +172,8 @@ const HowItWorks = () => {
         ))}
       </div>
 
-      <div ref={pinRef} className='relative pb-8'>
+      <div ref={pinRef} className='relative pb-6 sm:pb-8'>
         {/* Header Section */}
-
         <SectionTitle
           topText={'Protection Coverage'}
           middleText={'How It Works'}
@@ -183,58 +182,88 @@ const HowItWorks = () => {
           }
         />
 
-        <div className='flex justify-center mt-2'>
+        <div className='flex justify-center mt-4 sm:mt-5 md:mt-6'>
           <Button buttonText='Get Started' />
         </div>
 
         {/* Slider Section */}
-        <div className='rounded-2xl mt-8 sm:mt-10 md:mt-12 flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6'>
+        <div className='rounded-xl sm:rounded-2xl mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-8 px-3 sm:px-4 md:px-5 lg:px-6'>
           {/* Left Side Image */}
           <img
             ref={imageRef}
             src={howItWorksSteps[0].image}
             alt={howItWorksSteps[0].title}
-            className='order-2 md:order-1 object-contain w-full max-w-[250px] sm:max-w-[280px] md:max-w-[180px] lg:max-w-none mt-4 sm:mt-5 md:mt-0'
+            className='order-2 md:order-1 object-contain w-full max-w-[200px] sm:max-w-[240px] md:max-w-[200px] lg:max-w-[300px] mt-3 sm:mt-4 md:mt-0 self-center'
           />
 
           {/* Description and Navigation Wrapper for small screens */}
-          <div className='order-1 flex flex-row md:flex-none justify-center items-center w-full md:w-auto min-w-[280px]'>
+          <div className='order-1 flex flex-row md:flex-none justify-center items-center w-full md:w-auto min-w-[240px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[500px]'>
             {/* Description Middle Section */}
-            <div className='flex flex-col items-center md:items-start text-center md:text-left flex-1 md:flex-none pr-2 sm:pr-3'>
+            <div className='flex flex-col items-center md:items-start text-center md:text-left flex-1 md:flex-none pr-1 sm:pr-2 md:pr-3 lg:pr-4 w-[180px] sm:w-[200px] md:w-[260px] lg:w-[400px] self-center'>
               <h1
                 ref={titleRef}
-                className='text-[#f7f7f7] text-[16px] sm:text-[18px] md:text-4xl lg:text-5xl font-normal leading-[1.5] sm:leading-[1.8] md:leading-[60px] lg:leading-[72px] mb-3 sm:mb-4'>
+                className='text-[#f7f7f7] text-base sm:text-lg md:text-3xl lg:text-5xl font-normal leading-6 sm:leading-7 md:leading-[48px] lg:leading-[72px] mb-2 sm:mb-3 md:mb-4 lg:mb-5 whitespace-normal'>
                 {howItWorksSteps[0].title}
               </h1>
               <p
                 ref={descriptionRef}
-                className='text-[#A6A6A6] text-[8px] sm:text-[9px] md:text-base lg:text-lg font-normal leading-[1.5] sm:leading-[1.6] md:leading-[28px] lg:leading-[30px]'>
+                className='text-[#A6A6A6] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-4 sm:leading-5 md:leading-6 lg:leading-[30px] whitespace-normal'>
                 {howItWorksSteps[0].description}
               </p>
             </div>
 
             {/* Navigation Indicator */}
-            <div className='flex flex-col items-center min-h-[320px] sm:min-h-[360px] md:min-h-[400px] ml-3 sm:ml-4 md:ml-0'>
+            <div className='flex flex-col items-center min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] ml-2 sm:ml-3 md:ml-4 lg:ml-5 self-center'>
               {indicatorNumbers.map((number) => (
                 <svg
                   key={number}
                   xmlns='http://www.w3.org/2000/svg'
-                  width='40'
-                  height={number - 1 === currentStep ? '109' : '110'}
+                  width={window.innerWidth >= 1024 ? '40' : '32'}
+                  height={
+                    window.innerWidth >= 1024
+                      ? number - 1 === currentStep
+                        ? '109'
+                        : '110'
+                      : number - 1 === currentStep
+                      ? '88'
+                      : '90'
+                  }
                   viewBox={
-                    number - 1 === currentStep ? '0 0 40 109' : '0 0 40 110'
+                    window.innerWidth >= 1024
+                      ? number - 1 === currentStep
+                        ? '0 0 40 109'
+                        : '0 0 40 110'
+                      : number - 1 === currentStep
+                      ? '0 0 32 88'
+                      : '0 0 32 90'
                   }
                   fill='none'
-                  className='mb-[-16px] sm:mb-[-18px]'
+                  className='mb-[-12px] sm:mb-[-14px] md:mb-[-16px]'
                   aria-label={`Step ${number}`}>
                   <rect
-                    x='20'
-                    y={number - 1 === currentStep ? '39.0833' : '39.5833'}
-                    width='70'
-                    height='1.25'
-                    rx='0.625'
-                    transform={`rotate(90 20 ${
-                      number - 1 === currentStep ? '39.0833' : '39.5833'
+                    x={window.innerWidth >= 1024 ? '20' : '16'}
+                    y={
+                      number - 1 === currentStep
+                        ? window.innerWidth >= 1024
+                          ? '39.0833'
+                          : '31.0833'
+                        : window.innerWidth >= 1024
+                        ? '39.5833'
+                        : '31.5833'
+                    }
+                    width={window.innerWidth >= 1024 ? '70' : '56'}
+                    height={window.innerWidth >= 1024 ? '1.25' : '1'}
+                    rx={window.innerWidth >= 1024 ? '0.625' : '0.5'}
+                    transform={`rotate(90 ${
+                      window.innerWidth >= 1024 ? '20' : '16'
+                    } ${
+                      number - 1 === currentStep
+                        ? window.innerWidth >= 1024
+                          ? '39.0833'
+                          : '31.0833'
+                        : window.innerWidth >= 1024
+                        ? '39.5833'
+                        : '31.5833'
                     })`}
                     fill={
                       number - 1 === currentStep
@@ -244,20 +273,36 @@ const HowItWorks = () => {
                     opacity={number - 1 === currentStep ? '1' : '0.7'}
                   />
                   <circle
-                    cx='20'
-                    cy={number - 1 === currentStep ? '20.2083' : '20.7083'}
-                    r='19.375'
+                    cx={window.innerWidth >= 1024 ? '20' : '16'}
+                    cy={
+                      number - 1 === currentStep
+                        ? window.innerWidth >= 1024
+                          ? '20.2083'
+                          : '16.2083'
+                        : window.innerWidth >= 1024
+                        ? '20.7083'
+                        : '16.7083'
+                    }
+                    r={window.innerWidth >= 1024 ? '19.375' : '15.5'}
                     stroke={
                       number - 1 === currentStep
                         ? 'url(#paint1_linear_624_353)'
                         : 'white'
                     }
-                    strokeWidth='1.25'
+                    strokeWidth={window.innerWidth >= 1024 ? '1.25' : '1'}
                   />
                   <text
-                    x='20'
-                    y={number - 1 === currentStep ? '24.375' : '25'}
-                    fontSize='20'
+                    x={window.innerWidth >= 1024 ? '20' : '16'}
+                    y={
+                      number - 1 === currentStep
+                        ? window.innerWidth >= 1024
+                          ? '24.375'
+                          : '19.375'
+                        : window.innerWidth >= 1024
+                        ? '25'
+                        : '20'
+                    }
+                    fontSize={window.innerWidth >= 1024 ? '20' : '16'}
                     fontWeight='600'
                     fill={number - 1 === currentStep ? 'white' : '#A6A6A6'}
                     textAnchor='middle'
@@ -269,20 +314,20 @@ const HowItWorks = () => {
                       <>
                         <linearGradient
                           id='paint0_linear_624_353'
-                          x1Invoices='20'
-                          y1='39.8333'
-                          x2='90'
-                          y2='39.8333'
+                          x1Invoices={window.innerWidth >= 1024 ? '20' : '16'}
+                          y1={window.innerWidth >= 1024 ? '39.8333' : '31.8333'}
+                          x2={window.innerWidth >= 1024 ? '90' : '72'}
+                          y2={window.innerWidth >= 1024 ? '39.8333' : '31.8333'}
                           gradientUnits='userSpaceOnUse'>
                           <stop stopColor='#48BD42' />
                           <stop offset='1' stopColor='#0C0D0C' />
                         </linearGradient>
                         <linearGradient
                           id='paint1_linear_624_353'
-                          x1='3.52941'
-                          y1='10.2083'
-                          x2='36.6333'
-                          y2='33.2873'
+                          x1={window.innerWidth >= 1024 ? '3.52941' : '2.82353'}
+                          y1={window.innerWidth >= 1024 ? '10.2083' : '8.2083'}
+                          x2={window.innerWidth >= 1024 ? '36.6333' : '29.3067'}
+                          y2={window.innerWidth >= 1024 ? '33.2873' : '26.6299'}
                           gradientUnits='userSpaceOnUse'>
                           <stop stopColor='#48BD42' />
                           <stop offset='1' stopColor='white' />
