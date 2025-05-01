@@ -1,7 +1,6 @@
 import React from 'react'
 import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
-import NavbarSpacer from '../component/Common/NavbarSpacer'
 import Container from '../component/Common/Container'
 import SectionTitle from '../component/Common/SectionTitle'
 import Button from '../component/Common/Button'
@@ -26,9 +25,6 @@ const ContactUs = () => {
           className='w-[50vw] sm:w-[60vw] lg:w-[75vw] max-w-none opacity-80'
         />
       </div>
-
-      {/* Spacer to prevent content overlap with Navbar */}
-      <NavbarSpacer />
 
       {/* Main content */}
       <Container>

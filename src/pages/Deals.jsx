@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
 import FAQ from '../component/Home/FAQ'
-import NavbarSpacer from '../component/Common/NavbarSpacer'
 import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
 
@@ -29,9 +28,6 @@ const Deals = () => {
           className='w-[75vw] max-w-none opacity-80'
         />
       </div>
-
-      {/* Spacer to prevent content overlap with Navbar */}
-      <NavbarSpacer />
 
       {/* main content */}
       <Container>
