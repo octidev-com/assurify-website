@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import Home from './pages/Home'
@@ -9,16 +9,25 @@ import Deals from './pages/Deals'
 import Checkout from './pages/Checkout'
 import ForMerchant from './pages/ForMerchant'
 import PrivacyPolicy from './pages/PrivacyPolicy'
-import ScrollRestoration from './component/Common/ScrollRestoration'
-import Topbar from './component/Common/Topbar'
+import NavbarSpacer from './component/Common/NavbarSpacer'
 
 const App = () => {
+  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true)
+
   return (
     <div className='w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen'>
+      {/* Fixed Navbar */}
       <div className='fixed top-0 left-0 w-full z-[100]'>
-        <Navbar />
+        <Navbar
+          isAnnouncementVisible={isAnnouncementVisible}
+          setIsAnnouncementVisible={setIsAnnouncementVisible}
+        />
       </div>
-      <ScrollRestoration />
+
+      {/* Spacer with dynamic height */}
+      <NavbarSpacer isAnnouncementVisible={isAnnouncementVisible} />
+
+      {/* Content */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/pricing' element={<Pricing />} />

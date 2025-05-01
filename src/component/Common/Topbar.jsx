@@ -1,22 +1,28 @@
-import { useState } from "react";
-import Container from "./Container";
-import CustomIcon from "../../assets/icon/CustomIcon";
+import Container from './Container'
+import CustomIcon from '../../assets/icon/CustomIcon'
 
-const Topbar = () => {
-  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true);
+const Topbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   return (
-    <Container>
-      <div className={`justify-between items-center py-4 ${isAnnouncementVisible ? "flex" : "hidden"}`}>
-        <p className="text-[#f7f7f7] text-base font-normal leading-[24px]">
-          Enjoy 20% OFF your next purchase with code SAVE20 - limited time only! <span className="underline">Click Here</span>
-        </p>
+    <div className='bg-[rgba(4,3,3,0.12)] backdrop-blur-[37px]'>
+      <Container>
+        <div
+          className={`justify-between items-center py-4 ${
+            isAnnouncementVisible ? 'flex' : 'hidden'
+          }`}>
+          <p className='text-[#f7f7f7] text-base font-normal leading-[24px]'>
+            Enjoy 20% OFF your next purchase with code SAVE20 - limited time
+            only! <span className='underline'>Click Here</span>
+          </p>
 
-        <button className="cursor-pointer" onClick={() => setIsAnnouncementVisible(false)}>
-          <CustomIcon iconName={"announcement-close-btn"} />
-        </button>
-      </div>
-    </Container>
-  );
-};
+          <button
+            className='cursor-pointer'
+            onClick={() => setIsAnnouncementVisible(false)}>
+            <CustomIcon iconName='announcement-close-btn' />
+          </button>
+        </div>
+      </Container>
+    </div>
+  )
+}
 
-export default Topbar;
+export default Topbar

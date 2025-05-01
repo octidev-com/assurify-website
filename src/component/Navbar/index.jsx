@@ -5,7 +5,7 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 import Button from '../Common/Button'
 import Topbar from '../Common/Topbar'
 
-const Navbar = () => {
+const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const toggleSidebar = () => {
@@ -25,9 +25,12 @@ const Navbar = () => {
   return (
     <>
       {/* Topbar */}
-      <Topbar />
+      <Topbar
+        isAnnouncementVisible={isAnnouncementVisible}
+        setIsAnnouncementVisible={setIsAnnouncementVisible}
+      />
       {/* Navbar */}
-      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 z-50 sticky'>
+      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 sticky top-0 z-50'>
         <div className='container flex justify-between items-center max-w-full px-3 sm:px-4 lg:px-6'>
           {/* Logo */}
           <img
@@ -121,8 +124,8 @@ const Navbar = () => {
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
-          <Button buttonText={'View Demo'} variant='secondary-outline' />
-          <Button buttonText={'Try For Free'} />
+          <Button buttonText='View Demo' variant='secondary-outline' />
+          <Button buttonText='Try For Free' />
         </div>
       </div>
 
