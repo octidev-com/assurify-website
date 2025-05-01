@@ -183,7 +183,7 @@ const HowItWorks = () => {
         />
 
         <div className='flex justify-center mt-4 sm:mt-5 md:mt-6'>
-          <Button buttonText='Get Started' />
+          <Button>Get Started</Button>
         </div>
 
         {/* Slider Section */}
