@@ -1,10 +1,12 @@
 import React from 'react'
 import Container from '../Common/Container'
 import Button from '../Common/Button'
+import NavbarSpacer from '../Common/NavbarSpacer'
 
 const Banner = () => {
   return (
-    <div className='mt-[42px] md:mt-14'>
+    <div>
+      <NavbarSpacer />
       <Container>
         <div className='max-w-[90%] sm:max-w-[500px] lg:max-w-[600px] text-center mx-auto'>
           <h1 className='text-[32px] sm:text-[56px] lg:text-[96px] font-semibold leading-[38px] sm:leading-[64px] lg:leading-[110px] mb-2 sm:mb-3 lg:mb-4'>

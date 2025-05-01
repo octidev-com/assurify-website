@@ -45,9 +45,11 @@ const Home = () => {
       <Brands />
 
       {/* Pricing section */}
-      <Container>
-        <PricingSection hideToggle={true} />
-      </Container>
+      <div className='mt-[150px]'>
+        <Container>
+          <PricingSection hideToggle={true} />
+        </Container>
+      </div>
 
       {/* Review section */}
       <Review />
