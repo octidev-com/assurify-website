@@ -3,7 +3,7 @@ import leftSideHr from "../../assets/howItWorks/left-side-hr.png";
 
 const SectionTitle = ({ topText, middleText, bottomText }) => {
   return (
-    <div className="mx-autoflex flex-col items-center gap-2 mt-[32px] lg:mt-[56px]">
+    <div className="mx-auto flex flex-col items-center gap-2 mt-[32px] lg:mt-[56px]">
       {topText && (
         <div className="flex justify-center items-center gap-3">
           <img src={rightSideHr} alt="Right horizontal line" className="max-w-[100px]" />
