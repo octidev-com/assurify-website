@@ -140,7 +140,7 @@ const ProtectionCoverage = () => {
                 people what they want (again..and again).
               </p>
               <div>
-                <Button buttonText='Get Started' variant='secondary-outline' />
+                <Button variant='secondary-outline'>Get Started</Button>
               </div>
             </div>
 

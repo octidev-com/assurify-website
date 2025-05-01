@@ -17,8 +17,8 @@ const Banner = () => {
             packages; it's about protecting your brand.
           </p>
           <div className='flex justify-center gap-2 sm:gap-4 lg:gap-5'>
-            <Button buttonText='How it works' />
-            <Button buttonText='View Demo' variant='secondary-outline' />
+            <Button>How it works</Button>
+            <Button variant='secondary-outline'>View Demo</Button>
           </div>
         </div>
       </Container>

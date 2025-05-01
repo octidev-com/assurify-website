@@ -88,8 +88,8 @@ const Navbar = () => {
 
           {/* Buttons - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <Button buttonText={'View Demo'} variant='secondary-outline' />
-            <Button buttonText={'Try For Free'} />
+            <Button variant='secondary-outline'>View Demo</Button>
+            <Button>Try For Free</Button>
           </div>
         </div>
       </div>
@@ -137,8 +137,9 @@ const Navbar = () => {
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
-          <Button buttonText={'View Demo'} variant='secondary-outline' />
-          <Button buttonText={'Try For Free'} />
+          <Button variant='secondary-outline'>View Demo</Button>
+
+          <Button>Try For Free</Button>
         </div>
       </div>
 

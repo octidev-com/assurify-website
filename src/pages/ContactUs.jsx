@@ -135,7 +135,7 @@ const ContactUs = () => {
                     className='w-full p-3 sm:p-4 h-[120px] sm:h-[160px] lg:h-[200px] rounded-lg sm:rounded-xl mt-1 sm:mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none text-sm sm:text-base'
                   />
                 </div>
-                <Button buttonText='Send Message' variant='primary-green' />
+                <Button variant='primary-green'>Send Message</Button>
               </form>
             </div>
           </div>
