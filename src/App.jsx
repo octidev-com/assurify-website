@@ -10,11 +10,14 @@ import Checkout from "./pages/Checkout";
 import ForMerchant from "./pages/ForMerchant";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollRestoration from "./component/Common/ScrollRestoration";
+import Topbar from "./component/Common/Topbar";
 
 const App = () => {
   return (
     <div className="w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen">
-      <div className="fixed top-0 left-0 w-full z-[100]">
+      {/* Topbar */}
+      <Topbar />
+      <div className="sticky top-0 left-0 w-full z-[100]">
         <Navbar />
       </div>
       <ScrollRestoration />
