@@ -65,7 +65,7 @@ const ForMerchantSection = () => {
         <div className="absolute top-1/2 right-[-50%] transform -translate-y-1/2 pointer-events-none z-0">
           <img src={roundBg} alt="Background decoration" />
         </div>
-        <Container horizontalPadding="0">
+        <Container horizontalPadding="29px">
           <SectionTitle
             topText="Brands"
             middleText="Exclusively built for Shopify"
@@ -209,7 +209,7 @@ const ForMerchantSection = () => {
                 </p>
 
                 <div className="sm:mt-10 mt-[32px] flex flex-col gap-6 w-full">
-                  <div className="flex items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <div className="bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center">
                       <img
                         src={writingIcon}
@@ -222,7 +222,7 @@ const ForMerchantSection = () => {
                     </p>
                   </div>
 
-                  <div className="flex items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <div className="bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center">
                       <img
                         src={clockIcon}
@@ -235,7 +235,7 @@ const ForMerchantSection = () => {
                     </p>
                   </div>
 
-                  <div className="flex items-start sm:items-center gap-4">
+                  <div className="flex items-center gap-4">
                     <div className="bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center">
                       <img
                         src={supportIcon}
