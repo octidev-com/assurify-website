@@ -9,7 +9,7 @@ const Topbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
           className={`justify-between items-center py-4 ${
             isAnnouncementVisible ? 'flex' : 'hidden'
           }`}>
-          <p className='text-[#f7f7f7] text-base font-normal leading-[24px]'>
+          <p className='text-[#f7f7f7] text-sm md:text-base font-normal leading-[21px] md:leading-[24px]'>
             Enjoy 20% OFF your next purchase with code SAVE20 - limited time
             only! <span className='underline'>Click Here</span>
           </p>
