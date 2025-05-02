@@ -8,10 +8,11 @@ import ContactUs from "./pages/ContactUs";
 import Deals from "./pages/Deals";
 import Checkout from "./pages/Checkout";
 import ForMerchant from "./pages/ForMerchant";
-import PrivacyPolicy from './pages/PrivacyPolicy'
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Confirmation from "./pages/Confirmation";
 import NavbarSpacer from "./component/Common/NavbarSpacer";
 import ScrollRestoration from "./component/Common/ScrollRestoration";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true);
@@ -39,6 +40,9 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/deals" element={<Deals />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+        {/* Catch all route for undefined paths */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
