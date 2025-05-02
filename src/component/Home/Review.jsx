@@ -58,15 +58,13 @@ const Review = () => {
               <button>
                 <CustomIcon
                   iconName={'slider-left-icon'}
-                  width={56}
-                  height={56}
+                  className={'w-[56px] h-[56px]'}
                 />
               </button>
               <button>
                 <CustomIcon
                   iconName={'slider-right-icon'}
-                  width={56}
-                  height={56}
+                  className={'w-[56px] h-[56px]'}
                 />
               </button>
             </div>
@@ -122,8 +120,7 @@ const Review = () => {
               <button className='md:hidden'>
                 <CustomIcon
                   iconName={'mobile-slider-left-icon'}
-                  width={36}
-                  height={36}
+                  className={'w-[28px] h-[28px]'}
                 />
               </button>
 
@@ -131,34 +128,34 @@ const Review = () => {
               <div className='relative flex flex-col gap-4 md:gap-[30px] p-6 md:p-10 rounded-[20px] border border-[#262626] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full max-w-[600px] md:max-w-none mt-4 md:mt-0'>
                 {/* Review star */}
                 <div className='flex gap-1'>
-                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
                     <CustomIcon
                       iconName={'star-icon'}
-                      className='w-4 md:w-5 h-4 md:h-5'
+                      className='w-[20px] h-[20px]'
                     />
                   </div>
-                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
                     <CustomIcon
                       iconName={'star-icon'}
-                      className='w-4 md:w-5 h-4 md:h-5'
+                      className='w-[20px] h-[20px]'
                     />
                   </div>
-                  <div className='bg-[#219653] p-2 md:p-[10px]'>
+                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
                     <CustomIcon
                       iconName={'star-icon'}
-                      className='w-4 md:w-5 h-4 md:h-5'
+                      className='w-[20px] h-[20px]'
                     />
                   </div>
-                  <div className='bg-[#D9D9D930] p-2 md:p-[10px]'>
+                  <div className='bg-[#D9D9D930] p-[1px] md:p-[10px]'>
                     <CustomIcon
                       iconName={'star-icon'}
-                      className='w-4 md:w-5 h-4 md:h-5'
+                      className='w-[20px] h-[20px]'
                     />
                   </div>
-                  <div className='bg-[#D9D9D930] p-2 md:p-[10px]'>
+                  <div className='bg-[#D9D9D930] p-[1px] md:p-[10px]'>
                     <CustomIcon
                       iconName={'star-icon'}
-                      className='w-4 md:w-5 h-4 md:h-5'
+                      className='w-[20px] h-[20px]'
                     />
                   </div>
                 </div>
@@ -180,8 +177,7 @@ const Review = () => {
               <button className='md:hidden'>
                 <CustomIcon
                   iconName={'mobile-slider-right-icon'}
-                  width={36}
-                  height={36}
+                  className={'w-[28px] h-[28px]'}
                 />
               </button>
             </div>
