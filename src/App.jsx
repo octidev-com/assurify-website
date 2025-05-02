@@ -8,7 +8,8 @@ import ContactUs from "./pages/ContactUs";
 import Deals from "./pages/Deals";
 import Checkout from "./pages/Checkout";
 import ForMerchant from "./pages/ForMerchant";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import Confirmation from "./pages/Confirmation";
 import NavbarSpacer from "./component/Common/NavbarSpacer";
 import ScrollRestoration from "./component/Common/ScrollRestoration";
 
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/forMerchant" element={<ForMerchant />} />
+        <Route path="/confirmation" element={<Confirmation />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/deals" element={<Deals />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
