@@ -154,7 +154,7 @@ const HowItWorks = () => {
 
   return (
     <Container>
-      <div ref={containerRef} className="mt-20 sm:mt-24 md:mt-28 lg:mt-[150px] container min-h-screen overflow-x-hidden">
+      <div ref={containerRef} className="mt-[50px] lg:mt-[150px] min-h-screen overflow-x-hidden">
         {/* Preload Images */}
         <div style={{ display: "none" }}>
           {howItWorksSteps.map((step) => (
