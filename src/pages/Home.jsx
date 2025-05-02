@@ -67,9 +67,6 @@ const Home = () => {
         <img src={roundBg} alt="Background decoration" />
       </div>
 
-      {/* Spacer to prevent content overlap */}
-      <div className="w-full h-[80px]"></div>
-
       {/* Banner component */}
       <div style={{ backgroundImage: `url(${bannerBg})` }} className="my-class bg-cover bg-no-repeat bg-center w-full flex justify-center">
         <Banner />
