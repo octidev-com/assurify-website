@@ -1,14 +1,25 @@
-import rightSideHr from "../../assets/howItWorks/right-side-hr.png";
-import leftSideHr from "../../assets/howItWorks/left-side-hr.png";
+import leftSideHrDesktop from "../../assets/SectionTitle/left-side-hr-desktop.png";
+import leftSideHrMobile from "../../assets/SectionTitle/left-side-hr-mobile.png";
+import rightSideHrDesktop from "../../assets/SectionTitle/right-side-hr-desktop.png";
+import rightSideHrMobile from "../../assets/SectionTitle/right-side-hr-mobile.png";
 
 const SectionTitle = ({ topText, middleText, bottomText }) => {
   return (
     <div className="mx-auto flex flex-col items-center gap-2 sm:mt-[32px] lg:mt-[56px]">
       {topText && (
         <div className="flex justify-center items-center gap-3">
-          <img src={rightSideHr} alt="Right horizontal line" className="max-w-[100px]" />
+          {/* LEFT HR FOR DESKTOP, HIDDEN ON MOBILE */}
+          <img src={leftSideHrDesktop} className="hidden lg:block" alt="Right horizontal line" />
+          {/* LEFT HR FOR MOBILE, HIDDEN ON DESKTOP */}
+          <img src={leftSideHrMobile} className="block lg:hidden" alt="Right horizontal line" />
+
+          {/* TITLE TOP TEXT */}
           <p className="text-[14px] text-center lg:text-xl font-normal leading-[21px] lg:leading-[30px]">{topText}</p>
-          <img src={leftSideHr} alt="Left horizontal line" className="max-w-[100px]" />
+
+          {/* RIGHT HR FOR DESKTOP, HIDDEN ON MOBILE */}
+          <img src={rightSideHrDesktop} className="hidden lg:block" alt="Left horizontal line" />
+          {/* RIGHT HR FOR DESKTOP, HIDDEN ON MOBILE */}
+          <img src={rightSideHrMobile} className="block lg:hidden" alt="Left horizontal line" />
         </div>
       )}
       {middleText && (
