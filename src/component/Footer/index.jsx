@@ -70,35 +70,39 @@ const Footer = () => {
               <div className='flex flex-row justify-between gap-4 md:gap-[115px] '>
                 {/* Navigation Links */}
                 <div className='flex flex-col'>
-                  <p className='text-[#f7f7f7] text-base sm:text-lg font-semibold leading-6 sm:leading-normal tracking-[-0.18px]'>
+                  <p className='text-[#f7f7f7] text-base sm:text-lg font-semibold leading-6 sm:leading-normal tracking-[-0.16px] md:tracking-[-0.18px]'>
                     Company
                   </p>
-                  <div className='flex flex-col gap-2 sm:gap-3 lg:gap-4 mt-4 sm:mt-6 lg:mt-8'>
-                    <a
-                      href='#'
-                      className='text-[#fff] text-sm sm:text-base font-light leading-5 sm:leading-6'>
-                      Home
-                    </a>
-                    <a
-                      href='#'
-                      className='text-[#fff] text-sm sm:text-base font-light leading-5 sm:leading-6'>
-                      For Merchant
-                    </a>
-                    <a
-                      href='#'
-                      className='text-[#fff] text-sm sm:text-base font-light leading-5 sm:leading-6'>
-                      Deals
-                    </a>
-                    <a
-                      href='#'
-                      className='text-[#fff] text-sm sm:text-base font-light leading-5 sm:leading-6'>
-                      Contact Us
-                    </a>
-                    <Link
-                      to='/privacy-policy'
-                      className='text-[#fff] text-sm sm:text-base font-light leading-5 sm:leading-6'>
-                      Privacy Policy
-                    </Link>
+                  <div className='flex flex-col gap-[12px] md:gap-[16px]  mt-4 md:mt-8'>
+                    {[
+                      {
+                        label: 'Home',
+                        link: '/'
+                      },
+                      {
+                        label: 'For Merchant',
+                        link: '/forMerchant'
+                      },
+                      {
+                        label: 'Deals',
+                        link: '/deals'
+                      },
+                      {
+                        label: 'Contact Us',
+                        link: '/contact-us'
+                      },
+                      {
+                        label: 'Privacy Policy',
+                        link: '/privacy-policy'
+                      }
+                    ].map((link) => (
+                      <Link
+                        to={link.link}
+                        key={link.link}
+                        className='text-[#fff] text-[12px] sm:text-base font-light leading-5 sm:leading-6'>
+                        {link.label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -106,53 +110,47 @@ const Footer = () => {
                 <div className='flex flex-col'>
                   <label
                     htmlFor='user-email'
-                    className='text-[#fff] text-base sm:text-lg lg:text-xl font-semibold leading-6 sm:leading-[30px]'>
+                    className='text-[#fff] text-base md:text-xl font-semibold leading-6 md:leading-[30px]'>
                     Newsletter
                   </label>
-                  <div className='flex mt-1 sm:mt-2'>
+                  <div className='flex mt-[12px]'>
                     <input
                       type='email'
                       id='user-email'
-                      placeholder='Enter your email'
-                      className='w-[120px] sm:w-[150px] lg:w-full py-2 sm:py-3 px-3 sm:px-4 rounded-l-xl text-[#fff] text-xs sm:text-sm lg:text-base font-normal leading-5 sm:leading-6 border border-[#A6A6A6]/30 focus:outline-none focus:border-[#A6A6A6] transition-colors bg-gradient-to-r from-[rgba(255,255,255,0.06)] to-[rgba(255,255,255,0.06)] backdrop-blur-[37px]'
+                      placeholder='Enter email'
+                      className='w-[90px] md:w-[140px] lg:w-full py-[7px] md:py-3 px-[10px] md:px-4 rounded-l-xl text-[#fff] text-[10px] sm:text-sm lg:text-base font-normal leading-[15px] sm:leading-6 border border-[#A6A6A6]/30 focus:outline-none focus:border-[#A6A6A6] transition-colors bg-gradient-to-r from-[rgba(255,255,255,0.06)] to-[rgba(255,255,255,0.06)] backdrop-blur-[37px]'
                     />
-                    <button className='px-3 sm:px-4 py-2 sm:py-3 rounded-r-xl bg-[#48BD42] text-[#0C0D0C] text-xs sm:text-sm lg:text-base font-normal leading-5 sm:leading-6 whitespace-nowrap'>
+                    <button className='px-[10px] sm:px-4 py-[7px] sm:py-3 rounded-r-xl bg-[#48BD42] text-[#0C0D0C] text-[10px] sm:text-sm lg:text-base font-normal leading-[15px] sm:leading-6 whitespace-nowrap'>
                       Subscribe
                     </button>
                   </div>
                   <p className='mt-4 sm:mt-6 lg:mt-8 text-[#fff] text-base sm:text-lg lg:text-xl font-medium leading-6 sm:leading-[30px]'>
                     Follow us on
                   </p>
-                  <div className='flex gap-2 sm:gap-3 lg:gap-4 mt-2 sm:mt-4'>
-                    <a
-                      href='#'
-                      className='w-[32px] sm:w-[40px] lg:w-[50px] h-[32px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='facebook-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[32px] sm:w-[40px] lg:w-[50px] h-[32px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='instagram-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[32px] sm:w-[40px] lg:w-[50px] h-[32px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='youtube-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[32px] sm:w-[40px] lg:w-[50px] h-[32px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='twitter-icon' />
-                    </a>
+
+                  <div className='flex gap-3 lg:gap-4 mt-2 sm:mt-4'>
+                    {[
+                      'facebook-icon',
+                      'instagram-icon',
+                      'youtube-icon',
+                      'twitter-icon'
+                    ].map((icon) => (
+                      <a
+                        href='#'
+                        key={icon}
+                        className='w-[28px] sm:w-[40px] lg:w-[50px] h-[28px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
+                        <CustomIcon iconName={icon} />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Horizontal Line */}
-            <hr className='w-full h-[2px] bg-[#FFFFFF33] border-0 my-6 sm:my-8 lg:my-10' />
+            <hr className='w-full h-[2px] bg-[#FFFFFF33] border-0 my-6 md:my-10' />
 
-            <p className='text-center text-[#A6A6A6] font-normal text-xs sm:text-sm leading-5 sm:leading-[21px]'>
+            <p className='text-center text-[#A6A6A6] font-normal text-[14px]  leading-[21px]'>
               @ 2025 copyright assurify
             </p>
           </div>
