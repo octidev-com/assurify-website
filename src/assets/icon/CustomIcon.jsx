@@ -1,10 +1,9 @@
-const CustomIcon = ({ iconName, height, width }) => {
+const CustomIcon = ({ iconName, className }) => {
   switch (iconName) {
     case 'order_placed':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -29,8 +28,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'claim_raised':
       return (
         <svg
-          width='18'
-          height='20'
+          className={className}
           viewBox='0 0 18 20'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -55,8 +53,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'claim_approved':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -165,8 +162,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'merchant_paid':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -193,8 +189,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'claim_resolved':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -496,8 +491,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'reorder_refund':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -564,8 +558,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'tick-icon':
       return (
         <svg
-          width='16'
-          height='16'
+          className={className}
           viewBox='0 0 16 16'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -588,8 +581,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'slider-left-icon':
       return (
         <svg
-          width={width}
-          height={height}
+          className={className}
           viewBox='0 0 56 56'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -606,8 +598,7 @@ const CustomIcon = ({ iconName, height, width }) => {
           <defs>
             <clipPath id='clip0_149_965'>
               <rect
-                width={width}
-                height={height}
+                className={className}
                 fill='white'
                 transform='matrix(-1 0 0 1 56 0)'
               />
@@ -618,8 +609,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'slider-right-icon':
       return (
         <svg
-          width={width}
-          height={height}
+          className={className}
           viewBox='0 0 56 56'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -655,7 +645,7 @@ const CustomIcon = ({ iconName, height, width }) => {
               <stop offset='1' stop-color='white' />
             </linearGradient>
             <clipPath id='clip0_149_968'>
-              <rect width={width} height={height} fill='white' />
+              <rect className={className} fill='white' />
             </clipPath>
           </defs>
         </svg>
@@ -663,25 +653,33 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'star-icon':
       return (
         <svg
-          width='16'
-          height='16'
-          viewBox='0 0 16 16'
+          className={className}
+          viewBox='0 0 22 22'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
-          <g id='star'>
+          <g id='Icon' clip-path='url(#clip0_149_1028)'>
             <path
               id='Vector'
-              d='M8.00005 11.5134L10.7667 13.1867C11.2734 13.4934 11.8934 13.04 11.76 12.4667L11.0267 9.32005L13.4734 7.20005C13.92 6.81338 13.68 6.08005 13.0934 6.03338L9.87338 5.76005L8.61338 2.78671C8.38671 2.24671 7.61338 2.24671 7.38671 2.78671L6.12671 5.75338L2.90672 6.02671C2.32005 6.07338 2.08005 6.80671 2.52672 7.19338L4.97338 9.31338L4.24005 12.46C4.10672 13.0334 4.72671 13.4867 5.23338 13.18L8.00005 11.5134Z'
-              fill='#F7F7F7'
+              d='M9.65527 16.2516L14.0005 15.088L15.816 21L9.65527 16.2516ZM19.6553 8.61006H12.0065L9.65527 1L7.30408 8.61006H-0.344727L5.84575 13.327L3.49456 20.9371L9.68504 16.2201L13.4946 13.327L19.6553 8.61006Z'
+              fill='white'
             />
           </g>
+          <defs>
+            <clipPath id='clip0_149_1028'>
+              <rect
+                width='20.6897'
+                height='20.6897'
+                fill='white'
+                transform='translate(0.655273 0.655273)'
+              />
+            </clipPath>
+          </defs>
         </svg>
       )
     case 'accordion-close-icon':
       return (
         <svg
-          width='20'
-          height='20'
+          className={className}
           viewBox='0 0 20 20'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -697,7 +695,7 @@ const CustomIcon = ({ iconName, height, width }) => {
           </g>
           <defs>
             <clipPath id='clip0_977_1618'>
-              <rect width='20' height='20' fill='white' />
+              <rect className={className} fill='white' />
             </clipPath>
           </defs>
         </svg>
@@ -705,8 +703,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'accordion-open-icon':
       return (
         <svg
-          width='20'
-          height='21'
+          className={className}
           viewBox='0 0 20 21'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -723,8 +720,7 @@ const CustomIcon = ({ iconName, height, width }) => {
           <defs>
             <clipPath id='clip0_977_1628'>
               <rect
-                width='20'
-                height='20'
+                className={className}
                 fill='white'
                 transform='translate(0 0.5)'
               />
@@ -735,6 +731,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'twitter-icon':
       return (
         <svg
+          className={className}
           width='16'
           height='16'
           viewBox='0 0 16 16'
@@ -768,6 +765,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'youtube-icon':
       return (
         <svg
+          className={className}
           width='22'
           height='16'
           viewBox='0 0 22 16'
@@ -782,6 +780,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'instagram-icon':
       return (
         <svg
+          className={className}
           width='16'
           height='16'
           viewBox='0 0 16 16'
@@ -804,6 +803,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'facebook-icon':
       return (
         <svg
+          className={className}
           width='20'
           height='20'
           viewBox='0 0 20 20'
@@ -818,8 +818,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'envelope-icon':
       return (
         <svg
-          width='32'
-          height='32'
+          className={className}
           viewBox='0 0 32 32'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -839,8 +838,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'phone-icon':
       return (
         <svg
-          width='32'
-          height='32'
+          className={className}
           viewBox='0 0 32 32'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -868,8 +866,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'location-icon':
       return (
         <svg
-          width='32'
-          height='32'
+          className={className}
           viewBox='0 0 32 32'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -890,8 +887,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'half-filed-star-icon':
       return (
         <svg
-          width={width}
-          height={height}
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -907,8 +903,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'filled-star-icon':
       return (
         <svg
-          width={width}
-          height={height}
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -924,8 +919,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'close-icon':
       return (
         <svg
-          width='24'
-          height='24'
+          className={className}
           viewBox='0 0 24 24'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -961,8 +955,7 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'mobile-slider-right-icon':
       return (
         <svg
-          width='28'
-          height='28'
+          className={className}
           viewBox='0 0 28 28'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
@@ -1000,7 +993,7 @@ const CustomIcon = ({ iconName, height, width }) => {
               <stop offset='1' stop-color='white' />
             </linearGradient>
             <clipPath id='clip0_491_4447'>
-              <rect width='28' height='28' fill='white' />
+              <rect className={className} fill='white' />
             </clipPath>
           </defs>
         </svg>
@@ -1008,30 +1001,30 @@ const CustomIcon = ({ iconName, height, width }) => {
     case 'mobile-slider-left-icon':
       return (
         <svg
-          width='32'
-          height='32'
-          viewBox='0 0 32 32'
+          width='28'
+          height='28'
+          viewBox='0 0 28 28'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'>
           <g id='Frame' clip-path='url(#clip0_491_4425)'>
             <path
               id='Vector'
-              d='M16.0001 0C24.8366 0 32 7.16338 32 15.9999C32 24.8364 24.8366 32.0001 16.0001 32.0001C7.16357 32.0001 -9.91821e-05 24.8364 -9.91821e-05 15.9999C0.0098629 7.16748 7.16738 0.0099609 16.0001 0ZM16.0001 30.3999C23.953 30.3999 30.4001 23.9528 30.4001 15.9999C30.4001 8.04697 23.953 1.5999 16.0001 1.5999C8.04717 1.5999 1.6001 8.04697 1.6001 15.9999C1.60918 23.949 8.05098 30.3908 16.0001 30.3999Z'
+              d='M14.0001 0C21.732 0 28 6.26796 28 13.9999C28 21.7319 21.732 28.0001 14.0001 28.0001C6.26813 28.0001 -8.41776e-05 21.7319 -8.41776e-05 13.9999C0.00863168 6.27155 6.27146 0.00871579 14.0001 0ZM14.0001 26.5999C20.9589 26.5999 26.6001 20.9587 26.6001 13.9999C26.6001 7.0411 20.9589 1.39991 14.0001 1.39991C7.04127 1.39991 1.40009 7.0411 1.40009 13.9999C1.40803 20.9554 7.04461 26.592 14.0001 26.5999Z'
               fill='#A6A6A6'
             />
             <path
               id='Vector_2'
-              d='M17.8731 9.7979C18.206 9.50698 18.7113 9.54096 19.0022 9.87348C19.2929 10.2063 19.2589 10.7117 18.9264 11.0026L13.2147 16L18.9267 20.9978C19.2595 21.2887 19.2932 21.7941 19.0025 22.1266C18.7116 22.4594 18.2063 22.4934 17.8734 22.2025L11.4735 16.6024C11.2998 16.4506 11.2002 16.2309 11.2002 16C11.2002 15.7692 11.2998 15.5498 11.4735 15.3977L17.8731 9.7979Z'
+              d='M15.6391 8.57298C15.9303 8.31842 16.3725 8.34816 16.6271 8.63911C16.8814 8.93033 16.8517 9.37252 16.5607 9.62708L11.5629 13.9999L16.561 18.3729C16.8522 18.6274 16.8816 19.0696 16.6273 19.3606C16.3728 19.6518 15.9306 19.6815 15.6394 19.427L10.0395 14.5269C9.88745 14.3941 9.8003 14.2019 9.8003 13.9999C9.8003 13.7979 9.88745 13.6058 10.0395 13.4728L15.6391 8.57298Z'
               fill='#A6A6A6'
             />
           </g>
           <defs>
             <clipPath id='clip0_491_4425'>
               <rect
-                width='32'
-                height='32'
+                width='28'
+                height='28'
                 fill='white'
-                transform='matrix(-1 0 0 1 32 0)'
+                transform='matrix(-1 0 0 1 28 0)'
               />
             </clipPath>
           </defs>

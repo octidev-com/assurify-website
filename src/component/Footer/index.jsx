@@ -117,9 +117,15 @@ const Footer = () => {
                       <a
                         href="#"
                         key={icon}
-                        className="w-[28px] sm:w-[40px] lg:w-[50px] h-[28px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center"
-                      >
-                        <CustomIcon iconName={icon} />
+
+                        className='w-[28px] sm:w-[40px] lg:w-[50px] h-[28px] sm:h-[40px] lg:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
+                        <CustomIcon
+                          iconName={icon}
+                          className={
+                            'h-[16px] md:h-[20px] w-[16px] md:w-[20px]'
+                          }
+                        />
+
                       </a>
                     ))}
                   </div>

@@ -99,7 +99,7 @@ const PricingSection = ({ hideToggle }) => {
               </p>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   Employee directory
@@ -107,7 +107,7 @@ const PricingSection = ({ hideToggle }) => {
               </div>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   Task management
@@ -115,7 +115,7 @@ const PricingSection = ({ hideToggle }) => {
               </div>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   Calendar integration
@@ -123,7 +123,7 @@ const PricingSection = ({ hideToggle }) => {
               </div>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   File storage
@@ -131,7 +131,7 @@ const PricingSection = ({ hideToggle }) => {
               </div>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   Communication tools
@@ -139,7 +139,7 @@ const PricingSection = ({ hideToggle }) => {
               </div>
               <div className='flex items-center gap-2'>
                 <span>
-                  <CustomIcon iconName={'tick-icon'} />
+                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
                 <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
                   Reporting and analytics

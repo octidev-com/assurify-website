@@ -90,7 +90,7 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
         <button
           className='absolute top-6 right-6 text-white text-[16px] font-normal'
           onClick={toggleSidebar}>
-          <CustomIcon iconName='close-icon' />
+          <CustomIcon iconName='close-icon' className={'w-[24px] h-[24px]'} />
         </button>
 
         {/* Sidebar Links */}
