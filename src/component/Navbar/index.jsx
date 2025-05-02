@@ -124,8 +124,8 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
-          <Button buttonText={'View Demo'} variant='secondary-outline' />
-          <Button buttonText={'Try For Free'} />
+          <Button variant='secondary-outline'>View Demo</Button>
+          <Button>Try For Free</Button>
         </div>
       </div>
 

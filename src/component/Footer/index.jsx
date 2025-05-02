@@ -49,15 +49,15 @@ const Footer = () => {
 
           {/* Main Content with Container */}
           <div className='container relative pt-[80px] sm:pt-[120px] lg:pt-[150px] pb-[40px] sm:pb-[60px] lg:pb-[70px] mx-auto z-10'>
-            <div className='flex flex-col md:flex-row md:justify-between gap-6 sm:gap-8'>
+            <div className='flex flex-col md:flex-row md:justify-between gap-[24px] '>
               {/* Left Side: Org Name and Description */}
               <div className='max-w-[500px]'>
                 <img
                   src={OrgIcon}
                   alt='Assurify logo'
-                  className='w-[60px] sm:w-[80px] lg:w-[100px] h-auto'
+                  className='w-[180px] md:w-auto'
                 />
-                <p className='text-[#A6A6A6] text-xs sm:text-sm lg:text-sm font-normal leading-5 sm:leading-6 mt-4 sm:mt-6'>
+                <p className='text-[#A6A6A6] text-[12px] md:text-[14px] font-normal leading-[18px] md:leading-[24px] mt-[12px] md:mt-6'>
                   Our shipping protection app helps e-commerce brands safeguard
                   orders from loss, theft, or damage. Enhance customer trust,
                   reduce support costs, and recover revenue effortlessly—while
@@ -67,10 +67,10 @@ const Footer = () => {
               </div>
 
               {/* Right Side: Contacts and Navigation Links */}
-              <div className='flex flex-row gap-4 sm:gap-6 md:gap-[115px]'>
+              <div className='flex flex-row justify-between gap-4 md:gap-[115px] '>
                 {/* Navigation Links */}
                 <div className='flex flex-col'>
-                  <p className='text-[#f7f7f7] text-base sm:text-lg font-semibold leading-6 sm:leading-normal'>
+                  <p className='text-[#f7f7f7] text-base sm:text-lg font-semibold leading-6 sm:leading-normal tracking-[-0.18px]'>
                     Company
                   </p>
                   <div className='flex flex-col gap-2 sm:gap-3 lg:gap-4 mt-4 sm:mt-6 lg:mt-8'>
