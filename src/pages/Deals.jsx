@@ -6,6 +6,40 @@ import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
 
 const Deals = () => {
+  const faqs = [
+    {
+      id: 1,
+      question: 'Is assurify suitable for beginners?',
+      answer:
+        'Absolutely! Assurify’s intuitive interface ensures even non-tech-savvy users can navigate the app effortlessly.'
+    },
+    {
+      id: 2,
+      question:
+        'Can I upgrade to the lifetime deal if I’m on a subscription plan?',
+      answer:
+        'Absolutely! Assurify’s intuitive interface ensures even non-tech-savvy users can navigate the app effortlessly.'
+    },
+    {
+      id: 3,
+      question: 'Is my data stored securely on Assurify?',
+      answer:
+        'Absolutely! Assurify’s intuitive interface ensures even non-tech-savvy users can navigate the app effortlessly.'
+    },
+    {
+      id: 4,
+      question: 'Does Assurify work offline?',
+      answer:
+        'Absolutely! Assurify’s intuitive interface ensures even non-tech-savvy users can navigate the app effortlessly.'
+    },
+    {
+      id: 5,
+      question: 'Can I transfer my lifetime deal to another account?',
+      answer:
+        'Absolutely! Assurify’s intuitive interface ensures even non-tech-savvy users can navigate the app effortlessly.'
+    }
+  ]
+
   // State to track the active tab
   const [activeTab, setActiveTab] = useState('description')
 
@@ -461,7 +495,7 @@ const Deals = () => {
 
           {/* faq section */}
 
-          <FAQ />
+          <FAQ faqs={faqs} />
         </div>
       </Container>
     </div>
