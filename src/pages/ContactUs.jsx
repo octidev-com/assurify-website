@@ -1,7 +1,6 @@
 import React from 'react'
 import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
-import NavbarSpacer from '../component/Common/NavbarSpacer'
 import Container from '../component/Common/Container'
 import SectionTitle from '../component/Common/SectionTitle'
 import Button from '../component/Common/Button'
@@ -26,9 +25,6 @@ const ContactUs = () => {
           className='w-[50vw] sm:w-[60vw] lg:w-[75vw] max-w-none opacity-80'
         />
       </div>
-
-      {/* Spacer to prevent content overlap with Navbar */}
-      <NavbarSpacer />
 
       {/* Main content */}
       <Container>
@@ -135,7 +131,7 @@ const ContactUs = () => {
                     className='w-full p-3 sm:p-4 h-[120px] sm:h-[160px] lg:h-[200px] rounded-lg sm:rounded-xl mt-1 sm:mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none text-sm sm:text-base'
                   />
                 </div>
-                <Button buttonText='Send Message' variant='primary-green' />
+                <Button variant='primary-green'>Send Message</Button>
               </form>
             </div>
           </div>

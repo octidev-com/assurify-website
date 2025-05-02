@@ -3,11 +3,10 @@ import OrgIcon from '../../assets/icon/assurify-icon.png'
 import { NavLink } from 'react-router'
 import CustomIcon from '../../assets/icon/CustomIcon'
 import Button from '../Common/Button'
-import Container from '../Common/Container'
+import Topbar from '../Common/Topbar'
 
-const Navbar = () => {
+const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true)
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
@@ -25,26 +24,14 @@ const Navbar = () => {
 
   return (
     <>
-      <Container>
-        <div
-          className={`justify-between items-center py-4 ${
-            isAnnouncementVisible ? 'flex' : 'hidden'
-          }`}>
-          <p className='text-[#f7f7f7] text-base font-normal leading-[24px]'>
-            Enjoy 20% OFF your next purchase with code SAVE20 - limited time
-            only! <span className='underline'>Click Here</span>
-          </p>
-
-          <button
-            className='cursor-pointer'
-            onClick={() => setIsAnnouncementVisible(false)}>
-            <CustomIcon iconName={'announcement-close-btn'} />
-          </button>
-        </div>
-      </Container>
+      {/* Topbar */}
+      <Topbar
+        isAnnouncementVisible={isAnnouncementVisible}
+        setIsAnnouncementVisible={setIsAnnouncementVisible}
+      />
       {/* Navbar */}
-      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 sticky top-0 z-50'>
-        <div className='container flex justify-between items-center max-w-full px-3 sm:px-4 lg:px-6'>
+      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 z-50 sticky'>
+        <div className='container flex justify-between items-center max-w-full px-4 lg:px-0'>
           {/* Logo */}
           <img
             src={OrgIcon}
@@ -88,8 +75,8 @@ const Navbar = () => {
 
           {/* Buttons - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <Button buttonText={'View Demo'} variant='secondary-outline' />
-            <Button buttonText={'Try For Free'} />
+            <Button variant='secondary-outline'>View Demo</Button>
+            <Button>Try For Free</Button>
           </div>
         </div>
       </div>

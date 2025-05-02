@@ -1,12 +1,10 @@
 import React from 'react'
 import Container from '../Common/Container'
 import Button from '../Common/Button'
-import NavbarSpacer from '../Common/NavbarSpacer'
 
 const Banner = () => {
   return (
     <div>
-      <NavbarSpacer />
       <Container>
         <div className='max-w-[90%] sm:max-w-[500px] lg:max-w-[600px] text-center mx-auto'>
           <h1 className='text-[32px] sm:text-[56px] lg:text-[96px] font-semibold leading-[38px] sm:leading-[64px] lg:leading-[110px] mb-2 sm:mb-3 lg:mb-4'>
@@ -17,8 +15,8 @@ const Banner = () => {
             packages; it's about protecting your brand.
           </p>
           <div className='flex justify-center gap-2 sm:gap-4 lg:gap-5'>
-            <Button buttonText='How it works' />
-            <Button buttonText='View Demo' variant='secondary-outline' />
+            <Button>How it works</Button>
+            <Button variant='secondary-outline'>View Demo</Button>
           </div>
         </div>
       </Container>

@@ -85,11 +85,11 @@ const PricingSection = ({ hideToggle }) => {
               / {isMonthly ? 'per month' : 'per year'}
             </p>
             <Button
-              buttonText='Contact Us'
               variant='secondary-outline'
               onClick={() => navigate('/contact-us')}
-              className={'mt-[24px] lg:mt-[32px] w-full'}
-            />
+              className={'mt-[24px] lg:mt-[32px] w-full'}>
+              Contact Us
+            </Button>
 
             <hr className='my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0' />
 
