@@ -6,8 +6,8 @@ const Banner = () => {
   return (
     <div>
       <Container>
-        <div className='max-w-[90%] sm:max-w-[500px] lg:max-w-[600px] text-center mx-auto'>
-          <h1 className='text-[32px] sm:text-[56px] lg:text-[96px] font-semibold leading-[38px] sm:leading-[64px] lg:leading-[110px] mb-2 sm:mb-3 lg:mb-4'>
+        <div className='max-w-[299px] lg:max-w-[602px] text-center mx-auto'>
+          <h1 className='text-[48px] sm:text-[56px] lg:text-[114px] font-semibold leading-[62px] sm:leading-[64px] lg:leading-[130px] mb-2 sm:mb-3 lg:mb-4'>
             Guard Your Packages
           </h1>
           <p className='text-sm sm:text-base lg:text-lg font-[300] text-[#F7F7F7] mb-4 sm:mb-5 lg:mb-6'>

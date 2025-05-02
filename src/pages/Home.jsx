@@ -68,7 +68,7 @@ const Home = () => {
       </div>
 
       {/* Spacer to prevent content overlap */}
-      <div className='w-full h-[80px]'></div>
+      <div className='w-full lg:h-[56px] h-[32px]'></div>
 
       {/* Banner component */}
       <div
