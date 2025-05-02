@@ -11,7 +11,6 @@ import benefit3 from '../../assets/benefits/benefit-3.png'
 import Container from '../Common/Container'
 import SectionTitle from '../Common/SectionTitle'
 import Button from '../Common/Button'
-// import AssurifyDashboard from '../../assets/forMerchant/assurify_dashboard.png'
 import AssurifyDashboard from '../../assets/forMerchant/assurify_dashboard.png'
 
 const ForMerchantSection = () => {
