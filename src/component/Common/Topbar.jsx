@@ -6,7 +6,7 @@ const Topbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
     <div className='bg-[rgba(4,3,3,0.12)] backdrop-blur-[37px]'>
       <Container>
         <div
-          className={`justify-between items-center py-[4px] min-h-[71px] ${
+          className={`justify-between items-center py-[4px] ${
             isAnnouncementVisible ? 'flex' : 'hidden'
           }`}>
           <div>
