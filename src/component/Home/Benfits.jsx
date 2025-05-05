@@ -73,7 +73,7 @@ const Benefits = () => {
           </div>
 
           {/* Right side of the main content */}
-          <div className='flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-[30px]'>
+          <div className='flex flex-col gap-4 sm:gap-5 md:gap-7 lg:gap-[30px]'>
             {benefitsData.map((benefit) => (
               <div
                 key={benefit.id}
@@ -82,7 +82,7 @@ const Benefits = () => {
                   <img
                     src={benefit.image}
                     alt={`benefit-${benefit.id}`}
-                    className='w-8 sm:w-10 md:w-12 lg:w-[48px] h-8 sm:h-10 md:h-12 lg:h-[48px]'
+                    className='w-8 sm:w-10 md:w-12 lg:w-[32px] h-8 sm:h-10 md:h-12 lg:h-[32px]'
                   />
                 </div>
                 <h3 className='text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-normal text-[#f7f7f7] leading-7 sm:leading-8 md:leading-10 lg:leading-[48px]'>
