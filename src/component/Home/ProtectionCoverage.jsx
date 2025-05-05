@@ -201,7 +201,10 @@ const ProtectionCoverage = () => {
                         transform: position.transform
                       }}>
                       <div className='p-2 bg-[#98FF9317] rounded-sm'>
-                        <CustomIcon iconName={opt.iconName} />
+                        <CustomIcon
+                          iconName={opt.iconName}
+                          className={'w-3.5 h-3.5 md:w-6 md:h-6'}
+                        />
                       </div>
                       <h3 className='text-xl font-normal text-white'>
                         {opt.title}

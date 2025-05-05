@@ -38,6 +38,7 @@ const FAQ = ({ faqs }) => {
                       ? 'accordion-close-icon'
                       : 'accordion-open-icon'
                   }
+                  className={'w-[20px] h-[20px]'}
                 />
                 <p className='text-[12px] lg:text-lg font-normal text-[#f7f7f7] leading-[18px] lg:leading-[27px]'>
                   {faq.question}

@@ -86,8 +86,7 @@ const Deals = () => {
                             ? 'half-filed-star-icon'
                             : 'filled-star-icon'
                         }
-                        height={24}
-                        width={24}
+                        className={'w-[20px] md:w-[24px] h-[20px] md:h-[24px]'}
                       />
                     ))}
                   </div>
@@ -327,8 +326,7 @@ const Deals = () => {
                         {[1, 2, 3, 4, 5].map((item) => (
                           <CustomIcon
                             key={item}
-                            height={16}
-                            width={16}
+                            className={'w-[16px] h-[16px]'}
                             iconName={
                               item === 5
                                 ? 'half-filed-star-icon'
@@ -383,8 +381,7 @@ const Deals = () => {
                                   ? 'half-filed-star-icon'
                                   : 'filled-star-icon'
                               }
-                              height={24}
-                              width={24}
+                              className={'w-[24px] h-[24px]'}
                             />
                           ))}
                         </div>
@@ -453,8 +450,7 @@ const Deals = () => {
                                 {[1, 2, 3, 4, 5].map((star) => (
                                   <CustomIcon
                                     key={star}
-                                    height={16}
-                                    width={16}
+                                    className={'w-[16px] h-[16px]'}
                                     iconName={
                                       star === 5
                                         ? 'half-filled-star-icon'

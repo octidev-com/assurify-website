@@ -11,6 +11,7 @@ import benefit3 from '../../assets/benefits/benefit-3.png'
 import Container from '../Common/Container'
 import SectionTitle from '../Common/SectionTitle'
 import Button from '../Common/Button'
+import AssurifyDashboard from '../../assets/forMerchant/assurify_dashboard.png'
 
 const ForMerchantSection = () => {
   const benefitsData = [
@@ -53,8 +54,8 @@ const ForMerchantSection = () => {
             <Button variant='secondary-outline'>View Demo</Button>
           </div>
         </Container>
-        <div className='max-w-[1170px] mx-auto bg-[#EDEDED] w-full max-h-[812px] rounded-lg shadow-md mt-12 flex justify-center items-center'>
-          <p className='text-[#888] text-lg'>Image Goes Here</p>
+        <div className='max-w-[1170px] mx-auto w-full max-h-[812px] rounded-lg shadow-md mt-12 flex justify-center items-center'>
+          <img src={AssurifyDashboard}  />
         </div>
       </div>
       {/* Brands Section */}
