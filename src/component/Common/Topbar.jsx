@@ -3,7 +3,7 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 
 const Topbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   return (
-    <div className='bg-[rgba(4,3,3,0.12)] backdrop-blur-[37px]'>
+    <div className='bg-[linear-gradient(90deg,#51724C_0%,#182216_23.08%,#121A11_41.35%,#0F150E_67.31%,#587B52_100%)]'>
       <Container>
         <div
           className={`justify-between items-center py-[4px] ${
