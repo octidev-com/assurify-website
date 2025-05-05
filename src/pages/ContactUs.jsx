@@ -1,34 +1,16 @@
 import React from 'react'
-import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
 import Container from '../component/Common/Container'
 import SectionTitle from '../component/Common/SectionTitle'
 import Button from '../component/Common/Button'
+import TopBg from '../component/Common/TopBg'
 
 const ContactUs = () => {
   return (
-    <div className='w-full bg-[#0C0D0C] min-h-screen text-white relative overflow-x-hidden'>
-      {/* Right side bg image */}
-      <div className='absolute -top-[400px] -left-[250px] sm:-top-[600px] sm:-left-[400px] lg:-top-[800px] lg:-left-[500px] pointer-events-none z-0'>
-        <img
-          src={roundBg}
-          alt='Background decoration left'
-          className='w-[50vw] sm:w-[60vw] lg:w-[75vw] max-w-none opacity-80'
-        />
-      </div>
-
-      {/* Left side bg image */}
-      <div className='absolute -top-[400px] -right-[250px] sm:-top-[600px] sm:-right-[400px] lg:-top-[800px] lg:-right-[500px] pointer-events-none z-0'>
-        <img
-          src={roundBg}
-          alt='Background decoration right'
-          className='w-[50vw] sm:w-[60vw] lg:w-[75vw] max-w-none opacity-80'
-        />
-      </div>
-
+    <TopBg>
       {/* Main content */}
       <Container>
-        <div className='mt-8 sm:mt-10 md:mt-12 lg:mt-14'>
+        <div className='pt-[32px] md:pt-[56px]'>
           {/* Header Section */}
           <SectionTitle
             topText={'Contact us'}
@@ -137,7 +119,7 @@ const ContactUs = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </TopBg>
   )
 }
 

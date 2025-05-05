@@ -119,10 +119,10 @@ const ProtectionCoverage = () => {
                 </p>
                 <img src={leftSideHr} alt='' className='max-w-[100px]' />
               </div>
-              <h1 className='text-[24px] lg:text-5xl font-semibold text-center lg:text-left text-gradient leading-[36px] lg:leading-[72px]'>
+              <h1 className='text-[48px] lg:text-5xl font-semibold text-center lg:text-left text-gradient leading-[36px] lg:leading-[72px]'>
                 Total Coverage & Claims Management
               </h1>
-              <p className='text-[#A6A6A6] text-[12px] lg:text-lg text-center lg:text-start font-light leading-[18px] lg:leading-[27px]'>
+              <p className='text-[#A6A6A6] text-[18px] lg:text-lg text-center lg:text-start font-light leading-[18px] lg:leading-[27px]'>
                 Purchasers crave carbon-neutral shipping options and total
                 package protection. Guide Protection makes it easy to give the
                 people what they want (again..and again).

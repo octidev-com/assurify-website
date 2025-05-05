@@ -41,7 +41,7 @@ const ForMerchantSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className='w-full px-[24px] bg-cover bg-no-repeat bg-center z-10 relative sm:pt-[56px] pt-[32px] pb-[50px] sm:pb-[150px]'>
+      <div className='w-full px-[24px] bg-cover bg-no-repeat bg-center z-10 relative  pb-[50px] sm:pb-[150px]'>
         <Container horizontalPadding='0'>
           <SectionTitle
             topText='For Merchant'
@@ -55,7 +55,7 @@ const ForMerchantSection = () => {
           </div>
         </Container>
         <div className='max-w-[1170px] mx-auto w-full max-h-[812px] rounded-lg shadow-md mt-12 flex justify-center items-center'>
-          <img src={AssurifyDashboard}  />
+          <img src={AssurifyDashboard} />
         </div>
       </div>
       {/* Brands Section */}
@@ -80,7 +80,7 @@ const ForMerchantSection = () => {
       {/* Benefits Section */}
       <div className='relative overflow-hidden bg-[#0C0D0C]'>
         <Container>
-          <div className='sm:py-[150px] sm:py-[24px] py-[50px] relative z-10'>
+          <div className='sm:py-[150px] py-[50px] relative z-10'>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] sm:gap-[130px] shrink-0'>
               <div className='flex flex-col gap-4 sm:gap-2 w-full'>
                 <div className='flex justify-center sm:justify-start items-center text-center gap-3'>
