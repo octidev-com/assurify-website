@@ -41,7 +41,7 @@ const ForMerchantSection = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className='w-full px-[24px] bg-cover bg-no-repeat bg-center z-10 relative sm:pt-[56px] pt-[32px] pb-[50px] sm:pb-[150px]'>
+      <div className='w-full px-[24px] bg-cover bg-no-repeat bg-center z-10 relative  pb-[50px] sm:pb-[150px]'>
         <Container horizontalPadding='0'>
           <SectionTitle
             topText='For Merchant'
@@ -55,7 +55,7 @@ const ForMerchantSection = () => {
           </div>
         </Container>
         <div className='max-w-[1170px] mx-auto w-full max-h-[812px] rounded-lg shadow-md mt-12 flex justify-center items-center'>
-          <img src={AssurifyDashboard}  />
+          <img src={AssurifyDashboard} />
         </div>
       </div>
       {/* Brands Section */}
