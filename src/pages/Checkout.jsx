@@ -5,6 +5,7 @@ import TextAreaField from "../component/Common/Form/TextAreaFields";
 import TextField from "../component/Common/Form/TextField";
 import SectionTitle from "../component/Common/SectionTitle";
 import stripeImg from "../assets/checkout/Stripe.png";
+import Container from "../component/Common/Container";
 
 const Checkout = () => {
   const countryList = [
@@ -267,108 +268,109 @@ const Checkout = () => {
   return (
     <div>
       {/* SPACER TO PREVENT CONTENT OVERLAP WITH NAVBAR */}
-      <div className="w-full h-[48px] lg:h-[97px]"></div>
 
-      {/* MAIN SECTION */}
-      <SectionTitle middleText={"Checkout"} />
+      <Container>
+        {/* MAIN SECTION */}
+        <SectionTitle middleText={"Checkout"} />
 
-      <div className="container mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0">
-        {/* MAIN CONTENT */}
-        <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[30px]">
-          {/* COLUMN 1 */}
-          <div className="flex flex-col gap-[24px] lg:gap-[30px]">
-            <div className="flex flex-col gap-[12px] lg:gap-[30px] lg:w-[670px]">
-              <div className="flex flex-col lg:flex-row gap-[12px] lg:gap-[30px]">
-                {/* First Name */}
-                <TextField label={"First Name"} id={"first-name"} required={true} />
-                {/* First Name */}
-                <TextField label={"Last Name"} id={"last-name"} required={true} />
+        <div className="mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0">
+          {/* MAIN CONTENT */}
+          <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[30px]">
+            {/* COLUMN 1 */}
+            <div className="flex flex-col gap-[24px] lg:gap-[30px]">
+              <div className="flex flex-col gap-[12px] lg:gap-[30px] lg:w-[670px]">
+                <div className="flex flex-col lg:flex-row gap-[12px] lg:gap-[30px]">
+                  {/* First Name */}
+                  <TextField label={"First Name"} id={"first-name"} required={true} />
+                  {/* First Name */}
+                  <TextField label={"Last Name"} id={"last-name"} required={true} />
+                </div>
+                {/* Country (select field) */}
+                <SelectField label="Country" placeholder="Choose a country" id="country" options={countryList} />
+                {/* Town / City */}
+                <TextField label={"Town/City"} id={"city"} required={true} />
+                {/* Address */}
+                <TextField label={"Address"} id={"address"} required={true} />
+                {/* Email Address */}
+                <EmailField label={"Email Address"} id={"email-address"} required={true} />
+                {/* Phone Number (number field) */}
+                <TextField label={"Phone Number"} id={"phone-number"} required={true} />
+                {/* Order Note (text area) */}
+                <TextAreaField label={"Order Note (Optional)"} placeholder="Write something here" id={"order-note"} />
               </div>
-              {/* Country (select field) */}
-              <SelectField label="Country" placeholder="Choose a country" id="country" options={countryList} />
-              {/* Town / City */}
-              <TextField label={"Town/City"} id={"city"} required={true} />
-              {/* Address */}
-              <TextField label={"Address"} id={"address"} required={true} />
-              {/* Email Address */}
-              <EmailField label={"Email Address"} id={"email-address"} required={true} />
-              {/* Phone Number (number field) */}
-              <TextField label={"Phone Number"} id={"phone-number"} required={true} />
-              {/* Order Note (text area) */}
-              <TextAreaField label={"Order Note (Optional)"} placeholder="Write something here" id={"order-note"} />
             </div>
-          </div>
 
-          {/* COLUMN 2 */}
-          <div className="flex flex-col gap-[24px] lg:gap-[30px]">
-            {/* Coupon Code */}
-            <div className="w-full lg:w-[470px]">
-              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-                <label htmlFor={"Coupon Code"} className="text-base text-[#A6A6A6] font-light leading-6">
-                  Have a coupon code?
-                </label>
-                <div className="flex gap-[12px] mt-[8px]">
-                  <input
-                    type="text"
-                    id={"coupon-code"}
-                    placeholder={"Coupon Code"}
-                    className="w-full px-4 h-[48px] rounded-2xl border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
-                  />
-                  <button className="flex justify-center align-middle  text-[#000000] bg-[#F7F7F7] disabled:bg-[#A6A6A6] rounded-[16px] py-[11px] px-[24px]">
-                    Apply
-                  </button>
+            {/* COLUMN 2 */}
+            <div className="flex flex-col gap-[24px] lg:gap-[30px]">
+              {/* Coupon Code */}
+              <div className="w-full lg:w-[470px]">
+                <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                  <label htmlFor={"Coupon Code"} className="text-base text-[#A6A6A6] font-light leading-6">
+                    Have a coupon code?
+                  </label>
+                  <div className="flex gap-[12px] mt-[8px]">
+                    <input
+                      type="text"
+                      id={"coupon-code"}
+                      placeholder={"Coupon Code"}
+                      className="w-full px-4 h-[48px] rounded-2xl border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
+                    />
+                    <button className="flex justify-center align-middle  text-[#000000] bg-[#F7F7F7] disabled:bg-[#A6A6A6] rounded-[16px] py-[11px] px-[24px]">
+                      Apply
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Your Order */}
-            <div className="w-full lg:w-[470px]">
-              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-                <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Your Order</h3>
+              {/* Your Order */}
+              <div className="w-full lg:w-[470px]">
+                <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                  <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Your Order</h3>
 
-                {/* Product Details */}
-                <div className="flex flex-col gap-[16px] mt-[12px]">
-                  <div className="flex justify-between items-center">
-                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Product</p>
-                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Subtotal</p>
-                  </div>
-
-                  {productDetails.map((item, index) => (
-                    <div key={index} className="flex justify-between items-center">
-                      <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.title}</p>
-                      <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.price}</p>
+                  {/* Product Details */}
+                  <div className="flex flex-col gap-[16px] mt-[12px]">
+                    <div className="flex justify-between items-center">
+                      <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Product</p>
+                      <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Subtotal</p>
                     </div>
-                  ))}
 
-                  {/* Total */}
-                  <div className="flex justify-between items-center">
-                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Total</p>
-                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">$50.00</p>
+                    {productDetails.map((item, index) => (
+                      <div key={index} className="flex justify-between items-center">
+                        <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.title}</p>
+                        <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.price}</p>
+                      </div>
+                    ))}
+
+                    {/* Total */}
+                    <div className="flex justify-between items-center">
+                      <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Total</p>
+                      <p className="text-[#fff] text-[16px] font-medium leading-[24px]">$50.00</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Payment Method */}
-            <div className="w-full lg:w-[470px]">
-              <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-                <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Payment Method</h3>
+              {/* Payment Method */}
+              <div className="w-full lg:w-[470px]">
+                <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
+                  <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Payment Method</h3>
 
-                {/* Product Details */}
-                <div className="flex flex-col gap-[16px] mt-[12px]">
-                  <div className="flex gap-[6px] items-center">
-                    <img src={stripeImg} style={{ width: "24px", height: "24px" }} alt="" />
-                    <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Stripe</p>
+                  {/* Product Details */}
+                  <div className="flex flex-col gap-[16px] mt-[12px]">
+                    <div className="flex gap-[6px] items-center">
+                      <img src={stripeImg} style={{ width: "24px", height: "24px" }} alt="" />
+                      <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Stripe</p>
+                    </div>
+
+                    {/* Placeholder Button */}
+                    <button className="btn-primary-green-full">Place Order</button>
                   </div>
-
-                  {/* Placeholder Button */}
-                  <button className="btn-primary-green-full">Place Order</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };
