@@ -3,7 +3,23 @@ import leftSideHrMobile from '../../assets/SectionTitle/left-side-hr-mobile.png'
 import rightSideHrDesktop from '../../assets/SectionTitle/right-side-hr-desktop.png'
 import rightSideHrMobile from '../../assets/SectionTitle/right-side-hr-mobile.png'
 
-const SectionTitle = ({ topText, middleText, bottomText }) => {
+/**
+ * a reusable and responsive section header component with multiple props
+ *
+ * @param {String} topText - top text for section title component
+ * @param {String} middleText - middle text for section title component
+ * @param {String} bottomText - bottom text for section title component
+ * @param {Boolean} isTextCentered - conditional text alignment props
+ *
+ * @returns {JSX.Element} a section title component
+ */
+
+const SectionTitle = ({
+  topText,
+  middleText,
+  bottomText,
+  isTextCentered = true
+}) => {
   return (
     <div className='mx-auto flex flex-col items-center gap-2 '>
       {topText && (
@@ -41,12 +57,18 @@ const SectionTitle = ({ topText, middleText, bottomText }) => {
         </div>
       )}
       {middleText && (
-        <h1 className='max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient text-center leading-[36px] lg:leading-[72px]'>
+        <h1
+          className={`max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient  leading-[36px] lg:leading-[72px] ${
+            isTextCentered ? 'text-center' : 'text-left'
+          }`}>
           {middleText}
         </h1>
       )}
       {bottomText && (
-        <p className='max-w-[732px] mx-auto text-[#A6A6A6] text-[12px] lg:text-lg font-light text-center leading-[18px] lg:leading-[27px]'>
+        <p
+          className={`max-w-[732px] mx-auto text-[#A6A6A6] text-[12px] lg:text-lg font-light  leading-[18px] lg:leading-[27px] ${
+            isTextCentered ? 'text-center' : 'text-left'
+          }`}>
           {bottomText}
         </p>
       )}
