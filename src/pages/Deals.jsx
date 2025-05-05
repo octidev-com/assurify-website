@@ -4,6 +4,7 @@ import FAQ from '../component/Home/FAQ'
 import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
 import TopBg from '../component/Common/TopBg'
+import AssurifyShippingProtectionCartImg from '../assets/deals/assurify-shipping-protection-cart-image.png'
 
 const Deals = () => {
   const faqs = [
@@ -50,7 +51,11 @@ const Deals = () => {
         <div className='pt-[32px] md:pt-[56px]'>
           <div className='flex flex-col lg:flex-row items-start lg:items-center gap-[30px]'>
             {/* product image */}
-            <div className='w-full lg:w-[570px] h-[290px] lg:h-[500px] rounded-xl bg-[#D9D9D9]'></div>
+            <img
+              src={AssurifyShippingProtectionCartImg}
+              alt={'assurify-shipping-protection-cart-image'}
+              className='max-w-[327px] max-h-[290px] md:max-w-[570px] md:max-h-[500px]'
+            />
 
             {/* product details */}
             <div className='max-w-[570px] flex flex-col gap-[24px] lg:gap-8'>

@@ -80,7 +80,7 @@ const ForMerchantSection = () => {
       {/* Benefits Section */}
       <div className='relative overflow-hidden bg-[#0C0D0C]'>
         <Container>
-          <div className='sm:py-[150px] sm:py-[24px] py-[50px] relative z-10'>
+          <div className='sm:py-[150px] py-[50px] relative z-10'>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] sm:gap-[130px] shrink-0'>
               <div className='flex flex-col gap-4 sm:gap-2 w-full'>
                 <div className='flex justify-center sm:justify-start items-center text-center gap-3'>
