@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
 import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import roundBg from '../../assets/banner/round-bg.png'
@@ -8,6 +8,44 @@ import AssurifyIcon from '../../assets/icon/assurify-icon.png'
 import Container from '../Common/Container'
 
 const Review = () => {
+  const reviews = [
+    {
+      text: 'Working with DigitX was a pleasure. Their web design team created a stunning website that perfectly captured our brand’s essence. The feedback from our customers has been overwhelmingly positive.',
+      name: 'Aditya Verma',
+      stars: 3
+    },
+    {
+      text: 'DigitX transformed our online presence with a sleek, user-friendly website. Their attention to detail and quick response times made the process seamless. Highly recommend their services!',
+      name: 'Priya Sharma',
+      stars: 3
+    },
+    {
+      text: 'The team at DigitX delivered beyond our expectations. Our new website is not only visually appealing but also drives more traffic. Their support team is top-notch!',
+      name: 'Rahul Mehta',
+      stars: 3
+    },
+    {
+      text: 'DigitX’s expertise in web design is unmatched. They crafted a site that’s both functional and beautiful, boosting our brand credibility. The collaboration was smooth and professional.',
+      name: 'Sneha Kapoor',
+      stars: 3
+    },
+    {
+      text: 'We’re thrilled with the website DigitX built for us. It’s intuitive, modern, and has significantly improved our customer engagement. Their team was a joy to work with!',
+      name: 'Vikram Singh',
+      stars: 3
+    }
+  ]
+
+  const [currentReview, setCurrentReview] = useState(0)
+
+  const handleNext = () => {
+    setCurrentReview((prev) => (prev + 1) % reviews.length)
+  }
+
+  const handlePrev = () => {
+    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)
+  }
+
   return (
     <div className='w-full mt-[80px] md:mt-[150px] py-[80px] md:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
       {/* Background elements */}
@@ -55,13 +93,19 @@ const Review = () => {
               </p>
             </div>
             <div className='hidden md:flex gap-[40px] mt-6 md:mt-0 max-w-[164px]'>
-              <button>
+              <button
+                onClick={handlePrev}
+                disabled={currentReview === 0}
+                className='disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'>
                 <CustomIcon
                   iconName={'slider-left-icon'}
                   className={'w-[56px] h-[56px]'}
                 />
               </button>
-              <button>
+              <button
+                onClick={handleNext}
+                disabled={currentReview === reviews.length - 1}
+                className='disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'>
                 <CustomIcon
                   iconName={'slider-right-icon'}
                   className={'w-[56px] h-[56px]'}
@@ -117,7 +161,10 @@ const Review = () => {
 
             <div className='flex items-center gap-3'>
               {/* Slider icons for mobile */}
-              <button className='md:hidden'>
+              <button
+                className='md:hidden disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'
+                onClick={handlePrev}
+                disabled={currentReview === 0}>
                 <CustomIcon
                   iconName={'mobile-slider-left-icon'}
                   className={'w-[28px] h-[28px]'}
@@ -125,56 +172,42 @@ const Review = () => {
               </button>
 
               {/* Reviews card with gradient background */}
-              <div className='relative flex flex-col gap-4 md:gap-[30px] p-6 md:p-10 rounded-[20px] border border-[#262626] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full max-w-[600px] md:max-w-none mt-4 md:mt-0'>
+              <div
+                key={currentReview}
+                className='relative flex flex-col gap-4 md:gap-[30px] p-6 md:p-10 rounded-[20px] border border-[#262626] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full max-w-[600px] md:max-w-none mt-4 md:mt-0 animate-fadeSlide'>
                 {/* Review star */}
                 <div className='flex gap-1'>
-                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
-                    <CustomIcon
-                      iconName={'star-icon'}
-                      className='w-[20px] h-[20px]'
-                    />
-                  </div>
-                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
-                    <CustomIcon
-                      iconName={'star-icon'}
-                      className='w-[20px] h-[20px]'
-                    />
-                  </div>
-                  <div className='bg-[#219653] p-[1px] md:p-[10px]'>
-                    <CustomIcon
-                      iconName={'star-icon'}
-                      className='w-[20px] h-[20px]'
-                    />
-                  </div>
-                  <div className='bg-[#D9D9D930] p-[1px] md:p-[10px]'>
-                    <CustomIcon
-                      iconName={'star-icon'}
-                      className='w-[20px] h-[20px]'
-                    />
-                  </div>
-                  <div className='bg-[#D9D9D930] p-[1px] md:p-[10px]'>
-                    <CustomIcon
-                      iconName={'star-icon'}
-                      className='w-[20px] h-[20px]'
-                    />
-                  </div>
+                  {[...Array(5)].map((_, index) => (
+                    <div
+                      key={index}
+                      className={
+                        index < reviews[currentReview].stars
+                          ? 'bg-[#219653] p-[1px] md:p-[10px]'
+                          : 'bg-[#D9D9D930] p-[1px] md:p-[10px]'
+                      }>
+                      <CustomIcon
+                        iconName={'star-icon'}
+                        className='w-[20px] h-[20px]'
+                      />
+                    </div>
+                  ))}
                 </div>
 
                 {/* Review text */}
                 <p className='text-[#fff] text-sm md:text-lg font-normal leading-5 md:leading-[27px]'>
-                  Working with DigitX was a pleasure. Their web design team
-                  created a stunning website that perfectly captured our brand's
-                  essence. The feedback from our customers has been
-                  overwhelmingly positive.
+                  {reviews[currentReview].text}
                 </p>
 
                 {/* Reviewer name */}
                 <p className='text-[#A6A6A6] text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
-                  Aditya Verma
+                  {reviews[currentReview].name}
                 </p>
               </div>
 
-              <button className='md:hidden'>
+              <button
+                className='md:hidden disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'
+                onClick={handleNext}
+                disabled={currentReview === reviews.length - 1}>
                 <CustomIcon
                   iconName={'mobile-slider-right-icon'}
                   className={'w-[28px] h-[28px]'}
@@ -184,6 +217,24 @@ const Review = () => {
           </div>
         </div>
       </Container>
+      {/* Inline CSS for custom animation */}
+      <style>
+        {`
+          @keyframes fadeSlide {
+            0% {
+              opacity: 0;
+              transform: translateX(20px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+          .animate-fadeSlide {
+            animation: fadeSlide 0.5s ease-in-out;
+          }
+        `}
+      </style>
     </div>
   )
 }
