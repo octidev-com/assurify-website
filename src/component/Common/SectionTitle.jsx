@@ -4,7 +4,7 @@ import rightSideHrDesktop from '../../assets/SectionTitle/right-side-hr-desktop.
 import rightSideHrMobile from '../../assets/SectionTitle/right-side-hr-mobile.png'
 
 /**
- * a reusable and responsive section header component with multiple props
+ * A reusable and responsive section header component with multiple props
  *
  * @param {String} topText - top text for section title component
  * @param {String} middleText - middle text for section title component
@@ -13,7 +13,6 @@ import rightSideHrMobile from '../../assets/SectionTitle/right-side-hr-mobile.pn
  *
  * @returns {JSX.Element} a section title component
  */
-
 const SectionTitle = ({
   topText,
   middleText,
@@ -21,20 +20,20 @@ const SectionTitle = ({
   isTextCentered = true
 }) => {
   return (
-    <div className='mx-auto flex flex-col items-center gap-2 '>
+    <div className='mx-auto flex flex-col items-center gap-2'>
       {topText && (
         <div className='flex justify-center items-center gap-3'>
           {/* LEFT HR FOR DESKTOP, HIDDEN ON MOBILE */}
           <img
             src={leftSideHrDesktop}
             className='hidden lg:block'
-            alt='Right horizontal line'
+            alt='Left horizontal line'
           />
           {/* LEFT HR FOR MOBILE, HIDDEN ON DESKTOP */}
           <img
             src={leftSideHrMobile}
             className='block lg:hidden'
-            alt='Right horizontal line'
+            alt='Left horizontal line'
           />
 
           {/* TITLE TOP TEXT */}
@@ -46,19 +45,19 @@ const SectionTitle = ({
           <img
             src={rightSideHrDesktop}
             className='hidden lg:block'
-            alt='Left horizontal line'
+            alt='Right horizontal line'
           />
-          {/* RIGHT HR FOR DESKTOP, HIDDEN ON MOBILE */}
+          {/* RIGHT HR FOR MOBILE, HIDDEN ON DESKTOP */}
           <img
             src={rightSideHrMobile}
             className='block lg:hidden'
-            alt='Left horizontal line'
+            alt='Right horizontal line'
           />
         </div>
       )}
       {middleText && (
         <h1
-          className={`max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient  leading-[36px] lg:leading-[72px] ${
+          className={`max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient leading-[36px] lg:leading-[72px] text-center md:${
             isTextCentered ? 'text-center' : 'text-left'
           }`}>
           {middleText}
@@ -66,7 +65,7 @@ const SectionTitle = ({
       )}
       {bottomText && (
         <p
-          className={`max-w-[732px] mx-auto text-[#A6A6A6] text-[12px] lg:text-lg font-light  leading-[18px] lg:leading-[27px] ${
+          className={`max-w-[732px] mx-auto text-[#A6A6A6] text-[12px] lg:text-lg font-light leading-[18px] lg:leading-[27px] text-center md:${
             isTextCentered ? 'text-center' : 'text-left'
           }`}>
           {bottomText}
