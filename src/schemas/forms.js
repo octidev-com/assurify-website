@@ -13,3 +13,10 @@ export const checkoutSchema = yup.object().shape({
     .matches(/^\+?[0-9]\d{1,14}$/, "Please enter a valid phone number"),
   orderNote: yup.string(), // Optional field
 });
+
+export const contactUsSchema = yup.object().shape({
+  fullName: yup.string().required("Full name is required"),
+  emailAddress: yup.string().email("Please enter a valid email").required("Email is required"),
+  subject: yup.string().required("Subject is required"),
+  message: yup.string().required("Message is required"),
+});
