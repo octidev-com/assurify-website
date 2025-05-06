@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
-import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import roundBg from '../../assets/banner/round-bg.png'
 import CustomIcon from '../../assets/icon/CustomIcon'
 import Container from '../Common/Container'
 import Button from '../Common/Button'
-import SectionTitle from '../Common/SectionTitle'
+import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
+import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 
 const ProtectionCoverage = () => {
   const protectionCoverageOptions = [
@@ -122,20 +121,20 @@ const ProtectionCoverage = () => {
       {/* Main content with container */}
       <Container>
         <div className='relative py-[24px] lg:py-[150px] mx-auto z-10'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-[38px] py-[26px]'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 justify-center items-center gap-[38px] py-[26px]'>
             {/* Left side of the main content (header) - No animation */}
             <div className='flex flex-col gap-[12px] lg:gap-[24px]'>
-              <div className='flex justify-center lg:justify-start items-center gap-3'>
+              <div className='flex justify-center xl:justify-start items-center gap-3'>
                 <img src={rightSideHr} alt='' className='max-w-[100px]' />
                 <p className='text-[14px] lg:text-[20px] text-[#F7F7F7] font-normal leading-[21px] lg:leading-[30px]'>
                   Protection Coverage
                 </p>
                 <img src={leftSideHr} alt='' className='max-w-[100px]' />
               </div>
-              <h1 className='text-[48px] lg:text-5xl font-semibold text-center lg:text-left text-gradient leading-[36px] lg:leading-[72px]'>
+              <h1 className='text-[24px] lg:text-5xl font-semibold text-center lg:text-left text-gradient leading-[36px] lg:leading-[72px]'>
                 Total Coverage & Claims Management
               </h1>
-              <p className='text-[#A6A6A6] text-[18px] lg:text-lg text-center lg:text-start font-light leading-[18px] lg:leading-[27px]'>
+              <p className='text-[#A6A6A6] text-[12px] lg:text-lg text-center lg:text-start font-light leading-[18px] lg:leading-[27px]'>
                 Purchasers crave carbon-neutral shipping options and total
                 package protection. Guide Protection makes it easy to give the
                 people what they want (again..and again).
@@ -146,11 +145,11 @@ const ProtectionCoverage = () => {
             </div>
 
             {/* Right side of the main content - With animation */}
-            <div className='w-full lg:w-[744px] lg:h-[370px] flex items-center justify-center'>
+            <div className='w-full lg:w-[744px] lg:h-[370px] flex items-center justify-center mx-auto'>
               {/* Container for the border */}
               <div
                 ref={containerRef}
-                className='relative w-[250px] h-[250px] lg:w-[370px] lg:h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10'>
+                className='relative w-[250px] h-[250px] lg:w-[370px] lg:h-[370px] border-2 border-[#FFFFFF4D] rounded-full z-10 '>
                 {/* Options positioned around the circle */}
                 {protectionCoverageOptions.map((opt, index) => {
                   // Mobile positions (for <640px)
@@ -162,13 +161,13 @@ const ProtectionCoverage = () => {
                     }, // Top
                     {
                       top: '25%',
-                      left: '85%',
-                      transform: 'translate(-20%, -50%)'
+                      left: '40%',
+                      transform: 'translate(60%, -50%)'
                     }, // Top-right
                     {
                       top: '75%',
-                      left: '85%',
-                      transform: 'translate(-20%, -50%)'
+                      left: '40%',
+                      transform: 'translate(40%, -50%)'
                     }, // Bottom-right
                     {
                       top: '100%',
@@ -178,12 +177,12 @@ const ProtectionCoverage = () => {
                     {
                       top: '75%',
                       left: '15%',
-                      transform: 'translate(-80%, -50%)'
+                      transform: 'translate(-60%, -50%)'
                     }, // Bottom-left
                     {
                       top: '25%',
                       left: '15%',
-                      transform: 'translate(-80%, -50%)'
+                      transform: 'translate(-60%, -50%)'
                     } // Top-left
                   ]
 
@@ -244,10 +243,10 @@ const ProtectionCoverage = () => {
                       <div className='p-1.5 lg:p-2 bg-[#98FF9317] rounded-sm'>
                         <CustomIcon
                           iconName={opt.iconName}
-                          className='w-4 h-4 lg:w-6 lg:h-6'
+                          className='w-[14px] h-[14px] lg:w-6 lg:h-6'
                         />
                       </div>
-                      <h3 className='text-[#F7F7F7] text-[12px] lg:text-[20px] leading-[18px] lg:leading-[30px]'>
+                      <h3 className='text-[#F7F7F7] text-[11px] lg:text-[20px] leading-[17px] lg:leading-[30px]'>
                         {opt.title}
                       </h3>
                     </div>
