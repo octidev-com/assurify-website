@@ -54,7 +54,7 @@ const Review = () => {
                 Discover why customers trust us through their honest reviews.
               </p>
             </div>
-            <div className='hidden md:flex gap-[40px] mt-6 md:mt-0'>
+            <div className='hidden md:flex gap-[40px] mt-6 md:mt-0 max-w-[164px]'>
               <button>
                 <CustomIcon
                   iconName={'slider-left-icon'}
