@@ -3,8 +3,6 @@ import writingIcon from '../../assets/support/writing.svg'
 import clockIcon from '../../assets/support/clock.svg'
 import supportIcon from '../../assets/support/support.svg'
 import supportImage from '../../assets/support/supportImage.svg'
-import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
-import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import benefit1 from '../../assets/benefits/benefit-1.png'
 import benefit2 from '../../assets/benefits/benefit-2.png'
 import benefit3 from '../../assets/benefits/benefit-3.png'
@@ -75,7 +73,7 @@ const ForMerchantSection = () => {
           />
         </Container>
         <div className='max-w-[1170px] mx-[24px] sm:mx-auto max-h-[800px] rounded-lg shadow-md mt-12 sm:mb-[126px] flex justify-center items-center'>
-        <img src={brandImage} alt='Brands Image' />
+          <img src={brandImage} alt='Brands Image' />
         </div>
       </div>
       {/* Benefits Section */}
@@ -83,37 +81,26 @@ const ForMerchantSection = () => {
         <Container>
           <div className='sm:py-[150px] py-[50px] relative z-10'>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-[24px] sm:gap-[130px] shrink-0'>
-              <div className='flex flex-col gap-4 sm:gap-2 w-full'>
-                <div className='flex justify-center sm:justify-start items-center text-center gap-3'>
-                  <img
-                    src={rightSideHr}
-                    alt=''
-                    className='max-w-[80px] sm:max-w-[100px]'
-                  />
-                  <p className='text-[14px] sm:text-xl font-normal leading-[21px] sm:leading-[30px]'>
-                    Benefits
-                  </p>
-                  <img
-                    src={leftSideHr}
-                    alt=''
-                    className='max-w-[80px] sm:max-w-[100px]'
-                  />
-                </div>
-                <h1 className='text-[24px] sm:text-4xl lg:text-5xl font-semibold text-gradient leading-[36px] sm:leading-[60px] lg:leading-[72px] text-center sm:text-left'>
-                  Exclusive customer Experience
-                </h1>
-                <p className='text-[#A6A6A6] text-[12px] sm:text-lg font-light leading-[18px] sm:leading-[27px] text-center sm:text-left'>
-                  A perfect balance—customers get great value, and merchants
-                  boost their sales effortlessly!
-                </p>
-              </div>
+              <SectionTitle
+                topText={'Benefits'}
+                middleText={'Exclusive customer Experience'}
+                bottomText={
+                  'A perfect balance—customers get great value, and merchants boost their sales effortlessly!'
+                }
+                isTextCentered={false}
+              />
+
               <div className='flex flex-col gap-[24px] sm:gap-[30px]'>
                 {benefitsData.map((benefit) => (
                   <div
                     key={benefit.id}
                     className='p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] flex flex-col gap-3 items-start'>
                     <div className='p-2 sm:p-3  rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] lg:w-[56px] lg:h-[56px] w-[40px] h-[40px]'>
-                      <img src={benefit.image} alt='benefit' className='lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]' />
+                      <img
+                        src={benefit.image}
+                        alt='benefit'
+                        className='lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]'
+                      />
                     </div>
                     <h3 className='text-[16px] sm:text-[25px] lg:text-[32px] font-normal text-[#f7f7f7] leading-[24px] sm:leading-[40px] lg:leading-[48px]'>
                       {benefit.title}
@@ -191,63 +178,47 @@ const ForMerchantSection = () => {
         <Container>
           <div className='sm:py-[150px] py-[50px]'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px]'>
-              <div className='flex flex-col gap-4 md:max-w-[570px] w-full'>
-                <div className='flex sm:justify-start justify-center items-center gap-3'>
-                  <img src={rightSideHr} alt='' className='max-w-[100px]' />
-                  <p className='text-[14px] sm:text-xl font-normal leading-[21px] sm:leading-[30px]'>
-                    Support
-                  </p>
-                  <img src={leftSideHr} alt='' className='max-w-[100px]' />
-                </div>
+              <div className='flex flex-col gap-[32px] md:gap-[48px] md:max-w-[570px] w-full'>
+                <SectionTitle
+                  topText={'Support'}
+                  middleText={'Instant support and service'}
+                  bottomText={
+                    'A perfect balance—customers get great value, and merchants boost their sales effortlessly!'
+                  }
+                  isTextCentered={false}
+                />
 
-                <h2 className='text-[24px] sm:text-5xl font-semibold text-gradient leading-[36px] sm:leading-[72px] text-center sm:text-left'>
-                  Instant support and service
-                </h2>
-
-                <p className='text-[#A6A6A6] text-[12px] sm:text-base font-light leading-[18px] sm:leading-relaxed text-center sm:text-left'>
-                  A perfect balance—customers get great value, and merchants
-                  boost their sales effortlessly!
-                </p>
-
-                <div className='sm:mt-10 mt-[32px] flex flex-col gap-6 w-full'>
-                  <div className='flex items-center gap-4'>
-                    <div className='bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center'>
-                      <img
-                        src={writingIcon}
-                        alt='Seamless claim icon'
-                        className='w-[40px] h-[40px]'
-                      />
+                <div className=' flex flex-col gap-[16px] md:gap-[24px] w-full'>
+                  {[
+                    {
+                      id: 1,
+                      img: writingIcon,
+                      text: 'Seamless claim submission experience'
+                    },
+                    {
+                      id: 2,
+                      img: clockIcon,
+                      text: 'Fast and transparent claim processing'
+                    },
+                    {
+                      id: 3,
+                      img: supportIcon,
+                      text: 'Dedicated expert support from start to finish'
+                    }
+                  ].map((item) => (
+                    <div key={item.id} className='flex items-center gap-4'>
+                      <div className='bg-[#1A1A1A] p-[8px] md:p-[12px] rounded-[4px] md:w-[56px] md:h-[56px] w-[40px] h-[40px] flex items-center justify-center'>
+                        <img
+                          src={item.img}
+                          alt='Seamless claim icon'
+                          className='w-[24px] md:w-[32px] h-[24px] md:h-[32px]'
+                        />
+                      </div>
+                      <p className='text-white text-[16px] md:text-[24px] leading-[23px] md:leading-[36px]'>
+                        {item.text}
+                      </p>
                     </div>
-                    <p className='text-white text-[14px] sm:text-base leading-[22px] sm:leading-[26px]'>
-                      Seamless claim submission experience
-                    </p>
-                  </div>
-
-                  <div className='flex items-center gap-4'>
-                    <div className='bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center'>
-                      <img
-                        src={clockIcon}
-                        alt='Fast claim processing icon'
-                        className='w-[40px] h-[40px]'
-                      />
-                    </div>
-                    <p className='text-white text-[14px] sm:text-base leading-[22px] sm:leading-[26px]'>
-                      Fast and transparent claim processing
-                    </p>
-                  </div>
-
-                  <div className='flex items-center gap-4'>
-                    <div className='bg-[#1A1A1A] p-3 rounded-md w-[55px] h-[56px] flex items-center justify-center'>
-                      <img
-                        src={supportIcon}
-                        alt='Expert support icon'
-                        className='w-[40px] h-[40px]'
-                      />
-                    </div>
-                    <p className='text-white text-[14px] sm:text-base leading-[22px] sm:leading-[26px]'>
-                      Dedicated expert support from start to finish
-                    </p>
-                  </div>
+                  ))}
                 </div>
               </div>
 
