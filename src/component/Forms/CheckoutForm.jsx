@@ -1,5 +1,6 @@
 import { useFormik } from "formik";
 import stripeImg from "../../assets/checkout/Stripe.png";
+import { checkoutSchema } from "../../schemas/forms";
 
 const initialValues = {
   firstName: "",
@@ -12,6 +13,10 @@ const initialValues = {
   orderNote: "",
 };
 
+const onSubmit = (values) => {
+  console.log("Form submitted", values);
+};
+
 const productDetails = [
   { title: "Assurify Lifetime Deal * 1", price: "50.00" },
   { title: "Subtotal", price: "50.00" },
@@ -21,11 +26,8 @@ const productDetails = [
 const CheckoutForm = () => {
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
-    onSubmit: (values) => {
-      // Handle form submission
-      console.log("Form values:", values);
-      console.log("Form errors:", errors);
-    },
+    validationSchema: checkoutSchema,
+    onSubmit: onSubmit,
   });
 
   const countryList = [
@@ -295,14 +297,16 @@ const CheckoutForm = () => {
                 type="text"
                 name="firstName"
                 id="firstName"
-                required={true}
                 value={values.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
-                  errors.firstName && touched ? "border-red-500" : "border-[#A6A6A6]"
+                  errors.firstName && touched.firstName ? "border-red-500" : "border-[#A6A6A6]"
                 }  opacity-[0.6] focus:outline-none`}
               />
+
+              {/* error message */}
+              {errors.firstName && touched.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
             </div>
 
             {/* LAST NAME */}
@@ -314,14 +318,16 @@ const CheckoutForm = () => {
                 type="text"
                 name="lastName"
                 id="lastName"
-                required={true}
                 value={values.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
-                  errors.lastName && touched ? "border-red-500" : "border-[#A6A6A6]"
-                }  opacity-[0.6] focus:outline-none`}
+                className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
+                  errors.lastName && touched.lastName ? "border-red-500" : "border-[#A6A6A6]"
+                } opacity-[0.6] focus:outline-none`}
               />
+
+              {/* error message */}
+              {errors.lastName && touched.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
             </div>
           </div>
 
@@ -332,11 +338,12 @@ const CheckoutForm = () => {
             </label>
             <select
               id="country"
-              required={true}
               value={values.country}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-full px-4 h-[48px] rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDI0IDEyIiBmaWxsPSJub25lIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMTA5N18zOTA3KSI+PHBhdGggZD0iTTE3LjQxOTggMi40NTE5OUwxOC40Nzk4IDMuNTEyOTlMMTIuNzAyOCA5LjI5MTk5QzEyLjYxMDIgOS4zODUxNCAxMi41MDAxIDkuNDU5MDcgMTIuMzc4OSA5LjUwOTUyQzEyLjI1NzYgOS41NTk5NyAxMi4xMjc2IDkuNTg1OTQgMTEuOTk2MyA5LjU4NTk0QzExLjg2NDkgOS41ODU5NCAxMS43MzQ5IDkuNTU5OTcgMTEuNjEzNyA5LjUwOTUyQzExLjQ5MjQgOS40NTkwNyAxMS4zODIzIDkuMzg1MTQgMTEuMjg5OCA5LjI5MTk5TDUuNTA5NzcgMy41MTI5OUw2LjU2OTc3IDIuNDUyOTlMMTEuOTk0OCA3Ljg3Njk5TDE3LjQxOTggMi40NTE5OVoiIGZpbGw9IiNGN0Y3RjciLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMF8xMDk3XzM5MDciPjxyZWN0IHdpZHRoPSIxMiIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0KSByb3RhdGUoOTApIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-[center_right_1rem]"
+              className={`w-full px-4 h-[48px] ${
+                errors.country && touched.country ? "border-red-500" : "border-[#A6A6A6]"
+              } rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDI0IDEyIiBmaWxsPSJub25lIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMTA5N18zOTA3KSI+PHBhdGggZD0iTTE3LjQxOTggMi40NTE5OUwxOC40Nzk4IDMuNTEyOTlMMTIuNzAyOCA5LjI5MTk5QzEyLjYxMDIgOS4zODUxNCAxMi41MDAxIDkuNDU5MDcgMTIuMzc4OSA5LjUwOTUyQzEyLjI1NzYgOS41NTk5NyAxMi4xMjc2IDkuNTg1OTQgMTEuOTk2MyA5LjU4NTk0QzExLjg2NDkgOS41ODU5NCAxMS43MzQ5IDkuNTU5OTcgMTEuNjEzNyA5LjUwOTUyQzExLjQ5MjQgOS40NTkwNyAxMS4zODIzIDkuMzg1MTQgMTEuMjg5OCA5LjI5MTk5TDUuNTA5NzcgMy41MTI5OUw2LjU2OTc3IDIuNDUyOTlMMTEuOTk0OCA3Ljg3Njk5TDE3LjQxOTggMi40NTE5OVoiIGZpbGw9IiNGN0Y3RjciLz48L2c+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMF8xMDk3XzM5MDciPjxyZWN0IHdpZHRoPSIxMiIgaGVpZ2h0PSIyNCIgZmlsbD0id2hpdGUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0KSByb3RhdGUoOTApIi8+PC9jbGlwUGF0aD48L2RlZnM+PC9zdmc+')] bg-no-repeat bg-[center_right_1rem]`}
             >
               <option value="" disabled selected>
                 Choose a Country
@@ -347,6 +354,9 @@ const CheckoutForm = () => {
                 </option>
               ))}
             </select>
+
+            {/* error message */}
+            {errors.country && touched.country && <p className="text-red-500 text-sm">{errors.country}</p>}
           </div>
 
           {/* TOWN / CITY */}
@@ -358,14 +368,16 @@ const CheckoutForm = () => {
               type="text"
               name="city"
               id="city"
-              required={true}
               value={values.city}
               onChange={handleChange}
               onBlur={handleBlur}
               className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
-                errors.city && touched ? "border-red-500" : "border-[#A6A6A6]"
+                errors.city && touched.city ? "border-red-500" : "border-[#A6A6A6]"
               }  opacity-[0.6] focus:outline-none`}
             />
+
+            {/* error message */}
+            {errors.city && touched.city && <p className="text-red-500 text-sm">{errors.city}</p>}
           </div>
 
           {/* ADDRESS */}
@@ -377,14 +389,16 @@ const CheckoutForm = () => {
               type="text"
               name="address"
               id="address"
-              required={true}
               value={values.address}
               onChange={handleChange}
               onBlur={handleBlur}
               className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
-                errors.address && touched ? "border-red-500" : "border-[#A6A6A6]"
+                errors.address && touched.address ? "border-red-500" : "border-[#A6A6A6]"
               }  opacity-[0.6] focus:outline-none`}
             />
+
+            {/* error message */}
+            {errors.address && touched.address && <p className="text-red-500 text-sm">{errors.address}</p>}
           </div>
 
           {/* EMAIL */}
@@ -396,14 +410,16 @@ const CheckoutForm = () => {
               type="email"
               name="emailAddress"
               id="emailAddress"
-              required={true}
               value={values.emailAddress}
               onChange={handleChange}
               onBlur={handleBlur}
               className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
-                errors.emailAddress && touched ? "border-red-500" : "border-[#A6A6A6]"
+                errors.emailAddress && touched.emailAddress ? "border-red-500" : "border-[#A6A6A6]"
               }  opacity-[0.6] focus:outline-none`}
             />
+
+            {/* error message */}
+            {errors.emailAddress && touched.emailAddress && <p className="text-red-500 text-sm">{errors.emailAddress}</p>}
           </div>
 
           {/* PHONE NUMBER */}
@@ -417,7 +433,6 @@ const CheckoutForm = () => {
               id="phoneNumber"
               inputMode="tel" // ✅ Helps browsers choose a numeric keypad
               autoComplete="tel" // ✅ Suggests phone number from saved user data
-              required
               value={values.phoneNumber}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -426,6 +441,9 @@ const CheckoutForm = () => {
               } opacity-[0.6] focus:outline-none`}
               placeholder="e.g. +1 234 567 8901" // Optional for UX
             />
+
+            {/* error message */}
+            {errors.phoneNumber && touched.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber}</p>}
           </div>
 
           {/* ORDER NOTE */}
@@ -441,8 +459,13 @@ const CheckoutForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Add any notes about your order here"
-              className="w-full p-4 rounded-2xl mt-2 border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
+              className={`w-full p-4 rounded-2xl mt-2 border ${
+                errors.orderNote && touched.orderNote ? "border-red-500" : "border-[#A6A6A6]"
+              } border-[#A6A6A6] opacity-[0.6] focus:outline-none`}
             />
+
+            {/* error message */}
+            {errors.orderNote && touched.orderNote && <p className="text-red-500 text-sm">{errors.orderNote}</p>}
           </div>
         </div>
 
