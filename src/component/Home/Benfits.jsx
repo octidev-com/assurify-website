@@ -44,7 +44,7 @@ const Benefits = () => {
         </div>
 
         {/* Main content */}
-        <div className='grid grid-cols-1 md:grid-cols-2  gap-[32px] md:gap-[100px] shrink-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2  gap-[32px] md:gap-[130px] shrink-0'>
           {/* Left side of the main content (header) */}
 
           <SectionTitle

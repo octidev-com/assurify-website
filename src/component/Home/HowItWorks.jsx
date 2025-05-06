@@ -154,13 +154,13 @@ const HowItWorks = () => {
       window.removeEventListener('resize', handleResize)
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
-  }, [currentStep])
+  }, [])
 
   return (
     <Container>
       <div
         ref={containerRef}
-        className='mt-[50px] sm:mt-[18px] lg:mt-[94px] min-h-screen overflow-x-hidden'>
+        className='lg:mt-[150px] mt-[50px] sm:mt-[18px] min-h-screen overflow-x-hidden'>
         {/* Preload Images */}
         <div style={{ display: 'none' }}>
           {howItWorksSteps.map((step) => (

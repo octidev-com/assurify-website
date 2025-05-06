@@ -124,7 +124,7 @@ const ProtectionCoverage = () => {
         <div className='relative py-[24px] lg:py-[150px] mx-auto z-10'>
           <div className='grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-[38px] py-[26px]'>
             {/* Left side of the main content (header) - No animation */}
-            <div className='flex flex-col gap-[12px] lg:gap-[24px]'>
+            <div className='flex flex-col gap-[12px] lg:gap-[24px] max-w-[570px]'>
               <div className='flex justify-center lg:justify-start items-center gap-3'>
                 <img src={rightSideHr} alt='' className='max-w-[100px]' />
                 <p className='text-[14px] lg:text-[20px] text-[#F7F7F7] font-normal leading-[21px] lg:leading-[30px]'>
