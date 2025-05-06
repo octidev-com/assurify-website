@@ -154,7 +154,7 @@ const HowItWorks = () => {
       window.removeEventListener('resize', handleResize)
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
-  }, [currentStep])
+  }, [])
 
   return (
     <Container>

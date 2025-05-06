@@ -11,7 +11,7 @@ const FAQ = ({ faqs }) => {
   }
 
   return (
-    <div className='mt-[50px] lg:mt-[150px]'>
+    <div className='mt-[50px] lg:mt-[156px]'>
       {/* Header Section */}
 
       <SectionTitle
