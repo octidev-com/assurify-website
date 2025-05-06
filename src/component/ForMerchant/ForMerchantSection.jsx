@@ -8,6 +8,7 @@ import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import benefit1 from '../../assets/benefits/benefit-1.png'
 import benefit2 from '../../assets/benefits/benefit-2.png'
 import benefit3 from '../../assets/benefits/benefit-3.png'
+import brandImage from '../../assets/forMerchant/brands.png'
 import Container from '../Common/Container'
 import SectionTitle from '../Common/SectionTitle'
 import Button from '../Common/Button'
@@ -73,8 +74,8 @@ const ForMerchantSection = () => {
             bottomText='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis ante eu sem tempus, eleifend sollicitudin felis cursus.Praesent non ante vitae turpis.'
           />
         </Container>
-        <div className='max-w-[1170px] mx-[24px] sm:mx-auto bg-[#EDEDED] max-h-[800px] rounded-lg shadow-md mt-12 sm:mb-[126px] flex justify-center items-center'>
-          <p className='text-[#888] text-lg'>Image Goes Here</p>
+        <div className='max-w-[1170px] mx-[24px] sm:mx-auto max-h-[800px] rounded-lg shadow-md mt-12 sm:mb-[126px] flex justify-center items-center'>
+        <img src={brandImage} alt='Brands Image' />
         </div>
       </div>
       {/* Benefits Section */}
@@ -111,8 +112,8 @@ const ForMerchantSection = () => {
                   <div
                     key={benefit.id}
                     className='p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] flex flex-col gap-3 items-start'>
-                    <div className='p-2 sm:p-3 rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]'>
-                      <img src={benefit.image} alt='benefit' />
+                    <div className='p-2 sm:p-3  rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] lg:w-[56px] lg:h-[56px] w-[40px] h-[40px]'>
+                      <img src={benefit.image} alt='benefit' className='lg:w-[32px] lg:h-[32px] w-[24px] h-[24px]' />
                     </div>
                     <h3 className='text-[16px] sm:text-[25px] lg:text-[32px] font-normal text-[#f7f7f7] leading-[24px] sm:leading-[40px] lg:leading-[48px]'>
                       {benefit.title}
