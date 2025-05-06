@@ -1,8 +1,9 @@
 import React from 'react'
 import roundBg from '../../assets/banner/round-bg.png'
-import benefit1 from '../../assets/benefits/benefit-1.png'
-import benefit2 from '../../assets/benefits/benefit-2.png'
-import benefit3 from '../../assets/benefits/benefit-3.png'
+import benefit1 from '../../assets/whyAssurify/maximize.png'
+import benefit2 from '../../assets/whyAssurify/customerSatisfaction.png'
+import benefit3 from '../../assets/whyAssurify/retention.png'
+import benefit4 from '../../assets/whyAssurify/boost.png'
 import MaximizeRevinue from '../../assets/whyAssurify/MaximizeRevinue.png'
 import Container from '../Common/Container'
 
@@ -10,31 +11,31 @@ const WhyAssurifyBestChoice = () => {
   const benefitsData = [
     {
       id: 1,
-      title: 'No Direct Cost to Sellers',
+      title: 'Maximize Revenue',
       description:
         'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
       image: benefit1
     },
     {
       id: 2,
-      title: 'Flexible Integrations',
+      title: 'Customer Satisfaction',
       description:
         'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
       image: benefit2
     },
     {
       id: 3,
-      title: 'Superior Customer Service',
+      title: 'Retention',
       description:
         'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
       image: benefit3
     },
     {
       id: 4,
-      title: 'Superior Customer Service',
+      title: 'Boost Revenue',
       description:
         'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
-      image: benefit3
+      image: benefit4
     }
   ]
 
@@ -62,8 +63,8 @@ const WhyAssurifyBestChoice = () => {
                 <div
                   key={benefit.id}
                   className='p-4 md:p-5 lg:p-6 rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] flex flex-col gap-2 md:gap-3 items-start'>
-                  <div className='p-2 md:p-3 rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]'>
-                    <img src={benefit.image} alt={`benefit-${benefit.id}`} />
+                  <div className='p-2 md:p-3 rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] w-[56px] h-[56px]'>
+                    <img src={benefit.image} alt={`benefit-${benefit.id}`} className='w-[32px] h-[32px]'/>
                   </div>
                   <h3 className='text-xl md:text-2xl lg:text-[32px] font-normal text-[#f7f7f7] leading-7 md:leading-9 lg:leading-[48px]'>
                     {benefit.title}

@@ -24,7 +24,7 @@ const FAQ = ({ faqs }) => {
 
       {/* FAQ Section */}
       <Container>
-        <div className='max-w-[732px] mx-auto mt-12'>
+        <div className='max-w-[770px] mx-auto mt-12'>
           {faqs.map((faq) => (
             <div
               key={faq.id}
