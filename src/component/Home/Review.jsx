@@ -9,7 +9,7 @@ import Container from '../Common/Container'
 
 const Review = () => {
   return (
-    <div className='w-full mt-[80px] md:mt-[150px] py-[80px] md:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
+    <div className='w-full mt-[50px] sm:mt-[80px] md:mt-[150px] py-[24px] md:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
       {/* Background elements */}
       <div className='absolute top-1/2 left-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img
