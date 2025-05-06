@@ -1,11 +1,10 @@
 import React from 'react'
-import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
-import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
 import roundBg from '../../assets/banner/round-bg.png'
 import benefit1 from '../../assets/benefits/benefit-1.png'
 import benefit2 from '../../assets/benefits/benefit-2.png'
 import benefit3 from '../../assets/benefits/benefit-3.png'
 import Container from '../Common/Container'
+import SectionTitle from '../Common/SectionTitle'
 
 const Benefits = () => {
   const benefitsData = [
@@ -45,50 +44,35 @@ const Benefits = () => {
         </div>
 
         {/* Main content */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-[100px] shrink-0'>
+        <div className='grid grid-cols-1 md:grid-cols-2  gap-[32px] md:gap-[100px] shrink-0'>
           {/* Left side of the main content (header) */}
-          <div className='flex flex-col gap-4 sm:gap-5 md:gap-6 items-center md:items-start text-center md:text-left'>
-            <div className='flex justify-center md:justify-start items-center gap-2 sm:gap-3'>
-              <img
-                src={rightSideHr}
-                alt=''
-                className='max-w-[60px] sm:max-w-[80px] md:max-w-[100px]'
-              />
-              <p className='text-base sm:text-lg md:text-xl font-normal leading-6 sm:leading-7 md:leading-[30px]'>
-                Benefits
-              </p>
-              <img
-                src={leftSideHr}
-                alt=''
-                className='max-w-[60px] sm:max-w-[80px] md:max-w-[100px]'
-              />
-            </div>
-            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gradient leading-10 sm:leading-12 md:leading-[60px] lg:leading-[72px]'>
-              Win Win For Both Merchant and Customer
-            </h1>
-            <p className='text-[#A6A6A6] text-sm sm:text-base md:text-lg font-light leading-5 sm:leading-6 md:leading-[27px]'>
-              A perfect balance—customers get great value, and merchants boost
-              their sales effortlessly!
-            </p>
-          </div>
+
+          <SectionTitle
+            topText={'Benefits'}
+            middleText={'Win Win For Both Merchant and Customer'}
+            bottomText={
+              'A perfect balance—customers get great value, and merchants boost their sales effortlessly!'
+            }
+            isTextCentered={false}
+          />
 
           {/* Right side of the main content */}
-          <div className='flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-[30px]'>
+          <div className='flex flex-col gap-4 md:gap-[30px]'>
             {benefitsData.map((benefit) => (
               <div
                 key={benefit.id}
-                className='p-4 sm:p-5 md:p-6 rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] flex flex-col gap-2 sm:gap-3 md:gap-3 items-start'>
-                <div className='p-2 sm:p-3 rounded-sm bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]'>
+                className='p-[12px] md:p-[24px] rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] flex flex-col gap-3 items-start'>
+                <div className='p-2 md:p-3 rounded-[4px] bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]'>
                   <img
                     src={benefit.image}
                     alt={`benefit-${benefit.id}`}
-                    className='w-8 sm:w-10 md:w-12 lg:w-[48px] h-8 sm:h-10 md:h-12 lg:h-[48px]'
+                    className='w-[24px] md:w-[32px] h-[24px] md:h-[32px]'
                   />
                 </div>
-                <h3 className='text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-normal text-[#f7f7f7] leading-7 sm:leading-8 md:leading-10 lg:leading-[48px]'>
+                <h3 className='text-[16px] md:text-[32px] font-normal text-[#f7f7f7] leading-[24px] md:leading-[48px]'>
                   {benefit.title}
                 </h3>
-                <p className='text-sm sm:text-base md:text-base font-normal leading-5 sm:leading-6 md:leading-[30px] text-[#A6A6A6]'>
+                <p className='text-[12px]  md:text-[16px] font-normal leading-[21px]  md:leading-[30px] text-[#A6A6A6]'>
                   {benefit.description}
                 </p>
               </div>

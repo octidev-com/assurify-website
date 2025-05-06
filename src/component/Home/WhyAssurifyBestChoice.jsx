@@ -3,6 +3,7 @@ import roundBg from '../../assets/banner/round-bg.png'
 import benefit1 from '../../assets/benefits/benefit-1.png'
 import benefit2 from '../../assets/benefits/benefit-2.png'
 import benefit3 from '../../assets/benefits/benefit-3.png'
+import MaximizeRevinue from '../../assets/whyAssurify/MaximizeRevinue.png'
 import Container from '../Common/Container'
 
 const WhyAssurifyBestChoice = () => {
@@ -76,7 +77,9 @@ const WhyAssurifyBestChoice = () => {
           </div>
 
           {/* Right Column: Placeholder Image */}
-          <div className='w-full md:w-[400px] lg:w-[570px] h-[400px] md:h-[460px] lg:h-[520px] rounded-xl bg-[#D9D9D9] z-10 mx-auto md:mx-0'></div>
+          <div className='w-full md:w-[400px] lg:w-[570px] h-[400px] md:h-[460px] lg:h-[520px] rounded-xl z-10 mx-auto md:mx-0'>
+         <img src={MaximizeRevinue} alt='why assurify image' />
+          </div>
         </div>
       </div>
     </Container>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import roundBg from '../assets/banner/round-bg.png'
 import CustomIcon from '../assets/icon/CustomIcon'
 import FAQ from '../component/Home/FAQ'
 import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
+import TopBg from '../component/Common/TopBg'
+import AssurifyShippingProtectionCartImg from '../assets/deals/assurify-shipping-protection-cart-image.png'
 
 const Deals = () => {
   const faqs = [
@@ -44,31 +45,17 @@ const Deals = () => {
   const [activeTab, setActiveTab] = useState('description')
 
   return (
-    <div className='w-full bg-[#0C0D0C] min-h-screen text-white relative overflow-x-hidden'>
-      {/* Right side bg image */}
-      <div className='absolute -top-[800px] -left-[500px] pointer-events-none z-0'>
-        <img
-          src={roundBg}
-          alt='Background decoration left'
-          className='w-[75vw] max-w-none opacity-80'
-        />
-      </div>
-
-      {/* Left side bg image */}
-      <div className='absolute -top-[800px] -right-[500px] pointer-events-none z-0'>
-        <img
-          src={roundBg}
-          alt='Background decoration right'
-          className='w-[75vw] max-w-none opacity-80'
-        />
-      </div>
-
+    <TopBg>
       {/* main content */}
       <Container>
-        <div className='mt-[32px] lg:mt-14 mx-auto'>
+        <div className='pt-[32px] md:pt-[56px]'>
           <div className='flex flex-col lg:flex-row items-start lg:items-center gap-[30px]'>
             {/* product image */}
-            <div className='w-full lg:w-[570px] h-[290px] lg:h-[500px] rounded-xl bg-[#D9D9D9]'></div>
+            <img
+              src={AssurifyShippingProtectionCartImg}
+              alt={'assurify-shipping-protection-cart-image'}
+              className='max-w-[327px] max-h-[290px] md:max-w-[570px] md:max-h-[500px]'
+            />
 
             {/* product details */}
             <div className='max-w-[570px] flex flex-col gap-[24px] lg:gap-8'>
@@ -126,26 +113,44 @@ const Deals = () => {
                     Follow us on
                   </p>
                   <div className='flex gap-3 mt-2'>
-                    <a
-                      href='#'
-                      className='w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='facebook-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='instagram-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='youtube-icon' />
-                    </a>
-                    <a
-                      href='#'
-                      className='w-[40px] sm:w-[50px] h-[40px] sm:h-[50px] rounded-full border border-[#A6A6A6] flex justify-center items-center'>
-                      <CustomIcon iconName='twitter-icon' />
-                    </a>
+                    {[
+                      {
+                        id: 1,
+                        iconName: 'facebook-icon',
+                        link: 'https://www.facebook.com/DaisyDiffusion'
+                      },
+                      {
+                        id: 2,
+                        iconName: 'instagram-icon',
+                        link: 'https://www.instagram.com/daisy_diffusion/'
+                      },
+                      {
+                        id: 3,
+                        iconName: 'youtube-icon',
+                        link: 'https://www.youtube.com/@DaisyDiffusion'
+                      },
+                      {
+                        id: 4,
+                        iconName: 'twitter-icon',
+                        link: 'https://x.com/DaisyDiffu50543'
+                      },
+                      {
+                        id: 5,
+                        iconName: 'facebook-group-icon',
+                        link: 'https://www.facebook.com/groups/daisydiffusioncommunity'
+                      }
+                    ].map((item) => (
+                      <a
+                        target='_blank'
+                        href={item.link}
+                        key={item.id}
+                        className='w-[28px] md:w-[32px] h-[28px] md:h-[32px] rounded-full border border-[#A6A6A6] flex justify-center items-center '>
+                        <CustomIcon
+                          iconName={item.iconName}
+                          className={'h-[16px] w-[16px] '}
+                        />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -494,7 +499,7 @@ const Deals = () => {
           <FAQ faqs={faqs} />
         </div>
       </Container>
-    </div>
+    </TopBg>
   )
 }
 
