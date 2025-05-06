@@ -76,22 +76,22 @@ const InsightsAndInspiration = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-[30px] mt-6 md:mt-8 lg:mt-[48px]'>
             {blogs.map((item) => (
               // blog card
-              <div key={item.id} className='bg-[#FFF] rounded-xl'>
+              <div key={item.id} className='bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] rounded-xl'>
                 <img src={item.img} alt='inspiration-image' />
                 <div className='p-3 md:p-4 lg:p-4 flex flex-col gap-1 md:gap-2'>
-                  <p className='text-[#0C0D0C] text-[12px] md:text-base font-normal leading-[18px] md:leading-6'>
+                  <p className='text-[#F7F7F7] text-[12px] md:text-base font-normal leading-[18px] md:leading-6'>
                     March 26, 2025
                   </p>
-                  <h3 className='text-[#0C0D0C] text-xl md:text-2xl font-medium leading-[30px] lg:leading-9'>
+                  <h3 className='text-[#F7F7F7] text-xl md:text-2xl font-medium leading-[30px] lg:leading-9'>
                     {item.title}
                   </h3>
-                  <p className='text-[#0C0D0CCC] text-sm md:text-base font-light leading-5 md:leading-6'>
+                  <p className='text-[#A6A6A6] text-sm md:text-base font-light leading-5 md:leading-6'>
                     {item.shortDes}
                   </p>
                   <a
                     target='_blank'
                     href={item.externalLink}
-                    className='text-[#0C0D0C] text-sm md:text-base font-light leading-5 md:leading-6 underline'>
+                    className='text-[#F7F7F7] text-sm md:text-base font-light leading-5 md:leading-6 underline'>
                     Read more..
                   </a>
                 </div>

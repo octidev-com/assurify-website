@@ -160,7 +160,7 @@ const HowItWorks = () => {
     <Container>
       <div
         ref={containerRef}
-        className='mt-[50px] sm:mt-[18px] lg:mt-[94px] min-h-screen overflow-x-hidden'>
+        className='mt-[50px] md:mt-[150px] min-h-screen overflow-x-hidden'>
         {/* Preload Images */}
         <div style={{ display: 'none' }}>
           {howItWorksSteps.map((step) => (
@@ -189,7 +189,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Slider Section */}
-          <div className='rounded-xl sm:rounded-2xl mt-6 sm:mt-8 md:mt-10 lg:mt-12 flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-8 px-3 sm:px-4 md:px-5 lg:px-6'>
+          <div className='rounded-xl sm:rounded-2xl mt-[32px] sm:mt-[48px] flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-8 '>
             {/* Left Side Image */}
             <img
               ref={imageRef}
@@ -215,7 +215,7 @@ const HowItWorks = () => {
               </div>
 
               {/* Navigation Indicator */}
-              <div className='flex flex-col items-center min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] ml-2 sm:ml-3 md:ml-4 lg:ml-5 self-center'>
+              <div className='flex flex-col items-center min-h-[180px] sm:min-h-[220px] md:min-h-[200px] lg:min-h-[300px] ml-2 sm:ml-3 md:ml-4 lg:ml-5 self-center'>
                 {indicatorNumbers.map((number) => (
                   <svg
                     key={number}
