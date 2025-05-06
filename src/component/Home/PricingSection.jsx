@@ -68,7 +68,7 @@ const PricingSection = ({ hideToggle }) => {
         {pricingData.map((item) => (
           <div
             key={item.id}
-            className='p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px]'>
+            className='p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] transition-transform duration-200 ease-out hover:-translate-y-1 hover:border hover:border-white'>
             <div>
               <h4 className='text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8'>
                 {item.title}
@@ -101,7 +101,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   Employee directory
                 </p>
               </div>
@@ -109,7 +109,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   Task management
                 </p>
               </div>
@@ -117,7 +117,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   Calendar integration
                 </p>
               </div>
@@ -125,7 +125,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   File storage
                 </p>
               </div>
@@ -133,7 +133,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   Communication tools
                 </p>
               </div>
@@ -141,7 +141,7 @@ const PricingSection = ({ hideToggle }) => {
                 <span>
                   <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                 </span>
-                <p className='#ffffffcc text-[13px] lg:text-[14px] leading-[22px]'>
+                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
                   Reporting and analytics
                 </p>
               </div>
