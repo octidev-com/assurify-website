@@ -33,7 +33,7 @@ const Benefits = () => {
 
   return (
     <Container>
-      <div className='mt-[80px] sm:mt-[100px] md:mt-[120px] lg:mt-[150px] relative'>
+      <div className='mt-[50px] sm:mt-[100px] md:mt-[120px] lg:mt-[150px] relative'>
         {/* Left side roundBg image */}
         <div className='absolute -top-[10%] -left-[100%] pointer-events-none z-0'>
           <img

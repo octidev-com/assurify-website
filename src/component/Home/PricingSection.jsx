@@ -64,7 +64,7 @@ const PricingSection = ({ hideToggle }) => {
       )}
 
       {/* Pricing package cards */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[20px] lg:mt-12 mx-auto'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[30px] mt-[20px] lg:mt-12 mx-auto'>
         {pricingData.map((item) => (
           <div
             key={item.id}

@@ -120,9 +120,9 @@ const ProtectionCoverage = () => {
 
       {/* Main content with container */}
       <Container>
-        <div className='relative py-[24px] lg:py-[150px] mx-auto z-10'>
-          <div className='grid grid-cols-1 xl:grid-cols-2 justify-center items-center gap-[38px] py-[26px]'>
-            {/* Left side of the main content (header) - No animation */}
+        <div className='relative py-[27px] lg:py-[150px] mx-auto z-10'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 justify-center items-center gap-[38px] pb-[27px] sm:pb-0'>
+            {/* Left side of the main content (header) - No animation */} 
             <div className='flex flex-col gap-[12px] lg:gap-[24px]'>
               <div className='flex justify-center xl:justify-start items-center gap-3'>
                 <img src={rightSideHr} alt='' className='max-w-[100px]' />

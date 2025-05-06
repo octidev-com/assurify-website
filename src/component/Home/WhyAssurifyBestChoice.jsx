@@ -41,7 +41,7 @@ const WhyAssurifyBestChoice = () => {
 
   return (
     <Container>
-      <div className="mt-[80px] md:mt-[120px] lg:mt-[150px] relative">
+      <div className="py-[50px] md:mt-[120px] lg:mt-[150px] relative">
         {/* Right side roundBg image */}
         <div className="absolute bottom-0 -right-[50%] md:-right-[70%] lg:-right-[90%] pointer-events-none z-0">
           <img
@@ -83,7 +83,7 @@ const WhyAssurifyBestChoice = () => {
           </div>
 
           {/* Right Column: Placeholder Image */}
-          <div className="w-full md:w-[400px] lg:w-[570px] h-[400px] md:h-[460px] lg:h-[520px] rounded-xl z-10 mx-auto md:mx-0">
+          <div className="w-full md:w-[400px] lg:w-[570px] max:h-[280px] md:h-[460px] lg:h-[520px] rounded-xl z-10 mx-auto md:mx-0">
             <img src={MaximizeRevinue} alt="why assurify image" />
           </div>
         </div>

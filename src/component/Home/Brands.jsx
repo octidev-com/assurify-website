@@ -44,7 +44,7 @@ const Brands = () => {
   }, [logos])
 
   return (
-    <div className='mt-[150px] w-full'>
+    <div className='mt-[50px] md:mt-[100px] lg:mt-[150px] w-full'>
       <SectionTitle
         topText={'Brands'}
         middleText={'Brands Who Trust Assurify'}
