@@ -10,52 +10,6 @@ const PricingSection = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true)
   const navigate = useNavigate()
 
-
-  const faqs = [
-    {
-      id: 1,
-      question: 'Is there a free trial available',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 2,
-      question: 'What is shipping protection, and how does it work?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 3,
-      question: 'How do I add shipping protection to my order?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 4,
-      question: 'How do I file a claim a damaged or missing order?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 5,
-      question: 'Is there a time limit for filing a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 6,
-      question: 'How long does it take to process a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 7,
-      question: 'Who do I contact for help with a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    }
-  ]
-
   const pricingData = [
     {
       id: 1,
@@ -121,7 +75,6 @@ const PricingSection = ({ hideToggle }) => {
         'Return Management',
         'Chat Support',
         'Priority Support'
-
       ]
     },
     {
@@ -143,14 +96,14 @@ const PricingSection = ({ hideToggle }) => {
   return (
     <>
       {/* Header Section */}
-      <SectionTitle
-        topText={'Pricing'}
-        middleText={'Simple, Transparent Pricing — No Hidden Fees!'}
-        bottomText={
-          'Choose a plan that fits your business—small, medium, or large. No surprises, just value-packed features.'
-        }
-      />
-
+      <Container>
+        <SectionTitle
+          topText={'Pricing'}
+          middleText={'Simple, Transparent Pricing — No Hidden Fees!'}
+          bottomText={
+            'Choose a plan that fits your business—small, medium, or large. No surprises, just value-packed features.'
+          }
+        />
 
         {/* MONTHLY AND YEARLY PLAN TOGGLE */}
         {!hideToggle && (
@@ -196,47 +149,46 @@ const PricingSection = ({ hideToggle }) => {
                 </p>
               </div>
 
+              <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
+                <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
+                  {isMonthly ? item.monthlyPrice : item.yearlyPrice}
+                </span>{' '}
+                /{' '}
+                {item.title === 'Lifetime Deal'
+                  ? 'One-TimePayment'
+                  : isMonthly
+                  ? 'per month'
+                  : 'per year'}
+              </p>
 
-            <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
-              <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
-                {isMonthly ? item.monthlyPrice : item.yearlyPrice}
-              </span>{' '}
-              /{' '}
-              {item.title === 'Lifetime Deal'
-                ? 'One-TimePayment'
-                : isMonthly
-                ? 'per month'
-                : 'per year'}
-            </p>
-            <Button
-              variant='secondary-outline'
-              onClick={() => navigate('/contact-us')}
-              className={'mt-[24px] lg:mt-[32px] w-full'}>
-              Contact Us
-            </Button>
-
+              <Button
+                variant='secondary-outline'
+                onClick={() => navigate('/contact-us')}
+                className={'mt-[24px] lg:mt-[32px] w-full'}>
+                Contact Us
+              </Button>
 
               <hr className='my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0' />
 
+              <div className='flex flex-col gap-4'>
+                <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
+                  What you will get
+                </p>
 
-            <div className='flex flex-col gap-4'>
-              <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
-                What you will get
-              </p>
-
-              {item.facilities.map((facility, index) => (
-                <div className='flex items-center gap-2' key={index}>
-
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-
-                    {facility}
-                  </p>
-                </div>
-              ))}
-
+                {item.facilities.map((facility, index) => (
+                  <div className='flex items-center gap-2' key={index}>
+                    <span>
+                      <CustomIcon
+                        iconName={'tick-icon'}
+                        className={'w-[16px]'}
+                      />
+                    </span>
+                    <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                      {facility}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
