@@ -4,55 +4,11 @@ import { useNavigate } from 'react-router'
 import SectionTitle from '../Common/SectionTitle'
 import Button from '../Common/Button'
 import FAQ from './FAQ'
+import Container from '../Common/Container'
 
 const PricingSection = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true)
   const navigate = useNavigate()
-
-  const faqs = [
-    {
-      id: 1,
-      question: 'Is there a free trial available',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 2,
-      question: 'What is shipping protection, and how does it work?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 3,
-      question: 'How do I add shipping protection to my order?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 4,
-      question: 'How do I file a claim a damaged or missing order?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 5,
-      question: 'Is there a time limit for filing a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 6,
-      question: 'How long does it take to process a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    },
-    {
-      id: 7,
-      question: 'Who do I contact for help with a claim?',
-      answer:
-        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
-    }
-  ]
 
   const pricingData = isMonthly
     ? [
@@ -75,6 +31,7 @@ const PricingSection = ({ hideToggle }) => {
   return (
     <>
       {/* Header Section */}
+      <Container>
       <SectionTitle
         topText={'Pricing'}
         middleText={'Simple, Transparent Pricing No Hidden Fees!'}
@@ -197,7 +154,7 @@ const PricingSection = ({ hideToggle }) => {
           </div>
         ))}
       </div>
-      <FAQ faqs={faqs} marginTop="150px" />
+      </Container>
     </>
   )
 }

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import CustomIcon from '../../assets/icon/CustomIcon'
-import SectionTitle from '../Common/SectionTitle'
-import Container from '../Common/Container'
+import React, { useState } from "react";
+import CustomIcon from "../../assets/icon/CustomIcon";
+import SectionTitle from "../Common/SectionTitle";
+import Container from "../Common/Container";
 
-const FAQ = ({ faqs, marginTop='156px' }) => {
-  const [openFAQ, setOpenFAQ] = useState(null)
+const FAQ = ({ faqs, marginTop = "156px", isSectionPadding = true }) => {
+  const [openFAQ, setOpenFAQ] = useState(null);
 
   const toggleFAQ = (id) => {
     setOpenFAQ(openFAQ === id ? null : id)
@@ -13,22 +13,34 @@ const FAQ = ({ faqs, marginTop='156px' }) => {
   return (
     <div className={`mt-[50px] lg:mt-[${marginTop}]`}>
       {/* Header Section */}
-
-      <SectionTitle
-        topText={'Customer Support'}
-        middleText={'Frequently Asked Question'}
-        bottomText={
-          'Find answers to common questions and get the support you need—quick and easy'
-        }
-      />
+      {isSectionPadding ? (
+        <div className="px-7">
+          <SectionTitle
+            topText={"Customer Support"}
+            middleText={"Frequently Asked Question"}
+            bottomText={
+              "Find answers to common questions and get the support you need—quick and easy"
+            }
+          />
+        </div>
+      ) : (
+        <SectionTitle
+          topText={"Customer Support"}
+          middleText={"Frequently Asked Question"}
+          bottomText={
+            "Find answers to common questions and get the support you need—quick and easy"
+          }
+        />
+      )}
 
       {/* FAQ Section */}
       <Container>
-        <div className='max-w-[770px] mx-auto mt-12'>
+        <div className='max-w-[770px] mx-auto mt-8 lg:mt-12'>
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className='bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] rounded-2xl mb-4 overflow-hidden'>
+              className="bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] rounded-2xl mb-3 lg:mb-6 overflow-hidden"
+            >
               <button
                 className='flex items-center gap-4 p-4 w-full text-left'
                 onClick={() => toggleFAQ(faq.id)}>

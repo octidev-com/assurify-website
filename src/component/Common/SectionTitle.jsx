@@ -20,7 +20,7 @@ const SectionTitle = ({
   isTextCentered = true
 }) => {
   return (
-    <div className='mx-auto flex flex-col items-center gap-2'>
+    <div className='mx-auto flex flex-col items-center gap-3'>
       {topText && (
         <div className='flex justify-center items-center gap-3'>
           {/* LEFT HR FOR DESKTOP, HIDDEN ON MOBILE */}
