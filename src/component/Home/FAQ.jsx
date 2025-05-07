@@ -1,34 +1,32 @@
-import React, { useState } from 'react'
-import CustomIcon from '../../assets/icon/CustomIcon'
-import SectionTitle from '../Common/SectionTitle'
-import Container from '../Common/Container'
+import React, { useState } from "react";
+import CustomIcon from "../../assets/icon/CustomIcon";
+import SectionTitle from "../Common/SectionTitle";
+import Container from "../Common/Container";
 
 const FAQ = ({ faqs }) => {
-  const [openFAQ, setOpenFAQ] = useState(null)
+  const [openFAQ, setOpenFAQ] = useState(null);
 
   const toggleFAQ = (id) => {
     setOpenFAQ(openFAQ === id ? null : id)
   }
 
   return (
-    <div className='mt-[50px] lg:mt-[156px]'>
-      {/* Header Section */}
-
-      <SectionTitle
-        topText={'Customer Support'}
-        middleText={'Frequently Asked Question'}
-        bottomText={
-          'Find answers to common questions and get the support you need—quick and easy'
-        }
-      />
-
+    <div className="mt-[50px] lg:mt-[150px]">
       {/* FAQ Section */}
       <Container>
-        <div className='max-w-[770px] mx-auto mt-12'>
+      <SectionTitle
+          topText={"Customer Support"}
+          middleText={"Frequently Asked Question"}
+          bottomText={
+            "Find answers to common questions and get the support you need—quick and easy"
+          }
+        />
+        <div className='max-w-[770px] mx-auto mt-8 lg:mt-12'>
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className='bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] rounded-2xl mb-4 overflow-hidden'>
+              className="bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] rounded-2xl mb-3 lg:mb-6 overflow-hidden"
+            >
               <button
                 className='flex items-center gap-4 p-4 w-full text-left'
                 onClick={() => toggleFAQ(faq.id)}>

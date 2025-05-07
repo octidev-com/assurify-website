@@ -205,7 +205,7 @@ const HowItWorks = () => {
               ref={imageRef}
               src={howItWorksSteps[0].image}
               alt={howItWorksSteps[0].title}
-              className='order-2 md:order-1 object-contain w-full max-w-[200px] sm:max-w-[240px] md:max-w-[200px] lg:max-w-[300px] mt-3 sm:mt-4 md:mt-0 self-center'
+              className='order-2 md:order-1 object-contain max-w-[300px] lg:max-w-[500px] mt-3 sm:mt-4 md:mt-0 self-center'
             />
 
             {/* Description and Navigation Wrapper for small screens */}
