@@ -52,7 +52,7 @@ const Pricing = () => {
     <TopBg>
       <div className="pt-[32px] md:pt-[56px]">
         <PricingSection />
-        <FAQ faqs={faqs} marginTop="150px" isSectionPadding={true} />
+        <FAQ faqs={faqs} />
       </div>
     </TopBg>
   );

@@ -3,7 +3,7 @@ import CustomIcon from "../../assets/icon/CustomIcon";
 import SectionTitle from "../Common/SectionTitle";
 import Container from "../Common/Container";
 
-const FAQ = ({ faqs, marginTop = "156px", isSectionPadding = true }) => {
+const FAQ = ({ faqs }) => {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   const toggleFAQ = (id) => {
@@ -11,30 +11,16 @@ const FAQ = ({ faqs, marginTop = "156px", isSectionPadding = true }) => {
   }
 
   return (
-    <div className={`mt-[50px] lg:mt-[${marginTop}]`}>
-      {/* Header Section */}
-      {isSectionPadding ? (
-        <div className="px-7">
-          <SectionTitle
-            topText={"Customer Support"}
-            middleText={"Frequently Asked Question"}
-            bottomText={
-              "Find answers to common questions and get the support you need—quick and easy"
-            }
-          />
-        </div>
-      ) : (
-        <SectionTitle
+    <div className="mt-[50px] lg:mt-[150px]">
+      {/* FAQ Section */}
+      <Container>
+      <SectionTitle
           topText={"Customer Support"}
           middleText={"Frequently Asked Question"}
           bottomText={
             "Find answers to common questions and get the support you need—quick and easy"
           }
         />
-      )}
-
-      {/* FAQ Section */}
-      <Container>
         <div className='max-w-[770px] mx-auto mt-8 lg:mt-12'>
           {faqs.map((faq) => (
             <div
