@@ -20,37 +20,42 @@ const HowItWorks = () => {
       id: 1,
       title: 'Protection Selected',
       description:
-        'Customer selects Guide Protection as an added feature directly within their checkout.',
+        'Customers can opt-in for shipping protection at checkout, giving them confidence with every purchase.',
       image: stepImg1
     },
     {
       id: 2,
       title: 'Set Assurance Fees Easily',
-      description: 'Auto-add assurance fees for lost or damage protection',
+      description:
+        'Merchants control the shipping insurance fee—set it as a fixed amount or a percentage of the order value.',
       image: stepImg2
     },
     {
       id: 3,
       title: 'Efficient Management Panel',
-      description: 'Handle lost, damaged, or returned claims in-store',
+      description:
+        'Manage lost, damaged, returned, and refunded orders easily through the Assurify panel.',
       image: stepImg3
     },
     {
       id: 4,
       title: 'Automated Claims Processing',
-      description: 'One-click claims through a simple resolution portal',
+      description:
+        'Filing a claim takes just one click through our intuitive claims portal.',
       image: stepImg4
     },
     {
       id: 5,
       title: 'Boost Revenue & Trust',
-      description: 'Offset losses and build trust with shipping guarantee',
+      description:
+        'Increase revenue and customer loyalty by offering guaranteed shipping protection.',
       image: stepImg5
     },
     {
       id: 6,
       title: 'Where Custom Meets Care',
-      description: 'Fully customize pricing and style, backed by 24/7 support',
+      description:
+        'Fully customize pricing and appearance to match your brand—backed by 24/7 expert support.',
       image: stepImg6
     }
   ]
@@ -178,14 +183,19 @@ const HowItWorks = () => {
           {/* Header Section */}
           <SectionTitle
             topText={'Protection Coverage'}
-            middleText={'How It Works'}
+            middleText={'How Assurify Shipping Protection Works'}
             bottomText={
-              'With licensed shipping protection, fast issue resolution, package tracking, product recommendations, and carbon neutral shipping.'
+              'Curious how it works? Scroll down to explore the simple steps and benefits that make Assurify the smarter way to protect every shipment.'
             }
           />
 
           <div className='flex justify-center mt-4 sm:mt-5 md:mt-6'>
-            <Button>Get Started</Button>
+            <a
+              href='https://apps.shopify.com/assurify'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button>Get Started</Button>
+            </a>
           </div>
 
           {/* Slider Section */}
@@ -195,18 +205,18 @@ const HowItWorks = () => {
               ref={imageRef}
               src={howItWorksSteps[0].image}
               alt={howItWorksSteps[0].title}
-              className='order-2 md:order-1 object-contain w-full max-w-[200px] sm:max-w-[240px] md:max-w-[200px] lg:max-w-[300px] mt-3 sm:mt-4 md:mt-0 self-center'
+              className='order-2 md:order-1 object-contain max-w-[300px] lg:max-w-[500px] mt-3 sm:mt-4 md:mt-0 self-center'
             />
 
             {/* Description and Navigation Wrapper for small screens */}
             <div className='order-1 flex flex-row md:flex-none justify-center items-center w-full md:w-auto min-w-[240px] sm:min-w-[260px] md:min-w-[300px] lg:min-w-[500px]'>
               {/* Description Middle Section */}
               <div className='flex flex-col items-center md:items-start text-center md:text-left flex-1 md:flex-none pr-1 sm:pr-2 md:pr-3 lg:pr-4 w-[180px] sm:w-[200px] md:w-[260px] lg:w-[400px] self-center'>
-                <h1
+                <h3
                   ref={titleRef}
                   className='text-[#f7f7f7] text-base sm:text-lg md:text-3xl lg:text-5xl font-normal leading-6 sm:leading-7 md:leading-[48px] lg:leading-[72px] mb-2 sm:mb-3 md:mb-4 lg:mb-5 whitespace-normal'>
                   {howItWorksSteps[0].title}
-                </h1>
+                </h3>
                 <p
                   ref={descriptionRef}
                   className='text-[#A6A6A6] text-xs sm:text-sm md:text-base lg:text-lg font-normal leading-4 sm:leading-5 md:leading-6 lg:leading-[30px] whitespace-normal'>

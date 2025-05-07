@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import stripeImg from "../../assets/checkout/Stripe.png";
-import { checkoutSchema } from "../../schemas/checkout";
+import { checkoutSchema } from "../../schemas/forms";
 
 const initialValues = {
   firstName: "",

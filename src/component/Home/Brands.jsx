@@ -44,12 +44,12 @@ const Brands = () => {
   }, [logos])
 
   return (
-    <div className='mt-[150px] w-full'>
+    <div className='mt-[50px] md:mt-[100px] lg:mt-[150px] w-full'>
       <SectionTitle
         topText={'Brands'}
         middleText={'Brands Who Trust Assurify'}
         bottomText={
-          'Trusted by leading brands for security, reliability, and peace of mind'
+          'Trusted by Shopify store owners for reliable shipping protection.'
         }
       />
       <div className='mt-12 w-full overflow-hidden'>
