@@ -13,28 +13,36 @@ const WhyAssurifyBestChoice = () => {
       id: 1,
       title: 'Maximize Revenue',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+
+        'Turn protection into profit with every order while delivering peace of mind to your shoppers.',
+
       image: benefit1
     },
     {
       id: 2,
       title: 'Customer Satisfaction',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+
+        'Fewer complaints and more 5-star reviews thanks to stress-free claims handling.',
+
       image: benefit2
     },
     {
       id: 3,
-      title: 'Retention',
+
+      title: 'Increase Customer Retention',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+        'Build customer trust through reliable claim resolution and consistent delivery protection.',
+
       image: benefit3
     },
     {
       id: 4,
       title: 'Boost Revenue',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+
+        'Assurify helps secure your profits from shipping losses while enhancing customer trust and repeat sales.',
+
       image: benefit4
     }
   ]
@@ -43,7 +51,9 @@ const WhyAssurifyBestChoice = () => {
     <Container>
       <div className='py-[50px] md:mt-[120px] lg:mt-[150px] relative'>
         {/* Right side roundBg image */}
+
         <div className='absolute bottom-[-30%] hidden md:block -left-[-50%]  pointer-events-none z-0'>
+
           <img
             src={roundBg}
             alt='Background decoration'
@@ -55,9 +65,11 @@ const WhyAssurifyBestChoice = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 lg:gap-[30px]'>
           {/* Left Column: Heading and Benefit Cards */}
           <div>
-            <h1 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-gradient leading-10 md:leading-[56px] lg:leading-[72px] text-center md:text-left'>
-              Why Assurify Your Best Choice
-            </h1>
+
+            <h2 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-gradient leading-10 md:leading-[56px] lg:leading-[72px] text-center md:text-left'>
+              What Makes Assurify Your Best Choice
+            </h2>
+
             <div className='flex flex-col gap-4 md:gap-6 lg:gap-[32px] mt-6 lg:mt-[32px] max-w-[570px]'>
               {benefitsData.map((benefit) => (
                 <div

@@ -10,35 +10,147 @@ const PricingSection = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true)
   const navigate = useNavigate()
 
-  const pricingData = isMonthly
-    ? [
-        { id: 1, title: 'Basic', price: '$0.00' },
-        { id: 2, title: 'Starter', price: '$9.00' },
-        { id: 3, title: 'Starter Plus', price: '$19.00' },
-        { id: 4, title: 'Enterprise', price: '$49.00' },
-        { id: 5, title: 'Ultimate', price: '$99.00' },
-        { id: 6, title: 'Lifetime Deal', price: '$69.99' }
+
+  const faqs = [
+    {
+      id: 1,
+      question: 'Is there a free trial available',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 2,
+      question: 'What is shipping protection, and how does it work?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 3,
+      question: 'How do I add shipping protection to my order?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 4,
+      question: 'How do I file a claim a damaged or missing order?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 5,
+      question: 'Is there a time limit for filing a claim?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 6,
+      question: 'How long does it take to process a claim?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    },
+    {
+      id: 7,
+      question: 'Who do I contact for help with a claim?',
+      answer:
+        'Yes! We offer a free trial so you can explore all features risk-free. No credit card required experience the benefits  and see how we can help your business grow effortlessly!'
+    }
+  ]
+
+  const pricingData = [
+    {
+      id: 1,
+      title: 'Basic',
+      monthlyPrice: '$0.00',
+      yearlyPrice: '$0.00',
+      facilities: [
+        '50 secure orders/month',
+        'Claim Management',
+        'Basic Analytics',
+        'Chat Support'
       ]
-    : [
-        { id: 1, title: 'Basic', price: '$0.00' },
-        { id: 2, title: 'Starter', price: '$97.20' },
-        { id: 3, title: 'Starter Plus', price: '$205.20' },
-        { id: 4, title: 'Enterprise', price: '$529.20' },
-        { id: 5, title: 'Ultimate', price: '$1069.20' },
-        { id: 6, title: 'Lifetime Deal', price: '$69.99' }
+    },
+    {
+      id: 2,
+      title: 'Starter',
+      monthlyPrice: '$9.00',
+      yearlyPrice: '$97.20',
+      facilities: [
+        '600 secure orders/month',
+        'Claim Management',
+        'Return Management',
+        'Basic Analytics',
+        'Chat Support'
       ]
+    },
+    {
+      id: 3,
+      title: 'Starter Plus',
+      monthlyPrice: '$19.00',
+      yearlyPrice: '$205.20',
+      facilities: [
+        '2500 secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Advanced Analytics',
+        'Chat Support'
+      ]
+    },
+    {
+      id: 4,
+      title: 'Enterprise',
+      monthlyPrice: '$49.00',
+      yearlyPrice: '$529.20',
+      facilities: [
+        'Unlimited secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Chat Support'
+      ]
+    },
+    {
+      id: 5,
+      title: 'Ultimate',
+      monthlyPrice: '$99.00',
+      yearlyPrice: '$1069.20',
+      facilities: [
+        'Unlimited secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Chat Support',
+        'Priority Support'
+
+      ]
+    },
+    {
+      id: 6,
+      title: 'Lifetime Deal',
+      monthlyPrice: '$1140',
+      yearlyPrice: '$1140',
+      facilities: [
+        'Lifetime Access',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Advanced Analytics',
+        'Chat & Priority Support'
+      ]
+    }
+  ]
 
   return (
     <>
       {/* Header Section */}
-      <Container>
-        <SectionTitle
-          topText={'Pricing'}
-          middleText={'Simple, Transparent Pricing No Hidden Fees!'}
-          bottomText={
-            'Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features.'
-          }
-        />
+      <SectionTitle
+        topText={'Pricing'}
+        middleText={'Simple, Transparent Pricing — No Hidden Fees!'}
+        bottomText={
+          'Choose a plan that fits your business—small, medium, or large. No surprises, just value-packed features.'
+        }
+      />
+
 
         {/* MONTHLY AND YEARLY PLAN TOGGLE */}
         {!hideToggle && (
@@ -84,74 +196,47 @@ const PricingSection = ({ hideToggle }) => {
                 </p>
               </div>
 
-              <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
-                <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
-                  {item.price}
-                </span>{' '}
-                / {isMonthly ? 'per month' : 'per year'}
-              </p>
-              <Button
-                variant='secondary-outline'
-                onClick={() => navigate('/contact-us')}
-                className={'mt-[24px] lg:mt-[32px] w-full'}>
-                Contact Us
-              </Button>
+
+            <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
+              <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
+                {isMonthly ? item.monthlyPrice : item.yearlyPrice}
+              </span>{' '}
+              /{' '}
+              {item.title === 'Lifetime Deal'
+                ? 'One-TimePayment'
+                : isMonthly
+                ? 'per month'
+                : 'per year'}
+            </p>
+            <Button
+              variant='secondary-outline'
+              onClick={() => navigate('/contact-us')}
+              className={'mt-[24px] lg:mt-[32px] w-full'}>
+              Contact Us
+            </Button>
+
 
               <hr className='my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0' />
 
-              <div className='flex flex-col gap-4'>
-                <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
-                  What you will get
-                </p>
-                <div className='flex items-center gap-2'>
+
+            <div className='flex flex-col gap-4'>
+              <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
+                What you will get
+              </p>
+
+              {item.facilities.map((facility, index) => (
+                <div className='flex items-center gap-2' key={index}>
+
                   <span>
                     <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
                   </span>
                   <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Employee directory
+
+                    {facility}
                   </p>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Task management
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Calendar integration
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    File storage
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Communication tools
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Reporting and analytics
-                  </p>
-                </div>
-              </div>
+              ))}
+
             </div>
           ))}
         </div>
