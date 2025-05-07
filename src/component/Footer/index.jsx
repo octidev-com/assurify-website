@@ -13,10 +13,10 @@ const Footer = () => {
         {/* Call to Action Section */}
         <div className='mx-auto flex flex-col md:flex-row md:items-center md:justify-between p-[12px] lg:p-12 container border border-[rgba(72,189,66,0.10)] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] rounded-[26px] relative z-10 shadow-lg -mb-12 lg:-mb-16'>
           <div className='flex flex-col gap-[16px] max-w-[664px] text-center md:text-left'>
-            <h1 className='text-[18px] lg:text-[40px] font-normal text-[#fff] leading-[27px] lg:leading-[50px] tracking-[-0.18px]'>
-              Protect Your Customers, Boost Your Margins — Shipping Coverage
-              That Works for Everyone.
-            </h1>
+            <h2 className='text-[18px] lg:text-[40px] font-normal text-[#fff] leading-[27px] lg:leading-[50px] tracking-[-0.18px]'>
+              Protect Your Customers, Boost Your Margins — Shipping Coverage for
+              Everyone
+            </h2>
             <p className='text-[12px] lg:text-[16px] font-light lg:font-normal text-[#A6A6A6] leading-[18px] lg:leading-[24px]'>
               Seamlessly cover lost, stolen, or damaged shipments while building
               trust with customers and unlocking new revenue with every sale.
