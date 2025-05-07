@@ -3,7 +3,7 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 import SectionTitle from '../Common/SectionTitle'
 import Container from '../Common/Container'
 
-const FAQ = ({ faqs }) => {
+const FAQ = ({ faqs, marginTop='156px' }) => {
   const [openFAQ, setOpenFAQ] = useState(null)
 
   const toggleFAQ = (id) => {
@@ -11,7 +11,7 @@ const FAQ = ({ faqs }) => {
   }
 
   return (
-    <div className='mt-[50px] lg:mt-[156px]'>
+    <div className={`mt-[50px] lg:mt-[${marginTop}]`}>
       {/* Header Section */}
 
       <SectionTitle

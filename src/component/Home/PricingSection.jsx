@@ -197,7 +197,7 @@ const PricingSection = ({ hideToggle }) => {
           </div>
         ))}
       </div>
-      <FAQ faqs={faqs} />
+      <FAQ faqs={faqs} marginTop="150px" />
     </>
   )
 }
