@@ -32,128 +32,129 @@ const PricingSection = ({ hideToggle }) => {
     <>
       {/* Header Section */}
       <Container>
-      <SectionTitle
-        topText={'Pricing'}
-        middleText={'Simple, Transparent Pricing No Hidden Fees!'}
-        bottomText={
-          'Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features.'
-        }
-      />
+        <SectionTitle
+          topText={'Pricing'}
+          middleText={'Simple, Transparent Pricing No Hidden Fees!'}
+          bottomText={
+            'Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features.'
+          }
+        />
 
-      {/* MONTHLY AND YEARLY PLAN TOGGLE */}
-      {!hideToggle && (
-        <div className='flex justify-center mt-[32px] lg:mt-12'>
-          <div className='relative flex items-center bg-[#1A1B1A] rounded-[16px] w-[200px] h-[40px] overflow-hidden'>
+        {/* MONTHLY AND YEARLY PLAN TOGGLE */}
+        {!hideToggle && (
+          <div className='flex justify-center mt-[32px] lg:mt-12'>
+            <div className='relative flex items-center bg-[#1A1B1A] rounded-[16px] w-[200px] h-[40px] overflow-hidden'>
+              <div
+                className={`absolute top-0 left-0 w-1/2 h-full rounded-[14px] z-0 transition-transform duration-300 ease-in-out shadow-[0_0_10px_rgba(72,189,66,0.8)]`}
+                style={{
+                  transform: isMonthly ? 'translateX(0%)' : 'translateX(100%)',
+                  background:
+                    'linear-gradient(94deg, #48BD42 2.15%, #FFF 97.92%)'
+                }}></div>
+              <button
+                className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+                  isMonthly ? 'text-black' : 'text-white'
+                }`}
+                onClick={() => setIsMonthly(true)}>
+                Monthly
+              </button>
+              <button
+                className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+                  !isMonthly ? 'text-black' : 'text-white'
+                }`}
+                onClick={() => setIsMonthly(false)}>
+                Annually
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Pricing package cards */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[30px] mt-[20px] lg:mt-[30px] mx-auto'>
+          {pricingData.map((item) => (
             <div
-              className={`absolute top-0 left-0 w-1/2 h-full rounded-[14px] z-0 transition-transform duration-300 ease-in-out shadow-[0_0_10px_rgba(72,189,66,0.8)]`}
-              style={{
-                transform: isMonthly ? 'translateX(0%)' : 'translateX(100%)',
-                background: 'linear-gradient(94deg, #48BD42 2.15%, #FFF 97.92%)'
-              }}></div>
-            <button
-              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
-                isMonthly ? 'text-black' : 'text-white'
-              }`}
-              onClick={() => setIsMonthly(true)}>
-              Monthly
-            </button>
-            <button
-              className={`relative z-10 w-1/2 h-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
-                !isMonthly ? 'text-black' : 'text-white'
-              }`}
-              onClick={() => setIsMonthly(false)}>
-              Annually
-            </button>
-          </div>
+              key={item.id}
+              className='p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[40px] transition-transform duration-200 ease-out hover:-translate-y-1 hover:bg-[linear-gradient(195.05deg,rgba(72,189,66,0.18)_0%,rgba(72,189,66,0.04)_50%,rgba(72,189,66,0.08)_100%)]'>
+              <div>
+                <h4 className='text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8'>
+                  {item.title}
+                </h4>
+                <p className='text-[#ffffffcc] text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1'>
+                  15-day free trial
+                </p>
+              </div>
+
+              <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
+                <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
+                  {item.price}
+                </span>{' '}
+                / {isMonthly ? 'per month' : 'per year'}
+              </p>
+              <Button
+                variant='secondary-outline'
+                onClick={() => navigate('/contact-us')}
+                className={'mt-[24px] lg:mt-[32px] w-full'}>
+                Contact Us
+              </Button>
+
+              <hr className='my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0' />
+
+              <div className='flex flex-col gap-4'>
+                <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
+                  What you will get
+                </p>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    Employee directory
+                  </p>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    Task management
+                  </p>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    Calendar integration
+                  </p>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    File storage
+                  </p>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    Communication tools
+                  </p>
+                </div>
+                <div className='flex items-center gap-2'>
+                  <span>
+                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
+                  </span>
+                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                    Reporting and analytics
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      )}
-
-      {/* Pricing package cards */}
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] lg:gap-[30px] mt-[20px] lg:mt-[30px] mx-auto'>
-        {pricingData.map((item) => (
-          <div
-            key={item.id}
-            className='p-[24px] lg:p-[40px] rounded-2xl bg-[linear-gradient(195deg,rgba(255,255,255,0.10)_0%,rgba(255,255,255,0.02)_50%,rgba(255,255,255,0.06)_100%)] backdrop-blur-[20px] transition-transform duration-200 ease-out hover:-translate-y-1 hover:border hover:border-[#48BD42]'>
-            <div>
-              <h4 className='text-[18px] lg:text-2xl font-medium leading-[27px] lg:leading-8'>
-                {item.title}
-              </h4>
-              <p className='text-[#ffffffcc] text-[12px] lg:text-sm font-normal leading-[18px] lg:leading-5 mt-1'>
-                15-day free trial
-              </p>
-            </div>
-
-            <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
-              <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
-                {item.price}
-              </span>{' '}
-              / {isMonthly ? 'per month' : 'per year'}
-            </p>
-            <Button
-              variant='secondary-outline'
-              onClick={() => navigate('/contact-us')}
-              className={'mt-[24px] lg:mt-[32px] w-full'}>
-              Contact Us
-            </Button>
-
-            <hr className='my-[24px] lg:my-[32px] w-full h-[1px] bg-[#FFFFFF33] border-0' />
-
-            <div className='flex flex-col gap-4'>
-              <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
-                What you will get
-              </p>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  Employee directory
-                </p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  Task management
-                </p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  Calendar integration
-                </p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  File storage
-                </p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  Communication tools
-                </p>
-              </div>
-              <div className='flex items-center gap-2'>
-                <span>
-                  <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                </span>
-                <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                  Reporting and analytics
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
       </Container>
     </>
   )
