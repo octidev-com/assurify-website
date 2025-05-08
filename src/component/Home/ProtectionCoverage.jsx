@@ -2,18 +2,16 @@ import React, { useEffect, useRef } from 'react'
 import roundBg from '../../assets/banner/round-bg.png'
 import CustomIcon from '../../assets/icon/CustomIcon'
 import Container from '../Common/Container'
-import Button from '../Common/Button'
-import rightSideHr from '../../assets/howItWorks/right-side-hr.png'
-import leftSideHr from '../../assets/howItWorks/left-side-hr.png'
+import SectionTitle from '../Common/SectionTitle'
 
 const ProtectionCoverage = () => {
   const protectionCoverageOptions = [
-    { id: 1, title: 'Order placed', iconName: 'order_placed' },
-    { id: 2, title: 'Claim raised', iconName: 'claim_raised' },
-    { id: 3, title: 'Claim approved', iconName: 'claim_raised' },
-    { id: 4, title: 'Merchant paid', iconName: 'merchant_paid' },
-    { id: 5, title: 'Claim resolved', iconName: 'claim_resolved' },
-    { id: 6, title: 'Reorder / refund', iconName: 'reorder_refund' }
+    { id: 1, title: 'Order Placed', iconName: 'order_placed' },
+    { id: 2, title: 'Claim Raised', iconName: 'claim_raised' },
+    { id: 3, title: 'Claim Approved', iconName: 'claim_raised' },
+    { id: 4, title: 'Merchant Paid', iconName: 'merchant_paid' },
+    { id: 5, title: 'Claim Resolved', iconName: 'claim_resolved' },
+    { id: 6, title: 'Reorder / Refund', iconName: 'reorder_refund' }
   ]
 
   // Ref for the container and elements (right side only)
@@ -120,10 +118,10 @@ const ProtectionCoverage = () => {
 
       {/* Main content with container */}
       <Container>
-        <div className='relative py-[24px] lg:py-[150px] mx-auto z-10'>
-          <div className='grid grid-cols-1 xl:grid-cols-2 justify-center items-center gap-[38px] py-[26px]'>
-            {/* Left side of the main content (header) - No animation */}
-            <div className='flex flex-col gap-[12px] lg:gap-[24px]'>
+        <div className='relative py-[27px] lg:py-[150px] mx-auto z-10'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 justify-center items-center gap-[38px] pb-[27px] sm:pb-0'>
+            {/* Left side of the main content  */}
+            {/* <div className='flex flex-col gap-[12px] lg:gap-[24px]'>
               <div className='flex justify-center xl:justify-start items-center gap-3'>
                 <img src={rightSideHr} alt='' className='max-w-[100px]' />
                 <p className='text-[14px] lg:text-[20px] text-[#F7F7F7] font-normal leading-[21px] lg:leading-[30px]'>
@@ -132,19 +130,27 @@ const ProtectionCoverage = () => {
                 <img src={leftSideHr} alt='' className='max-w-[100px]' />
               </div>
               <h1 className='text-[24px] lg:text-5xl font-semibold text-center lg:text-left text-gradient leading-[36px] lg:leading-[72px]'>
-                Total Coverage & Claims Management
+                Full Coverage & Efficient Claims Solution
               </h1>
               <p className='text-[#A6A6A6] text-[12px] lg:text-lg text-center lg:text-start font-light leading-[18px] lg:leading-[27px]'>
-                Purchasers crave carbon-neutral shipping options and total
-                package protection. Guide Protection makes it easy to give the
-                people what they want (again..and again).
+                Assurify protects orders from placement to refund or
+                replacement, making the process seamless for both customers and
+                merchants.
               </p>
               <div className='flex lg:justify-start justify-center'>
                 <Button variant='secondary-outline'>Get Started</Button>
               </div>
-            </div>
+            </div> */}
+            <SectionTitle
+              topText={'Protection Coverage'}
+              middleText={'Full Coverage & Efficient Claims Solution'}
+              bottomText={
+                'Assurify protects orders from placement to refund or replacement, making the process seamless for both customers and merchants.'
+              }
+              isTextCentered={false}
+            />
 
-            {/* Right side of the main content - With animation */}
+            {/* Right side of the main content  */}
             <div className='w-full lg:w-[744px] lg:h-[370px] flex items-center justify-center mx-auto'>
               {/* Container for the border */}
               <div

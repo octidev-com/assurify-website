@@ -41,7 +41,7 @@ const InsightsAndInspiration = () => {
   ]
 
   return (
-    <div className='w-full mt-[80px] md:mt-[120px] lg:mt-[150px] py-[60px] md:py-[100px] lg:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
+    <div className='w-full mt-[0px] md:mt-[120px] lg:mt-[150px] py-[24px] md:py-[100px] lg:py-[150px] relative bg-gradient-to-r from-white/5 to-white/5 backdrop-blur-[37px] overflow-hidden'>
       {/* Background elements */}
       <div className='absolute top-1/2 left-[-30%] md:left-[-40%] lg:left-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
         <img
@@ -59,7 +59,8 @@ const InsightsAndInspiration = () => {
       </div>
 
       {/* Main content with container */}
-      <Container>
+      {/* <Container> */}
+      <div className='max-w-[1170px] mx-auto px-[16px] xl:px-0'>
         <div className='relative mx-auto'>
           {/* Header */}
           <SectionTitle
@@ -73,10 +74,12 @@ const InsightsAndInspiration = () => {
           />
 
           {/* Main content */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-[30px] mt-6 md:mt-8 lg:mt-[48px]'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 lg:gap-[30px] mt-6 md:mt-8 lg:mt-[48px]'>
             {blogs.map((item) => (
               // blog card
-              <div key={item.id} className='bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] rounded-xl'>
+              <div
+                key={item.id}
+                className='bg-gradient-to-br from-white/10 via-white/5 to-white/5 backdrop-blur-[20px] rounded-xl'>
                 <img src={item.img} alt='inspiration-image' />
                 <div className='p-3 md:p-4 lg:p-4 flex flex-col gap-1 md:gap-2'>
                   <p className='text-[#F7F7F7] text-[12px] md:text-base font-normal leading-[18px] md:leading-6'>
@@ -104,7 +107,7 @@ const InsightsAndInspiration = () => {
               target='_blank'
               rel='noopener noreferrer'
               className='inline-block'>
-              <Button className='mt-[48px] underline' variant='primary-green'>
+              <Button className='mt-[48px]' variant='primary-green'>
                 <p className='flex items-center gap-2'>
                   Read More Blogs
                   <CustomIcon iconName='external-link-icon' />
@@ -113,7 +116,8 @@ const InsightsAndInspiration = () => {
             </a>
           </div>
         </div>
-      </Container>
+      </div>
+      {/* </Container> */}
     </div>
   )
 }

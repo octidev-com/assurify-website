@@ -12,28 +12,28 @@ const Benefits = () => {
       id: 1,
       title: 'No Direct Cost to Sellers',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+        'Offer premium shipping protection at no additional cost to you. Assurify adds value for customers while increasing your profits—without cutting into margins.',
       image: benefit1
     },
     {
       id: 2,
       title: 'Flexible Integrations',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+        'Assurify integrates seamlessly with your existing Shopify store—no technical hassle, no workflow disruptions.',
       image: benefit2
     },
     {
       id: 3,
       title: 'Superior Customer Service',
       description:
-        'Check out our custom research services designed to tackle your business challenges! We offer market analysis and consumer insights to help you make better decisions and boost your growth.',
+        'Get 24/7 support from a team that truly understands your business. From setup to claims, we’re here for you and your customers.',
       image: benefit3
     }
   ]
 
   return (
     <Container>
-      <div className='mt-[80px] sm:mt-[100px] md:mt-[120px] lg:mt-[150px] relative'>
+      <div className='mt-[50px] sm:mt-[100px] md:mt-[120px] lg:mt-[150px] relative'>
         {/* Left side roundBg image */}
         <div className='absolute -top-[10%] -left-[100%] pointer-events-none z-0'>
           <img
@@ -49,9 +49,9 @@ const Benefits = () => {
 
           <SectionTitle
             topText={'Benefits'}
-            middleText={'Win Win For Both Merchant and Customer'}
+            middleText={'A Win-Win for Both Merchants and Customers'}
             bottomText={
-              'A perfect balance—customers get great value, and merchants boost their sales effortlessly!'
+              'The perfect balance—customers get premium value, and merchants increase sales effortlessly!'
             }
             isTextCentered={false}
           />

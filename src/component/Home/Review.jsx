@@ -6,33 +6,19 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 import StartIcon from '../../assets/star.png'
 import AssurifyIcon from '../../assets/icon/assurify-icon.png'
 import Container from '../Common/Container'
+import SectionTitle from '../Common/SectionTitle'
 
 const Review = () => {
   const reviews = [
     {
-      text: 'Working with DigitX was a pleasure. Their web design team created a stunning website that perfectly captured our brand’s essence. The feedback from our customers has been overwhelmingly positive.',
+      text: " I cannot emphasize enough how impressed I am with Assurify's support team... (Full testimonial as you have it.)",
       name: 'Aditya Verma',
-      stars: 3
+      stars: 5
     },
     {
-      text: 'DigitX transformed our online presence with a sleek, user-friendly website. Their attention to detail and quick response times made the process seamless. Highly recommend their services!',
+      text: ' Works flawlessly and the support team responds quickly. Very flexible app, easy to set up. Highly recommend!',
       name: 'Priya Sharma',
-      stars: 3
-    },
-    {
-      text: 'The team at DigitX delivered beyond our expectations. Our new website is not only visually appealing but also drives more traffic. Their support team is top-notch!',
-      name: 'Rahul Mehta',
-      stars: 3
-    },
-    {
-      text: 'DigitX’s expertise in web design is unmatched. They crafted a site that’s both functional and beautiful, boosting our brand credibility. The collaboration was smooth and professional.',
-      name: 'Sneha Kapoor',
-      stars: 3
-    },
-    {
-      text: 'We’re thrilled with the website DigitX built for us. It’s intuitive, modern, and has significantly improved our customer engagement. Their team was a joy to work with!',
-      name: 'Vikram Singh',
-      stars: 3
+      stars: 5
     }
   ]
 
@@ -92,6 +78,7 @@ const Review = () => {
                 Discover why customers trust us through their honest reviews.
               </p>
             </div>
+
             <div className='hidden md:flex gap-[40px] mt-6 md:mt-0 max-w-[164px]'>
               <button
                 onClick={handlePrev}
