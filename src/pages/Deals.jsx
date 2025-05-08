@@ -5,8 +5,11 @@ import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
 import TopBg from '../component/Common/TopBg'
 import AssurifyShippingProtectionCartImg from '../assets/deals/assurify-shipping-protection-cart-image.png'
+import { useNavigate } from 'react-router'
 
 const Deals = () => {
+  const navigate = useNavigate()
+
   const faqs = [
     {
       id: 1,
@@ -93,7 +96,11 @@ const Deals = () => {
 
               {/* Buttons */}
               <div className='flex gap-3'>
-                <Button variant='primary-green'>Buy Now</Button>
+                <Button
+                  onClick={() => navigate('/checkout')}
+                  variant='primary-green'>
+                  Buy Now
+                </Button>
                 <Button variant='secondary-outline'>
                   How to install Assurify?
                 </Button>
