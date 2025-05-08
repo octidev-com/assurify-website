@@ -60,7 +60,7 @@ const InsightsAndInspiration = () => {
 
       {/* Main content with container */}
       {/* <Container> */}
-      <div className="max-w-[1170px] mx-auto px-[16px] xl:px-0">
+      <div className='max-w-[1170px] mx-auto px-[16px] xl:px-0'>
         <div className='relative mx-auto'>
           {/* Header */}
           <SectionTitle
@@ -116,7 +116,7 @@ const InsightsAndInspiration = () => {
             </a>
           </div>
         </div>
-        </div>
+      </div>
       {/* </Container> */}
     </div>
   )

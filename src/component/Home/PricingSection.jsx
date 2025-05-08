@@ -10,23 +10,88 @@ const PricingSection = ({ hideToggle }) => {
   const [isMonthly, setIsMonthly] = useState(true)
   const navigate = useNavigate()
 
-  const pricingData = isMonthly
-    ? [
-        { id: 1, title: 'Basic', price: '$0.00' },
-        { id: 2, title: 'Starter', price: '$9.00' },
-        { id: 3, title: 'Starter Plus', price: '$19.00' },
-        { id: 4, title: 'Enterprise', price: '$49.00' },
-        { id: 5, title: 'Ultimate', price: '$99.00' },
-        { id: 6, title: 'Lifetime Deal', price: '$69.99' }
+  const pricingData = [
+    {
+      id: 1,
+      title: 'Basic',
+      monthlyPrice: '$0.00',
+      yearlyPrice: '$0.00',
+      facilities: [
+        '50 secure orders/month',
+        'Claim Management',
+        'Basic Analytics',
+        'Chat Support'
       ]
-    : [
-        { id: 1, title: 'Basic', price: '$0.00' },
-        { id: 2, title: 'Starter', price: '$97.20' },
-        { id: 3, title: 'Starter Plus', price: '$205.20' },
-        { id: 4, title: 'Enterprise', price: '$529.20' },
-        { id: 5, title: 'Ultimate', price: '$1069.20' },
-        { id: 6, title: 'Lifetime Deal', price: '$69.99' }
+    },
+    {
+      id: 2,
+      title: 'Starter',
+      monthlyPrice: '$9.00',
+      yearlyPrice: '$97.20',
+      facilities: [
+        '600 secure orders/month',
+        'Claim Management',
+        'Return Management',
+        'Basic Analytics',
+        'Chat Support'
       ]
+    },
+    {
+      id: 3,
+      title: 'Starter Plus',
+      monthlyPrice: '$19.00',
+      yearlyPrice: '$205.20',
+      facilities: [
+        '2500 secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Advanced Analytics',
+        'Chat Support'
+      ]
+    },
+    {
+      id: 4,
+      title: 'Enterprise',
+      monthlyPrice: '$49.00',
+      yearlyPrice: '$529.20',
+      facilities: [
+        'Unlimited secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Chat Support'
+      ]
+    },
+    {
+      id: 5,
+      title: 'Ultimate',
+      monthlyPrice: '$99.00',
+      yearlyPrice: '$1069.20',
+      facilities: [
+        'Unlimited secure orders/month',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Chat Support',
+        'Priority Support'
+      ]
+    },
+    {
+      id: 6,
+      title: 'Lifetime Deal',
+      monthlyPrice: '$1140',
+      yearlyPrice: '$1140',
+      facilities: [
+        'Lifetime Access',
+        'Checkout Extension',
+        'Claim Management',
+        'Return Management',
+        'Advanced Analytics',
+        'Chat & Priority Support'
+      ]
+    }
+  ]
 
   return (
     <>
@@ -34,9 +99,9 @@ const PricingSection = ({ hideToggle }) => {
       <Container>
         <SectionTitle
           topText={'Pricing'}
-          middleText={'Simple, Transparent Pricing No Hidden Fees!'}
+          middleText={'Simple, Transparent Pricing — No Hidden Fees!'}
           bottomText={
-            'Choose a plan that fits your needs and scale with ease. No surprises, just value-packed features.'
+            'Choose a plan that fits your business—small, medium, or large. No surprises, just value-packed features.'
           }
         />
 
@@ -86,10 +151,16 @@ const PricingSection = ({ hideToggle }) => {
 
               <p className='mt-[16px] lg:mt-[32px] text-[#FFFFFFCC] text-sm font-normal leading-6'>
                 <span className='text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14'>
-                  {item.price}
+                  {isMonthly ? item.monthlyPrice : item.yearlyPrice}
                 </span>{' '}
-                / {isMonthly ? 'per month' : 'per year'}
+                /{' '}
+                {item.title === 'Lifetime Deal'
+                  ? 'One-TimePayment'
+                  : isMonthly
+                  ? 'per month'
+                  : 'per year'}
               </p>
+
               <Button
                 variant='secondary-outline'
                 onClick={() => navigate('/contact-us')}
@@ -103,54 +174,20 @@ const PricingSection = ({ hideToggle }) => {
                 <p className='text-[#FFFFFF] text-lg font-medium leading-7'>
                   What you will get
                 </p>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Employee directory
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Task management
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Calendar integration
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    File storage
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Communication tools
-                  </p>
-                </div>
-                <div className='flex items-center gap-2'>
-                  <span>
-                    <CustomIcon iconName={'tick-icon'} className={'w-[16px]'} />
-                  </span>
-                  <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
-                    Reporting and analytics
-                  </p>
-                </div>
+
+                {item.facilities.map((facility, index) => (
+                  <div className='flex items-center gap-2' key={index}>
+                    <span>
+                      <CustomIcon
+                        iconName={'tick-icon'}
+                        className={'w-[16px]'}
+                      />
+                    </span>
+                    <p className='text-[#ffffffcc] text-[13px] lg:text-[14px] leading-[22px]'>
+                      {facility}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}

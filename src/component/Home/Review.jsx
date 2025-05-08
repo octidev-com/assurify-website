@@ -6,33 +6,19 @@ import CustomIcon from '../../assets/icon/CustomIcon'
 import StartIcon from '../../assets/star.png'
 import AssurifyIcon from '../../assets/icon/assurify-icon.png'
 import Container from '../Common/Container'
+import SectionTitle from '../Common/SectionTitle'
 
 const Review = () => {
   const reviews = [
     {
-      text: 'Working with DigitX was a pleasure. Their web design team created a stunning website that perfectly captured our brand’s essence. The feedback from our customers has been overwhelmingly positive.',
-      name: 'Aditya Verma',
-      stars: 3
+      text: "I cannot emphasize enough how impressed I am with Assurify's support team. From the moment I encountered a minor issue to major ones like cloudflare problems with the app, their customer service representatives demonstrated an extraordinary level of commitment and technical expertise.",
+      name: 'Mearth',
+      stars: 5
     },
     {
-      text: 'DigitX transformed our online presence with a sleek, user-friendly website. Their attention to detail and quick response times made the process seamless. Highly recommend their services!',
-      name: 'Priya Sharma',
-      stars: 3
-    },
-    {
-      text: 'The team at DigitX delivered beyond our expectations. Our new website is not only visually appealing but also drives more traffic. Their support team is top-notch!',
-      name: 'Rahul Mehta',
-      stars: 3
-    },
-    {
-      text: 'DigitX’s expertise in web design is unmatched. They crafted a site that’s both functional and beautiful, boosting our brand credibility. The collaboration was smooth and professional.',
-      name: 'Sneha Kapoor',
-      stars: 3
-    },
-    {
-      text: 'We’re thrilled with the website DigitX built for us. It’s intuitive, modern, and has significantly improved our customer engagement. Their team was a joy to work with!',
-      name: 'Vikram Singh',
-      stars: 3
+      text: 'Works flawlessly and the support team responds quickly. Very flexible app, easy to set up. Highly recommend!',
+      name: 'Orgacia',
+      stars: 5
     }
   ]
 
@@ -85,13 +71,14 @@ const Review = () => {
                   className='max-w-[60px] md:max-w-[100px]'
                 />
               </div>
-              <h1 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
+              <h2 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
                 Verified Customer Experiences
-              </h1>
+              </h2>
               <p className='text-[#A6A6A6] text-sm md:text-lg font-light leading-5 md:leading-[27px]'>
                 Discover why customers trust us through their honest reviews.
               </p>
             </div>
+
             <div className='hidden md:flex gap-[40px] mt-6 md:mt-0 max-w-[164px]'>
               <button
                 onClick={handlePrev}
