@@ -71,9 +71,9 @@ const Review = () => {
                   className='max-w-[60px] md:max-w-[100px]'
                 />
               </div>
-              <h1 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
+              <h2 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
                 Verified Customer Experiences
-              </h1>
+              </h2>
               <p className='text-[#A6A6A6] text-sm md:text-lg font-light leading-5 md:leading-[27px]'>
                 Discover why customers trust us through their honest reviews.
               </p>
