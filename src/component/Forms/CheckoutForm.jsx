@@ -1,6 +1,9 @@
+import { PaymentElement, useCheckout } from "@stripe/react-stripe-js";
 import { useFormik } from "formik";
 import stripeImg from "../../assets/checkout/Stripe.png";
 import { checkoutSchema } from "../../schemas/forms";
+import EmailInput from "./EmailInput";
+import PayButton from "./PayButton";
 
 const initialValues = {
   firstName: "",
@@ -13,10 +16,6 @@ const initialValues = {
   orderNote: "",
 };
 
-const onSubmit = (values) => {
-  console.log("Form submitted", values);
-};
-
 const productDetails = [
   { title: "Assurify Lifetime Deal * 1", price: "50.00" },
   { title: "Subtotal", price: "50.00" },
@@ -24,6 +23,23 @@ const productDetails = [
 ];
 
 const CheckoutForm = () => {
+  const checkout = useCheckout();
+
+  const onSubmit = async (values) => {
+    console.log("Form submitted", values);
+
+    const result = await checkout.confirm();
+    console.log("result", result);
+    if (result.type === "error") {
+      // Show error to your customer (for example, payment details incomplete)
+      console.log(result.error.message);
+    } else {
+      // Your customer will be redirected to your `return_url`. For some payment
+      // methods like iDEAL, your customer will be redirected to an intermediate
+      // site first to authorize the payment, then redirected to the `return_url`.
+    }
+  };
+
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     validationSchema: checkoutSchema,
@@ -283,7 +299,7 @@ const CheckoutForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[30px]">
+      <div className="flex flex-col lg:flex-row lg:items-start gap-[24px] lg:gap-[30px]">
         {/* COLUMN 1 */}
 
         <div className="w-full lg:max-w-[670px] flex flex-col gap-[24px] lg:gap-[30px]">
@@ -406,7 +422,8 @@ const CheckoutForm = () => {
             <label htmlFor="emailAddress" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
               Email Address
             </label>
-            <input
+            <EmailInput />
+            {/* <input
               type="email"
               name="emailAddress"
               id="emailAddress"
@@ -416,7 +433,7 @@ const CheckoutForm = () => {
               className={`w-full px-4 h-[48px] rounded-2xl mt-2 border  ${
                 errors.emailAddress && touched.emailAddress ? "border-red-500" : "border-[#A6A6A6]"
               }  opacity-[0.6] focus:outline-none`}
-            />
+            /> */}
 
             {/* error message */}
             {errors.emailAddress && touched.emailAddress && <p className="text-red-500 text-sm">{errors.emailAddress}</p>}
@@ -532,10 +549,23 @@ const CheckoutForm = () => {
                   <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Stripe</p>
                 </div>
 
+                {/* STRIPE PAYMENT ELEMENT */}
+
+                <PaymentElement
+                  options={{
+                    layout: {
+                      type: "accordion",
+                      defaultCollapsed: false,
+                      radios: true,
+                      spacedAccordionItems: true,
+                    },
+                  }}
+                />
+                <PayButton />
                 {/* Placeholder Button */}
-                <button type="submit" className="btn-primary-green-full">
+                {/* <button type="submit" className="btn-primary-green-full">
                   Place Order
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
