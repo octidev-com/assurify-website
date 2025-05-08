@@ -5,6 +5,7 @@ import Container from '../component/Common/Container'
 import Button from '../component/Common/Button'
 import TopBg from '../component/Common/TopBg'
 import AssurifyShippingProtectionCartImg from '../assets/deals/assurify-shipping-protection-cart-image.png'
+
 import Description from '../component/Deals/Description'
 import RatingsAndReviews from '../component/Deals/RatingsAndReviews'
 
@@ -13,10 +14,13 @@ import { useNavigate } from 'react-router'
 
 
 
+
+
+
 const Deals = () => {
-  // State to track the active tab
+   // State to track the active tab
   const [activeTab, setActiveTab] = useState('description')
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
 
   const faqs = [
