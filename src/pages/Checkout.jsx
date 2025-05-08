@@ -21,7 +21,7 @@ const Checkout = () => {
         {/* MAIN SECTION */}
         <SectionTitle middleText={"Checkout"} />
 
-        <div className="mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0">
+        <div className="mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0 min-h-screen">
           <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
             <CheckoutForm />
           </CheckoutProvider>

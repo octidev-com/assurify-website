@@ -299,7 +299,7 @@ const CheckoutForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col lg:flex-row gap-[24px] lg:gap-[30px]">
+      <div className="flex flex-col lg:flex-row lg:items-start gap-[24px] lg:gap-[30px]">
         {/* COLUMN 1 */}
 
         <div className="w-full lg:max-w-[670px] flex flex-col gap-[24px] lg:gap-[30px]">
@@ -551,7 +551,16 @@ const CheckoutForm = () => {
 
                 {/* STRIPE PAYMENT ELEMENT */}
 
-                <PaymentElement />
+                <PaymentElement
+                  options={{
+                    layout: {
+                      type: "accordion",
+                      defaultCollapsed: false,
+                      radios: true,
+                      spacedAccordionItems: true,
+                    },
+                  }}
+                />
                 <PayButton />
                 {/* Placeholder Button */}
                 {/* <button type="submit" className="btn-primary-green-full">
