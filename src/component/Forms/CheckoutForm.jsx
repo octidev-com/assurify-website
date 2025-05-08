@@ -1,6 +1,5 @@
 import { PaymentElement, useCheckout } from "@stripe/react-stripe-js";
 import { useFormik } from "formik";
-import stripeImg from "../../assets/checkout/Stripe.png";
 import { checkoutSchema } from "../../schemas/forms";
 import EmailInput from "./EmailInput";
 import PayButton from "./PayButton";
