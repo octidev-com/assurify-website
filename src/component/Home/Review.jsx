@@ -11,13 +11,13 @@ import SectionTitle from '../Common/SectionTitle'
 const Review = () => {
   const reviews = [
     {
-      text: " I cannot emphasize enough how impressed I am with Assurify's support team... (Full testimonial as you have it.)",
-      name: 'Aditya Verma',
+      text: "I cannot emphasize enough how impressed I am with Assurify's support team. From the moment I encountered a minor issue to major ones like cloudflare problems with the app, their customer service representatives demonstrated an extraordinary level of commitment and technical expertise.",
+      name: 'Mearth',
       stars: 5
     },
     {
-      text: ' Works flawlessly and the support team responds quickly. Very flexible app, easy to set up. Highly recommend!',
-      name: 'Priya Sharma',
+      text: 'Works flawlessly and the support team responds quickly. Very flexible app, easy to set up. Highly recommend!',
+      name: 'Orgacia',
       stars: 5
     }
   ]
