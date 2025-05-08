@@ -544,11 +544,6 @@ const CheckoutForm = () => {
 
               {/* Product Details */}
               <div className="flex flex-col gap-[16px] mt-[12px]">
-                <div className="flex gap-[6px] items-center">
-                  <img src={stripeImg} style={{ width: "24px", height: "24px" }} alt="" />
-                  <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Stripe</p>
-                </div>
-
                 {/* STRIPE PAYMENT ELEMENT */}
 
                 <PaymentElement
