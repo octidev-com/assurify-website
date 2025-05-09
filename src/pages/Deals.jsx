@@ -8,12 +8,19 @@ import AssurifyShippingProtectionCartImg from '../assets/deals/assurify-shipping
 
 import Description from '../component/Deals/Description'
 import RatingsAndReviews from '../component/Deals/RatingsAndReviews'
+
 import { useNavigate } from 'react-router'
 
 
+
+
+
+
+
 const Deals = () => {
+   // State to track the active tab
+  const [activeTab, setActiveTab] = useState('description')
   const navigate = useNavigate()
-   const [activeTab, setActiveTab] = useState('description')
 
 
   const faqs = [
