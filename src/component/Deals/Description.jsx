@@ -1,279 +1,197 @@
 import React, { useState } from 'react'
 
 const Description = () => {
-  const [visibleQuestions, setVisibleQuestions] = useState(5)
+  const [visibleQuestions, setVisibleQuestions] = useState(3)
 
   const questions = [
     {
-      title: '1. What is Assurify?',
-      content: (
-        <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          Assurify is a comprehensive app designed to enhance your digital
-          security and simplify your daily tasks. From monitoring personal
-          information breaches to managing important documents, Assurify acts as
-          your digital assistant, ensuring your online world remains protected
-          and organized.
-        </p>
-      )
-    },
-    {
-      title: '2. Why You Need Assurify?',
+      title: '🚀 What\'s Included in the Lifetime Deal',
       content: (
         <>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            In today’s interconnected world, online threats are increasing
-            daily. Personal data theft, password breaches, and identity fraud
-            have become significant concerns. Assurify provides:
-          </p>
           <ul className='list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            <li>A proactive way to safeguard sensitive information.</li>
-            <li>Tools to streamline document management.</li>
-            <li>Real-time alerts for potential vulnerabilities.</li>
+            <li>Unlimited Secure Orders/Month</li>
+            <li>Lifetime Access</li>
+            <li>Checkout Extension Integration</li>
+            <li>Claim Management System</li>
+            <li>Return Management Features</li>
+            <li>Advanced Analytics Dashboard</li>
+            <li>24/7 Chat & Priority Support</li>
+            <li>All Future Updates Included</li>
           </ul>
           <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Investing in a solution like Assurify not only secures your data but
-            also gives you peace of mind.
+            All the power of our Ultimate Plan—a $1,069/year value—for just $1,140 for life.
           </p>
         </>
       )
     },
     {
-      title: '3. Feature Of Assurify?',
+      title: '✨ Why Choose the Lifetime Deal?',
       content: (
-        <>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Assurify’s robust features make it stand out in the crowded security
-            app market. Here are some key highlights:
-          </p>
-          <ul className='flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Breach Monitoring:
-              </span>{' '}
-              Receive real-time alerts if your personal data appears in any
-              breach database.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Password Management:
-              </span>{' '}
-              Generate and store strong, unique passwords for all your accounts
-              securely.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Secure Document Storage:
-              </span>{' '}
-              Organize and access your critical documents safely from anywhere.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Identity Theft Protection:
-              </span>{' '}
-              Tools to protect your identity and mitigate risks in case of
-              fraud.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Intuitive Dashboard:
-              </span>{' '}
-              Easy-to-use interface that provides a holistic view of your
-              digital security.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Multi-Device Support:
-              </span>{' '}
-              Sync Assurify across devices for seamless access to your data.
-            </li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '4. How the Lifetime Deal Works',
-      content: (
-        <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          The Assurify Lifetime Deal offers unparalleled value by allowing you
-          lifetime access for a one-time payment of $69.99, compared to the
-          regular yearly subscription costing $1,140. This means you save over
-          90%, making it a no-brainer investment.
-        </p>
-      )
-    },
-    {
-      title: '5. Who Should Use Assurify?',
-      content: (
-        <>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Assurify is ideal for:
-          </p>
-          <ul className='flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Freelancers:</span>{' '}
-              Manage sensitive client information securely.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Small Business Owners:
-              </span>{' '}
-              Protect company data and streamline operations.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Individuals:</span>{' '}
-              Safeguard personal details and avoid identity theft.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Families:</span>{' '}
-              Share secure access to essential documents and passwords.
-            </li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '6. Benefits of the Lifetime Deal',
-      content: (
-        <>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Opting for the Assurify Lifetime Deal ensures:
-          </p>
-          <ul className='flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Cost Savings:</span>{' '}
-              Pay once and enjoy lifetime benefits
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Peace of Mind:</span>{' '}
-              Enhanced security for your personal and professional data.
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>Ease of Use:</span> A
-              user-friendly platform to simplify your digital tasks
-            </li>
-            <li>
-              <span className='font-normal text-[#f7f7f7]'>
-                Future Updates:
-              </span>{' '}
-              Access to all future upgrades without additional costs.
-            </li>
-          </ul>
-        </>
-      )
-    },
-    {
-      title: '7. Pricing Comparison: Lifetime Deal vs. Regular Pricing',
-      content: (
-        <div className='border border-[#F7F7F7] rounded-[8px] overflow-hidden'>
-          <table className='border-collapse w-full'>
-            <tr>
-              <th className='border border-[#F7F7F7] p-2'>Plan</th>
-              <th className='border border-[#F7F7F7] p-2'>
-                Annual Subscription
-              </th>
-              <th className='border border-[#F7F7F7] p-2'>
-                Lifetime Deal Price
-              </th>
-            </tr>
-            <tr>
-              <td className='border border-[#F7F7F7] p-2'>Regular Price</td>
-              <td className='border border-[#F7F7F7] p-2'>$1,140/year</td>
-              <td className='border border-[#F7F7F7] p-2'>-</td>
-            </tr>
-            <tr>
-              <td className='border border-[#F7F7F7] p-2'>Annual Price</td>
-              <td className='border border-[#F7F7F7] p-2'>-</td>
-              <td className='border border-[#F7F7F7] p-2'>$69.99</td>
-            </tr>
-          </table>
-        </div>
-      )
-    },
-    {
-      title: '8. How to Redeem the Assurify Lifetime Deal',
-      content: (
-        <ul className='flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          <li className='font-normal text-[#f7f7f7]'>
-            Visit the official Assurify Lifetime Deal page.
-          </li>
-          <li className='font-normal text-[#f7f7f7]'>
-            Click on the "Buy Now" button.
-          </li>
-          <li className='font-normal text-[#f7f7f7]'>
-            Complete the payment process.
-          </li>
-          <li className='font-normal text-[#f7f7f7]'>
-            Download and activate your app to start securing your digital life.
-          </li>
+        <ul className='list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
+          <li>No Monthly or Yearly Fees</li>
+          <li>Instant ROI <span className='font-thin'>— recover your cost with just a few protected orders</span></li>
+          <li>Fully Integrated with Shopify Checkout</li>
+          <li>Easy Setup — No Developer Needed</li>
+          <li>One Payment = Lifetime Access</li>
+          <li>Risk-Free with a 15-Day Money-Back Guarantee</li>
         </ul>
       )
     },
     {
-      title: '9. Tips For Maximize Assurify',
+      title: '💸 Price Comparison — Lifetime Deal vs. Ultimate Plan',
       content: (
-        <ul className='flex flex-col gap-[12px] list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          <li>
-            <span className='font-normal text-[#f7f7f7]'>Regular Updates:</span>{' '}
-            Always ensure your app is updated to access the latest features.
-          </li>
-          <li>
-            <span className='font-normal text-[#f7f7f7]'>Set Alerts:</span>{' '}
-            Customize breach monitoring alerts for faster responses.
-          </li>
-          <li>
-            <span className='font-normal text-[#f7f7f7]'>
-              Use Across Devices:
-            </span>{' '}
-            Sync Assurify across all devices to maximize utility.
-          </li>
-          <li>
-            <span className='font-normal text-[#f7f7f7]'>
-              Leverage Secure Storage:
-            </span>{' '}
-            Store important documents for easy access and added safety.
-          </li>
-        </ul>
+        <>
+          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
+            Why keep paying yearly when lifetime protection costs half of the years of the Ultimate Plan?
+          </p>
+          <div className='relative'>
+            {/* Scroll indicator for mobile */}
+            <div className='absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-[#1A1A1A] to-transparent pointer-events-none z-10 md:hidden'></div>
+            
+            {/* Table container with improved scroll styling */}
+            <div className='overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-[#555] scrollbar-track-[#2A2A2A] hover:scrollbar-thumb-[#777] transition-colors'>
+              <table className='w-full min-w-[600px] text-[12px] lg:text-[14px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[20px] tracking-[-0.16px] border-collapse'>
+                <thead>
+                  <tr className='bg-[#2A2A2A] border-b-2 border-[#A6A6A6]'>
+                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px] sticky left-0 bg-[#2A2A2A]'>Feature</th>
+                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>Ultimate Plan ($99/month)</th>
+                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>Lifetime Deal ($1,140 once)</th>
+                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>🏆 Winner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Payment Frequency</td>
+                    <td className='py-3 px-4'>🔄 12 payments/year (Forever)</td>
+                    <td className='py-3 px-4'>💳 1 payment EVER</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Total 1-Year Cost</td>
+                    <td className='py-3 px-4'>$1,188</td>
+                    <td className='py-3 px-4'>$1,140</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Total 3-Year Cost</td>
+                    <td className='py-3 px-4'>$3,564</td>
+                    <td className='py-3 px-4'>$1,140</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Total 5-Year Cost</td>
+                    <td className='py-3 px-4'>$5,940</td>
+                    <td className='py-3 px-4'>$1,140</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Monthly Cost After Year 1</td>
+                    <td className='py-3 px-4'>❌ $99 forever</td>
+                    <td className='py-3 px-4'>✅ $0 after Year 1</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Lifetime Access</td>
+                    <td className='py-3 px-4'>❌ Pay to maintain access</td>
+                    <td className='py-3 px-4'>✅ Free updates forever</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Financial Risk</td>
+                    <td className='py-3 px-4'>❌ Cancel = lose everything</td>
+                    <td className='py-3 px-4'>✅ 15-day money-back guarantee</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Best for Scaling</td>
+                    <td className='py-3 px-4'>❌ No long-term savings</td>
+                    <td className='py-3 px-4'>✅ Designed for growing stores</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Order Protection</td>
+                    <td className='py-3 px-4'>✅ Unlimited</td>
+                    <td className='py-3 px-4'>✅ Unlimited</td>
+                    <td className='py-3 px-4'>=</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Checkout Branding</td>
+                    <td className='py-3 px-4'>✅ Included</td>
+                    <td className='py-3 px-4'>✅ Included</td>
+                    <td className='py-3 px-4'>=</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Priority Support & Chat</td>
+                    <td className='py-3 px-4'>✅ Only Priority Support Included</td>
+                    <td className='py-3 px-4'>✅ Both Included</td>
+                    <td className='py-3 px-4'>=</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Advanced Analytics</td>
+                    <td className='py-3 px-4'>❌ Not included</td>
+                    <td className='py-3 px-4'>✅ Included</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                  <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Plan Flexibility</td>
+                    <td className='py-3 px-4'>❌ Lose access if canceled</td>
+                    <td className='py-3 px-4'>✅ Keep forever</td>
+                    <td className='py-3 px-4'>🏆 LTD</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </>
       )
     },
     {
-      title: '10. Conclusion',
+      title: '📅 Limited-Time Offer',
       content: (
         <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          In an era where online security is paramount, investing in tools like
-          Assurify is essential. The Assurify Lifetime Deal offers a rare
-          opportunity to secure your digital world at a fraction of the cost.
-          Originally priced at $1,140, you can now access lifetime benefits for
-          just $69.99. Don’t wait – take the step towards enhanced security and
-          organization today!
+          This deal won't last forever. Once sold out, the lifetime option will be gone for good. Lock in your access now and enjoy shipping protection without ongoing fees.
         </p>
+      )
+    },
+    {
+      title: '🧵 Frequently Asked Questions',
+      content: (
+        <>
+          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
+            Q1: Is the Lifetime Deal really unlimited?
+          </p>
+          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
+            Yes, you get unlimited secure orders per month—just like the Ultimate plan.
+          </p>
+        </>
       )
     }
-  ]
-
+  ];
+  
   // handle see more button function
   const handleSeeMore = () => {
-    setVisibleQuestions(questions.length)
+    setVisibleQuestions(questions.length);
   }
 
   // handle see less button function
   const handleSeeLess = () => {
-    setVisibleQuestions(5)
+    setVisibleQuestions(3);
   }
 
   return (
     <div className='flex flex-col gap-[16px] lg:gap-[24px]'>
       {/* top section */}
       <div className='flex flex-col gap-3'>
-        <h1 className='text-[20px] lg:text-[40px] font-semibold text-[#f7f7f7] leading-[30px] lg:leading-[60px] tracking-[-0.4px]'>
-          Transform Your Digital Security for Just $69.99
-        </h1>
+        <h2 className='text-[20px] lg:text-[40px] font-semibold text-[#f7f7f7] leading-[30px] lg:leading-[60px] tracking-[-0.4px]'>
+          Transform Your Digital Security for Just $1,140
+        </h2>
         <p className='text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
           With the Assurify Lifetime Deal, originally priced at $1,140 but now
           available for only $69.99, you gain access to a robust suite of tools
           that keep your digital life secure and hassle-free.
         </p>
         <p className='text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-          In this guide, we’ll explore everything about this deal, from features
+          In this guide, we'll explore everything about this deal, from features
           to benefits, and answer frequently asked questions to help you make an
           informed decision.
         </p>
@@ -298,27 +216,29 @@ const Description = () => {
           </div>
         ))}
 
-        {/* See More Button */}
+        {/* See More/See Less Buttons */}
         <div className='flex justify-start gap-[24px]'>
           <button
             onClick={handleSeeMore}
-            disabled={visibleQuestions === questions.length}
-            className={`my-3 cursor-pointer text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
-              visibleQuestions === questions.length
+            disabled={visibleQuestions >= questions.length}
+            className={`my-3 text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
+              visibleQuestions >= questions.length
                 ? 'opacity-50 cursor-not-allowed'
-                : 'hover:underline'
-            }`}>
+                : 'hover:underline cursor-pointer'
+            }`}
+          >
             See more..
           </button>
 
           <button
             onClick={handleSeeLess}
-            disabled={visibleQuestions === 5}
-            className={`my-3 cursor-pointer text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
-              visibleQuestions === 5
+            disabled={visibleQuestions <= 3}
+            className={`my-3 text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
+              visibleQuestions <= 3
                 ? 'opacity-50 cursor-not-allowed'
-                : 'hover:underline'
-            }`}>
+                : 'hover:underline cursor-pointer'
+            }`}
+          >
             See less..
           </button>
         </div>
