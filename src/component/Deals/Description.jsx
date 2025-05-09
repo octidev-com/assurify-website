@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Description = () => {
-  const [visibleQuestions, setVisibleQuestions] = useState(3)
-
   const questions = [
     {
-      title: '🚀 What\'s Included in the Lifetime Deal',
+      title: 'What\'s Included in the Lifetime Deal',
       content: (
         <>
           <ul className='list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
@@ -25,7 +23,7 @@ const Description = () => {
       )
     },
     {
-      title: '✨ Why Choose the Lifetime Deal?',
+      title: 'Why Choose the Lifetime Deal?',
       content: (
         <ul className='list-disc list-inside text-[12px] lg:text-[16px] font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
           <li>No Monthly or Yearly Fees</li>
@@ -38,7 +36,7 @@ const Description = () => {
       )
     },
     {
-      title: '💸 Price Comparison — Lifetime Deal vs. Ultimate Plan',
+      title: 'Price Comparison — Lifetime Deal vs. Ultimate Plan',
       content: (
         <>
           <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
@@ -55,85 +53,85 @@ const Description = () => {
                   <tr className='bg-[#2A2A2A] border-b-2 border-[#A6A6A6]'>
                     <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px] sticky left-0 bg-[#2A2A2A]'>Feature</th>
                     <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>Ultimate Plan ($99/month)</th>
-                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>Lifetime Deal ($1,140 once)</th>
+                    <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>Lifetime Deal - LTD ($1,140 once)</th>
                     <th className='text-left py-3 px-4 font-bold text-[#f7f7f7] text-[13px] lg:text-[15px]'>🏆 Winner</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Payment Frequency</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Payment Frequency</td>
                     <td className='py-3 px-4'>🔄 12 payments/year (Forever)</td>
                     <td className='py-3 px-4'>💳 1 payment EVER</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Total 1-Year Cost</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Total 1-Year Cost</td>
                     <td className='py-3 px-4'>$1,188</td>
                     <td className='py-3 px-4'>$1,140</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Total 3-Year Cost</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Total 3-Year Cost</td>
                     <td className='py-3 px-4'>$3,564</td>
                     <td className='py-3 px-4'>$1,140</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Total 5-Year Cost</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Total 5-Year Cost</td>
                     <td className='py-3 px-4'>$5,940</td>
                     <td className='py-3 px-4'>$1,140</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Monthly Cost After Year 1</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Monthly Cost After Year 1</td>
                     <td className='py-3 px-4'>❌ $99 forever</td>
                     <td className='py-3 px-4'>✅ $0 after Year 1</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Lifetime Access</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Lifetime Access</td>
                     <td className='py-3 px-4'>❌ Pay to maintain access</td>
                     <td className='py-3 px-4'>✅ Free updates forever</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Financial Risk</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Financial Risk</td>
                     <td className='py-3 px-4'>❌ Cancel = lose everything</td>
                     <td className='py-3 px-4'>✅ 15-day money-back guarantee</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Best for Scaling</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Best for Scaling</td>
                     <td className='py-3 px-4'>❌ No long-term savings</td>
                     <td className='py-3 px-4'>✅ Designed for growing stores</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Order Protection</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Order Protection</td>
                     <td className='py-3 px-4'>✅ Unlimited</td>
                     <td className='py-3 px-4'>✅ Unlimited</td>
                     <td className='py-3 px-4'>=</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Checkout Branding</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Checkout Branding</td>
                     <td className='py-3 px-4'>✅ Included</td>
                     <td className='py-3 px-4'>✅ Included</td>
                     <td className='py-3 px-4'>=</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Priority Support & Chat</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Priority Support & Chat</td>
                     <td className='py-3 px-4'>✅ Only Priority Support Included</td>
                     <td className='py-3 px-4'>✅ Both Included</td>
                     <td className='py-3 px-4'>=</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#222222]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#222222]'>Advanced Analytics</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#222222] font-semibold text-[#D1D1D1]'>Advanced Analytics</td>
                     <td className='py-3 px-4'>❌ Not included</td>
                     <td className='py-3 px-4'>✅ Included</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
                   </tr>
                   <tr className='border-b border-[#A6A6A6] bg-[#1A1A1A]'>
-                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A]'>Plan Flexibility</td>
+                    <td className='py-3 px-4 sticky left-0 bg-[#1A1A1A] font-semibold text-[#D1D1D1]'>Plan Flexibility</td>
                     <td className='py-3 px-4'>❌ Lose access if canceled</td>
                     <td className='py-3 px-4'>✅ Keep forever</td>
                     <td className='py-3 px-4'>🏆 LTD</td>
@@ -146,37 +144,14 @@ const Description = () => {
       )
     },
     {
-      title: '📅 Limited-Time Offer',
+      title: 'Limited-Time Offer',
       content: (
         <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
           This deal won't last forever. Once sold out, the lifetime option will be gone for good. Lock in your access now and enjoy shipping protection without ongoing fees.
         </p>
       )
-    },
-    {
-      title: '🧵 Frequently Asked Questions',
-      content: (
-        <>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Q1: Is the Lifetime Deal really unlimited?
-          </p>
-          <p className='text-[12px] lg:text-base font-light text-[#A6A6A6] leading-[18px] lg:leading-[24px] tracking-[-0.16px]'>
-            Yes, you get unlimited secure orders per month—just like the Ultimate plan.
-          </p>
-        </>
-      )
     }
   ];
-  
-  // handle see more button function
-  const handleSeeMore = () => {
-    setVisibleQuestions(questions.length);
-  }
-
-  // handle see less button function
-  const handleSeeLess = () => {
-    setVisibleQuestions(3);
-  }
 
   return (
     <div className='flex flex-col gap-[16px] lg:gap-[24px]'>
@@ -199,15 +174,8 @@ const Description = () => {
 
       {/* bottom section */}
       <div className='flex flex-col gap-[12px] lg:gap-4'>
-        {/* Table of Contents */}
-        <div className='flex flex-col gap-3'>
-          <h1 className='text-[18px] lg:text-[32px] font-semibold text-[#f7f7f7] leading-[27px] lg:leading-12 tracking-[-0.32px]'>
-            Table of Contents
-          </h1>
-        </div>
-
         {/* Render Questions Dynamically */}
-        {questions.slice(0, visibleQuestions).map((question, index) => (
+        {questions.map((question, index) => (
           <div key={index} className='flex flex-col gap-3'>
             <h2 className='text-[16px] lg:text-2xl font-medium text-[#f7f7f7] leading-[24px] lg:leading-9 tracking-[-0.24px]'>
               {question.title}
@@ -215,33 +183,6 @@ const Description = () => {
             {question.content}
           </div>
         ))}
-
-        {/* See More/See Less Buttons */}
-        <div className='flex justify-start gap-[24px]'>
-          <button
-            onClick={handleSeeMore}
-            disabled={visibleQuestions >= questions.length}
-            className={`my-3 text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
-              visibleQuestions >= questions.length
-                ? 'opacity-50 cursor-not-allowed'
-                : 'hover:underline cursor-pointer'
-            }`}
-          >
-            See more..
-          </button>
-
-          <button
-            onClick={handleSeeLess}
-            disabled={visibleQuestions <= 3}
-            className={`my-3 text-[16px] text-[#f7f7f7] text-base font-medium leading-[24px] ${
-              visibleQuestions <= 3
-                ? 'opacity-50 cursor-not-allowed'
-                : 'hover:underline cursor-pointer'
-            }`}
-          >
-            See less..
-          </button>
-        </div>
       </div>
     </div>
   )
