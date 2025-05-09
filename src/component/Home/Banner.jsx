@@ -16,8 +16,19 @@ const Banner = () => {
             App and boost your revenue and customer retention like never before.
           </p>
           <div className='flex justify-center gap-4 sm:gap-5 lg:gap-7 mt-[16px] lg:mt-[32px]'>
-            <Button>How it works</Button>
-            <Button variant='secondary-outline'>View Demo</Button>
+            <a
+              href='https://app.assurify.app/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button>How it works</Button>
+            </a>
+
+            <a
+              href='https://assurify.app/schedule-a-demo/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button variant='secondary-outline'>View Demo</Button>
+            </a>
           </div>
         </div>
       </div>
