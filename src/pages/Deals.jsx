@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import CustomIcon from '../assets/icon/CustomIcon'
 import FAQ from '../component/Home/FAQ'
 import Container from '../component/Common/Container'
@@ -11,16 +11,27 @@ import RatingsAndReviews from '../component/Deals/RatingsAndReviews'
 
 import { useNavigate } from 'react-router'
 
-
-
-
-
-
-
 const Deals = () => {
    // State to track the active tab
   const [activeTab, setActiveTab] = useState('description')
   const navigate = useNavigate()
+  const reviewsSectionRef = useRef(null);
+
+  const scrollToReviews = () => {
+    setActiveTab('reviews');
+    setTimeout(() => {
+      if (reviewsSectionRef.current) {
+        const rect = reviewsSectionRef.current.getBoundingClientRect();
+        const offset = window.innerWidth >= 1024 ? 210 : 160;
+        const topPosition = rect.top + window.scrollY - offset;
+  
+        window.scrollTo({
+          top: topPosition,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
+  };
 
 
   const faqs = [
@@ -84,7 +95,10 @@ const Deals = () => {
                   Secure More, Spend Less — Get Lifetime Access for a One-Time
                   Price
                 </p>
-                <div className="flex items-center gap-2">
+                <div
+                  className="flex items-center gap-2 cursor-pointer"
+                  onClick={scrollToReviews}
+                >
                   <div className="flex gap-1 h-[24px]">
                     {[1, 2, 3, 4, 5].map((item) => (
                       <CustomIcon
@@ -102,6 +116,7 @@ const Deals = () => {
                     4.5 (288 reviews)
                   </p>
                 </div>
+
                 <p className="text-[20px] lg:text-[32px] text-[#f7f7f7] font-semibold leading-[21px] lg:leading-12">
                   $1,140.00
                 </p>
@@ -214,7 +229,11 @@ const Deals = () => {
               {activeTab === "description" && <Description />}
 
               {/* ratings and reviews tab content */}
-              {activeTab === "reviews" && <RatingsAndReviews />}
+              {activeTab === "reviews" && (
+                <div ref={reviewsSectionRef}>
+                  <RatingsAndReviews />
+                </div>
+              )}
             </div>
           </div>
         </div>
