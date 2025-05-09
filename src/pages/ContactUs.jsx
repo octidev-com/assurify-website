@@ -26,7 +26,7 @@ const ContactUs = () => {
                   id: 1,
                   icon: "envelope-icon",
                   text1: "We're always happy to help",
-                  text2: "octidevfigma@gmail.com",
+                  text2: "info@daisydiffusion.com",
                 },
                 {
                   id: 2,
