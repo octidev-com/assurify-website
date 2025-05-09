@@ -56,12 +56,12 @@ const SectionTitle = ({
         </div>
       )}
       {middleText && (
-        <h1
+        <h2
           className={`max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient leading-[36px] lg:leading-[72px] text-center md:${
             isTextCentered ? 'text-center' : 'text-left'
           }`}>
           {middleText}
-        </h1>
+        </h2>
       )}
       {bottomText && (
         <p

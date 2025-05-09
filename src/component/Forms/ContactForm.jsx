@@ -92,6 +92,7 @@ function ContactForm() {
           <textarea
             id="message"
             name="message"
+            placeholder="Write something here..."
             value={values.message}
             onChange={handleChange}
             onBlur={handleBlur}
