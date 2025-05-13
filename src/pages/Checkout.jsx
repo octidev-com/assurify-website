@@ -3,24 +3,27 @@ import { loadStripe } from "@stripe/stripe-js";
 import Container from "../component/Common/Container";
 import SectionTitle from "../component/Common/SectionTitle";
 import CheckoutForm from "../component/Forms/CheckoutForm";
-
-const stripe = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
-
-const fetchClientSecret = () => {
-  return fetch("http://localhost:3000/create-checkout-session", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      item: { name: "Lifetime Deal", price: 99 },
-    }),
-  })
-    .then((response) => response.json())
-    .then((json) => json.checkoutSessionClientSecret);
-};
+import { useLocation } from "react-router";
 
 const Checkout = () => {
+  const location = useLocation();
+  const price = location.state.price;
+  const plan = location.state.plan;
+
+  // load stripe using stripe publishable key
+  const stripe = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+
+  const fetchClientSecret = async () => {
+    const response = await fetch("http://localhost:3000/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ plan: plan, price: price }),
+    });
+    const json = await response.json();
+    return json.checkoutSessionClientSecret;
+  };
   return (
     <div>
       <Container>
@@ -28,16 +31,9 @@ const Checkout = () => {
         <SectionTitle middleText={"Checkout"} />
 
         <div className="mt-[32px] lg:mt-14 mx-auto px-4 lg:px-0 min-h-screen">
-          {stripe ? (
-            <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
-              <CheckoutForm />
-            </CheckoutProvider>
-          ) : (
-            <div className="text-center">
-              <h2 className="text-2xl font-bold">Loading...</h2>
-              <p>Please wait while we prepare your checkout session.</p>
-            </div>
-          )}
+          <CheckoutProvider stripe={stripe} options={{ fetchClientSecret }}>
+            <CheckoutForm />
+          </CheckoutProvider>
         </div>
       </Container>
     </div>

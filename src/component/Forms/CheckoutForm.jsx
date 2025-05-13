@@ -2,51 +2,12 @@ import { PaymentElement, useCheckout } from "@stripe/react-stripe-js";
 import { useFormik } from "formik";
 import { checkoutSchema } from "../../schemas/forms";
 import { useState } from "react";
-
-// EmailInput component
-const EmailInput = ({ email, setEmail, setEmailError }) => {
-  const checkout = useCheckout();
-
-  const handleBlur = () => {
-    checkout.updateEmail(email).then((result) => {
-      if (result.error) {
-        setEmailError(result.error);
-      }
-    });
-  };
-
-  const handleEmailChange = (e) => {
-    setEmailError(null);
-    setEmail(e.target.value);
-  };
-
-  return (
-    <div>
-      <input
-        type="email"
-        value={email}
-        onChange={handleEmailChange}
-        onBlur={handleBlur}
-        className={`w-full px-4 h-[48px] rounded-2xl mt-2 border opacity-[0.6] focus:outline-none`}
-      />
-    </div>
-  );
-};
-
-// PayButton component
-const PayButton = ({ loading }) => {
-  return (
-    <button type="submit" className="btn-primary-green-full disabled:cursor-not-allowed">
-      {loading ? "Loading..." : "Pay Now"}
-    </button>
-  );
-};
+import { useLocation } from "react-router";
 
 // Initial values for the form
 const initialValues = {
   firstName: "",
   lastName: "",
-  // country: "",
   city: "",
   address: "",
   emailAddress: "",
@@ -56,34 +17,26 @@ const initialValues = {
 
 const CheckoutForm = () => {
   // const { confirm, total, updateEmail } = useCheckout();
+
   const checkout = useCheckout();
-  const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const location = useLocation();
+  const plan = location.state.plan;
 
   const productDetails = [
-    { title: "Assurify Lifetime Deal * 1", price: checkout.total.total.amount },
+    { title: plan, price: checkout.total.total.amount },
     { title: "Subtotal", price: checkout.total.total.amount },
     { title: "Shipping", price: 0 },
   ];
 
   const onSubmit = async (values) => {
-    console.log("testing", values);
-
-    // Validate email explicitly
-    // if (!email) {
-    //   setEmailError({ message: "Email is required" });
-    //   return;
-    // }
-
-    console.log("email", checkout.updateEmail);
-
     setLoading(true);
     try {
       // Update email with Stripe
-      const updateResult = await checkout.updateEmail(email);
-      console.log("updateResult", updateResult);
+      const updateResult = await checkout.updateEmail(values.emailAddress);
+
       if (updateResult.error) {
         setEmailError(updateResult.error);
         return;
@@ -96,7 +49,7 @@ const CheckoutForm = () => {
         return;
       }
 
-      confirm().then((result) => {
+      checkout.confirm().then((result) => {
         if (result.type === "error") {
           setError(result.error);
         }
@@ -218,7 +171,7 @@ const CheckoutForm = () => {
                 errors.emailAddress && touched.emailAddress ? "border-red-500" : "border-[#A6A6A6]"
               } opacity-[0.6] focus:outline-none`}
             />
-            {/* <EmailInput email={email} setEmail={setEmail} setEmailError={setEmailError} /> */}
+            {emailError && <p className="text-red-500 text-sm">{emailError.message}</p>}
             {errors.emailAddress && touched.emailAddress && <p className="text-red-500 text-sm">{errors.emailAddress}</p>}
           </div>
 
@@ -325,7 +278,11 @@ const CheckoutForm = () => {
                     },
                   }}
                 />
-                <PayButton loading={loading} />
+
+                {/* Make Payment Button */}
+                <button type="submit" className="btn-primary-green-full disabled:cursor-not-allowed">
+                  {loading ? "Loading..." : "Pay Now"}
+                </button>
 
                 {/* Show error message if there is any error while making payment */}
                 {error && <p className="text-red-500 text-sm">{error.message}</p>}

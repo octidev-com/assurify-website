@@ -10,9 +10,10 @@ const PricingSection = ({ hideToggle }) => {
   const navigate = useNavigate();
 
   // navigate user to checkout page with selected price data
-  const handleCheckout = (price) => {
+  const handleCheckout = (plan, price) => {
     navigate("/checkout", {
       state: {
+        plan,
         price,
       },
     });
@@ -137,7 +138,11 @@ const PricingSection = ({ hideToggle }) => {
               <span className="text-[#FFFFFF] text-[32px] lg:text-5xl font-normal leading-[48px] lg:leading-14">${item.price}</span> /{" "}
               {isMonthly ? "per month" : "per year"}
             </p>
-            <Button variant="secondary-outline" onClick={() => handleCheckout(item.price)} className={"mt-[24px] lg:mt-[32px] w-full"}>
+            <Button
+              variant="secondary-outline"
+              onClick={() => handleCheckout(item.title, item.price)}
+              className={"mt-[24px] lg:mt-[32px] w-full"}
+            >
               Contact Us
             </Button>
 
