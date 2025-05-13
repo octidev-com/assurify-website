@@ -1,12 +1,16 @@
+import { Helmet } from "react-helmet";
 import CustomIcon from "../assets/icon/CustomIcon";
 import Container from "../component/Common/Container";
 import SectionTitle from "../component/Common/SectionTitle";
-import Button from "../component/Common/Button";
 import TopBg from "../component/Common/TopBg";
 import ContactForm from "../component/Forms/ContactForm";
 
 const ContactUs = () => {
   return (
+    <>
+    <Helmet>
+      <title>Assurify | Contact Us</title>
+    </Helmet>
     <TopBg>
       {/* Main content */}
       <Container>
@@ -19,15 +23,15 @@ const ContactUs = () => {
           />
 
           {/* Main Contact */}
-          <div className="flex flex-col lg:flex-row justify-between gap-4 sm:gap-5 lg:gap-6 mt-8 sm:mt-10 lg:mt-12 w-full">
+          <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-[30px] mt-8 sm:mt-10 lg:mt-12 w-full">
             {/* Contact Info */}
-            <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 w-full lg:w-[35%]">
+            <div className="flex flex-col gap-6 sm:gap-5 lg:gap-[30px] w-full lg:w-[370px]">
               {[
                 {
                   id: 1,
                   icon: "envelope-icon",
                   text1: "We're always happy to help",
-                  text2: "octidevfigma@gmail.com",
+                  text2: "info@daisydiffusion.com",
                 },
                 {
                   id: 2,
@@ -58,7 +62,7 @@ const ContactUs = () => {
             </div>
 
             {/* Contact Us Form */}
-            <div className="p-4 sm:p-5 lg:p-6 rounded-[16px] sm:rounded-[20px] lg:rounded-[26px] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full lg:w-[60%]">
+            <div className="p-4 sm:p-5 lg:p-6 rounded-[16px] sm:rounded-[20px] lg:rounded-[26px] bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px] w-full lg:w-[770px]">
               {/* CONTACT US FORM */}
               <ContactForm />
             </div>
@@ -66,6 +70,7 @@ const ContactUs = () => {
         </div>
       </Container>
     </TopBg>
+    </>
   );
 };
 

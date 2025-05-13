@@ -49,7 +49,7 @@ const Brands = () => {
         topText={'Brands'}
         middleText={'Brands Who Trust Assurify'}
         bottomText={
-          'Trusted by leading brands for security, reliability, and peace of mind'
+          'Trusted by Shopify store owners for reliable shipping protection.'
         }
       />
       <div className='mt-12 w-full overflow-hidden'>

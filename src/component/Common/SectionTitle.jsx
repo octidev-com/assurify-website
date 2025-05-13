@@ -10,6 +10,7 @@ import rightSideHrMobile from '../../assets/SectionTitle/right-side-hr-mobile.pn
  * @param {String} middleText - middle text for section title component
  * @param {String} bottomText - bottom text for section title component
  * @param {Boolean} isTextCentered - conditional text alignment props
+ * @param {Boolean} useH1 - optional prop to render middle text as h1 instead of h2
  *
  * @returns {JSX.Element} a section title component
  */
@@ -17,7 +18,8 @@ const SectionTitle = ({
   topText,
   middleText,
   bottomText,
-  isTextCentered = true
+  isTextCentered = true,
+  useH1 = false // Default to false to maintain h2 behavior
 }) => {
   return (
     <div className='mx-auto flex flex-col items-center gap-2'>
@@ -56,12 +58,12 @@ const SectionTitle = ({
         </div>
       )}
       {middleText && (
-        <h1
+        <div
           className={`max-w-[778px] mx-auto text-[24px] lg:text-5xl font-semibold text-gradient leading-[36px] lg:leading-[72px] text-center md:${
             isTextCentered ? 'text-center' : 'text-left'
           }`}>
-          {middleText}
-        </h1>
+          {useH1 ? <h1>{middleText}</h1> : <h2>{middleText}</h2>}
+        </div>
       )}
       {bottomText && (
         <p
