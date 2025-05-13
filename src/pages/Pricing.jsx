@@ -2,7 +2,6 @@ import Container from "../component/Common/Container";
 import PricingSection from "../component/Home/PricingSection";
 import TopBg from "../component/Common/TopBg";
 import FAQ from "../component/Home/FAQ";
-import { Helmet } from "react-helmet";
 
 const Pricing = () => {
   const faqs = [
@@ -51,9 +50,6 @@ const Pricing = () => {
   ];
   return (
     <>
-    <Helmet>
-    <title>Assurify | Pricing</title>
-    </Helmet>
     <TopBg>
       <div className="pt-[32px] md:pt-[56px]">
         <PricingSection />
