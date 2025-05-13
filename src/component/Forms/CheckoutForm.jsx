@@ -2,17 +2,11 @@ import { PaymentElement, useCheckout } from "@stripe/react-stripe-js";
 import { useFormik } from "formik";
 import { checkoutSchema } from "../../schemas/forms";
 import { useState } from "react";
-import { useLocation } from "react-router";
 
 // Initial values for the form
 const initialValues = {
-  firstName: "",
-  lastName: "",
-  city: "",
-  address: "",
   emailAddress: "",
-  phoneNumber: "",
-  orderNote: "",
+  storeAddress: "",
 };
 
 const CheckoutForm = () => {
@@ -22,14 +16,8 @@ const CheckoutForm = () => {
   const [emailError, setEmailError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const location = useLocation();
-  const plan = location.state.plan;
 
-  const productDetails = [
-    { title: plan, price: checkout.total.total.amount },
-    { title: "Subtotal", price: checkout.total.total.amount },
-    { title: "Shipping", price: 0 },
-  ];
+  const productDetails = [{ title: "Assurify Lifetime Deal * 1", price: checkout.total.total.amount }];
 
   const onSubmit = async (values) => {
     setLoading(true);
@@ -69,94 +57,12 @@ const CheckoutForm = () => {
     onSubmit: onSubmit,
   });
 
-  // Disable the PayButton if there are issues
-  // const isDisabled = !email || emailError || Object.keys(errors).length > 0 || loading;
-
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col lg:flex-row lg:items-start gap-[24px] lg:gap-[30px]">
-        {/* COLUMN 1 */}
-        <div className="w-full lg:max-w-[670px] flex flex-col gap-[24px] lg:gap-[30px]">
-          <div className="flex flex-col lg:flex-row gap-[12px] lg:gap-[30px]">
-            {/* FIRST NAME */}
-            <div className="flex-1">
-              <label htmlFor="firstName" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-                First Name
-              </label>
-              <input
-                type="text"
-                name="firstName"
-                id="firstName"
-                value={values.firstName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
-                  errors.firstName && touched.firstName ? "border-red-500" : "border-[#A6A6A6]"
-                } opacity-[0.6] focus:outline-none`}
-              />
-              {errors.firstName && touched.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
-            </div>
-
-            {/* LAST NAME */}
-            <div className="flex-1">
-              <label htmlFor="lastName" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-                Last Name
-              </label>
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                value={values.lastName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
-                  errors.lastName && touched.lastName ? "border-red-500" : "border-[#A6A6A6]"
-                } opacity-[0.6] focus:outline-none`}
-              />
-              {errors.lastName && touched.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
-            </div>
-          </div>
-
-          {/* TOWN / CITY */}
-          <div className="flex-1">
-            <label htmlFor="city" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-              Town / City
-            </label>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              value={values.city}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
-                errors.city && touched.city ? "border-red-500" : "border-[#A6A6A6]"
-              } opacity-[0.6] focus:outline-none`}
-            />
-            {errors.city && touched.city && <p className="text-red-500 text-sm">{errors.city}</p>}
-          </div>
-
-          {/* ADDRESS */}
-          <div className="flex-1">
-            <label htmlFor="address" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-              Address
-            </label>
-            <input
-              type="text"
-              name="address"
-              id="address"
-              value={values.address}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
-                errors.address && touched.address ? "border-red-500" : "border-[#A6A6A6]"
-              } opacity-[0.6] focus:outline-none`}
-            />
-            {errors.address && touched.address && <p className="text-red-500 text-sm">{errors.address}</p>}
-          </div>
-
+      <div className="flex flex-col gap-[24px] lg:gap-[30px] w-full lg:max-w-[470px] mx-auto">
+        <div className="flex flex-col gap-[12px] lg:gap-[16px]">
           {/* EMAIL */}
-          <div className="flex-1">
+          <div className="flex flex-col gap-[4px] lg:gap-[8px]">
             <label htmlFor="emailAddress" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
               Email Address
             </label>
@@ -167,7 +73,7 @@ const CheckoutForm = () => {
               value={values.emailAddress}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
+              className={`w-full px-4 h-[48px] rounded-2xl border ${
                 errors.emailAddress && touched.emailAddress ? "border-red-500" : "border-[#A6A6A6]"
               } opacity-[0.6] focus:outline-none`}
             />
@@ -175,89 +81,47 @@ const CheckoutForm = () => {
             {errors.emailAddress && touched.emailAddress && <p className="text-red-500 text-sm">{errors.emailAddress}</p>}
           </div>
 
-          {/* PHONE NUMBER */}
-          <div className="flex-1">
-            <label htmlFor="phoneNumber" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-              Phone Number
+          {/* STORE ADDRESS */}
+          <div className="flex flex-col gap-[4px] lg:gap-[8px]">
+            <label htmlFor="storeAddress" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
+              Store Address
             </label>
             <input
-              type="tel"
-              name="phoneNumber"
-              id="phoneNumber"
-              inputMode="tel"
-              autoComplete="tel"
-              value={values.phoneNumber}
+              type="text"
+              name="storeAddress"
+              id="storeAddress"
+              value={values.storeAddress}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
-                errors.phoneNumber && touched.phoneNumber ? "border-red-500" : "border-[#A6A6A6]"
-              } opacity-[0.6] focus:outline-none`}
-              placeholder="e.g. +1 234 567 8901"
-            />
-            {errors.phoneNumber && touched.phoneNumber && <p className="text-red-500 text-sm">{errors.phoneNumber}</p>}
-          </div>
-
-          {/* ORDER NOTE */}
-          <div className="flex-1">
-            <label htmlFor="orderNote" className="text-[14px] lg:text-base text-[#A6A6A6] font-light leading-6">
-              Order Note
-            </label>
-            <textarea
-              rows={5}
-              id="orderNote"
-              name="orderNote"
-              value={values.orderNote}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              placeholder="Add any notes about your order here"
-              className={`w-full p-4 rounded-2xl mt-2 border ${
-                errors.orderNote && touched.orderNote ? "border-red-500" : "border-[#A6A6A6]"
+              className={`w-full px-4 h-[48px] rounded-2xl border ${
+                errors.storeAddress && touched.storeAddress ? "border-red-500" : "border-[#A6A6A6]"
               } opacity-[0.6] focus:outline-none`}
             />
-            {errors.orderNote && touched.orderNote && <p className="text-red-500 text-sm">{errors.orderNote}</p>}
+            {errors.storeAddress && touched.storeAddress && <p className="text-red-500 text-sm">{errors.storeAddress}</p>}
           </div>
         </div>
 
-        {/* COLUMN 2 */}
         <div className="w-full lg:max-w-[470px] flex flex-col gap-[24px] lg:gap-[30px]">
-          {/* Coupon Code */}
-          <div className="w-full lg:w-[470px]">
-            <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-              <label htmlFor="Coupon Code" className="text-base text-[#A6A6A6] font-light leading-6">
-                Have a coupon code?
-              </label>
-              <div className="flex gap-[12px] mt-[8px]">
-                <input
-                  type="text"
-                  id="coupon-code"
-                  placeholder="Coupon Code"
-                  className="w-full px-4 h-[48px] rounded-2xl border border-[#A6A6A6] opacity-[0.6] focus:outline-none"
-                />
-                <button className="flex justify-center align-middle text-[#000000] bg-[#F7F7F7] disabled:bg-[#A6A6A6] rounded-[16px] py-[11px] px-[24px]">
-                  Apply
-                </button>
-              </div>
-            </div>
-          </div>
-
           {/* Your Order */}
           <div className="w-full lg:w-[470px]">
             <div className="p-4 border-[1px] border-[#48bd421a] rounded-xl bg-gradient-to-r from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.03)] backdrop-blur-[37px]">
-              <h3 className="text-[#fff] text-[20px] font-semibold leading-[30px]">Your Order</h3>
-              <div className="flex flex-col gap-[16px] mt-[12px]">
+              <h3 className="text-[#fff] text-[18px] lg:text-[20px] font-semibold leading-[27px] lg:leading-[30px]">Your Order</h3>
+              <div className="flex flex-col gap-[8px] mt-[12px]">
                 <div className="flex justify-between items-center">
-                  <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Product</p>
-                  <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Subtotal</p>
+                  <p className="text-[#fff] text-[14px] lg:text-[16px] font-medium leading-[21px] lg:leading-[24px]">Product Name</p>
+                  <p className="text-[#fff] text-[14px] lg:text-[16px] font-medium leading-[21px] lg:leading-[24px]">Amount</p>
                 </div>
                 {productDetails.map((item, index) => (
                   <div key={index} className="flex justify-between items-center">
-                    <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.title}</p>
-                    <p className="text-[#A6A6A6] text-[16px] leading-[24px]">{item.price}</p>
+                    <p className="text-gray-light text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px]">{item.title}</p>
+                    <p className="text-gray-light text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px]">{item.price}</p>
                   </div>
                 ))}
                 <div className="flex justify-between items-center">
-                  <p className="text-[#fff] text-[16px] font-medium leading-[24px]">Total</p>
-                  <p className="text-[#fff] text-[16px] font-medium leading-[24px]">{checkout.total.total.amount}</p>
+                  <p className="text-white text-[14px] lg:text-[16px] font-medium leading-[21px] lg:leading-[24px]">Total</p>
+                  <p className="text-white text-[14px] lg:text-[16px] font-medium leading-[21px] lg:leading-[24px]">
+                    {checkout.total.total.amount}
+                  </p>
                 </div>
               </div>
             </div>
