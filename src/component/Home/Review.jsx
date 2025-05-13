@@ -40,6 +40,7 @@ const Review = () => {
           src={roundBg}
           alt='Background decoration left'
           className='w-[150vw] md:w-[100vw] lg:w-[75vw] max-w-none'
+          loading="lazy"
         />
       </div>
       <div className='absolute top-1/2 right-[-50%] transform -translate-y-1/2 pointer-events-none z-0'>
@@ -47,6 +48,7 @@ const Review = () => {
           src={roundBg}
           alt='Background decoration right'
           className='w-[150vw] md:w-[100vw] lg:w-[75vw] max-w-none'
+          loading="lazy"
         />
       </div>
 
@@ -61,6 +63,7 @@ const Review = () => {
                   src={rightSideHr}
                   alt=''
                   className='max-w-[60px] md:max-w-[100px]'
+                  loading="lazy"
                 />
                 <p className='text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
                   Rated & Recommended
@@ -69,6 +72,7 @@ const Review = () => {
                   src={leftSideHr}
                   alt=''
                   className='max-w-[60px] md:max-w-[100px]'
+                  loading="lazy"
                 />
               </div>
               <h2 className='text-3xl md:text-5xl font-semibold text-gradient leading-10 md:leading-[72px]'>
@@ -113,26 +117,31 @@ const Review = () => {
                   src={StartIcon}
                   alt='Star'
                   className='w-5 md:w-6 h-5 md:h-6'
+                  loading="lazy"
                 />
                 <img
                   src={StartIcon}
                   alt='Star'
                   className='w-5 md:w-6 h-5 md:h-6'
+                  loading="lazy"
                 />
                 <img
                   src={StartIcon}
                   alt='Star'
                   className='w-5 md:w-6 h-5 md:h-6'
+                  loading="lazy"
                 />
                 <img
                   src={StartIcon}
                   alt='Star'
                   className='w-5 md:w-6 h-5 md:h-6'
+                  loading="lazy"
                 />
                 <img
                   src={StartIcon}
                   alt='Star'
                   className='w-5 md:w-6 h-5 md:h-6'
+                  loading="lazy"
                 />
               </div>
               <p className='text-[#A6A6A6] text-base md:text-xl font-normal leading-6 md:leading-[30px]'>
@@ -143,6 +152,7 @@ const Review = () => {
                 src={AssurifyIcon}
                 alt='Assurify'
                 className='w-[80px] md:w-[100px] h-[20px] md:h-[25px]'
+                loading="lazy"
               />
             </div>
 
