@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import CustomIcon from "../assets/icon/CustomIcon";
 import Container from "../component/Common/Container";
 import SectionTitle from "../component/Common/SectionTitle";
@@ -8,9 +7,6 @@ import ContactForm from "../component/Forms/ContactForm";
 const ContactUs = () => {
   return (
     <>
-    <Helmet>
-      <title>Assurify | Contact Us</title>
-    </Helmet>
     <TopBg>
       {/* Main content */}
       <Container>

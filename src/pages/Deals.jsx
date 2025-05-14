@@ -10,8 +10,6 @@ import Description from '../component/Deals/Description'
 import RatingsAndReviews from '../component/Deals/RatingsAndReviews'
 
 import { useNavigate } from 'react-router'
-import { Helmet } from 'react-helmet'
-
 const Deals = () => {
    // State to track the active tab
   const [activeTab, setActiveTab] = useState('description')
@@ -75,9 +73,6 @@ const Deals = () => {
 
   return (
     <>
-    <Helmet>
-      <title>Assurify | Deals</title>
-    </Helmet>
     <TopBg>
       {/* main content */}
       <Container>

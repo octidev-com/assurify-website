@@ -58,6 +58,7 @@ const WhyAssurifyBestChoice = () => {
             src={roundBg}
             alt='Background decoration'
             className='w-[150vw] md:w-[120vw] lg:w-[100vw] max-w-none'
+            loading="lazy"
           />
         </div>
 
@@ -80,6 +81,7 @@ const WhyAssurifyBestChoice = () => {
                       src={benefit.image}
                       alt={`benefit-${benefit.id}`}
                       className='w-[32px] h-[32px]'
+                      loading="lazy"
                     />
                   </div>
                   <h3 className='text-xl md:text-2xl lg:text-[32px] font-normal text-[#f7f7f7] leading-7 md:leading-9 lg:leading-[48px]'>
@@ -95,7 +97,7 @@ const WhyAssurifyBestChoice = () => {
 
           {/* Right Column: Placeholder Image */}
           <div className='w-full md:w-[400px] lg:w-[570px] max:h-[280px] md:h-[460px] lg:h-[520px] rounded-xl z-10 mx-auto md:mx-0'>
-            <img src={MaximizeRevinue} alt='why assurify image' />
+            <img src={MaximizeRevinue} alt='why assurify image' loading="lazy" />
           </div>
         </div>
       </div>

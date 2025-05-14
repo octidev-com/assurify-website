@@ -40,6 +40,7 @@ const Benefits = () => {
             src={roundBg}
             alt='Background decoration'
             className='w-[150vw] sm:w-[120vw] md:w-[100vw] lg:w-[75vw] max-w-none'
+            loading="lazy"
           />
         </div>
 
@@ -67,6 +68,7 @@ const Benefits = () => {
                     src={benefit.image}
                     alt={`benefit-${benefit.id}`}
                     className='w-[24px] md:w-[32px] h-[24px] md:h-[32px]'
+                    loading="lazy"
                   />
                 </div>
                 <h3 className='text-[16px] md:text-[32px] font-normal text-[#f7f7f7] leading-[24px] md:leading-[48px]'>

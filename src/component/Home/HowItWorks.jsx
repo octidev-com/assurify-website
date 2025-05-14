@@ -183,13 +183,13 @@ const HowItWorks = () => {
           {/* Header Section */}
           <SectionTitle
             topText={'Protection Coverage'}
-            middleText={'How Assurify Shipping Protection Works'}
+            middleText={'How It Works'}
             bottomText={
-              'Curious how it works? Scroll down to explore the simple steps and benefits that make Assurify the smarter way to protect every shipment.'
+              'With licensed shipping protection, fast issue resolution, package tracking, product recommendations, and carbon neutral shipping.'
             }
           />
 
-          <div className='flex justify-center mt-4 sm:mt-5 md:mt-6'>
+          <div className='flex justify-center mt-3 sm:mt-5 md:mt-2'>
             <a
               href='https://apps.shopify.com/assurify'
               target='_blank'

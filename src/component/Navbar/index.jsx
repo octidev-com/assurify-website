@@ -17,7 +17,7 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   // Array of navigation items
   const navItems = [
     { label: 'Home', to: '/', external: false },
-    { label: 'For Merchant', to: '/forMerchant', external: false },
+    { label: 'For Merchant', to: '/for-merchant', external: false },
     { label: 'Deals', to: '/deals', external: false },
     { label: 'Pricing', to: '/pricing', external: false },
     { label: 'Doc', to: 'https://documentation.assurify.app/', external: true },
@@ -79,8 +79,19 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
 
           {/* Buttons - Hidden on Mobile */}
           <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <Button variant='secondary-outline'>View Demo</Button>
-            <Button>Try For Free</Button>
+            <a
+              href='https://assurify.app/schedule-a-demo/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button variant='secondary-outline'>View Demo</Button>
+            </a>
+
+            <a
+              href='https://apps.shopify.com/assurify'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button>Try For Free</Button>
+            </a>
           </div>
         </div>
       </div>
@@ -128,8 +139,19 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
 
         {/* Sidebar Buttons */}
         <div className='flex flex-col gap-4 mt-8'>
-          <Button variant='secondary-outline'>View Demo</Button>
-          <Button>Try For Free</Button>
+          <a
+            href='https://assurify.app/schedule-a-demo/'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <Button variant='secondary-outline'>View Demo</Button>
+          </a>
+
+          <a
+            href='https://apps.shopify.com/assurify'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <Button>Try For Free</Button>
+          </a>
         </div>
       </div>
 
