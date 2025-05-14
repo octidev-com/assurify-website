@@ -1,28 +1,30 @@
+import React, { useState } from "react";
 import { useCheckout } from "@stripe/react-stripe-js";
-import React from "react";
 
-const PayButton = () => {
+const PayButton = ({ onSubmit }) => {
   const { confirm } = useCheckout();
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setLoading(true);
-    confirm().then((result) => {
+    try {
+      const result = await confirm();
       if (result.type === "error") {
-        setError(result.error);
+        console.error("Payment error:", result.error.message);
+      } else {
+        onSubmit(); // Call form submission logic if payment is successful
       }
+    } catch (err) {
+      console.error("Error during payment:", err);
+    } finally {
       setLoading(false);
-    });
+    }
   };
 
   return (
-    <div>
-      <button className="btn-primary-green-full" disabled={loading} onClick={handleClick}>
-        Pay
-      </button>
-      {error && <div>{error.message}</div>}
-    </div>
+    <button type="button" className="btn-primary-green-full disabled:cursor-not-allowed" disabled={loading} onClick={handleClick}>
+      {loading ? "Processing..." : "Pay Now"}
+    </button>
   );
 };
 

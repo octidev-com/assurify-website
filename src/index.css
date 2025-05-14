@@ -1,7 +1,4 @@
-@import 'tailwindcss';
-
-
-
+@import "tailwindcss";
 
 @layer utilities {
   .container {
@@ -44,6 +41,10 @@
     font-weight: 500;
     font-size: 1rem;
     color: #ffffff;
+  }
+
+  .text-gray-light {
+    color: #dbdbdb;
   }
 
   .text-gradient {
