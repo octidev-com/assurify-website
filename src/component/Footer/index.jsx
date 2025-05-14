@@ -86,7 +86,7 @@ const Footer = () => {
                       },
                       {
                         label: 'For Merchant',
-                        link: '/forMerchant'
+                        link: '/for-merchant'
                       },
                       {
                         label: 'Deals',
