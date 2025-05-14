@@ -1,65 +1,56 @@
-import React, { useState } from 'react'
-import OrgIcon from '../../assets/icon/assurify-icon.png'
-import { NavLink } from 'react-router'
-import CustomIcon from '../../assets/icon/CustomIcon'
-import Button from '../Common/Button'
-import Topbar from '../Common/Topbar'
-import { useNavigate } from 'react-router'
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router";
+import OrgIcon from "../../assets/icon/assurify-icon.png";
+import CustomIcon from "../../assets/icon/CustomIcon";
+import Button from "../Common/Button";
+import Topbar from "../Common/Topbar";
 
 const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const navigate = useNavigate()
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
-  }
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   // Array of navigation items
   const navItems = [
-    { label: 'Home', to: '/', external: false },
-    { label: 'For Merchant', to: '/forMerchant', external: false },
-    { label: 'Deals', to: '/deals', external: false },
-    { label: 'Pricing', to: '/pricing', external: false },
-    { label: 'Doc', to: 'https://documentation.assurify.app/', external: true },
-    { label: 'Blog', to: 'https://blog.assurify.app/', external: true }
-  ]
+    { label: "Home", to: "/", external: false },
+    { label: "For Merchant", to: "/for-merchant", external: false },
+    { label: "Deals", to: "/deals", external: false },
+    { label: "Pricing", to: "/pricing", external: false },
+    { label: "Doc", to: "https://documentation.assurify.app/", external: true },
+    { label: "Blog", to: "https://blog.assurify.app/", external: true },
+  ];
 
   return (
     <>
       {/* Topbar */}
-      <Topbar
-        isAnnouncementVisible={isAnnouncementVisible}
-        setIsAnnouncementVisible={setIsAnnouncementVisible}
-      />
+      <Topbar isAnnouncementVisible={isAnnouncementVisible} setIsAnnouncementVisible={setIsAnnouncementVisible} />
       {/* Navbar */}
-      <div className='bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 z-50 sticky'>
-        <div className='container flex justify-between items-center max-w-full px-4 lg:px-0'>
+      <div className="bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white flex justify-center w-full items-center p-3 sm:p-4 lg:p-6 z-50 sticky">
+        <div className="container flex justify-between items-center max-w-full px-4 lg:px-0">
           {/* Logo */}
-          <button onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-            <img
-              src={OrgIcon}
-              alt='Assurify logo'
-              className='w-[96px] md:w-[120px] lg:w-auto h-auto'
-            />
+          <button onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+            <img src={OrgIcon} alt="Assurify logo" className="w-[96px] md:w-[120px] lg:w-auto h-auto" />
           </button>
 
           {/* Toggle Text for Mobile */}
-          <button
-            className='md:hidden text-white text-[16px] font-normal'
-            onClick={toggleSidebar}>
-            <CustomIcon iconName='hamburger-icon' />
+          <button className="md:hidden text-white text-[16px] font-normal" onClick={toggleSidebar}>
+            <CustomIcon iconName="hamburger-icon" />
           </button>
 
           {/* Navigation Links - Hidden on Mobile */}
-          <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-6 flex-wrap items-center'>
+          <div className="hidden md:flex gap-2 sm:gap-3 lg:gap-6 flex-wrap items-center">
             {navItems.map((item) =>
               item.external ? (
                 <a
                   key={item.label}
                   href={item.to}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-[14px] lg:text-[16px] font-normal text-white hover:text-[#48BD42]'>
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] lg:text-[16px] font-normal text-white hover:text-[#48BD42]"
+                >
                   {item.label}
                 </a>
               ) : (
@@ -67,10 +58,9 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
                   key={item.label}
                   to={item.to}
                   className={({ isActive }) =>
-                    `text-[14px] lg:text-[16px] font-normal ${
-                      isActive ? 'text-[#48BD42]' : 'text-white'
-                    } hover:text-[#48BD42]`
-                  }>
+                    `text-[14px] lg:text-[16px] font-normal ${isActive ? "text-[#48BD42]" : "text-white"} hover:text-[#48BD42]`
+                  }
+                >
                   {item.label}
                 </NavLink>
               )
@@ -78,8 +68,8 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
           </div>
 
           {/* Buttons - Hidden on Mobile */}
-          <div className='hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center'>
-            <Button variant='secondary-outline'>View Demo</Button>
+          <div className="hidden md:flex gap-2 sm:gap-3 lg:gap-[30px] flex-wrap items-center">
+            <Button variant="secondary-outline">View Demo</Button>
             <Button>Try For Free</Button>
           </div>
         </div>
@@ -88,38 +78,35 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
       {/* Sidebar for Mobile */}
       <div
         className={`fixed top-0 right-0 h-full w-[250px] bg-[rgba(255,255,255,0.12)] backdrop-blur-[37px] border-b-[0.5px] border-b-[rgba(255,255,255,0.6)] text-white p-6 transform ${
-          isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300 ease-in-out z-50 md:hidden`}>
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out z-50 md:hidden`}
+      >
         {/* Close Icon */}
-        <button
-          className='absolute top-6 right-6 text-white text-[16px] font-normal'
-          onClick={toggleSidebar}>
-          <CustomIcon iconName='close-icon' className={'w-[24px] h-[24px]'} />
+        <button className="absolute top-6 right-6 text-white text-[16px] font-normal" onClick={toggleSidebar}>
+          <CustomIcon iconName="close-icon" className={"w-[24px] h-[24px]"} />
         </button>
 
         {/* Sidebar Links */}
-        <div className='flex flex-col gap-6 mt-12'>
+        <div className="flex flex-col gap-6 mt-12">
           {navItems.map((item) =>
             item.external ? (
               <a
                 key={item.label}
                 href={item.to}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='text-[16px] font-normal text-white hover:text-[#48BD42]'
-                onClick={toggleSidebar}>
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[16px] font-normal text-white hover:text-[#48BD42]"
+                onClick={toggleSidebar}
+              >
                 {item.label}
               </a>
             ) : (
               <NavLink
                 key={item.label}
                 to={item.to}
-                className={({ isActive }) =>
-                  `text-[16px] font-normal ${
-                    isActive ? 'text-[#48BD42]' : 'text-white'
-                  } hover:text-[#48BD42]`
-                }
-                onClick={toggleSidebar}>
+                className={({ isActive }) => `text-[16px] font-normal ${isActive ? "text-[#48BD42]" : "text-white"} hover:text-[#48BD42]`}
+                onClick={toggleSidebar}
+              >
                 {item.label}
               </NavLink>
             )
@@ -127,21 +114,16 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
         </div>
 
         {/* Sidebar Buttons */}
-        <div className='flex flex-col gap-4 mt-8'>
-          <Button variant='secondary-outline'>View Demo</Button>
+        <div className="flex flex-col gap-4 mt-8">
+          <Button variant="secondary-outline">View Demo</Button>
           <Button>Try For Free</Button>
         </div>
       </div>
 
       {/* Overlay for Sidebar (visible when sidebar is open) */}
-      {isSidebarOpen && (
-        <div
-          className='fixed inset-0 bg-opacity-50 z-40 md:hidden'
-          onClick={toggleSidebar}
-        />
-      )}
+      {isSidebarOpen && <div className="fixed inset-0 bg-opacity-50 z-40 md:hidden" onClick={toggleSidebar} />}
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
