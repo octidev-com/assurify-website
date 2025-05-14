@@ -1,33 +1,41 @@
+import React, { useState } from "react";
 import { useCheckout } from "@stripe/react-stripe-js";
-import React from "react";
 
-const EmailInput = () => {
+const EmailInput = ({ value, onChange, onBlur, name }) => {
   const checkout = useCheckout();
-  const [email, setEmail] = React.useState("");
-  const [error, setError] = React.useState(null);
+  const [error, setError] = useState(null);
 
-  const handleBlur = () => {
-    checkout.updateEmail(email).then((result) => {
-      if (result.error) {
-        setError(result.error);
+  const handleEmailBlur = async (e) => {
+    onBlur(e);
+    if (value) {
+      try {
+        const result = await checkout.updateEmail(value);
+        if (result.error) {
+          setError(result.error);
+        } else {
+          setError(null);
+        }
+      } catch (err) {
+        console.error("Error updating email:", err);
+        setError({ message: "Error validating email" });
       }
-    });
+    }
   };
 
-  const handleChange = (e) => {
-    setError(null);
-    setEmail(e.target.value);
-  };
   return (
     <div>
       <input
         type="email"
-        value={email}
-        onChange={handleChange}
-        onBlur={handleBlur}
-        className={`w-full px-4 h-[48px] rounded-2xl mt-2 border   opacity-[0.6] focus:outline-none`}
+        required={true}
+        value={value}
+        onChange={onChange}
+        onBlur={handleEmailBlur}
+        name={name}
+        className={`w-full px-4 h-[48px] rounded-2xl mt-2 border ${
+          error ? "border-red-500" : "border-[#A6A6A6]"
+        } opacity-[0.6] focus:outline-none`}
       />
-      {error && <div>{error.message}</div>}
+      {error && <div className="text-red-500 text-sm">{error.message}</div>}
     </div>
   );
 };
