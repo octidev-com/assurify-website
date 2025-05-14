@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import Home from './pages/Home'
@@ -15,8 +15,24 @@ import ScrollRestoration from './component/Common/ScrollRestoration'
 import NotFound from './pages/NotFound'
 
 const App = () => {
-  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true)
+  const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollButton(window.pageYOffset > 100);
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className='w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen'>
       {/* Fixed Navbar */}
@@ -48,6 +64,33 @@ const App = () => {
         <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
+
+      <button
+        type="button"
+        onClick={scrollToTop}
+        className={`fixed bottom-5 right-5 rounded-full bg-red-600 p-3 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg ${
+          showScrollButton ? "block" : "hidden"
+        }`}
+        aria-label="Scroll to top"
+        id="btn-back-to-top"
+      >
+        <span className="inline-block w-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="3"
+            stroke="currentColor"
+            className="h-4 w-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   )
 }
