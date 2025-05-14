@@ -12,7 +12,6 @@ import Review from '../component/Home/Review'
 import PricingSection from '../component/Home/PricingSection'
 import Container from '../component/Common/Container'
 import TopBg from '../component/Common/TopBg'
-import { Helmet } from 'react-helmet'
 
 const Home = () => {
   const faqs = [
@@ -80,10 +79,9 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Assurify | Home</title>
-      </Helmet>
-      <TopBg>
+
+    <TopBg>
+     
         {/* Banner component */}
         <div
           style={{ backgroundImage: `url(${bannerBg})` }}

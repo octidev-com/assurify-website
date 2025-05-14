@@ -58,14 +58,14 @@ const Brands = () => {
             <div
               key={`logo-${index}`}
               className='flex-shrink-0 w-[100px] sm:w-[120px] lg:w-[150px] mx-2 sm:mx-4 lg:mx-6'>
-              <img src={logo} alt={`Brand ${index + 1}`} />
+              <img src={logo} alt={`Brand ${index + 1}`} loading="lazy" />
             </div>
           ))}
           {logos.map((logo, index) => (
             <div
               key={`logo-dup-${index}`}
               className='flex-shrink-0 w-[100px] sm:w-[120px] lg:w-[150px] mx-2 sm:mx-4 lg:mx-6'>
-              <img src={logo} alt={`Brand ${index + 1}`} />
+              <img src={logo} alt={`Brand ${index + 1}`} loading="lazy" />
             </div>
           ))}
         </div>
