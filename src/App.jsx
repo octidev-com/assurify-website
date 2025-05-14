@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 import Home from './pages/Home'
-import { Route, Routes } from 'react-router'
 import Pricing from './pages/Pricing'
 import ContactUs from './pages/ContactUs'
 import Deals from './pages/Deals'
@@ -14,6 +14,17 @@ import NavbarSpacer from './component/Common/NavbarSpacer'
 import ScrollRestoration from './component/Common/ScrollRestoration'
 import NotFound from './pages/NotFound'
 import TopBg from './component/Common/TopBg'
+
+// Custom Redirect Component
+const CaseSensitiveRedirect = ({ to }) => {
+  useEffect(() => {
+    // Client-side redirect to lowercase URL
+    if (to !== to.toLowerCase()) {
+      window.location.replace(to.toLowerCase())
+    }
+  }, [to])
+  return null
+}
 
 const App = () => {
   const [isAnnouncementVisible, setIsAnnouncementVisible] = useState(true)
@@ -40,13 +51,23 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/pricing' element={<Pricing />} />
           <Route path='/checkout' element={<Checkout />} />
-          <Route path='/forMerchant' element={<ForMerchant />} />
+          <Route path='/for-merchant' element={<ForMerchant />} />
           <Route path='/confirmation' element={<Confirmation />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/deals' element={<Deals />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-
-          {/* Catch all route for undefined paths */}
+          {/* Catch uppercase URLs */}
+          <Route
+            path='/:url([a-zA-Z-]*)'
+            render={({ match }) => {
+              const { url } = match.params
+              if (/[A-Z]/.test(url)) {
+                return <CaseSensitiveRedirect to={`/${url}`} />
+              }
+              return <NotFound />
+            }}
+          />
+          {/* Catch-all for other invalid routes */}
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
