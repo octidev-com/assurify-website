@@ -17,7 +17,7 @@ const Navbar = ({ isAnnouncementVisible, setIsAnnouncementVisible }) => {
   // Array of navigation items
   const navItems = [
     { label: 'Home', to: '/', external: false },
-    { label: 'For Merchant', to: '/forMerchant', external: false },
+    { label: 'For Merchant', to: '/for-merchant', external: false },
     { label: 'Deals', to: '/deals', external: false },
     { label: 'Pricing', to: '/pricing', external: false },
     { label: 'Doc', to: 'https://documentation.assurify.app/', external: true },
