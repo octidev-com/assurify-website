@@ -136,20 +136,33 @@
   /* Paragraph Styles */
   .text-large-paragraph {
     font-size: var(--font-size-large-paragraph);
-    font-weight: var(--font-weight-paragraph);
     line-height: var(--line-height-paragraph);
   }
 
   .text-paragraph {
     font-size: var(--font-size-paragraph);
-    font-weight: var(--font-weight-paragraph);
     line-height: var(--line-height-paragraph);
   }
 
   .text-small-paragraph {
     font-size: var(--font-size-small-paragraph);
-    font-weight: var(--font-weight-paragraph);
     line-height: var(--line-height-paragraph);
+  }
+
+  .text-paragraph-light {
+    font-weight: var(--font-weight-paragraph-light);
+  }
+
+  .text-paragraph {
+    font-weight: var(--font-weight-paragraph);
+  }
+
+  .text-paragraph-medium {
+    font-weight: var(--font-weight-paragraph-medium);
+  }
+
+  .text-paragraph-semibold {
+    font-weight: var(--font-weight-paragraph-semibold);
   }
 
   /* Responsive Text Adjustments */
