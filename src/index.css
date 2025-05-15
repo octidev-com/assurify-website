@@ -1,4 +1,13 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@theme {
+  --color-primary: #48bd42;
+  --color-gray: #dbdbdb;
+  --color-black-base: #0c0d0c;
+  --color-white-base: #f7f7f7;
+  --font-family-primary: "Outfit", sans-serif;
+}
 
 @layer utilities {
   .container {
