@@ -64,7 +64,7 @@ const App = () => {
     <TopBg>
       <div className='w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen'>
         {/* GTM Tracker */}
-        {/* <GTMPageTracker /> */}
+        <GTMPageTracker />
 
         {/* Fixed Navbar */}
         <div className='fixed top-0 left-0 w-full z-[100]'>
