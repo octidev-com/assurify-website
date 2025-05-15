@@ -7,7 +7,7 @@ const Banner = () => {
       <div className="max-w-[1170px] mx-auto px-[38px] xl:px-0">
         <div className="flex flex-col items-center gap-[12px] lg:gap-[16px] text-left md:text-center">
           <p className="text-display-semibold text-center max-w-[888px]">Eleminate Shipping Risk</p>
-          <p className="text-large-paragraph text-large-paragraph-light text-gray text-center max-w-[770px] inline-block">
+          <p className="text-large-paragraph text-paragraph-light text-gray text-center max-w-[770px] inline-block">
             Protect your packages from loss, theft, or damage and boost revenue with the{" "}
             <h1 className="inline text-inherit m-0 p-0">Assurify Shipping Protection</h1> App, your store's shield for customer trust and
             retention.
