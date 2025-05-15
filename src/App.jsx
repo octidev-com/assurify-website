@@ -14,6 +14,7 @@ import NavbarSpacer from './component/Common/NavbarSpacer'
 import ScrollRestoration from './component/Common/ScrollRestoration'
 import NotFound from './pages/NotFound'
 import TopBg from './component/Common/TopBg'
+import GTMPageTracker from './utils/GTMPageTracker'
 
 // Custom Redirect Component
 const CaseSensitiveRedirect = ({ to }) => {
@@ -62,6 +63,9 @@ const App = () => {
   return (
     <TopBg>
       <div className='w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen'>
+        {/* GTM Tracker */}
+        <GTMPageTracker />
+
         {/* Fixed Navbar */}
         <div className='fixed top-0 left-0 w-full z-[100]'>
           <Navbar
