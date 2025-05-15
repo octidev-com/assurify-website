@@ -1,9 +1,6 @@
-
-import Container from "../component/Common/Container";
-import PricingSection from "../component/Home/PricingSection";
-import TopBg from "../component/Common/TopBg";
-import FAQ from "../component/Home/FAQ";
-
+import Container from '../component/Common/Container'
+import PricingSection from '../component/Home/PricingSection'
+import FAQ from '../component/Home/FAQ'
 
 const Pricing = () => {
   const faqs = [
@@ -114,16 +111,12 @@ const Pricing = () => {
     }
   ]
   return (
-    <>
-
-    <TopBg>
-      <div className="pt-[32px] md:pt-[56px]">
+    <div>
+      <div className='pt-[32px] md:pt-[56px]'>
         <PricingSection />
         <FAQ faqs={faqs} />
       </div>
-    </TopBg>
-
-    </>
+    </div>
   )
 }
 

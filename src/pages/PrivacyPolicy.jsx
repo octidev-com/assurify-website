@@ -1,8 +1,6 @@
-import React from 'react'
 import SectionTitle from '../component/Common/SectionTitle'
 import FAQ from '../component/Home/FAQ'
 import Container from '../component/Common/Container'
-import TopBg from '../component/Common/TopBg'
 
 const PrivacyPolicy = () => {
   const faqs = [
@@ -105,7 +103,7 @@ const PrivacyPolicy = () => {
   ]
 
   return (
-    <TopBg>
+    <div>
       {/* main content */}
       <Container>
         <div className='pt-[32px] md:pt-[56px]'>
@@ -155,7 +153,7 @@ const PrivacyPolicy = () => {
           <FAQ faqs={faqs} />
         </div>
       </Container>
-    </TopBg>
+    </div>
   )
 }
 

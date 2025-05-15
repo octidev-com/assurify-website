@@ -78,47 +78,43 @@ const Home = () => {
   ]
 
   return (
-    <>
+    <div>
+      {/* Banner component */}
+      <div
+        style={{ backgroundImage: `url(${bannerBg})` }}
+        className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center pt-[32px] md:pt-[56px]'>
+        <Banner />
+      </div>
 
-    <TopBg>
-     
-        {/* Banner component */}
-        <div
-          style={{ backgroundImage: `url(${bannerBg})` }}
-          className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center pt-[32px] md:pt-[56px]'>
-          <Banner />
-        </div>
+      {/* How it works section */}
+      <HowItWorks />
 
-        {/* How it works section */}
-        <HowItWorks />
+      {/* Protection coverage section */}
+      <ProtectionCoverage />
 
-        {/* Protection coverage section */}
-        <ProtectionCoverage />
+      {/* Benefits section */}
+      <Benefits />
 
-        {/* Benefits section */}
-        <Benefits />
+      {/* Brands section */}
+      <Brands />
 
-        {/* Brands section */}
-        <Brands />
+      {/* Pricing section */}
+      <div className='mt-[50px] md:mt-[100px] lg:mt-[150px]'>
+        <PricingSection hideToggle={true} />
+      </div>
 
-        {/* Pricing section */}
-        <div className='mt-[50px] md:mt-[100px] lg:mt-[150px]'>
-          <PricingSection hideToggle={true} />
-        </div>
+      {/* Review section */}
+      <Review />
 
-        {/* Review section */}
-        <Review />
+      {/* Why Assurify best choice section */}
+      <WhyAssurifyBestChoice />
 
-        {/* Why Assurify best choice section */}
-        <WhyAssurifyBestChoice />
+      {/* Insights & Inspiration section */}
+      <InsightsAndInspiration />
 
-        {/* Insights & Inspiration section */}
-        <InsightsAndInspiration />
-
-        {/* FAQ section */}
-        <FAQ faqs={faqs} />
-      </TopBg>
-    </>
+      {/* FAQ section */}
+      <FAQ faqs={faqs} />
+    </div>
   )
 }
 
