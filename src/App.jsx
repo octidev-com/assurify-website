@@ -14,6 +14,7 @@ import NavbarSpacer from './component/Common/NavbarSpacer'
 import ScrollRestoration from './component/Common/ScrollRestoration'
 import NotFound from './pages/NotFound'
 import TopBg from './component/Common/TopBg'
+import GTMPageTracker from './utils/GTMPageTracker'
 
 // Custom Redirect Component
 const CaseSensitiveRedirect = ({ to }) => {
@@ -77,6 +78,9 @@ const App = () => {
         <NavbarSpacer isAnnouncementVisible={isAnnouncementVisible} />
 
         {/* Content */}
+
+        <GTMPageTracker />
+
         <Routes>
           <Route path='/' element={<Home />} caseSensitive />
           <Route path='/pricing' element={<Pricing />} caseSensitive />
