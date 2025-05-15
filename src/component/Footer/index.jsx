@@ -23,7 +23,12 @@ const Footer = () => {
             </p>
           </div>
           <div className='mx-auto md:mx-0'>
-            <Button className='mt-4 sm:mt-6 md:mt-0'>Try it for free</Button>
+            <a
+              href='https://apps.shopify.com/assurify'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Button className='mt-4 sm:mt-6 md:mt-0'>Try it for free</Button>
+            </a>
           </div>
         </div>
       </Container>
@@ -81,7 +86,7 @@ const Footer = () => {
                       },
                       {
                         label: 'For Merchant',
-                        link: '/forMerchant'
+                        link: '/for-merchant'
                       },
                       {
                         label: 'Deals',

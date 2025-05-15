@@ -12,7 +12,6 @@ import Review from '../component/Home/Review'
 import PricingSection from '../component/Home/PricingSection'
 import Container from '../component/Common/Container'
 import TopBg from '../component/Common/TopBg'
-import { Helmet } from 'react-helmet'
 
 const Home = () => {
   const faqs = [
@@ -80,59 +79,45 @@ const Home = () => {
 
   return (
     <>
-    <Helmet>
-        <title>Assurify | Home</title>
-    </Helmet>
+
     <TopBg>
-      {/* Right side bg image */}
-      {/* <div className='absolute  -top-[800px] -left-[1000px] sm:-left-[800px] md:-left-[500px] pointer-events-none z-0'>
-        <img src={roundBg} alt='Background decoration' />
-      </div> */}
+     
+        {/* Banner component */}
+        <div
+          style={{ backgroundImage: `url(${bannerBg})` }}
+          className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center pt-[32px] md:pt-[56px]'>
+          <Banner />
+        </div>
 
-      {/* Spacer to prevent content overlap */}
-      {/* <div className='w-full lg:h-[56px] h-[32px]'></div> */}
+        {/* How it works section */}
+        <HowItWorks />
 
-      {/* Banner component */}
-      <div
-        style={{ backgroundImage: `url(${bannerBg})` }}
-        className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center pt-[32px] md:pt-[56px]'>
-        <Banner />
-      </div>
+        {/* Protection coverage section */}
+        <ProtectionCoverage />
 
-      {/* How it works section */}
-      <HowItWorks />
+        {/* Benefits section */}
+        <Benefits />
 
-      {/* Protection coverage section */}
-      <ProtectionCoverage />
+        {/* Brands section */}
+        <Brands />
 
-      {/* Benefits section */}
-      <Benefits />
-
-      {/* Brands section */}
-      <Brands />
-
-      {/* Pricing section */}
-      <div className='mt-[50px] md:mt-[100px] lg:mt-[150px]'>
+        {/* Pricing section */}
+        <div className='mt-[50px] md:mt-[100px] lg:mt-[150px]'>
           <PricingSection hideToggle={true} />
-      </div>
+        </div>
 
-      {/* Review section */}
-      <Review />
+        {/* Review section */}
+        <Review />
 
-      {/* Why Assurify best choice section */}
-      <WhyAssurifyBestChoice />
+        {/* Why Assurify best choice section */}
+        <WhyAssurifyBestChoice />
 
-      {/* Insights & Inspiration section */}
-      <InsightsAndInspiration />
+        {/* Insights & Inspiration section */}
+        <InsightsAndInspiration />
 
-      {/* FAQ section */}
-      <FAQ faqs={faqs} />
-
-      {/* Left side bg image */}
-      {/* <div className='absolute -top-[800px] -right-[1000px] sm:-right-[800px] md:-right-[500px] pointer-events-none z-0'>
-        <img src={roundBg} alt='Background decoration' />
-      </div> */}
-    </TopBg>
+        {/* FAQ section */}
+        <FAQ faqs={faqs} />
+      </TopBg>
     </>
   )
 }
