@@ -28,13 +28,6 @@ const GTMPageTracker = () => {
       title: `Unknown Page: ${path}`
     }
 
-    // Log for debugging
-    console.log('GTM Push:', {
-      event: page.event,
-      page_path: path,
-      page_title: page.title
-    })
-
     // Push to dataLayer
     window.dataLayer.push({
       event: page.event,
