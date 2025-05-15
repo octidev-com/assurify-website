@@ -91,6 +91,13 @@
     -webkit-text-fill-color: transparent;
   }
 
+  /* Display Text Styles */
+  .text-display-semibold {
+    font-size: var(--font-size-display-semibold);
+    font-weight: var(--font-weight-display-semibold);
+    line-height: var(--line-height-heading);
+  }
+
   /* Headings Styles */
   .text-h1,
   .text-h2,
@@ -147,6 +154,9 @@
 
   /* Responsive Text Adjustments */
   @media screen and (max-width: 1023px) {
+    .text-display-semibold {
+      font-size: var(--font-size-display-semibold-mobile);
+    }
     .text-h1 {
       font-size: var(--font-size-h1-mobile);
     }
