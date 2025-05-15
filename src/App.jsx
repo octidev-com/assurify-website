@@ -21,13 +21,21 @@ const CaseSensitiveRedirect = ({ to }) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Redirect to lowercase URL
     if (to !== to.toLowerCase()) {
-      navigate(to.toLowerCase(), { replace: true }) // Use navigate for a smoother redirect
+      navigate(to.toLowerCase(), { replace: true })
     }
   }, [to, navigate])
 
   return null
+}
+
+// Page Wrapper for Titles
+const Page = ({ title, element }) => {
+  useEffect(() => {
+    document.title = `Assurify | ${title}`
+  }, [title])
+
+  return element
 }
 
 const App = () => {
@@ -36,7 +44,7 @@ const App = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-  // Global URL case-sensitivity check
+  // URL case-sensitivity check
   useEffect(() => {
     const currentPath = location.pathname
     if (currentPath !== currentPath.toLowerCase()) {
@@ -44,12 +52,12 @@ const App = () => {
     }
   }, [location, navigate])
 
+  // Scroll button visibility
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollButton(window.pageYOffset > 100)
     }
     window.addEventListener('scroll', handleScroll)
-
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -63,43 +71,58 @@ const App = () => {
   return (
     <TopBg>
       <div className='w-full mx-auto bg-[#0C0D0C] text-[#fff] min-h-screen'>
-        {/* GTM Tracker */}
-        <GTMPageTracker />
-
-        {/* Fixed Navbar */}
         <div className='fixed top-0 left-0 w-full z-[100]'>
           <Navbar
             isAnnouncementVisible={isAnnouncementVisible}
             setIsAnnouncementVisible={setIsAnnouncementVisible}
           />
         </div>
-
-        {/* Scroll Restoration */}
         <ScrollRestoration />
-
-        {/* Spacer with dynamic height */}
         <NavbarSpacer isAnnouncementVisible={isAnnouncementVisible} />
-
-        {/* Content */}
-
+        <GTMPageTracker />
         <Routes>
-          <Route path='/' element={<Home />} caseSensitive />
-          <Route path='/pricing' element={<Pricing />} caseSensitive />
-          <Route path='/checkout' element={<Checkout />} caseSensitive />
-          <Route path='/for-merchant' element={<ForMerchant />} caseSensitive />
+          <Route
+            path='/'
+            element={<Page title='Home' element={<Home />} />}
+            caseSensitive
+          />
+          <Route
+            path='/pricing'
+            element={<Page title='Pricing' element={<Pricing />} />}
+            caseSensitive
+          />
+          <Route
+            path='/checkout'
+            element={<Page title='Checkout' element={<Checkout />} />}
+            caseSensitive
+          />
+          <Route
+            path='/for-merchant'
+            element={<Page title='For Merchants' element={<ForMerchant />} />}
+            caseSensitive
+          />
           <Route
             path='/confirmation'
-            element={<Confirmation />}
+            element={<Page title='Confirmation' element={<Confirmation />} />}
             caseSensitive
           />
-          <Route path='/contact-us' element={<ContactUs />} caseSensitive />
-          <Route path='/deals' element={<Deals />} caseSensitive />
+          <Route
+            path='/contact-us'
+            element={<Page title='Contact Us' element={<ContactUs />} />}
+            caseSensitive
+          />
+          <Route
+            path='/deals'
+            element={<Page title='Deals' element={<Deals />} />}
+            caseSensitive
+          />
           <Route
             path='/privacy-policy'
-            element={<PrivacyPolicy />}
+            element={
+              <Page title='Privacy Policy' element={<PrivacyPolicy />} />
+            }
             caseSensitive
           />
-          {/* Catch uppercase URLs */}
           <Route
             path='/:url([a-zA-Z-]*)'
             element={({ match }) => {
@@ -107,14 +130,15 @@ const App = () => {
               if (/[A-Z]/.test(url)) {
                 return <CaseSensitiveRedirect to={`/${url}`} />
               }
-              return <NotFound />
+              return <Page title='Not Found' element={<NotFound />} />
             }}
           />
-          {/* Catch all route for undefined paths */}
-          <Route path='*' element={<NotFound />} />
+          <Route
+            path='*'
+            element={<Page title='Not Found' element={<NotFound />} />}
+          />
         </Routes>
         <Footer />
-
         <button
           type='button'
           onClick={scrollToTop}
