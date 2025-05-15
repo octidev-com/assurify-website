@@ -10,65 +10,42 @@
 
   /* Typography scale */
   --font-size-display-semibold: 124px;
-  --font-size-display-semibold-mobile: 48px; /* Smaller size for mobile */
+  --font-size-display-semibold-mobile: 48px;
   --font-weight-display-medium: 500;
   --font-weight-display-semibold: 600;
 
-  /* line height for headings and paragraphs */
   --line-height-heading: 130%;
   --line-height-paragraph: 150%;
 
-  /* H1 */
-  --font-size-h1-regular: 60px;
-  --font-size-h1-regular-mobile: 48px; /* Smaller size for mobile */
-  --font-weight-h1-medium: 500;
-  --font-weight-h1-semibold: 600;
+  /* Headings */
+  --font-size-h1: 48px;
+  --font-size-h1-mobile: 24px;
+  --font-size-h2: 40px;
+  --font-size-h2-mobile: 18px;
+  --font-size-h3: 32px;
+  --font-size-h3-mobile: 20px;
+  --font-size-h4: 24px;
+  --font-size-h4-mobile: 18px;
+  --font-size-h5: 20px;
+  --font-size-h5-mobile: 14px;
+  --font-size-h6: 16px;
+  --font-size-h6-mobile: 14px;
 
-  /* H2 */
-  --font-size-h2-regular: 48px;
-  --font-size-h2-regular-mobile: 40px; /* Smaller size for mobile */
-  --font-weight-h2-medium: 500;
-  --font-weight-h2-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
 
-  /* H3 */
-  --font-size-h3-regular: 40px;
-  --font-size-h3-regular-mobile: 32px; /* Smaller size for mobile */
-  --font-weight-h3-medium: 500;
-  --font-weight-h3-semibold: 600;
+  /* Paragraphs */
+  --font-size-large-paragraph: 18px;
+  --font-size-large-paragraph-mobile: 14px;
+  --font-size-paragraph: 16px;
+  --font-size-paragraph-mobile: 14px;
+  --font-size-small-paragraph: 14px;
+  --font-size-small-paragraph-mobile: 12px;
 
-  /* H4 */
-  --font-size-h4-regular: 32px;
-  --font-size-h4-regular-mobile: 28px; /* Smaller size for mobile */
-  --font-weight-h4-medium: 500;
-  --font-weight-h4-semibold: 600;
-
-  /* H5 */
-  --font-size-h5-regular: 24px;
-  --font-size-h5-regular-mobile: 24px; /* Smaller size for mobile */
-  --font-weight-h5-medium: 500;
-  --font-weight-h5-semibold: 600;
-
-  /* H6 */
-  --font-size-h5-regular: 20px;
-  --font-size-h5-regular-mobile: 20px; /* Smaller size for mobile */
-  --font-weight-h5-medium: 500;
-  --font-weight-h5-semibold: 600;
-
-  /* Large Paragraph */
-  --font-size-large-paragraph-regular: 18px;
-  --font-size-large-paragraph-regular-mobile: 14px; /* Smaller size for mobile */
-  --font-weight-large-paragraph-light: 300;
-  --font-weight-large-paragraph-regular: 400;
-  --font-weight-large-paragraph-medium: 500;
-  --font-weight-large-paragraph-semibold: 600;
-
-  /* Small Paragraph */
-  --font-size-small-paragraph-regular: 14px;
-  --font-size-small-paragraph-regular-mobile: 12px; /* Smaller size for mobile */
-  --font-weight-small-paragraph-light: 300;
-  --font-weight-small-paragraph-regular: 400;
-  --font-weight-small-paragraph-medium: 500;
-  --font-weight-small-paragraph-semibold: 600;
+  --font-weight-paragraph-light: 300;
+  --font-weight-paragraph: 400;
+  --font-weight-paragraph-medium: 500;
+  --font-weight-paragraph-semibold: 600;
 }
 
 @layer utilities {
@@ -80,41 +57,30 @@
     max-width: 1170px;
   }
 
-  .btn-primary {
+  /* Button Styles */
+  .btn-primary,
+  .btn-primary-green-full,
+  .btn-secondary {
     cursor: pointer;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 11px;
-    padding-bottom: 11px;
-    background-color: var(--color-white);
+    padding: 11px 1.5rem;
     border-radius: 1rem;
-    color: #000000;
     font-weight: 500;
     font-size: 1rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-black);
   }
 
   .btn-primary-green-full {
-    cursor: pointer;
-    width: 100%;
-    padding-top: 11px;
-    padding-bottom: 11px;
     background-color: var(--color-primary);
-    border-radius: 1rem;
-    color: #000000;
-    font-weight: 500;
-    font-size: 1rem;
+    color: var(--color-black);
+    width: 100%;
   }
 
   .btn-secondary {
-    cursor: pointer;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 11px;
-    padding-bottom: 11px;
     border: 1px solid var(--color-white);
-    border-radius: 1rem;
-    font-weight: 500;
-    font-size: 1rem;
     color: var(--color-white);
   }
 
@@ -125,22 +91,89 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .text-display-semibold {
-    font-size: var(--font-size-display-semibold);
-    font-weight: var(--font-weight-display-semibold);
+  /* Headings Styles */
+  .text-h1,
+  .text-h2,
+  .text-h3,
+  .text-h4,
+  .text-h5,
+  .text-h6 {
     line-height: var(--line-height-heading);
-    color: var(--color-white);
   }
 
   .text-h1 {
-    font-size: var(--font-size-h1-regular);
-    font-weight: var(--font-weight-h1-regular);
-    line-height: var(--line-height-heading);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-h5 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-semibold);
+  }
+  .text-h6 {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-semibold);
   }
 
+  /* Paragraph Styles */
+  .text-large-paragraph {
+    font-size: var(--font-size-large-paragraph);
+    font-weight: var(--font-weight-paragraph);
+    line-height: var(--line-height-paragraph);
+  }
+
+  .text-paragraph {
+    font-size: var(--font-size-paragraph);
+    font-weight: var(--font-weight-paragraph);
+    line-height: var(--line-height-paragraph);
+  }
+
+  .text-small-paragraph {
+    font-size: var(--font-size-small-paragraph);
+    font-weight: var(--font-weight-paragraph);
+    line-height: var(--line-height-paragraph);
+  }
+
+  /* Responsive Text Adjustments */
   @media screen and (max-width: 1023px) {
-    .text-display-semibold {
-      font-size: var(--font-size-display-semibold-mobile);
+    .text-h1 {
+      font-size: var(--font-size-h1-mobile);
+    }
+    .text-h2 {
+      font-size: var(--font-size-h2-mobile);
+    }
+    .text-h3 {
+      font-size: var(--font-size-h3-mobile);
+    }
+    .text-h4 {
+      font-size: var(--font-size-h4-mobile);
+    }
+    .text-h5 {
+      font-size: var(--font-size-h5-mobile);
+    }
+    .text-h6 {
+      font-size: var(--font-size-h6-mobile);
+    }
+
+    .text-large-paragraph {
+      font-size: var(--font-size-large-paragraph-mobile);
+    }
+    .text-paragraph {
+      font-size: var(--font-size-paragraph-mobile);
+    }
+    .text-small-paragraph {
+      font-size: var(--font-size-small-paragraph-mobile);
     }
   }
 }
