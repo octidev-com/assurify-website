@@ -38,9 +38,9 @@
   --text-small-paragraph-mobile: 12px;
 
   /* Line height */
-  --line-height-display: 120%;
-  --line-height-heading: 130%;
-  --line-height-paragraph: 150%;
+  --leading-display: 120%;
+  --leading-heading: 130%;
+  --leading-paragraph: 150%;
 }
 
 @layer utilities {
