@@ -13,11 +13,11 @@ import React from "react";
 const Button = ({ children, variant = "primary-white", className = "", ...props }) => {
   const variantStyles = {
     "primary-white":
-      "cursor-pointer px-4 py-2 bg-white hover:bg-[linear-gradient(103.28deg,#48BD42_5.59%,#FFFFFF_100%)] hover:shadow-[0px_7px_25px_0px_#80EF805C] border-[1px] border-white rounded-[16px] text-black font-medium text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph md:px-6 py-[10px] md:py-[11px]",
+      "cursor-pointer px-4 py-2 bg-white hover:bg-[linear-gradient(103.28deg,#48BD42_5.59%,#FFFFFF_100%)] hover:shadow-[0px_7px_25px_0px_#80EF805C] rounded-[16px] text-black font-medium text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph md:px-6 h-[48px] transition-all duration-200 ease-in-out",
     "primary-green":
-      "cursor-pointer px-4 py-2 bg-primary text-black font-medium text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph md:px-6 py-[10px] md:py-[11px] rounded-[16px]",
+      "cursor-pointer px-4 py-2 bg-primary text-black font-medium text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph md:px-6 h-[48px] rounded-[16px] transition-all duration-200 ease-in-out",
     "secondary-outline":
-      "cursor-pointer px-4 py-2 border-[1px] border-white rounded-[16px] text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph text-white font-medium hover:bg-primary hover:border-primary hover:text-black md:px-6 py-[10px] md:py-[11px]",
+      "cursor-pointer px-4 py-2 border-[1px] border-white rounded-[16px] text-normal-paragraph-mobile lg:text-normal-paragraph-desktop leading-paragraph text-white font-medium hover:bg-primary hover:border-primary hover:text-black md:px-6 h-[48px] transition-all duration-200 ease-in-out",
   };
 
   const buttonStyle = variantStyles[variant] || variantStyles["primary-white"];
