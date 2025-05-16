@@ -12,41 +12,33 @@
   --color-white: #f7f7f7;
 
   /* Display */
-  --font-size-display-semibold: 124px;
-  --font-size-display-semibold-mobile: 48px;
-  --font-weight-display-medium: 500;
-  --font-weight-display-semibold: 600;
+  --text-display-desktop: 124px;
+  --text-display-mobile: 48px;
 
   /* Headings */
-  --font-size-h1: 48px;
-  --font-size-h1-mobile: 24px;
-  --font-size-h2: 40px;
-  --font-size-h2-mobile: 18px;
-  --font-size-h3: 32px;
-  --font-size-h3-mobile: 20px;
-  --font-size-h4: 24px;
-  --font-size-h4-mobile: 18px;
-  --font-size-h5: 20px;
-  --font-size-h5-mobile: 14px;
-  --font-size-h6: 16px;
-  --font-size-h6-mobile: 14px;
+  --text-h1-desktop: 48px;
+  --text-h1-mobile: 24px;
+  --text-h2-desktop: 40px;
+  --text-h2-mobile: 18px;
+  --text-h3-desktop: 32px;
+  --text-h3-mobile: 20px;
+  --text-h4-desktop: 24px;
+  --text-h4-mobile: 18px;
+  --text-h5-desktop: 20px;
+  --text-h5-mobile: 14px;
+  --text-h6-desktop: 16px;
+  --text-h6-mobile: 14px;
 
   /* Paragraphs */
-  --font-size-large-paragraph: 18px;
-  --font-size-large-paragraph-mobile: 14px;
-  --font-size-paragraph: 16px;
-  --font-size-paragraph-mobile: 14px;
-  --font-size-small-paragraph: 14px;
-  --font-size-small-paragraph-mobile: 12px;
-
-  /* Font weight scale */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --text-large-paragraph-desktop: 18px;
+  --text-large-paragraph-mobile: 14px;
+  --text-normal-paragraph-desktop: 16px;
+  --text-normal-paragraph-mobile: 14px;
+  --text-small-paragraph-desktop: 14px;
+  --text-small-paragraph-mobile: 12px;
 
   /* Line height */
+  --line-height-display: 120%;
   --line-height-heading: 130%;
   --line-height-paragraph: 150%;
 }
