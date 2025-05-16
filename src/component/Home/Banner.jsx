@@ -1,51 +1,72 @@
-import React from "react";
-import TypewriterComponent from "typewriter-effect";
-import Button from "../Common/Button";
-import AssurifyDashboardImg from "../../assets/forMerchant/assurify_dashboard.png";
-import bannerBg from "../../assets/banner/banner-bg.png";
+import React from "react"
+import TypewriterComponent from "typewriter-effect"
+import Button from "../Common/Button"
+import AssurifyDashboardImg from "../../assets/forMerchant/assurify_dashboard.png"
+import bannerBg from "../../assets/banner/banner-bg.png"
 
 const Banner = () => {
   return (
     <div>
-      <div style={{ backgroundImage: `url(${bannerBg})` }} className="bg-cover bg-no-repeat bg-center pt-[32px] md:pt-[56px]">
-        <div className="max-w-[1170px] mx-auto px-[38px] xl:px-0">
-          <div className="flex flex-col items-center gap-[12px] lg:gap-[16px] text-center">
-            <div className="text-display-mobile lg:text-display-desktop leading-display font-semibold text-white">
-              <p className="">Eliminate</p>
-              <span className="inline-block min-h-[40px]">
+      <div
+        style={{ backgroundImage: `url(${bannerBg})` }}
+        className='bg-cover bg-no-repeat bg-center pt-[32px] md:pt-[56px]'>
+        <div className='max-w-[1170px] mx-auto px-[38px] xl:px-0'>
+          <div className='flex flex-col items-center gap-[12px] lg:gap-[16px] text-center'>
+            <div className='text-display-mobile lg:text-display-desktop leading-display font-semibold text-white'>
+              <p className=''>Eliminate</p>
+              <span className='inline-block min-h-[40px]'>
                 <TypewriterComponent
                   options={{
-                    strings: ["Shipping Risk", "Product Damage", "Packages Loss"],
+                    strings: [
+                      "Shipping Risk",
+                      "Product Damage",
+                      "Packages Loss"
+                    ],
                     autoStart: true,
                     loop: true,
                     delay: 80, // Typing speed
                     deleteSpeed: 40, // Deleting speed
                     pauseFor: 1500, // Pause after typing
                     cursor: "I", // Simple 'I' cursor
-                    cursorClassName: "Typewriter__cursor", // Default class for blinking
+                    cursorClassName: "Typewriter__cursor" // Default class for blinking
                   }}
                 />
               </span>
             </div>
-            <p className="text-large-paragraph-mobile lg:text-large-paragraph-desktop leading-paragraph font-light text-gray max-w-[770px]">
-              Protect your packages from loss, theft, or damage and boost revenue with the{" "}
-              <h1 className="inline text-inherit m-0 p-0">Assurify Shipping Protection</h1> App, your store's shield for customer trust and
-              retention.
+            <p className='text-large-paragraph-mobile lg:text-large-paragraph-desktop leading-paragraph font-light text-gray max-w-[770px]'>
+              Protect your packages from loss, theft, or damage and boost
+              revenue with the{" "}
+              <h1 className='inline text-inherit m-0 p-0'>
+                Assurify Shipping Protection
+              </h1>{" "}
+              App, your store's shield for customer trust and retention.
             </p>
-            <div className="flex justify-center gap-4 sm:gap-5 lg:gap-7 mt-[4px] lg:mt-[16px]">
-              <a href="https://app.assurify.app/" target="_blank" rel="noopener noreferrer">
+            <div className='flex justify-center gap-4 sm:gap-5 lg:gap-7 mt-[4px] lg:mt-[16px]'>
+              <a
+                href='https://app.assurify.app/'
+                target='_blank'
+                rel='noopener noreferrer'>
                 <Button>How it works</Button>
               </a>
-              <a href="https://assurify.app/schedule-a-demo/" target="_blank" rel="noopener noreferrer">
-                <Button variant="secondary-outline">View Demo</Button>
+              <a
+                href='https://assurify.app/schedule-a-demo/'
+                target='_blank'
+                rel='noopener noreferrer'>
+                <Button variant='secondary-outline'>View Demo</Button>
               </a>
             </div>
           </div>
+
+          {/* assurify dashboard image */}
+          <img
+            src={AssurifyDashboardImg}
+            alt='Assurify Dashboard'
+            className='mx-auto'
+          />
         </div>
       </div>
-      <img src={AssurifyDashboardImg} alt="Assurify Dashboard" className="mx-auto" />
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner
