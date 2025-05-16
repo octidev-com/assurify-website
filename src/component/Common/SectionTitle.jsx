@@ -22,7 +22,7 @@ const SectionTitle = ({
   useH1 = false, // Default to false to maintain h2 behavior
 }) => {
   return (
-    <div className="mx-auto flex flex-col items-center gap-2">
+    <div className="mx-auto flex flex-col items-center gap-[12px]">
       {topText && (
         <div className={`w-full flex ${isTextCentered ? "justify-center" : "justify-start"} items-center gap-3`}>
           {/* LEFT HR FOR DESKTOP, HIDDEN ON MOBILE */}
