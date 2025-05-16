@@ -13,6 +13,7 @@ import Confirmation from './pages/Confirmation'
 import NavbarSpacer from './component/Common/NavbarSpacer'
 import ScrollRestoration from './component/Common/ScrollRestoration'
 import NotFound from './pages/NotFound'
+import GTMPageTracker from './utils/GTMPageTracker'
 import roundBg from '../src/assets/banner/round-bg.png'
 
 // Custom Redirect Component
@@ -22,7 +23,7 @@ const CaseSensitiveRedirect = ({ to }) => {
   useEffect(() => {
     // Redirect to lowercase URL
     if (to !== to.toLowerCase()) {
-      navigate(to.toLowerCase(), { replace: true })
+      navigate(to.toLowerCase(), { replace: true }) // Use navigate for a smoother redirect
     }
   }, [to, navigate])
 
@@ -82,8 +83,11 @@ const App = () => {
         </div>
       </div>
 
+      {/* GTM Tracker */}
+      <GTMPageTracker />
+
       {/* Fixed Navbar */}
-      <div className='fixed top-0 left-0 w-full z-50'>
+      <div className='fixed top-0 left-0 w-full z-[100]'>
         <Navbar
           isAnnouncementVisible={isAnnouncementVisible}
           setIsAnnouncementVisible={setIsAnnouncementVisible}
@@ -97,40 +101,35 @@ const App = () => {
       <NavbarSpacer isAnnouncementVisible={isAnnouncementVisible} />
 
       {/* Content */}
-      <div className='relative z-10'>
-        <Routes>
-          <Route path='/' element={<Home />} caseSensitive />
-          <Route path='/pricing' element={<Pricing />} caseSensitive />
-          <Route path='/checkout' element={<Checkout />} caseSensitive />
-          <Route path='/for-merchant' element={<ForMerchant />} caseSensitive />
-          <Route
-            path='/confirmation'
-            element={<Confirmation />}
-            caseSensitive
-          />
-          <Route path='/contact-us' element={<ContactUs />} caseSensitive />
-          <Route path='/deals' element={<Deals />} caseSensitive />
-          <Route
-            path='/privacy-policy'
-            element={<PrivacyPolicy />}
-            caseSensitive
-          />
-          {/* Catch uppercase URLs */}
-          <Route
-            path='/:url([a-zA-Z-]*)'
-            element={({ match }) => {
-              const { url } = match.params
-              if (/[A-Z]/.test(url)) {
-                return <CaseSensitiveRedirect to={`/${url}`} />
-              }
-              return <NotFound />
-            }}
-          />
-          {/* Catch all route for undefined paths */}
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-        <Footer />
-      </div>
+
+      <Routes>
+        <Route path='/' element={<Home />} caseSensitive />
+        <Route path='/pricing' element={<Pricing />} caseSensitive />
+        <Route path='/checkout' element={<Checkout />} caseSensitive />
+        <Route path='/for-merchant' element={<ForMerchant />} caseSensitive />
+        <Route path='/confirmation' element={<Confirmation />} caseSensitive />
+        <Route path='/contact-us' element={<ContactUs />} caseSensitive />
+        <Route path='/deals' element={<Deals />} caseSensitive />
+        <Route
+          path='/privacy-policy'
+          element={<PrivacyPolicy />}
+          caseSensitive
+        />
+        {/* Catch uppercase URLs */}
+        <Route
+          path='/:url([a-zA-Z-]*)'
+          element={({ match }) => {
+            const { url } = match.params
+            if (/[A-Z]/.test(url)) {
+              return <CaseSensitiveRedirect to={`/${url}`} />
+            }
+            return <NotFound />
+          }}
+        />
+        {/* Catch all route for undefined paths */}
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+      <Footer />
 
       <button
         type='button'

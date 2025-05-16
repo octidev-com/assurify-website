@@ -6,10 +6,10 @@ const Banner = () => {
     <div>
       <div className='max-w-[1170px] mx-auto px-[38px] xl:px-0'>
         <div className='flex flex-col items-center gap-[12px] lg:gap-[16px] text-left md:text-center'>
-          <p className='text-[#F7F7F7] text-[48px] lg:text-[124px] font-semibold leading-[62px] lg:leading-[130px] max-w-[888px]'>
+          <p className='text-display-semibold text-center max-w-[888px]'>
             Eliminate Shipping Risk
           </p>
-          <p className='text-center text-xs sm:text-base lg:text-xl font-light text-[#F7F7F7] leading-[18px] lg:leading-[30px] max-w-[570px] inline-block'>
+          <p className='text-large-paragraph text-paragraph-light text-gray text-center max-w-[770px] inline-block'>
             Protect your packages from loss, theft, or damage and boost revenue
             with the{' '}
             <h1 className='inline text-inherit m-0 p-0'>
