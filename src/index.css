@@ -2,11 +2,14 @@
 @import "tailwindcss";
 
 @theme {
+  /* Font */
+  --font-primary: "Outfit", sans-serif;
+
+  /* Colors */
   --color-primary: #48bd42;
   --color-gray: #dbdbdb;
   --color-black: #0c0d0c;
   --color-white: #f7f7f7;
-  --font-primary: "Outfit", sans-serif;
 
   /* Display */
   --font-size-display-semibold: 124px;
