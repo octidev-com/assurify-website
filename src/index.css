@@ -2,50 +2,45 @@
 @import "tailwindcss";
 
 @theme {
+  /* Font */
+  --font-primary: "Outfit", sans-serif;
+
+  /* Colors */
   --color-primary: #48bd42;
   --color-gray: #dbdbdb;
   --color-black: #0c0d0c;
   --color-white: #f7f7f7;
-  --font-primary: "Outfit", sans-serif;
 
-  /* Typography scale */
-  --font-size-display-semibold: 124px;
-  --font-size-display-semibold-mobile: 48px;
-  --font-weight-display-medium: 500;
-  --font-weight-display-semibold: 600;
-
-  --line-height-heading: 130%;
-  --line-height-paragraph: 150%;
+  /* Display */
+  --text-display-desktop: 124px;
+  --text-display-mobile: 48px;
 
   /* Headings */
-  --font-size-h1: 48px;
-  --font-size-h1-mobile: 24px;
-  --font-size-h2: 40px;
-  --font-size-h2-mobile: 18px;
-  --font-size-h3: 32px;
-  --font-size-h3-mobile: 20px;
-  --font-size-h4: 24px;
-  --font-size-h4-mobile: 18px;
-  --font-size-h5: 20px;
-  --font-size-h5-mobile: 14px;
-  --font-size-h6: 16px;
-  --font-size-h6-mobile: 14px;
-
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
+  --text-h1-desktop: 48px;
+  --text-h1-mobile: 24px;
+  --text-h2-desktop: 40px;
+  --text-h2-mobile: 18px;
+  --text-h3-desktop: 32px;
+  --text-h3-mobile: 20px;
+  --text-h4-desktop: 24px;
+  --text-h4-mobile: 18px;
+  --text-h5-desktop: 20px;
+  --text-h5-mobile: 14px;
+  --text-h6-desktop: 16px;
+  --text-h6-mobile: 14px;
 
   /* Paragraphs */
-  --font-size-large-paragraph: 18px;
-  --font-size-large-paragraph-mobile: 14px;
-  --font-size-paragraph: 16px;
-  --font-size-paragraph-mobile: 14px;
-  --font-size-small-paragraph: 14px;
-  --font-size-small-paragraph-mobile: 12px;
+  --text-large-paragraph-desktop: 18px;
+  --text-large-paragraph-mobile: 14px;
+  --text-normal-paragraph-desktop: 16px;
+  --text-normal-paragraph-mobile: 14px;
+  --text-small-paragraph-desktop: 14px;
+  --text-small-paragraph-mobile: 12px;
 
-  --font-weight-paragraph-light: 300;
-  --font-weight-paragraph: 400;
-  --font-weight-paragraph-medium: 500;
-  --font-weight-paragraph-semibold: 600;
+  /* Line height */
+  --leading-display: 120%;
+  --leading-heading: 130%;
+  --leading-paragraph: 150%;
 }
 
 @layer utilities {
@@ -89,114 +84,5 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  /* Display Text Styles */
-  .text-display-semibold {
-    font-size: var(--font-size-display-semibold);
-    font-weight: var(--font-weight-display-semibold);
-    line-height: var(--line-height-heading);
-  }
-
-  /* Headings Styles */
-  .text-h1,
-  .text-h2,
-  .text-h3,
-  .text-h4,
-  .text-h5,
-  .text-h6 {
-    line-height: var(--line-height-heading);
-  }
-
-  .text-h1 {
-    font-size: var(--font-size-h1);
-    font-weight: var(--font-weight-semibold);
-  }
-  .text-h2 {
-    font-size: var(--font-size-h2);
-    font-weight: var(--font-weight-semibold);
-  }
-  .text-h3 {
-    font-size: var(--font-size-h3);
-    font-weight: var(--font-weight-semibold);
-  }
-  .text-h4 {
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-semibold);
-  }
-  .text-h5 {
-    font-size: var(--font-size-h5);
-    font-weight: var(--font-weight-semibold);
-  }
-  .text-h6 {
-    font-size: var(--font-size-h6);
-    font-weight: var(--font-weight-semibold);
-  }
-
-  /* Paragraph Styles */
-  .text-large-paragraph {
-    font-size: var(--font-size-large-paragraph);
-    line-height: var(--line-height-paragraph);
-  }
-
-  .text-paragraph {
-    font-size: var(--font-size-paragraph);
-    line-height: var(--line-height-paragraph);
-  }
-
-  .text-small-paragraph {
-    font-size: var(--font-size-small-paragraph);
-    line-height: var(--line-height-paragraph);
-  }
-
-  .text-paragraph-light {
-    font-weight: var(--font-weight-paragraph-light);
-  }
-
-  .text-paragraph {
-    font-weight: var(--font-weight-paragraph);
-  }
-
-  .text-paragraph-medium {
-    font-weight: var(--font-weight-paragraph-medium);
-  }
-
-  .text-paragraph-semibold {
-    font-weight: var(--font-weight-paragraph-semibold);
-  }
-
-  /* Responsive Text Adjustments */
-  @media screen and (max-width: 1023px) {
-    .text-display-semibold {
-      font-size: var(--font-size-display-semibold-mobile);
-    }
-    .text-h1 {
-      font-size: var(--font-size-h1-mobile);
-    }
-    .text-h2 {
-      font-size: var(--font-size-h2-mobile);
-    }
-    .text-h3 {
-      font-size: var(--font-size-h3-mobile);
-    }
-    .text-h4 {
-      font-size: var(--font-size-h4-mobile);
-    }
-    .text-h5 {
-      font-size: var(--font-size-h5-mobile);
-    }
-    .text-h6 {
-      font-size: var(--font-size-h6-mobile);
-    }
-
-    .text-large-paragraph {
-      font-size: var(--font-size-large-paragraph-mobile);
-    }
-    .text-paragraph {
-      font-size: var(--font-size-paragraph-mobile);
-    }
-    .text-small-paragraph {
-      font-size: var(--font-size-small-paragraph-mobile);
-    }
   }
 }
