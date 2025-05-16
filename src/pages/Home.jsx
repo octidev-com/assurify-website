@@ -1,90 +1,85 @@
-import React from 'react'
-import Banner from '../component/Home/Banner'
-import bannerBg from '../assets/banner/banner-bg.png'
-import HowItWorks from '../component/Home/HowItWorks'
-import ProtectionCoverage from '../component/Home/ProtectionCoverage'
-import Benefits from '../component/Home/Benfits'
-import Brands from '../component/Home/Brands'
-import WhyAssurifyBestChoice from '../component/Home/WhyAssurifyBestChoice'
-import InsightsAndInspiration from '../component/Home/InsightsAndInspiration'
-import FAQ from '../component/Home/FAQ'
-import Review from '../component/Home/Review'
-import PricingSection from '../component/Home/PricingSection'
-import Container from '../component/Common/Container'
-import TopBg from '../component/Common/TopBg'
+import Banner from "../component/Home/Banner";
+import HowItWorks from "../component/Home/HowItWorks";
+import ProtectionCoverage from "../component/Home/ProtectionCoverage";
+import Benefits from "../component/Home/Benfits";
+import Brands from "../component/Home/Brands";
+import WhyAssurifyBestChoice from "../component/Home/WhyAssurifyBestChoice";
+import InsightsAndInspiration from "../component/Home/InsightsAndInspiration";
+import FAQ from "../component/Home/FAQ";
+import Review from "../component/Home/Review";
+import PricingSection from "../component/Home/PricingSection";
+import Container from "../component/Common/Container";
+import TopBg from "../component/Common/TopBg";
 
 const Home = () => {
   const faqs = [
     {
       id: 1,
-      question: 'What is Assurify Shipping Protection?',
+      question: "What is Assurify Shipping Protection?",
       answer:
-        'Assurify is a Shopify app that offers merchants a seamless method of providing shipping protection to customers. It helps cover lost, stolen, or damaged plans while increasing profits and building trust.'
+        "Assurify is a Shopify app that offers merchants a seamless method of providing shipping protection to customers. It helps cover lost, stolen, or damaged plans while increasing profits and building trust.",
     },
     {
       id: 2,
-      question: 'How does Assurify benefit my Shopify store?',
+      question: "How does Assurify benefit my Shopify store?",
       answer:
-        'Assurify boosts client complete satisfaction by assuring shipping. It also creates a new revenue stream through protection costs while minimizing the time invested in handling claims.'
+        "Assurify boosts client complete satisfaction by assuring shipping. It also creates a new revenue stream through protection costs while minimizing the time invested in handling claims.",
     },
     {
       id: 3,
-      question: 'How does Assurify handle claims?',
+      question: "How does Assurify handle claims?",
       answer:
-        'When a customer sues (for a lost, stolen, or damaged item), Assurify provides a structured dashboard for you to manage and resolve the concern rapidly, either by refund or replacement.'
+        "When a customer sues (for a lost, stolen, or damaged item), Assurify provides a structured dashboard for you to manage and resolve the concern rapidly, either by refund or replacement.",
     },
     {
       id: 4,
-      question: 'Is Assurify easy to set up?',
+      question: "Is Assurify easy to set up?",
       answer:
-        'Yes! Assurify can be set up and triggered in minutes. It integrates straight with your Shopify store without requiring any coding.'
+        "Yes! Assurify can be set up and triggered in minutes. It integrates straight with your Shopify store without requiring any coding.",
     },
     {
       id: 5,
-      question: 'Can I customize the protection pricing and policy?',
+      question: "Can I customize the protection pricing and policy?",
       answer:
-        'Absolutely. You can set your security charge structure and change policy terms based on what works best for your shop and clients.'
+        "Absolutely. You can set your security charge structure and change policy terms based on what works best for your shop and clients.",
     },
     {
       id: 6,
-      question: 'Is there any cost to using Assurify?',
+      question: "Is there any cost to using Assurify?",
       answer:
-        'Types of subscription models based on the Assurify provides flexible subscription plans tailored to different business models. The entire protection fee is transferred directly to the merchants - there are no hidden charges. We maintain complete transparency over your earnings and the claims process'
+        "Types of subscription models based on the Assurify provides flexible subscription plans tailored to different business models. The entire protection fee is transferred directly to the merchants - there are no hidden charges. We maintain complete transparency over your earnings and the claims process",
     },
     {
       id: 7,
       question: "What happens if a customer doesn't purchase protection?",
       answer:
-        'If a customer decreases security, normal store policies are used. Assurify only covers orders that include the optional shipping protection at checkout.'
+        "If a customer decreases security, normal store policies are used. Assurify only covers orders that include the optional shipping protection at checkout.",
     },
     {
       id: 8,
-      question: 'Do I need to handle all claims myself?',
+      question: "Do I need to handle all claims myself?",
       answer:
-        "You have complete control. Assurify's simple claim management system makes it easy to resolve claims effectively-- and keep your consumers delighted."
+        "You have complete control. Assurify's simple claim management system makes it easy to resolve claims effectively-- and keep your consumers delighted.",
     },
     {
       id: 9,
-      question: 'Can I remove Assurify at any time?',
+      question: "Can I remove Assurify at any time?",
       answer:
-        'Yes, you can uninstall the app whenever you like. Your shop data remains safe and secure, and you retain access to previous claim records.'
+        "Yes, you can uninstall the app whenever you like. Your shop data remains safe and secure, and you retain access to previous claim records.",
     },
     {
       id: 10,
-      question: 'Can I track how much revenue Assurify generates?',
+      question: "Can I track how much revenue Assurify generates?",
       answer:
-        'Certainly, Assurify supplies an in-depth control panel that demonstrates the number of customers who opt-in for security, the earnings produced, and the claim status, so you always understand your efficiency.'
-    }
-  ]
+        "Certainly, Assurify supplies an in-depth control panel that demonstrates the number of customers who opt-in for security, the earnings produced, and the claim status, so you always understand your efficiency.",
+    },
+  ];
 
   return (
     <div>
       {/* Banner component */}
-      <div
-        style={{ backgroundImage: `url(${bannerBg})` }}
-        className='my-class bg-cover bg-no-repeat bg-center w-full flex justify-center pt-[32px] md:pt-[56px]'>
-        <Banner />
-      </div>
+
+      <Banner />
 
       {/* How it works section */}
       <HowItWorks />
@@ -99,7 +94,7 @@ const Home = () => {
       <Brands />
 
       {/* Pricing section */}
-      <div className='mt-[50px] md:mt-[100px] lg:mt-[150px]'>
+      <div className="mt-[50px] md:mt-[100px] lg:mt-[150px]">
         <PricingSection hideToggle={true} />
       </div>
 
@@ -115,7 +110,7 @@ const Home = () => {
       {/* FAQ section */}
       <FAQ faqs={faqs} />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
