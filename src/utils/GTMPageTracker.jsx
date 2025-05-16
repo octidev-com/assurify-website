@@ -1,26 +1,34 @@
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router'
 
 const GTMPageTracker = () => {
   const location = useLocation()
 
   useEffect(() => {
-    const path = location.pathname
+    // Ensure dataLayer exists
+    window.dataLayer = window.dataLayer || []
 
+    const path = location.pathname
     const pageMap = {
-      '/': { event: 'home_view', title: 'Home' }
-      // '/for-merchant': { event: 'for_merchant_view', title: 'For Merchant' },
-      // '/deals': { event: 'deals_view', title: 'Deals' },
-      // '/pricing': { event: 'pricing_view', title: 'Pricing' },
-      // '/doc': { event: 'doc_view', title: 'Doc' },
-      // '/blog': { event: 'blog_view', title: 'Blog' },
-      // '/view-demo': { event: 'view_demo_view', title: 'View Demo' },
-      // '/try-for-free': { event: 'try_for_free_view', title: 'Try for Free' }
+      '/': { event: 'home_view', title: 'Home' },
+      '/pricing': { event: 'pricing_view', title: 'Pricing' },
+      '/for-merchant': { event: 'for_merchant_view', title: 'For Merchant' },
+      '/deals': { event: 'deals_view', title: 'Deals' },
+      '/contact-us': { event: 'contact_us_view', title: 'Contact Us' },
+      '/checkout': { event: 'checkout_view', title: 'Checkout' },
+      '/confirmation': { event: 'confirmation_view', title: 'Confirmation' },
+      '/privacy-policy': {
+        event: 'privacy_policy_view',
+        title: 'Privacy Policy'
+      }
     }
 
-    const page = pageMap[path] || { event: 'page_view', title: 'Unknown Page' }
+    const page = pageMap[path] || {
+      event: 'page_view',
+      title: `Unknown Page: ${path}`
+    }
 
-    window.dataLayer = window.dataLayer || []
+    // Push to dataLayer
     window.dataLayer.push({
       event: page.event,
       page_path: path,
