@@ -31,7 +31,7 @@ const SectionTitle = ({
           <img src={leftSideHrMobile} className="block lg:hidden" alt="Left horizontal line" />
 
           {/* TITLE TOP TEXT */}
-          <p className="text-h5-mobile lg:text-h5-desktop text-center font-normal leading-paragraph">{topText}</p>
+          <p className="text-h5-mobile lg:text-h5-desktop text-center font-light leading-paragraph">{topText}</p>
 
           {/* RIGHT HR FOR DESKTOP, HIDDEN ON MOBILE */}
           <img src={rightSideHrDesktop} className="hidden lg:block" alt="Right horizontal line" />
