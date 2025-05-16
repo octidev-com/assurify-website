@@ -168,12 +168,12 @@ const HowItWorks = () => {
             topText={"Protection Coverage"}
             middleText={"How It Works"}
             bottomText={
-              "With licensed shipping protection, fast issue resolution, package tracking, product recommendations, and carbon neutral shipping."
+              "With licensed shipping protection, fast issue resolution, package tracking, product recommendations, and carbon neutral shipping."
             }
             isTextCentered={true}
           />
 
-          <div className="flex justify-center mt-3 sm:mt-5 md:mt-2">
+          <div className="flex justify-center mt-[32px]">
             <a href="https://apps.shopify.com/assurify" target="_blank" rel="noopener noreferrer">
               <Button>Get Started</Button>
             </a>
