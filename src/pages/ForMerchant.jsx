@@ -1,15 +1,12 @@
-import TopBg from '../component/Common/TopBg'
 import ForMerchantSection from '../component/ForMerchant/ForMerchantSection'
 
 const ForMerchant = () => {
   return (
-    <>
-      <TopBg>
-        <div className='pt-[32px] md:pt-[56px]'>
-          <ForMerchantSection />
-        </div>
-      </TopBg>
-    </>
+    <div>
+      <div className='pt-[32px] md:pt-[56px]'>
+        <ForMerchantSection />
+      </div>
+    </div>
   )
 }
 

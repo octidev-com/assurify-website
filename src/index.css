@@ -12,8 +12,8 @@
   --color-white: #f7f7f7;
 
   /* Display */
-  --text-display-desktop: 124px;
-  --text-display-mobile: 48px;
+  --text-display-desktop: 100px;
+  --text-display-mobile: 36px;
 
   /* Headings */
   --text-h1-desktop: 48px;
@@ -84,5 +84,10 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .Typewriter__cursor {
+    -webkit-text-fill-color: #fff !important; /* Solid white cursor, overrides gradient */
+    color: #fff !important; /* Fallback for non-webkit browsers */
   }
 }
